@@ -11,6 +11,8 @@
 /4_Backend_ICC2/2_Output/
 /4_Backend_ICC2/3_Log/
 /4_Backend_ICC2/4_Report/
+/5_STA/3_Log/
+/5_STA/4_Report/
 /runs/
 /reports/
 
@@ -29,4 +31,9 @@
 alib-52/
 FM_WORK/
 FM_INFO/
-
+FM_INFO*/
+formality*_svf/
+*.lck
+moduleparamid
+/2_Synthesis/work_*/
+/2_Synthesis/mw_lib/

@@ -12,3 +12,8 @@ Initial clock target:
 10 ns
 ```
 
+Current status:
+
+```text
+Initial baseline SDC created for clk_i, reset false path, GPIO/IMEM preload input delays, and simple output delays.
+```

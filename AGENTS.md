@@ -38,15 +38,50 @@ RESULT_SUMMARY.md
 
 Do not start clock, memory, or utilization sweeps before one baseline flow exists.
 
-## Current State
+## Professional Execution Standard
 
-At the time this file was created:
+Run this project like a practical ASIC implementation project, not as a demo.
+
+Default behavior:
 
 ```text
-Ibex source has not been cloned yet.
-Implementation directory skeleton has not been created yet.
-No RTL, filelists, constraints, or tool scripts exist yet.
-/DATA/home/edu135/ibex/.git exists as a placeholder directory but is not a valid git repository.
+prefer reproducible scripts over one-off terminal commands
+keep DC, Formality, PT, and backend inputs aligned by top/config/filelist
+freeze configuration before comparing area/timing/FM/backend results
+record run commands, logs, reports, generated outputs, and pass/fail status
+separate source-controlled project collateral from generated tool outputs
+do not treat a tool completion as success until logs and signoff-style reports are checked
+when results are suspiciously small, large, clean, or broken, inspect the cause before proceeding
+```
+
+For each major stage, leave enough evidence that another engineer can rerun and audit it after context reset:
+
+```text
+script path
+exact command
+input RTL/filelist/constraints/config
+output netlist/database/SVF/SDF/SDC paths
+primary log path
+key reports checked
+known warnings or limitations
+next action
+```
+
+## Current State
+
+```text
+Ibex upstream clone exists at rtl/ibex.
+Frozen upstream commit: 9742d89f54fc297bed026841c8e68454ddfd7cc0.
+Project-specific Mini SoC RTL exists under rtl/mini_soc.
+Synthesis top: ibex_mini_soc_top.
+Ibex integration point: ibex_top instance u_ibex_top.
+Official synthesis baseline: DC Graphical topographical run tag pre_backend_topo.
+DC topo writes mapped DDC/netlist/SDC/SDF and Formality SVF.
+DC topo must enable hdlin_enable_hier_map and call set_verification_top before compile so Formality receives hier_map SVF guidance.
+Formality R2N has passed on the pre_backend_topo handoff.
+PrimeTime STA uses the matching topo netlist/SDC/SDF; SVF is Formality provenance, not a PT input.
+Pre-backend timing has no setup/hold violations, with known pre-backend max cap/transition DRC notes.
+/DATA/home/edu135/ibex/.git is a read-only placeholder; use ./scripts/git_project.sh for .git_local.
 ```
 
 ## EDA Tool Execution
@@ -245,4 +280,3 @@ software boot complete
 full ISA verification
 production readiness
 ```
-

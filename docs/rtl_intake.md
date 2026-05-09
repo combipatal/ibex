@@ -19,10 +19,10 @@ Support reference: https://github.com/lowRISC/ibex-demo-system
 [x] Record commit hash
 [x] Read README/license
 [x] Identify first RTL filelist/manifest mechanism
-[ ] Identify synthesizable package order
-[ ] Identify ibex_core and ibex_top parameter sets
+[x] Identify synthesizable package order
+[x] Identify ibex_core and ibex_top parameter sets
 [ ] Identify simulation-only files to exclude
-[ ] Decide integration point
+[x] Decide integration point
 ```
 
 ## Initial Findings
@@ -40,6 +40,34 @@ rtl/ibex/ibex_icache.core
 
 Simple system reference inside upstream:
 rtl/ibex/examples/simple_system/
+```
+
+Integration finding:
+
+```text
+ibex_core exposes the register file interface externally.
+ibex_top wraps ibex_core with register file selection and top-level support interfaces.
+First baseline should instantiate ibex_top inside ibex_mini_soc_top.
+```
+
+Current Mini SoC top-level ports:
+
+```text
+clk_i
+rst_ni
+imem_we_i
+imem_waddr_i[31:0]
+imem_wdata_i[31:0]
+gpio_i[31:0]
+gpio_o[31:0]
+```
+
+IMEM preload decision:
+
+```text
+The baseline uses stdcell/flop memory, not SRAM macros.
+Instruction memory needs a write/preload path so it does not synthesize as a constant ROM.
+The preload interface is a top-level input path for program image loading and implementation realism.
 ```
 
 `rtl/ibex/rtl/ibex_core.f` currently lists:

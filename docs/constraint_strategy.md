@@ -3,9 +3,15 @@
 Initial target:
 
 ```text
-Clock: 10 ns
-Reset: async reset false path only if justified by RTL
-IO delays: pending top-level port definition
-Clock uncertainty: pending first SDC
+Clock: clk_i, 10 ns
+Reset: rst_ni false path for async reset
+IO delays: 1 ns input/output placeholder for GPIO and IMEM preload inputs, all top outputs
+Clock uncertainty: 0.1 ns
+Clock transition: 0.1 ns
 ```
 
+Constraint file:
+
+```text
+constraints/ibex_mini_soc_10ns.sdc
+```
