@@ -1,0 +1,11 @@
+# Address Map
+
+Initial baseline:
+
+```text
+0x0000_0000 - 0x0000_07FF : IMEM 2KB
+0x0001_0000 - 0x0001_07FF : DMEM 2KB
+0x0002_0000 - 0x0002_00FF : GPIO
+0x0002_0100 - 0x0002_01FF : TIMER
+```
+

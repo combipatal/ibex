@@ -1,0 +1,32 @@
+# Upstream RTL clone. Keep source revision recorded, do not upload vendor RTL here.
+/rtl/ibex/
+
+# EDA generated outputs and local tool state.
+/2_Synthesis/2_Output/
+/2_Synthesis/3_Log/
+/2_Synthesis/4_Report/
+/3_Formality/2_Output/
+/3_Formality/3_Log/
+/3_Formality/4_Report/
+/4_Backend_ICC2/2_Output/
+/4_Backend_ICC2/3_Log/
+/4_Backend_ICC2/4_Report/
+/runs/
+/reports/
+
+# Local git metadata workaround for read-only placeholder .git directory.
+/.git_local/
+
+# Common generated files.
+*.log
+*.rpt
+*.ddc
+*.svf
+*.sdf
+*.vpd
+*.fsdb
+*.vcd
+alib-52/
+FM_WORK/
+FM_INFO/
+
