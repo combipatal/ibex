@@ -28,6 +28,7 @@
 *.vpd
 *.fsdb
 *.vcd
+*.ems
 alib-52/
 FM_WORK/
 FM_INFO/
@@ -37,3 +38,9 @@ formality*_svf/
 moduleparamid
 /2_Synthesis/work_*/
 /2_Synthesis/mw_lib/
+
+# ICC2/LIBRARY_MANAGER scratch files in project root.
+/.graph_data.txt
+/icc2_output.txt
+/lm_output.txt
+/check_workspace.ems

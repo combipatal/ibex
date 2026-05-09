@@ -176,3 +176,100 @@ SVF guidance result: 2146 accepted, 0 rejected; hier_map 33 accepted, 0 rejected
 Known notes: synopsys_auto_setup enabled; reference RTL interpretation warnings exist, including suppressed FMR_ELAB-116 messages; one clock-gate latch is reported as not compared.
 Next action: start backend floorplan/powerplan setup from the FM-clean topo handoff.
 ```
+
+```text
+Stage: ICC2 NDM setup
+Command: 4_Backend_ICC2/0_Script/00_setup/build_saed32_ndm.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/00_setup/build_saed32_ndm.log
+Outputs: 4_Backend_ICC2/2_Output/00_setup/ndm/saed32rvt_tt.ndm, saed32lvt_tt.ndm, saed32hvt_tt.ndm
+Result: SAED32 RVT/LVT/HVT NDM libraries created for backend use.
+Known notes: SAED32 LEF/DB import warnings are recorded in the log; workspace checks completed and NDMs were written.
+Next action: run ICC2 init_design from the FM-clean topo handoff.
+```
+
+```text
+Stage: ICC2 init_design
+Command: 4_Backend_ICC2/0_Script/01_init_design/run_init_design_check.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/01_init_design/run_init_design_check.log
+Check design report: 4_Backend_ICC2/4_Report/01_init_design/check_design.rpt
+Timing report: 4_Backend_ICC2/4_Report/01_init_design/timing.rpt
+Result: design linked successfully; 0 errors in check_design; timing slack MET 1.88 ns in initial estimated timing.
+Known notes: ICC2 reports unsupported set_load constraints from the DC SDC; unconstrained/unused style warnings are recorded for closure tracking.
+Next action: create initial floorplan.
+```
+
+```text
+Stage: ICC2 floorplan
+Command: 4_Backend_ICC2/0_Script/02_floorplan/run_floorplan_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/02_floorplan/run_floorplan_initial.log
+Utilization report: 4_Backend_ICC2/4_Report/02_floorplan/utilization.rpt
+QoR report: 4_Backend_ICC2/4_Report/02_floorplan/qor.rpt
+Result: initial 1:1 floorplan created; utilization 0.6004; core bbox {20 20} {851.288 850.984}; no setup/hold violations in estimated QoR.
+Next action: create initial power plan.
+```
+
+```text
+Stage: ICC2 powerplan
+Command: 4_Backend_ICC2/0_Script/03_powerplan/run_powerplan_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/03_powerplan/run_powerplan_initial.log
+PG DRC report: 4_Backend_ICC2/4_Report/03_powerplan/pg_drc.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/03_powerplan/pg_connectivity.rpt
+Result: initial VDD/VSS rail/ring/mesh generated; PG DRC reports no errors.
+Open issue: PG connectivity is not clean. VDD reports 3142 std-cell unconnected ports and VSS reports 380 std-cell unconnected ports, with isolated rail paths recorded in pg_connectivity.rpt.
+Rejected experiment: denser M2/M3/M8 mesh variants reduced/shifted connectivity symptoms but introduced thousands of M1 spacing DRCs, so the DRC-clean baseline mesh was restored.
+Next action: continue placement while tracking PG connectivity as an open backend issue.
+```
+
+```text
+Stage: ICC2 placement
+Command: 4_Backend_ICC2/0_Script/04_place/run_place_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/04_place/run_place_initial.log
+Legality report: 4_Backend_ICC2/4_Report/04_place/check_legality.rpt
+QoR report: 4_Backend_ICC2/4_Report/04_place/place_qor.rpt
+Timing report: 4_Backend_ICC2/4_Report/04_place/timing.rpt
+Result: placement/legalization completed; check_legality TOTAL 0 violations; WNS/TNS 0; setup slack approximately 0.06 ns in estimated post-place timing.
+Open issue: PG connectivity issue from powerplan persists after placement.
+Next action: run CTS from placed design.
+```
+
+```text
+Stage: ICC2 CTS first attempts
+Command: 4_Backend_ICC2/0_Script/05_cts/run_cts_initial.sh
+Status: ABORTED_TO_DEBUG
+Log archive 1: 4_Backend_ICC2/3_Log/05_cts_aborted_20260509_2213/run_cts_initial.log
+Log archive 2: 4_Backend_ICC2/3_Log/05_cts_aborted_20260509_2220/run_cts_initial.log
+Stack trace archive: 4_Backend_ICC2/3_Log/05_cts_aborted_20260509_2213/Synopsys_stack_trace_3034893.txt and 4_Backend_ICC2/3_Log/05_cts_aborted_20260509_2220/Synopsys_stack_trace_3044997.txt
+Observed issue: duplicated CTS runs wrote the same current log path during debug, so partial logs were quarantined as aborted and are not accepted as signoff evidence.
+Fatal point: ICC2 reported an internal system error during clock_opt/CTS, including a message that fatal optimization occurred near U24139/Y in one aborted run.
+Process note: host ps showed individual icc2_exec processes near 100 percent CPU; this means roughly one logical CPU core per process, not whole-server 100 percent CPU usage.
+Current policy: do not add script-level atomic locks because this project area may be shared across users/projects; check active processes manually before launching shared-step reruns.
+Next action: inspect CTS Tcl/options and rerun from a clean log/report directory with only one active CTS process.
+```
+
+```text
+Stage: ICC2 CTS clean retry
+Command: 4_Backend_ICC2/0_Script/05_cts/run_cts_initial.sh
+Status: PASS_WITH_NOTE
+Start time: 2026-05-09 22:19 KST
+End time: 2026-05-09 22:33 KST
+Log path: 4_Backend_ICC2/3_Log/05_cts/run_cts_initial.log
+Clock tree report: 4_Backend_ICC2/4_Report/05_cts/check_clock_trees.post.rpt
+Clock QoR report: 4_Backend_ICC2/4_Report/05_cts/clock_qor.summary.rpt
+Timing max report: 4_Backend_ICC2/4_Report/05_cts/timing.max.rpt
+Timing min report: 4_Backend_ICC2/4_Report/05_cts/timing.min.rpt
+Legality report: 4_Backend_ICC2/4_Report/05_cts/check_legality.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/05_cts/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/05_cts/pg_drc.rpt
+Result: clean single-process CTS completed. The previous Phase 6 Iter 2 no-output interval was not a hang; it advanced after several minutes.
+Completion evidence: clock tree compilation finished successfully; clock route detail routing finished with 0 open nets and 0 DRCs; check_legality reports TOTAL 0 violations; check_pg_drc reports no errors.
+Timing result: timing.max worst reported slack MET 0.63 ns; timing.min worst reported slack MET 0.04 ns; qor.rpt reports total negative slack 0.00.
+Diagnosis result: duplicate/contaminated CTS logs caused a misleading failure picture. The earlier Error code=15/Terminated fatal artifact is not accepted as a clean tool-crash reproduction.
+Known notes: log still includes many intermediate ZRT-763 overlap warnings during CTS/routing analysis, but final check_legality is clean. Default max transition/default voltage warnings remain to be cleaned up later.
+Open issue: PG connectivity is still not clean. VDD reports 3358 floating std cells and VSS reports 415 floating std cells in 05_cts pg_connectivity.rpt. PG DRC remains clean.
+Next action: continue to route only with PG connectivity tracked as an open backend issue, or fix PG rail connectivity before route if strict backend strong-done criteria are required.
+```

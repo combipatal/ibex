@@ -138,6 +138,26 @@ suspected root cause
 next action
 ```
 
+## Failure Diagnosis Discipline
+
+When a tool run fails, crashes, hangs, regresses, or produces suspicious results, use the installed `diagnose` skill workflow before changing scripts broadly.
+
+Apply this loop:
+
+```text
+build a reproducible pass/fail signal
+reproduce and capture the exact symptom
+list 3-5 falsifiable root-cause hypotheses
+instrument or inspect one hypothesis at a time
+try the smallest targeted fix or workaround
+evaluate against the original pass/fail signal
+record the result, rejected hypotheses, and next action
+```
+
+For EDA failures, the feedback loop should normally be a scripted tool invocation plus report/log checks, not a visual guess.
+
+Record diagnosis notes in `00_Project_Tracking/` when the issue affects project direction or rerun policy.
+
 Every major claim must point to an artifact.
 
 Examples:

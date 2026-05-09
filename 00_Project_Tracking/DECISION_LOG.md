@@ -45,3 +45,16 @@ Reason: initial FM R2N run stayed in verify for too long; log showed no guide_hi
 Implementation: set hdlin_enable_hier_map true before RTL analyze and call set_verification_top after elaboration in 2_Synthesis/0_Script/run_dc_compile_topo.tcl.
 Result: regenerated SVF produced 2146 accepted guidance commands, 0 rejected, including 33 accepted hier_map commands; FM R2N passed.
 ```
+
+```text
+Decision: do not add script-level lock files to shared EDA wrappers.
+Reason: this project area may be used for separate experiments by different users/projects; locking inside the checked-in wrapper would impose a local execution policy globally.
+Operational policy: before rerunning a shared backend step, manually check active icc2_shell/icc2_exec processes and archive partial logs if a run was interrupted.
+```
+
+```text
+Decision: treat the clean single-process CTS retry as the accepted CTS baseline.
+Reason: the earlier CTS aborted logs were contaminated by duplicate runs and termination artifacts; a clean retry completed without Fatal/Internal system error.
+Evidence: 4_Backend_ICC2/3_Log/05_cts/run_cts_initial.log, 4_Backend_ICC2/4_Report/05_cts/check_legality.rpt, 4_Backend_ICC2/4_Report/05_cts/timing.max.rpt, 4_Backend_ICC2/4_Report/05_cts/timing.min.rpt, 4_Backend_ICC2/4_Report/05_cts/pg_connectivity.rpt.
+Result: CTS is PASS_WITH_NOTE; PG connectivity remains an open backend issue.
+```
