@@ -27,3 +27,16 @@ Remote target: ssh://git@ssh.github.com:443/combipatal/ibex.git
 Scope: scripts, docs, constraints, configs, AGENTS/init, and 00_Project_Tracking records only
 Next action: initialize .git_local, commit scoped files, push to GitHub over SSH port 443
 ```
+
+```text
+Stage: git publish
+Action: committed and pushed scoped project files to GitHub
+Status: PASS
+Remote: ssh://git@ssh.github.com:443/combipatal/ibex.git
+Branch: main
+Commit: 041887b Initialize Ibex Mini SoC flow records
+Push output: main -> main, branch main set to track origin/main
+Uploaded scope: .gitignore, AGENTS/init docs, project plan, docs, configs, constraints, filelists README, rtl/mini_soc README, scripts/git_project.sh, 00_Project_Tracking records
+Excluded scope: rtl/ibex upstream clone, EDA outputs/logs/reports/runs
+Next action: commit and push this publish log update
+```

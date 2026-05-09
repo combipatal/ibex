@@ -29,3 +29,15 @@ HVT_TT_DB=/DATA/home/edu135/lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1
 Ibex upstream commit: 9742d89f54fc297bed026841c8e68454ddfd7cc0
 Ibex clone path: rtl/ibex
 ```
+
+## Project Git Remote
+
+```text
+Remote: ssh://git@ssh.github.com:443/combipatal/ibex.git
+Branch: main
+SSH key: /DATA/home/edu135/.ssh/id_ed25519
+SSH port: 443 via ssh.github.com
+Local git metadata: .git_local, accessed by scripts/git_project.sh
+Uploaded scope: scripts/docs/configs/constraints/filelists/tracking records only
+Excluded: rtl/ibex upstream clone and generated EDA outputs
+```
