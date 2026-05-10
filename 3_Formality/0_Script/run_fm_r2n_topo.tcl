@@ -8,7 +8,11 @@
 
 set PROJECT_ROOT /DATA/home/edu135/ibex
 set TOP_DESIGN ibex_mini_soc_top
-set RUN_TAG pre_backend_topo
+if {[info exists ::env(FM_RUN_TAG)] && $::env(FM_RUN_TAG) ne ""} {
+  set RUN_TAG $::env(FM_RUN_TAG)
+} else {
+  set RUN_TAG pre_backend_topo
+}
 
 cd $PROJECT_ROOT
 

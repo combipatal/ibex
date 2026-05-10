@@ -35,7 +35,8 @@
 | VIA1 pitch NDM route probe | ICC2/LM | REJECTED_NO_IMPROVEMENT | 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_nor2_policy_route_flow/06_route/check_routes.rpt | 36 signal DRCs = Diff net spacing 2, Off-grid 34; worse than 18-DRC best artifact |
 | VIA1 pitch/no-track NDM build | LM | PASS_WITH_NOTE | 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log | Debug techfile removes VIA1 onGrid/onWireTrack; production policy not decided |
 | VIA1 pitch/no-track NOR2-policy route | ICC2 | COMPLETE_WITH_ONE_RESIDUAL_SIGNAL_DRC | 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/06_route/check_routes.rpt | 0 open nets; 1 Off-grid near MUX41X2_HVT/S0 |
-| NOR2+MUX41 cell-use synthesis debug | DC Graphical topo | PASS_WITH_PRE_BACKEND_DRC_NOTE | 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt | MUX41X2_HVT removed; Formality not rerun yet |
+| NOR2+MUX41 cell-use synthesis debug | DC Graphical topo | PASS_WITH_PRE_BACKEND_DRC_NOTE | 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt | MUX41X2_HVT removed; Formality R2N now passed |
+| NOR2+MUX41 Formality R2N | FM | PASS_WITH_NOTE | 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log | 34915 passing compare points; auto setup/RTL warnings remain |
 | VIA1 pitch/no-track NOR2+MUX41 route | ICC2 | DEBUG_ROUTE_DRC_CLEAN_CANDIDATE | 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt | 0 open nets and 0 signal DRC; debug candidate, not production-promoted |
 
 ## Backend Open Items
@@ -75,10 +76,11 @@ Lower-utilization rerun: CORE_UTILIZATION=0.55 clean modified-LEF NOR2-policy ba
 VIA1 pitch probe: project-local techfile/NDM with VIA1 pitch = 0.36 built successfully but reports TECH-025 for VIA1 onGrid/onWireTrack coexistence. Clean NOR2-policy route has 36 DRCs = Diff net spacing 2, Off-grid 34 with open nets 0, legality clean, PG clean, and timing positive. Rejected because it does not improve the 18-DRC best artifact.
 VIA1 pitch/no-track probe: project-local NDMs with VIA1 pitch = 0.36 and VIA1 onGrid/onWireTrack removed built successfully without TECH-025. Clean NOR2-policy backend route improved to 1 Off-grid/open0.
 One-DRC context: the remaining Off-grid is M1 net n55676 near U6629/MUX41X2_HVT/S0. Post-route resize of U6629 to MUX41X1_HVT is rejected because it creates 14 DRC and 6 open nets.
-NOR2+MUX41 debug synthesis: NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT are set dont_use and absent from the mapped Verilog; MUX41X1_HVT count is 126. This debug handoff has not yet gone through Formality R2N.
+NOR2+MUX41 debug synthesis: NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT are set dont_use and absent from the mapped Verilog; MUX41X1_HVT count is 126.
+NOR2+MUX41 Formality R2N: passed with Verification SUCCEEDED, 34915 passing compare points, 0 failing, 0 unmatched compare points, and SVF guidance 2146 accepted / 0 rejected.
 Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
 Current best debug route result: 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, timing.max slack MET 0.78 ns, timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
-Modified-LEF/no-track caveat: not promoted to production baseline yet. Production promotion requires a library-policy decision on the VIA1 no-track techfile change plus Formality R2N for the NOR2+MUX41 DC handoff.
+Modified-LEF/no-track caveat: not promoted to production baseline yet. Production promotion now mainly requires a library-policy decision on the VIA1 no-track techfile change.
 Route timing for current official production route remains timing.max MET 0.57 ns and timing.min MET 0.03 ns; the DRC-clean result is still under 99_debug until promoted.
 Strict backend strong-done is conditionally open: a debug candidate has signal DRC 0, but production baseline promotion and equivalent handoff proof are not complete.
 ```

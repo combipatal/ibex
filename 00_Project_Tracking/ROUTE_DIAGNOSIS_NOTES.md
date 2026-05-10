@@ -892,8 +892,8 @@ Evidence:
 - The mapped Verilog contains 126 MUX41X1_HVT references.
 - 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/post_compile.qor.rpt reports Design Area 414611.038071.
 
-Caveat:
-This debug synthesis handoff has not yet been rerun through Formality R2N.
+Caveat update:
+This debug synthesis handoff has now passed Formality R2N. Log: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log.
 ```
 
 ```text
@@ -916,6 +916,9 @@ The combined hypothesis is supported. The remaining route DRC is fixed in a save
 
 ```text
 Updated conclusion:
+Formality evidence:
+3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log reports Verification SUCCEEDED, 34915 passing compare points, 0 failing compare points, 0 unmatched compare points, and SVF guidance 2146 accepted / 0 rejected.
+
 Current best debug route artifact:
 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
 
@@ -928,5 +931,5 @@ Current best debug route evidence:
 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/timing.min.rpt
 
 Next action:
-Decide whether to promote the VIA1 no-track techfile policy and MUX41X2_HVT dont_use policy. If yes, rerun Formality R2N on pre_backend_topo_nor2_mux41_no_x0x2_hvt, then move the selected backend wrapper/report path from 99_debug into the baseline flow.
+Decide whether to promote the VIA1 no-track techfile policy. If yes, move the selected backend wrapper/report path from 99_debug into the baseline flow.
 ```

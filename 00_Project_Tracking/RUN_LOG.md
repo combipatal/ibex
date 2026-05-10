@@ -885,7 +885,7 @@ Report root: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_h
 Evidence: nor2_dont_use_verify.rpt reports NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use=true. The mapped Verilog has 0 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT references and 126 MUX41X1_HVT references.
 Outputs: ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.{ddc,vg,sdc,sdf}
 QoR note: post_compile.qor.rpt reports Design Area 414611.038071; pre-backend max transition/cap notes remain.
-Formality note: this debug handoff has not yet been promoted through Formality R2N.
+Formality note: this debug handoff later passed Formality R2N; see the Formality R2N for NOR2+MUX41 debug handoff entry below.
 ```
 
 ```text
@@ -899,5 +899,20 @@ Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_
 Backend inputs: NOR2+MUX41-policy netlist 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC.
 Result: 06_route/check_routes.rpt reports 0 open nets and 0 signal DRC. Antenna checking is not active because no antenna rules are defined.
 Sanity checks: check_legality TOTAL 0; pg_connectivity VDD/VSS floating objects 0; route log/check_pg_drc reports No errors found; timing.max worst reported slack MET 0.78 ns; timing.min worst reported slack MET 0.04 ns.
-Important caveat: this is a debug DRC-clean candidate, not a promoted production baseline. Promotion requires deciding whether the VIA1 no-track techfile change is acceptable library policy and rerunning Formality R2N for the NOR2+MUX41 DC handoff.
+Important caveat: this is a debug DRC-clean candidate, not a promoted production baseline. Promotion requires deciding whether the VIA1 no-track techfile change is acceptable library policy. The NOR2+MUX41 DC handoff later passed Formality R2N.
+```
+
+```text
+Stage: Formality R2N for NOR2+MUX41 debug handoff
+Command: env FM_RUN_TAG=pre_backend_topo_nor2_mux41_no_x0x2_hvt FM_LOG=3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log 3_Formality/0_Script/run_fm_r2n_topo.sh
+Status: PASS_WITH_NOTE
+Script updates: 3_Formality/0_Script/run_fm_r2n_topo.sh and run_fm_r2n_topo.tcl now accept FM_RUN_TAG/FM_LOG while preserving pre_backend_topo as the default.
+Basis: reference RTL from filelists/ibex_mini_soc_fm_ref.f; implementation DDC 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.ddc; matching SVF 2_Synthesis/2_Output/svf/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.svf.
+Log path: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log
+Report root: 3_Formality/4_Report/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Output session: 3_Formality/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/r2n_topo_fm_session.fss
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing compare points; 0 unmatched reference/implementation compare points.
+SVF guidance result: 2146 accepted, 0 rejected; hier_map 33 accepted, 0 rejected.
+Known notes: synopsys_auto_setup enabled; RTL interpretation warnings exist; one clock-gate latch not compared, consistent with prior baseline note.
+Remaining promotion caveat: only the VIA1 no-track techfile/library policy remains to be accepted before moving this candidate out of 99_debug.
 ```

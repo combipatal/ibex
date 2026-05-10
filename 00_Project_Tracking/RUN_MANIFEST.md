@@ -504,7 +504,7 @@ Output root: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt
 Report root: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt
 Key reports: nor2_dont_use_policy.rpt, nor2_dont_use_verify.rpt, post_compile.qor.rpt
 Result: NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT are dont_use=true and absent from mapped Verilog; MUX41X1_HVT count is 126.
-Use: debug backend input only until Formality R2N is rerun.
+Use: debug backend input for the DRC-clean route candidate; Formality R2N has now passed for this handoff.
 ```
 
 ```text
@@ -516,5 +516,19 @@ Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_mu
 ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
 Backend inputs: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC.
 Result: 0 open nets; 0 signal DRC; legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max MET 0.78 ns; timing.min MET 0.04 ns.
-Caveat: antenna checking is not active because no antenna rules are defined. This is not production-promoted until VIA1 no-track library policy and Formality R2N are handled.
+Caveat: antenna checking is not active because no antenna rules are defined. This is not production-promoted until VIA1 no-track library policy is handled.
+```
+
+```text
+Formality NOR2+MUX41 R2N status: PASS_WITH_NOTE
+Command: env FM_RUN_TAG=pre_backend_topo_nor2_mux41_no_x0x2_hvt FM_LOG=3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log 3_Formality/0_Script/run_fm_r2n_topo.sh
+Scripts: 3_Formality/0_Script/run_fm_r2n_topo.sh, 3_Formality/0_Script/run_fm_r2n_topo.tcl
+Log: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log
+Report root: 3_Formality/4_Report/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Session: 3_Formality/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/r2n_topo_fm_session.fss
+Reference: filelists/ibex_mini_soc_fm_ref.f
+Implementation: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.ddc
+SVF: 2_Synthesis/2_Output/svf/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.svf
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing; 0 unmatched compare points; SVF guidance 2146 accepted and 0 rejected.
+Caveat: synopsys_auto_setup and RTL interpretation warnings remain as in the official baseline.
 ```

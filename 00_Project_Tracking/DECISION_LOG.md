@@ -220,5 +220,12 @@ Decision: create a debug DRC-clean candidate by combining VIA1 pitch/no-track ND
 Reason: the one remaining Off-grid was tied to MUX41X2_HVT/S0 pin access. Removing MUX41X2_HVT upstream and rerunning clean backend with the no-track NDM produces a saved route block with 0 open nets and 0 signal DRC.
 Evidence: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt reports all three cells dont_use=true; the mapped Verilog has 0 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT references and 126 MUX41X1_HVT references. 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt reports 0 open nets and 0 signal DRC. check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; route log/check_pg_drc reports No errors found; timing.max/min reports MET 0.78 ns / 0.04 ns.
 Current best debug artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
-Promotion caveat: this is not yet the production baseline. Formality R2N has not been rerun for the NOR2+MUX41 debug handoff, and antenna checking is not active because no antenna rules are defined. Production promotion requires accepting the VIA1 no-track library policy, rerunning Formality, and moving the selected wrapper/report paths out of 99_debug.
+Promotion caveat: this is not yet the production baseline. Antenna checking is not active because no antenna rules are defined. Production promotion requires accepting the VIA1 no-track library policy and moving the selected wrapper/report paths out of 99_debug.
+```
+
+```text
+Decision: treat the NOR2+MUX41 debug synthesis handoff as logically proven by Formality R2N.
+Reason: the new DC cell-use policy handoff needed an equivalence check before any production promotion. Formality R2N using the matching DDC/SVF passed with the same compare-point count as the official baseline and no rejected SVF guidance.
+Evidence: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log reports Verification SUCCEEDED, 34915 passing compare points, 0 failing compare points, 0 unmatched reference/implementation compare points, and SVF guidance total 2146 accepted / 0 rejected, including hier_map 33 accepted / 0 rejected.
+Scope: this resolves the logic-equivalence promotion gate for the NOR2+MUX41 handoff. The remaining promotion decision is the VIA1 no-track techfile/library policy.
 ```
