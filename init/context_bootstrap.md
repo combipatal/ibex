@@ -78,4 +78,9 @@ Educational GDS output: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candida
 Educational GDS reports: 4_Backend_ICC2/4_Report/08_gds/route_closure_gds_candidate.
 Educational GDS result: GDS/DEF/netlist/SDC written; post-filler route DRC/open clean, legality clean, PG clean, and qor.after_filler reports clk critical path slack 0.78 ns.
 GDS caveat: constraints.after_filler reports max_transition 8 and max_capacitance 228 violations; do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC/metal-fill/signoff STA evidence.
+Post-route electrical cleanup note: 09 route_opt reduced max_transition to 0 and max_capacitance to 120; 10 max-cap ECO reduced max_capacitance to 2 but introduced route DRC 31; 11 cleanup recovered route DRC to 0 but left max_capacitance 2.
+Current post-route electrical/route clean candidate: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib.
+Current candidate reports: 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco.
+Current candidate result: constraints.final reports max_transition 0, max_capacitance 0, min_capacitance 0; check_routes.final reports open nets 0 and route DRC 0; legality TOTAL 0; PG connectivity floating objects 0; check_pg_drc command reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
+Current candidate caveat: ICC2 internal route/electrical clean candidate only. Antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA are not complete.
 ```

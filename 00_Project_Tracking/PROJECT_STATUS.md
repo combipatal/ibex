@@ -82,6 +82,7 @@ Status: COMPLETE_WITH_NOTES
 [x] Export educational GDS candidate from route-closure block
 [x] Attempt one post-route max-cap ECO and record non-promoted result
 [x] Attempt final route cleanup after max-cap ECO and verify residual max-cap status
+[x] Attempt one residual max-cap ECO from final cleanup and verify route/electrical reports
 ```
 
 ## Current Notes
@@ -147,6 +148,7 @@ Educational GDS candidate: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_cl
 GDS candidate checks: after-filler route DRC/open nets are clean, legality is clean, PG connectivity/PG DRC are clean, and qor.after_filler.rpt reports clk critical path slack 0.78 ns with no setup/hold violating paths.
 Remaining implementation notes: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules are absent, and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
 Post-route electrical DRC attempt: route_opt iterations reduced max_transition to 0 and max_capacitance to 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2, but check_routes regressed to 31 route DRCs. Final cleanup recovered check_routes to open nets 0 and route DRC 0, with legality 0, PG clean, timing positive, max_transition 0, and max_capacitance 2.
-Current decision: do not continue deeper ECO repair from the final cleanup result. Keep the final cleanup artifact as a partial electrical DRC closure waypoint, not an electrical-clean baseline.
-Next phase: package the baseline results and optionally add signoff-style educational extensions. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC evidence.
+Residual max-cap ECO update: one approved final attempt from the final-cleanup block inserted 1 buffer and issued 1 size_cell command. Final reports in 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco show max_transition 0, max_capacitance 0, min_capacitance 0, route open nets 0, route DRC 0, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, and timing.max/min MET 0.64 ns / 0.04 ns.
+Current decision: keep 12_post_route_residual_maxcap_eco as the ICC2 internal post-route electrical/route clean candidate for this debug sequence. Do not continue additional ECO repair unless a new explicitly approved signoff or GDS-refresh phase is opened.
+Next phase: package the baseline results and optionally add signoff-style educational extensions or regenerate a GDS candidate from the residual max-cap ECO block. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC evidence.
 ```

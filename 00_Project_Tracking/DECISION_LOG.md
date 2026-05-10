@@ -262,9 +262,13 @@ Reason: route_opt reduced max_transition to 0 and max_capacitance to 120 but sta
 
 Evidence: 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter4/constraints.after_route_opt.rpt reports max_transition 0 and max_capacitance 120. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/constraints.after_maxcap_eco.rpt reports max_transition 0 and max_capacitance 2. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/check_routes.after_maxcap_eco.rpt reports open nets 0 and route DRC 31. The max-cap ECO log reports 55 inserted buffers and 65 size_cell commands.
 
-Policy: per project-owner instruction, stop deeper ECO repair from this result. Carry the electrical DRC caveat forward unless a later explicitly approved closure phase is opened.
+Policy at that point: per project-owner instruction, stop deeper ECO repair from this result. Carry the electrical DRC caveat forward unless a later explicitly approved closure phase is opened.
 
 Update: one final bounded cleanup was approved and run after the max-cap ECO. It recovered route DRC to 0 and kept timing/legality/PG clean, but final ICC2 constraints still report max_capacitance 2. Evidence: 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/check_routes.after_cleanup.rpt reports open nets 0 and DRC 0; 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/constraints.after_cleanup.rpt reports max_transition 0 and max_capacitance 2.
 
-Final policy for this phase: stop here. Do not claim electrical DRC clean.
+Superseding update: the project owner later approved exactly one more residual max-cap attempt. 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh started from the final-cleanup block and ran one `eco_opt -types max_capacitance` pass, followed by bounded route_detail and route_eco cleanup.
+
+Evidence: 4_Backend_ICC2/3_Log/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.log reports 2 max-cap violations before ECO, 1 size_cell command, 1 insert_buffer command, and remaining ECO violations 0. 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco/constraints.final.rpt reports max_transition 0, max_capacitance 0, and min_capacitance 0. 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco/check_routes.final.rpt reports open nets 0 and route DRC 0. Legality, PG connectivity, PG DRC, and timing reports are clean or positive for ICC2 sanity.
+
+Final policy for this phase: accept 12_post_route_residual_maxcap_eco as the ICC2 internal post-route electrical/route clean candidate for this debug sequence. Do not claim signoff clean or tapeout ready because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology remain outside this evidence.
 ```

@@ -1016,3 +1016,19 @@ Result: route_detail plus route_eco recovered the max-cap ECO route regression. 
 Final saved-block ICC2 reports: constraints.after_cleanup.rpt reports max_transition 0, max_capacitance 2, and min_capacitance 0; check_legality reports TOTAL 0; PG connectivity floating objects are 0; PG DRC reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
 Decision: final bounded cleanup improved the result but is not electrical-DRC-clean because two max-cap violations remain.
 ```
+
+```text
+Stage: ICC2 residual max-cap ECO after final cleanup
+Command: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh
+Status: PASS_WITH_NOTE
+Scripts: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh, run_post_route_residual_maxcap_eco.tcl
+Log: 4_Backend_ICC2/3_Log/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.log
+Report root: 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco
+Output root: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export
+Saved ICC2 library: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib
+Source block: ibex_mini_soc_top_post_route_final_cleanup
+ECO block: ibex_mini_soc_top_post_route_residual_maxcap_eco
+Result: one residual max-cap ECO inserted 1 buffer and issued 1 size_cell command; PrimeTime ECO reported remaining violations 0.
+Final saved-block ICC2 reports: constraints.final.rpt reports max_transition 0, max_capacitance 0, and min_capacitance 0; check_routes.final.rpt reports open nets 0 and route DRC 0; check_legality reports TOTAL 0; PG connectivity floating objects are 0; PG DRC has no reported errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
+Conclusion: accepted as an ICC2 internal post-route electrical/route clean candidate for this debug sequence. This is not signoff clean because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology are not covered.
+```

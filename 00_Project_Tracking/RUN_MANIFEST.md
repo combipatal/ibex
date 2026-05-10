@@ -634,3 +634,21 @@ ICC2 library: 4_Backend_ICC2/2_Output/11_post_route_final_cleanup/ibex_mini_soc_
 Result: open nets 0, route DRC 0, legality 0, PG clean, timing positive, max_transition 0, max_capacitance 2.
 Decision: keep as final bounded cleanup artifact; do not claim electrical DRC clean.
 ```
+
+```text
+Residual max-cap ECO status: PASS_WITH_NOTE
+Command: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh
+Scripts: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh, run_post_route_residual_maxcap_eco.tcl
+Log: 4_Backend_ICC2/3_Log/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.log
+Report root: 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco
+Output root: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export
+Manifest: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/post_route_residual_maxcap_eco_manifest.txt
+ICC2 library: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib
+Source block: ibex_mini_soc_top_post_route_final_cleanup
+ECO block: ibex_mini_soc_top_post_route_residual_maxcap_eco
+ECO method: eco_opt -types max_capacitance -physical_mode occupied_site, then bounded route_detail and route_eco cleanup.
+ECO result: 2 residual max-cap violations before ECO; 1 inserted buffer; 1 size_cell command; remaining PrimeTime ECO violations 0.
+Final route/electrical result: constraints.final.rpt reports max_transition 0, max_capacitance 0, min_capacitance 0; qor.final.rpt reports Nets with Violations 0, Max Trans Violations 0, Max Cap Violations 0; check_routes.final.rpt reports open nets 0 and route DRC 0.
+Final sanity result: check_legality.final.rpt reports TOTAL 0; pg_connectivity.final.rpt reports VDD/VSS floating objects 0; check_pg_drc command reported No errors found; timing.max/min reports MET 0.64 ns / 0.04 ns.
+Decision: accepted as an ICC2 internal post-route electrical/route clean candidate for this debug sequence. Claim boundary remains not signoff/tapeout clean.
+```

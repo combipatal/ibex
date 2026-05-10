@@ -92,6 +92,10 @@ Educational GDS candidate wrapper: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_
 Educational GDS candidate output: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds.
 Educational GDS candidate result: GDS/DEF/netlist/SDC written; post-filler route DRC/open clean, legality clean, PG clean, and qor.after_filler reports clk critical path slack 0.78 ns.
 GDS caveat: constraints.after_filler reports max_transition 8 and max_capacitance 228 violations; antenna/LVS/IR/EM/foundry DRC/metal-fill/signoff STA are not done, so do not claim signoff clean or tapeout-ready.
+Post-route residual max-cap ECO candidate: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh.
+Post-route residual max-cap ECO artifact: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib.
+Post-route residual max-cap ECO result: constraints.final reports max_transition 0, max_capacitance 0, min_capacitance 0; check_routes.final reports open nets 0 and route DRC 0; legality TOTAL 0; PG connectivity floating objects 0; check_pg_drc command reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
+Post-route residual max-cap ECO caveat: ICC2 internal route/electrical clean candidate only; GDS has not been regenerated from this block and signoff-class checks are still absent.
 /DATA/home/edu135/ibex/.git is a read-only placeholder; use ./scripts/git_project.sh for .git_local.
 ```
 

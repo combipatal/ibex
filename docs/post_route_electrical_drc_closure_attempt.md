@@ -43,6 +43,7 @@ So filler insertion added at most one max-cap violation; the main problem is mis
 | route_opt iter4 | max_transition 0, max_capacitance 120 | stalled |
 | max-cap ECO | max_transition 0, max_capacitance 2, route DRC 31 | not accepted |
 | final route cleanup | max_transition 0, max_capacitance 2, route DRC 0 | route recovered, electrical partial |
+| residual max-cap ECO | max_transition 0, max_capacitance 0, route DRC 0 | ICC2 clean candidate |
 
 ## Max-Cap ECO
 
@@ -128,22 +129,64 @@ timing.min.after_cleanup.rpt: worst listed slack MET 0.04 ns
 
 The final cleanup recovers the route DRC regression caused by max-cap ECO, but the two small max-cap violations remain.
 
+## Residual Max-Cap ECO
+
+Command:
+
+```text
+4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh
+```
+
+Key output:
+
+```text
+ICC2 library: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco
+Export root: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export
+Manifest: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/post_route_residual_maxcap_eco_manifest.txt
+```
+
+PrimeTime ECO result:
+
+```text
+2 max-cap violations found before ECO
+1 size_cell command
+1 insert_buffer command
+remaining ECO violations: 0
+```
+
+Final ICC2 saved-block reports:
+
+```text
+constraints.final.rpt: max_transition 0, max_capacitance 0, min_capacitance 0
+qor.final.rpt: Nets with Violations 0, Max Trans Violations 0, Max Cap Violations 0
+check_routes.final.rpt: open nets 0, route DRC 0
+check_legality.final.rpt: TOTAL 0
+pg_connectivity.final.rpt: VDD/VSS floating objects 0
+pg_drc.final.rpt: No errors found in command log; report file contains no PG DRC records
+timing.max.final.rpt: worst listed slack MET 0.64 ns
+timing.min.final.rpt: worst listed slack MET 0.04 ns
+```
+
+This run is the first ICC2 saved-block candidate in this sequence with route DRC, max-transition, max-capacitance, legality, PG connectivity, PG DRC, and ICC2 timing sanity all clean or positive in the generated reports.
+
 ## Decision
 
-The max-cap ECO plus final route cleanup is not an electrical-DRC-clean result. It greatly reduced electrical DRC and recovered signal route DRC, but still leaves 2 max-cap violations in the final ICC2 report.
+The max-cap ECO plus final route cleanup was not an electrical-DRC-clean result because it still left 2 max-cap violations in the final ICC2 report.
 
-Per project-owner direction on 2026-05-10, this was the final bounded cleanup attempt. Carry the remaining 2 max-cap violations as a documented residual issue unless a later explicitly approved closure phase is opened.
+After later project-owner approval for exactly one more attempt, the residual max-cap ECO closed those last 2 violations and recovered route DRC to 0. Treat `12_post_route_residual_maxcap_eco` as the accepted ICC2 internal post-route electrical/route clean candidate for this debug sequence.
 
 ## Current Accepted Baseline
 
-Keep the route-closure baseline and educational GDS candidate as the accepted artifacts, with the electrical DRC caveat explicitly recorded.
+Keep the named route-closure baseline as the accepted backend flow baseline. The educational GDS candidate was generated before the residual max-cap ECO and remains an educational stream-out artifact with its recorded electrical DRC caveat.
+
+The `12_post_route_residual_maxcap_eco` block is the accepted ICC2 internal post-route electrical/route clean candidate. It has not yet been used to regenerate a new GDS artifact.
 
 Do not claim:
 
 ```text
-electrical DRC clean
 signoff clean
 tapeout ready
 ```
 
-without a later accepted closure run.
+because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology are still outside this evidence.
