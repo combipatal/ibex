@@ -471,7 +471,7 @@ NDM build log: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log
 Patched techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
 NDM root: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
 Result: project-local techfile enables VIA1 pitch = 0.36 and removes VIA1 onGrid/onWireTrack; RVT/LVT/HVT NDMs were written. No TECH-025/TECH-006/LIB-007/Fatal pattern was found in the log.
-Use: debug backend route experiments only until production library policy is accepted.
+Use: accepted for project baseline promotion as of 2026-05-10; wrapper/manifest promotion remains.
 ```
 
 ```text
@@ -516,7 +516,7 @@ Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_mu
 ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
 Backend inputs: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC.
 Result: 0 open nets; 0 signal DRC; legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max MET 0.78 ns; timing.min MET 0.04 ns.
-Caveat: antenna checking is not active because no antenna rules are defined. This is not production-promoted until VIA1 no-track library policy is handled.
+Caveat: antenna checking is not active because no antenna rules are defined. VIA1 no-track library policy is now accepted; wrapper/manifest promotion remains before calling this the baseline route flow.
 ```
 
 ```text
@@ -534,12 +534,20 @@ Caveat: synopsys_auto_setup and RTL interpretation warnings remain as in the off
 ```
 
 ```text
-Backend library policy note status: RECORDED
+Backend library policy note status: APPROVED_FOR_PROJECT_BASELINE_PROMOTION
 Document: docs/backend_library_policy.md
-Scope: records the current VIA1 pitch/no-track NDM as a candidate physical-library policy, not a production-promoted baseline.
+Scope: records the accepted VIA1 pitch/no-track physical-library policy for project baseline promotion.
 Key delta: Layer "VIA1" enables pitch = 0.36 and removes onWireTrack/onGrid from a project-local techfile copy.
 Evidence linked: NDM build log, DRC-clean route reports, PG/legal/timing sanity reports, and Formality R2N PASS.
-Open gate: explicit acceptance of the VIA1 no-track techfile/library policy before production promotion.
+Open gate: promote or explicitly alias the selected 99_debug wrapper/manifest path as the baseline backend flow.
+```
+
+```text
+Backend route closure case study status: RECORDED
+Document: docs/ibex_backend_route_closure_case_study.md
+Scope: records goal, baseline result, DRC breakdown, hypotheses, experiment history, accepted 0-DRC candidate, production-promotion boundary, and interview explanation.
+Key matrix: production route 720 DRC -> modified LEF 41 -> cleanup 20 -> NOR2 policy 19 -> diff blockage 18 -> VIA1 no-track + NOR2/MUX41 0.
+Claim boundary: route DRC-clean candidate only; not antenna/LVS/IR/EM/signoff clean.
 ```
 
 ```text

@@ -3,9 +3,11 @@
 ## Current Decision State
 
 ```text
-Status: CANDIDATE_NOT_PRODUCTION_PROMOTED
+Status: APPROVED_FOR_PROJECT_BASELINE_PROMOTION
 Scope: backend physical library / techfile policy
 Candidate: modified-LEF VIA1 pitch/no-track NDMs
+Approval date: 2026-05-10
+Approval source: user project decision
 ```
 
 The current best route result depends on a project-local physical-library setup:
@@ -62,15 +64,22 @@ Result: DRC_CLEAN_CANDIDATE_CHECK PASS
 Scope: parses saved route/FM/NDM/techfile artifacts; does not run licensed EDA tools.
 ```
 
-## Promotion Gate
+## Production Promotion Gate
 
-Do not call this the production backend baseline until this policy is explicitly accepted:
+This policy is now accepted for the project baseline:
 
 ```text
 Accept using /DATA/home/edu135/lib/libdir/LEF/modify physical abstracts for backend.
 Accept the project-local VIA1 techfile interpretation: pitch = 0.36 with onGrid/onWireTrack removed.
-Promote the selected scripts out of 99_debug or clearly mark the production wrapper that uses these exact NDMs.
 Keep all result claims tied to the route/FM artifacts listed above.
 ```
 
-If the VIA1 no-track policy is not accepted, the project still has only a debug DRC-clean candidate, not a production-promoted route baseline.
+Remaining promotion work:
+
+```text
+Promote the selected scripts out of 99_debug or clearly mark the production wrapper that uses these exact NDMs.
+Update RUN_MANIFEST.md and RESULT_SUMMARY.md to identify the promoted backend baseline.
+Keep the route-clean claim bounded to the reports listed above until a promoted rerun or explicit baseline alias is recorded.
+```
+
+The policy approval removes the library-governance blocker. It does not by itself create antenna, LVS, IR/EM, ATPG, or silicon signoff evidence.

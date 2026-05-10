@@ -229,3 +229,11 @@ Reason: the new DC cell-use policy handoff needed an equivalence check before an
 Evidence: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log reports Verification SUCCEEDED, 34915 passing compare points, 0 failing compare points, 0 unmatched reference/implementation compare points, and SVF guidance total 2146 accepted / 0 rejected, including hier_map 33 accepted / 0 rejected.
 Scope: this resolves the logic-equivalence promotion gate for the NOR2+MUX41 handoff. The remaining promotion decision is the VIA1 no-track techfile/library policy.
 ```
+
+```text
+Decision: accept the VIA1 pitch/no-track techfile policy for project baseline promotion.
+Reason: the DRC-clean route candidate depends on a project-local VIA1 techfile interpretation. The project owner explicitly accepted that policy on 2026-05-10, so the library-governance blocker is removed.
+Accepted policy: use /DATA/home/edu135/lib/libdir/LEF/modify physical abstracts and the project-local VIA1 techfile patch that enables pitch = 0.36 while removing VIA1 onGrid/onWireTrack.
+Evidence: docs/backend_library_policy.md records the exact techfile delta, NDM build evidence, route/FM evidence, and remaining claim boundary. docs/ibex_backend_route_closure_case_study.md records the 720-to-0 DRC closure path.
+Remaining work: promote or explicitly alias the selected 99_debug wrapper/manifest path as the baseline backend flow. This approval does not create antenna, LVS, IR/EM, ATPG, or silicon signoff evidence.
+```

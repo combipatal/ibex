@@ -914,5 +914,23 @@ Output session: 3_Formality/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/r2n
 Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing compare points; 0 unmatched reference/implementation compare points.
 SVF guidance result: 2146 accepted, 0 rejected; hier_map 33 accepted, 0 rejected.
 Known notes: synopsys_auto_setup enabled; RTL interpretation warnings exist; one clock-gate latch not compared, consistent with prior baseline note.
-Remaining promotion caveat: only the VIA1 no-track techfile/library policy remains to be accepted before moving this candidate out of 99_debug.
+Historical promotion caveat at run time: only the VIA1 no-track techfile/library policy remained to be accepted before moving this candidate out of 99_debug. This policy was later accepted on 2026-05-10; wrapper/manifest promotion remains.
+```
+
+```text
+Stage: Backend route closure documentation and VIA1 policy approval
+Command: documentation edit only; no licensed EDA tools rerun
+Status: RECORDED
+Documents:
+- docs/ibex_backend_route_closure_case_study.md
+- docs/backend_library_policy.md
+- 00_Project_Tracking/DECISION_LOG.md
+- 00_Project_Tracking/PROJECT_STATUS.md
+- 00_Project_Tracking/RESULT_SUMMARY.md
+- 00_Project_Tracking/RUN_MANIFEST.md
+- init/context_bootstrap.md
+- AGENTS.md
+Result: route closure case study records the baseline 720-DRC route, DRC breakdown, hypotheses, experiments, accepted 0-DRC debug candidate, production-promotion boundary, and interview explanation.
+Policy result: VIA1 pitch/no-track techfile policy is accepted for project baseline promotion as of 2026-05-10.
+Next action: promote or explicitly alias the selected 99_debug backend route wrapper/manifest path as the baseline flow; do not claim signoff clean without antenna/LVS/IR/EM evidence.
 ```

@@ -65,10 +65,11 @@ STA basis: matching topo netlist/SDC/SDF; PrimeTime does not read SVF directly.
 Formality result: PASS_WITH_NOTE, 34915 passing compare points, 0 failing, 0 unmatched.
 SVF guidance note: DC topo emits hier_map guidance; FM accepted 2146 guidance commands and rejected 0.
 Known note: pre-backend timing has no setup/hold violations, but max cap/transition DRC remains for backend closure.
-Backend debug route note: current best 99_debug route candidate uses project-local modified-LEF VIA1 pitch/no-track NDMs plus a DC cell-use policy that sets NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use.
-Backend debug route artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
-Backend debug route result: check_routes reports 0 open nets and 0 signal DRC; legality TOTAL 0; PG connectivity floating objects 0; PG DRC no errors; ICC2 timing.max MET 0.78 ns and timing.min MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
+Backend route note: current best 99_debug route candidate uses project-local modified-LEF VIA1 pitch/no-track NDMs plus a DC cell-use policy that sets NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use.
+Backend route artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
+Backend route result: check_routes reports 0 open nets and 0 signal DRC; legality TOTAL 0; PG connectivity floating objects 0; PG DRC no errors; ICC2 timing.max MET 0.78 ns and timing.min MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
 Formality for NOR2+MUX41 handoff: PASS_WITH_NOTE, 34915 passing compare points, 0 failing, 0 unmatched, SVF guidance 2146 accepted and 0 rejected.
-VIA1 no-track library policy gate: docs/backend_library_policy.md.
-Promotion caveat: this is not the production baseline until VIA1 no-track library policy is accepted.
+VIA1 no-track library policy: accepted for project baseline promotion as of 2026-05-10; see docs/backend_library_policy.md.
+Route closure case study: docs/ibex_backend_route_closure_case_study.md.
+Promotion caveat: wrapper/manifest promotion or explicit baseline aliasing remains; do not claim signoff clean without antenna/LVS/IR/EM evidence.
 ```

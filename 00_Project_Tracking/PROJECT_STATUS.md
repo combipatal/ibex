@@ -39,7 +39,7 @@ Status: COMPLETE_WITH_NOTES
 
 ```text
 Phase: B7 Route
-Status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
+Status: ROUTE_DRC_CLEAN_CANDIDATE_POLICY_APPROVED
 ```
 
 ## Checklist
@@ -72,7 +72,8 @@ Status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
 [x] Produce debug route candidate with 0 open nets and 0 signal DRC
 [x] Run Formality R2N on NOR2+MUX41 debug synthesis handoff
 [x] Record backend library policy gate for VIA1 no-track NDM
-[ ] Promote DRC-clean candidate to production baseline after VIA1 no-track library-policy decision
+[x] Accept VIA1 no-track library policy for project baseline promotion
+[ ] Promote DRC-clean candidate wrapper/manifest path to baseline backend flow
 ```
 
 ## Current Notes
@@ -130,7 +131,8 @@ NOR2+MUX41 policy synthesis: debug DC handoff set NOR2X0_HVT, NOR2X2_HVT, and MU
 NOR2+MUX41 Formality R2N: passed. Verification SUCCEEDED with 34915 passing compare points, 0 failing, 0 unmatched compare points, and SVF guidance 2146 accepted / 0 rejected.
 Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
 Current best debug route result: check_routes reports 0 open nets and 0 signal DRC; check_legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max slack MET 0.78 ns; timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
-Route promotion caveat: do not claim production/signoff clean yet. This candidate depends on a debug VIA1 no-track techfile policy; the logic-equivalence gate for the NOR2+MUX41 handoff has passed.
-Backend library policy note: docs/backend_library_policy.md records the exact VIA1 techfile delta, NDM source, route/FM evidence, and production promotion gate.
-Next phase: decide whether the VIA1 no-track techfile change is acceptable for the project baseline; if yes, promote the backend wrapper/report path from 99_debug into the baseline flow.
+Route policy update: VIA1 pitch/no-track techfile policy is accepted for project baseline promotion as of 2026-05-10. The clean route artifact is still under 99_debug until the wrapper/manifest path is promoted or explicitly aliased as the baseline flow.
+Backend library policy note: docs/backend_library_policy.md records the exact VIA1 techfile delta, NDM source, route/FM evidence, and accepted production promotion gate.
+Route closure case study: docs/ibex_backend_route_closure_case_study.md records the DRC breakdown, hypotheses, experiments, accepted candidate, production-promotion boundary, and interview explanation.
+Next phase: promote the selected backend wrapper/report path from 99_debug into the baseline flow, then prepare final result packaging. Do not claim signoff clean without antenna/LVS/IR/EM evidence.
 ```
