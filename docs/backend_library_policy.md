@@ -55,6 +55,11 @@ Sanity reports:
 Logic equivalence:
 Formality log: 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log
 Formality result: Verification SUCCEEDED, 34915 passing compare points, 0 failing, 0 unmatched, SVF guidance 2146 accepted / 0 rejected.
+
+Verifier:
+Command: 4_Backend_ICC2/0_Script/99_debug/check_drc_clean_candidate.sh
+Result: DRC_CLEAN_CANDIDATE_CHECK PASS
+Scope: parses saved route/FM/NDM/techfile artifacts; does not run licensed EDA tools.
 ```
 
 ## Promotion Gate

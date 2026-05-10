@@ -39,6 +39,7 @@
 | NOR2+MUX41 Formality R2N | FM | PASS_WITH_NOTE | 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log | 34915 passing compare points; auto setup/RTL warnings remain |
 | VIA1 pitch/no-track NOR2+MUX41 route | ICC2 | DEBUG_ROUTE_DRC_CLEAN_CANDIDATE | 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt | 0 open nets and 0 signal DRC; debug candidate, not production-promoted |
 | Backend library policy | docs | RECORDED | docs/backend_library_policy.md | VIA1 no-track policy still needs explicit production acceptance |
+| DRC-clean candidate verifier | shell/report parser | PASS | 4_Backend_ICC2/0_Script/99_debug/check_drc_clean_candidate.sh | Checks saved reports/logs only; no EDA rerun |
 
 ## Backend Open Items
 

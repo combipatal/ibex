@@ -541,3 +541,21 @@ Key delta: Layer "VIA1" enables pitch = 0.36 and removes onWireTrack/onGrid from
 Evidence linked: NDM build log, DRC-clean route reports, PG/legal/timing sanity reports, and Formality R2N PASS.
 Open gate: explicit acceptance of the VIA1 no-track techfile/library policy before production promotion.
 ```
+
+```text
+DRC-clean candidate verifier status: PASS
+Command: 4_Backend_ICC2/0_Script/99_debug/check_drc_clean_candidate.sh
+Script: 4_Backend_ICC2/0_Script/99_debug/check_drc_clean_candidate.sh
+Scope: lightweight report/log checker; does not run licensed EDA tools.
+Coverage:
+- route check_routes open nets 0 and DRC 0
+- route legality TOTAL 0
+- PG connectivity all floating counts 0
+- route log PG DRC no errors
+- timing.max/timing.min MET and no VIOLATED text
+- antenna rule absence recorded
+- Formality R2N Verification SUCCEEDED, 34915 passing, 0 failing, SVF guidance 0 rejected
+- NDM build log has no TECH-025/TECH-006/LIB-007/Fatal/Error pattern
+- patched VIA1 techfile has pitch = 0.36 and no onGrid/onWireTrack in the VIA1 section
+Result: DRC_CLEAN_CANDIDATE_CHECK PASS
+```
