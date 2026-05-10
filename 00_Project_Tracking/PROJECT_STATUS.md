@@ -83,6 +83,13 @@ Status: COMPLETE_WITH_NOTES
 [x] Attempt one post-route max-cap ECO and record non-promoted result
 [x] Attempt final route cleanup after max-cap ECO and verify residual max-cap status
 [x] Attempt one residual max-cap ECO from final cleanup and verify route/electrical reports
+[x] Run Formality on residual max-cap ECO netlist
+[x] Run PrimeTime SDF STA on residual max-cap ECO netlist
+[x] Diagnose after-filler max-cap regression in residual max-cap GDS refresh
+[x] Apply pre-filler max-cap margin ECO and verify route/electrical reports
+[x] Run Formality on pre-filler margin ECO netlist
+[x] Run PrimeTime SDF STA on pre-filler margin ECO netlist
+[x] Export final educational GDS candidate with after-filler route/electrical reports clean
 ```
 
 ## Current Notes
@@ -149,6 +156,11 @@ GDS candidate checks: after-filler route DRC/open nets are clean, legality is cl
 Remaining implementation notes: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules are absent, and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
 Post-route electrical DRC attempt: route_opt iterations reduced max_transition to 0 and max_capacitance to 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2, but check_routes regressed to 31 route DRCs. Final cleanup recovered check_routes to open nets 0 and route DRC 0, with legality 0, PG clean, timing positive, max_transition 0, and max_capacitance 2.
 Residual max-cap ECO update: one approved final attempt from the final-cleanup block inserted 1 buffer and issued 1 size_cell command. Final reports in 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco show max_transition 0, max_capacitance 0, min_capacitance 0, route open nets 0, route DRC 0, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, and timing.max/min MET 0.64 ns / 0.04 ns.
-Current decision: keep 12_post_route_residual_maxcap_eco as the ICC2 internal post-route electrical/route clean candidate for this debug sequence. Do not continue additional ECO repair unless a new explicitly approved signoff or GDS-refresh phase is opened.
-Next phase: package the baseline results and optionally add signoff-style educational extensions or regenerate a GDS candidate from the residual max-cap ECO block. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC evidence.
+Residual max-cap ECO FM/PT: Formality passed on 12_post_route_residual_maxcap_eco with 34915 passing compare points, 0 failing, 0 unmatched, and SVF guidance 2146 accepted / 0 rejected. PrimeTime SDF STA reports no setup/hold violations, SDF read errors 0, setup slack 0.68 ns, and hold slack 0.03 ns.
+Residual max-cap GDS refresh diagnosis: GDS stream-out from 12_post_route_residual_maxcap_eco completed with route/PG/legality/timing checks clean, but after-filler constraints reintroduced 4 max_capacitance violations on near-limit nets. The cause was filler insertion plus PG reconnect/re-extraction slightly increasing extracted capacitance after the pre-filler clean point.
+Pre-filler margin ECO: 14_post_route_prefiller_maxcap_margin applies driver-pin max-cap margin to U77216/Y, U13303/Y, ZBUF_1069_inst_8294/Y, ZBUF_259_inst_8705/Y, and U7539/Y. ECO inserted 5 NBUFFX2_RVT buffers and final reports show max_transition 0, max_capacitance 0, min_capacitance 0, route DRC 0, legality 0, PG clean, and positive timing.
+Pre-filler margin ECO FM/PT: Formality passed with 34915 passing compare points, 0 failing, 0 unmatched, SVF guidance 2146 accepted / 0 rejected. PrimeTime SDF STA reports no setup/hold violations, SDF read errors 0, setup slack 0.67 ns, and hold slack 0.03 ns.
+Final educational GDS candidate: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds, size 157M. After-filler reports show open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, and timing positive.
+Current decision: keep post_route_prefiller_maxcap_margin_gds_candidate as the final educational GDS candidate for this phase. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC/metal-fill/signoff STA evidence.
+Next phase: package and commit scripts/docs/tracking records, then optional educational extensions can start from signoff-style checks or from software/verification bring-up.
 ```

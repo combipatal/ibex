@@ -178,9 +178,134 @@ After later project-owner approval for exactly one more attempt, the residual ma
 
 ## Current Accepted Baseline
 
-Keep the named route-closure baseline as the accepted backend flow baseline. The educational GDS candidate was generated before the residual max-cap ECO and remains an educational stream-out artifact with its recorded electrical DRC caveat.
+Keep the named route-closure baseline as the accepted reproducible backend flow baseline. The earlier `08_gds/route_closure_gds_candidate` remains a historical educational stream-out artifact with its recorded electrical DRC caveat.
 
-The `12_post_route_residual_maxcap_eco` block is the accepted ICC2 internal post-route electrical/route clean candidate. It has not yet been used to regenerate a new GDS artifact.
+The `12_post_route_residual_maxcap_eco` block proved the post-route route/electrical cleanup direction, then a GDS refresh showed that filler insertion needed extra pre-filler margin. The final educational GDS candidate for this phase is generated from `14_post_route_prefiller_maxcap_margin`.
+
+## FM/PT And GDS Refresh
+
+After the residual max-cap ECO, the ECO netlist was checked before any new GDS claim:
+
+```text
+Formality command:
+env FM_RUN_TAG=post_route_residual_maxcap_eco \
+    FM_IMPL_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg \
+    FM_LOG=3_Formality/3_Log/fm_post_route_residual_maxcap_eco.log \
+    3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh
+
+PrimeTime command:
+env PT_RUN_TAG=post_route_residual_maxcap_eco \
+    PT_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg \
+    PT_SDC_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdc \
+    PT_SDF_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdf \
+    5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh
+```
+
+Results:
+
+```text
+Formality: Verification SUCCEEDED; 34915 passing; 0 failing; 0 unmatched; SVF guidance 2146 accepted / 0 rejected
+PrimeTime: no setup/hold violations; read_sdf errors 0; setup slack 0.68 ns; hold slack 0.03 ns
+```
+
+The first GDS refresh from `12_post_route_residual_maxcap_eco` completed stream-out but reintroduced four tiny max-cap violations after filler:
+
+```text
+GDS report root: 4_Backend_ICC2/4_Report/13_gds/post_route_residual_maxcap_eco_gds_candidate
+constraints.after_filler.rpt: max_transition 0, max_capacitance 4, min_capacitance 0
+check_routes.after_filler.rpt: open nets 0, route DRC 0
+```
+
+Root cause:
+
+```text
+The 12 block was clean before filler.
+Filler insertion plus PG reconnect/re-extraction slightly increased cap on near-limit nets.
+The issue required pre-filler margin, not another broad route cleanup.
+```
+
+## Pre-Filler Margin ECO
+
+The accepted margin ECO is:
+
+```text
+Command: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+Report root: 4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin
+ICC2 library: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib
+```
+
+Failed sub-attempt:
+
+```text
+set_max_capacitance on net collections produced SEL-002/SEL-005 messages and no ECO changes.
+The fix was to apply max-cap margin on driver pins.
+```
+
+Accepted target pins:
+
+```text
+U77216/Y 7.50
+U13303/Y 15.50
+ZBUF_1069_inst_8294/Y 15.50
+ZBUF_259_inst_8705/Y 15.50
+U7539/Y 7.50
+```
+
+Result:
+
+```text
+constraints.after_margin_targets.rpt: 5 intentional max-cap violations
+ECO log: 5 NBUFFX2_RVT buffers inserted
+constraints.final.rpt: max_transition 0, max_capacitance 0, min_capacitance 0
+check_routes.final.rpt: open nets 0, route DRC 0
+check_legality.final.rpt: TOTAL 0
+pg_connectivity.final.rpt: VDD/VSS floating objects 0
+qor.final.rpt: setup slack 0.64 ns; no hold violations
+```
+
+The margin ECO netlist also passed FM and PT:
+
+```text
+FM log: 3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log
+FM result: Verification SUCCEEDED; 34915 passing; 0 failing; 0 unmatched
+PT report root: 5_STA/4_Report/post_route_prefiller_maxcap_margin
+PT result: no setup/hold violations; read_sdf errors 0; setup slack 0.67 ns; hold slack 0.03 ns
+```
+
+## Final Educational GDS Candidate
+
+Final GDS command:
+
+```text
+env SOURCE_CLEAN_ICC2_LIB=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib \
+    SRC_BLOCK=ibex_mini_soc_top_post_route_prefiller_maxcap_margin \
+    GDS_TAG=post_route_prefiller_maxcap_margin_gds_candidate \
+    4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+```
+
+Final outputs:
+
+```text
+GDS: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+DEF: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.def
+Verilog: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.vg
+SDC: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.sdc
+Manifest: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt
+File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M
+```
+
+Final after-filler checks:
+
+```text
+check_routes.after_filler.rpt: open nets 0, route DRC 0
+constraints.after_filler.rpt: max_transition 0, max_capacitance 0, min_capacitance 0
+check_legality.after_filler.rpt: legality succeeded
+pg_connectivity.after_filler.rpt: VDD/VSS floating objects 0
+pg_drc.after_filler.rpt: no reported PG DRC records
+qor.after_filler.rpt: setup slack 0.64 ns; no hold violations
+```
+
+This supersedes the earlier GDS artifact with max-cap violations. It is still educational, not signoff/tapeout ready.
 
 Do not claim:
 

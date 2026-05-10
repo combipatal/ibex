@@ -82,5 +82,14 @@ Post-route electrical cleanup note: 09 route_opt reduced max_transition to 0 and
 Current post-route electrical/route clean candidate: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib.
 Current candidate reports: 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco.
 Current candidate result: constraints.final reports max_transition 0, max_capacitance 0, min_capacitance 0; check_routes.final reports open nets 0 and route DRC 0; legality TOTAL 0; PG connectivity floating objects 0; check_pg_drc command reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
-Current candidate caveat: ICC2 internal route/electrical clean candidate only. Antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA are not complete.
+Residual max-cap ECO FM/PT: Formality passed with 34915 passing compare points, 0 failing, 0 unmatched, and SVF guidance 2146 accepted / 0 rejected; PrimeTime reports no setup/hold violations and read_sdf errors 0.
+Residual max-cap GDS refresh: 4_Backend_ICC2/2_Output/13_gds/post_route_residual_maxcap_eco_gds_candidate was written but superseded because after-filler constraints reported max_capacitance 4.
+Current pre-filler margin ECO candidate: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib.
+Current margin ECO reports: 4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin.
+Current margin ECO result: driver-pin max-cap margin fixed by 5 NBUFFX2_RVT buffers; final route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality/PG clean, timing positive.
+Current margin ECO FM/PT: Formality passed with 34915 passing compare points, 0 failing, 0 unmatched, and SVF guidance 2146 accepted / 0 rejected; PrimeTime reports no setup/hold violations and read_sdf errors 0.
+Current final educational GDS: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds, size 157M.
+Current final GDS reports: 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate.
+Current final GDS result: after-filler open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, timing positive.
+Current final GDS caveat: educational only. Antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA are not complete.
 ```

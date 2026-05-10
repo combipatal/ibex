@@ -29,6 +29,7 @@ CTS: PASS_WITH_NOTE, clean single-process retry completed
 route: COMPLETE_WITH_OPEN_SIGNAL_DRC, 0 open nets, signal DRC 720
 route-closure baseline: PASS_WITH_NOTE, 0 open nets, 0 signal DRC with modified-LEF VIA1 pitch/no-track NDMs and NOR2+MUX41 cell-use handoff
 educational GDS candidate: PASS_WITH_NOTE, GDS/DEF/netlist/SDC exported from route-closure block
+final electrical-clean GDS candidate: PASS_WITH_NOTE, GDS/DEF/netlist/SDC exported after pre-filler max-cap margin ECO
 ```
 
 CTS evidence:
@@ -89,7 +90,17 @@ Educational GDS candidate:
 - Post-filler checks: route DRC/open clean, legality clean, PG connectivity clean, PG DRC no errors.
 - QoR note: clk critical path slack 0.78 ns; constraints.after_filler reports max_transition 8 and max_capacitance 228 violations.
 
-Strict backend strong-done for educational baseline is complete with caveats. Do not claim signoff clean without antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA evidence.
+Final electrical-clean educational GDS candidate:
+- Margin ECO wrapper: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+- GDS wrapper: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+- Manifest: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt
+- GDS: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+- Companion outputs: DEF, Verilog, and SDC in the same output directory.
+- Source netlist FM/PT: fm_post_route_prefiller_maxcap_margin.log reports Verification SUCCEEDED; PT post_route_prefiller_maxcap_margin reports no setup/hold violations and read_sdf errors 0.
+- Post-filler checks: route DRC/open clean, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG connectivity clean, PG DRC no errors.
+- QoR note: setup slack 0.64 ns; no hold violations.
+
+Strict backend strong-done for educational baseline is complete with caveats. The final GDS candidate has ICC2 after-filler route/electrical/PG checks clean, but do not claim signoff clean without antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA evidence.
 ```
 
 ## PG Diagnosis Notes

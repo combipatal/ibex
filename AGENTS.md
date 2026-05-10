@@ -95,7 +95,16 @@ GDS caveat: constraints.after_filler reports max_transition 8 and max_capacitanc
 Post-route residual max-cap ECO candidate: 4_Backend_ICC2/0_Script/12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh.
 Post-route residual max-cap ECO artifact: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/ibex_mini_soc_top_post_route_residual_maxcap_eco_icc2_lib.
 Post-route residual max-cap ECO result: constraints.final reports max_transition 0, max_capacitance 0, min_capacitance 0; check_routes.final reports open nets 0 and route DRC 0; legality TOTAL 0; PG connectivity floating objects 0; check_pg_drc command reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
-Post-route residual max-cap ECO caveat: ICC2 internal route/electrical clean candidate only; GDS has not been regenerated from this block and signoff-class checks are still absent.
+Post-route residual max-cap ECO FM/PT: fm_post_route_residual_maxcap_eco.log reports Verification SUCCEEDED with 34915 passing, 0 failing, 0 unmatched; PT post_route_residual_maxcap_eco reports no setup/hold violations and read_sdf errors 0.
+Residual max-cap GDS refresh from 12 completed stream-out but reintroduced after-filler max_capacitance 4, so it is superseded.
+Pre-filler margin ECO wrapper: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh.
+Pre-filler margin ECO artifact: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib.
+Pre-filler margin ECO result: driver-pin max-cap margin fixed by 5 NBUFFX2_RVT buffers; final reports show route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality/PG clean, and timing positive.
+Pre-filler margin ECO FM/PT: fm_post_route_prefiller_maxcap_margin.log reports Verification SUCCEEDED with 34915 passing, 0 failing, 0 unmatched; PT post_route_prefiller_maxcap_margin reports no setup/hold violations and read_sdf errors 0.
+Final educational GDS candidate: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds.
+Final GDS reports: 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate.
+Final GDS result: after-filler route open 0/DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, timing positive; GDS size 157M.
+Final GDS caveat: educational only; antenna/LVS/IR/EM/foundry DRC/metal-fill/signoff STA are not done, so do not claim signoff clean or tapeout-ready.
 /DATA/home/edu135/ibex/.git is a read-only placeholder; use ./scripts/git_project.sh for .git_local.
 ```
 

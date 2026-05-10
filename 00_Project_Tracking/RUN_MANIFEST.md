@@ -652,3 +652,85 @@ Final route/electrical result: constraints.final.rpt reports max_transition 0, m
 Final sanity result: check_legality.final.rpt reports TOTAL 0; pg_connectivity.final.rpt reports VDD/VSS floating objects 0; check_pg_drc command reported No errors found; timing.max/min reports MET 0.64 ns / 0.04 ns.
 Decision: accepted as an ICC2 internal post-route electrical/route clean candidate for this debug sequence. Claim boundary remains not signoff/tapeout clean.
 ```
+
+```text
+Post-route residual max-cap ECO Formality status: PASS_WITH_NOTE
+Command: env FM_RUN_TAG=post_route_residual_maxcap_eco FM_IMPL_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg FM_LOG=3_Formality/3_Log/fm_post_route_residual_maxcap_eco.log 3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh
+Scripts: 3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh, run_fm_post_route_residual_maxcap_eco.tcl
+Log: 3_Formality/3_Log/fm_post_route_residual_maxcap_eco.log
+Report root: 3_Formality/4_Report/post_route_residual_maxcap_eco
+Session: 3_Formality/2_Output/post_route_residual_maxcap_eco/post_route_residual_maxcap_eco_fm_session.fss
+Reference: filelists/ibex_mini_soc_fm_ref.f
+Implementation: 4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg
+SVF: 2_Synthesis/2_Output/svf/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.svf
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing; 0 unmatched; SVF guidance 2146 accepted and 0 rejected.
+```
+
+```text
+Post-route residual max-cap ECO PT SDF status: PASS_WITH_NOTE
+Command: env PT_RUN_TAG=post_route_residual_maxcap_eco PT_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg PT_SDC_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdc PT_SDF_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdf 5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh
+Scripts: 5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh, run_pt_post_route_residual_maxcap_eco_sdf.tcl
+Log: 5_STA/3_Log/pt_post_route_residual_maxcap_eco_sdf.log
+Report root: 5_STA/4_Report/post_route_residual_maxcap_eco
+Inputs: 12_post_route_residual_maxcap_eco exported netlist/SDC/SDF.
+Result: no setup or hold violations; setup slack 0.68 ns, hold slack 0.03 ns; read_sdf errors 0; setup/hold coverage 100% met.
+```
+
+```text
+GDS refresh from residual max-cap ECO status: COMPLETED_WITH_AFTER_FILLER_MAX_CAP_REGRESSION
+Command: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+Scripts: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh, run_write_gds_residual_maxcap_clean.tcl
+Log: 4_Backend_ICC2/3_Log/13_gds/run_write_gds_residual_maxcap_clean.post_route_residual_maxcap_eco_gds_candidate.log
+Report root: 4_Backend_ICC2/4_Report/13_gds/post_route_residual_maxcap_eco_gds_candidate
+Output root: 4_Backend_ICC2/2_Output/13_gds/post_route_residual_maxcap_eco_gds_candidate
+Manifest: 4_Backend_ICC2/2_Output/13_gds/post_route_residual_maxcap_eco_gds_candidate/gds_export_manifest.txt
+Result: stream-out completed, but constraints.after_filler.rpt reports 4 max_capacitance violations after filler insertion/re-extraction. This artifact is superseded by the pre-filler margin ECO GDS candidate.
+```
+
+```text
+Pre-filler max-cap margin ECO status: PASS_WITH_NOTE
+Command: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+Scripts: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh, run_post_route_prefiller_maxcap_margin.tcl
+Log: 4_Backend_ICC2/3_Log/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.log
+Report root: 4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin
+Output root: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export
+Manifest: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/post_route_prefiller_maxcap_margin_manifest.txt
+ICC2 library: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib
+Source block: ibex_mini_soc_top_post_route_residual_maxcap_eco
+ECO method: driver-pin set_max_capacitance margin on U77216/Y, U13303/Y, ZBUF_1069_inst_8294/Y, ZBUF_259_inst_8705/Y, and U7539/Y; eco_opt -types max_capacitance -physical_mode occupied_site.
+ECO result: 5 intentional target max-cap violations; 5 inserted NBUFFX2_RVT buffers; final route/electrical/legality/PG reports clean; timing remains positive.
+```
+
+```text
+Pre-filler max-cap margin ECO Formality status: PASS_WITH_NOTE
+Command: env FM_RUN_TAG=post_route_prefiller_maxcap_margin FM_IMPL_NETLIST=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.vg FM_LOG=3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log 3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh
+Log: 3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log
+Report root: 3_Formality/4_Report/post_route_prefiller_maxcap_margin
+Session: 3_Formality/2_Output/post_route_prefiller_maxcap_margin/post_route_prefiller_maxcap_margin_fm_session.fss
+Implementation: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.vg
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing; 0 unmatched; SVF guidance 2146 accepted and 0 rejected.
+```
+
+```text
+Pre-filler max-cap margin ECO PT SDF status: PASS_WITH_NOTE
+Command: env PT_RUN_TAG=post_route_prefiller_maxcap_margin PT_NETLIST=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.vg PT_SDC_FILE=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.sdc PT_SDF_FILE=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.sdf 5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh
+Log: 5_STA/3_Log/pt_post_route_prefiller_maxcap_margin_sdf.log
+Report root: 5_STA/4_Report/post_route_prefiller_maxcap_margin
+Inputs: 14_post_route_prefiller_maxcap_margin exported netlist/SDC/SDF.
+Result: no setup or hold violations; setup slack 0.67 ns, hold slack 0.03 ns; read_sdf errors 0; setup/hold coverage 100% met.
+```
+
+```text
+Pre-filler max-cap margin GDS status: PASS_WITH_NOTE
+Command: env SOURCE_CLEAN_ICC2_LIB=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib SRC_BLOCK=ibex_mini_soc_top_post_route_prefiller_maxcap_margin GDS_TAG=post_route_prefiller_maxcap_margin_gds_candidate 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+Scripts: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh, run_write_gds_residual_maxcap_clean.tcl
+Log: 4_Backend_ICC2/3_Log/13_gds/run_write_gds_residual_maxcap_clean.post_route_prefiller_maxcap_margin_gds_candidate.log
+Report root: 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate
+Output root: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate
+Manifest: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt
+GDS: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+Companion outputs: ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.vg, .def, .sdc
+File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M.
+After-filler result: open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, timing positive.
+Claim boundary: final educational GDS candidate for this phase only; antenna/foundry DRC/LVS/IR/EM/metal-fill/signoff STA remain absent.
+```

@@ -1032,3 +1032,93 @@ Result: one residual max-cap ECO inserted 1 buffer and issued 1 size_cell comman
 Final saved-block ICC2 reports: constraints.final.rpt reports max_transition 0, max_capacitance 0, and min_capacitance 0; check_routes.final.rpt reports open nets 0 and route DRC 0; check_legality reports TOTAL 0; PG connectivity floating objects are 0; PG DRC has no reported errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
 Conclusion: accepted as an ICC2 internal post-route electrical/route clean candidate for this debug sequence. This is not signoff clean because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology are not covered.
 ```
+
+```text
+Stage: Formality R2N for residual max-cap ECO netlist
+Command: env FM_RUN_TAG=post_route_residual_maxcap_eco FM_IMPL_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg FM_LOG=3_Formality/3_Log/fm_post_route_residual_maxcap_eco.log 3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh
+Status: PASS_WITH_NOTE
+Reports: 3_Formality/4_Report/post_route_residual_maxcap_eco
+Session: 3_Formality/2_Output/post_route_residual_maxcap_eco/post_route_residual_maxcap_eco_fm_session.fss
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing compare points; 0 unmatched compare points.
+SVF guidance result: 2146 accepted, 0 rejected.
+Known notes: synopsys_auto_setup enabled; RTL interpretation warnings remain; one clock-gate latch not compared, consistent with previous FM runs.
+```
+
+```text
+Stage: PrimeTime final SDF STA for residual max-cap ECO netlist
+Command: env PT_RUN_TAG=post_route_residual_maxcap_eco PT_NETLIST=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.vg PT_SDC_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdc PT_SDF_FILE=4_Backend_ICC2/2_Output/12_post_route_residual_maxcap_eco/export/ibex_mini_soc_top.post_route_residual_maxcap_eco.sdf 5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh
+Status: PASS_WITH_NOTE
+Report root: 5_STA/4_Report/post_route_residual_maxcap_eco
+Log: 5_STA/3_Log/pt_post_route_residual_maxcap_eco_sdf.log
+Result: global_timing.rpt reports no setup violations and no hold violations; qor.rpt reports setup slack 0.68 ns, hold slack 0.03 ns, TNS 0, and total DRC cost 0.
+SDF result: read_sdf reported 0 errors; annotated_delay.rpt reports 1011356 / 1015046 delay arcs annotated, 3690 not annotated.
+Coverage: setup/hold 34884/34884 met, 0 violated; recovery/removal 1845 each untested; all checks 139601 met, 0 violated, 5535 untested.
+Known note: PT constraints.rpt reports PTE-057, so ICC2 saved-block reports remain the evidence for max_transition/max_cap electrical DRC.
+```
+
+```text
+Stage: GDS refresh from residual max-cap ECO block
+Command: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+Status: COMPLETED_WITH_AFTER_FILLER_MAX_CAP_REGRESSION
+Script: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.tcl
+Log: 4_Backend_ICC2/3_Log/13_gds/run_write_gds_residual_maxcap_clean.post_route_residual_maxcap_eco_gds_candidate.log
+Report root: 4_Backend_ICC2/4_Report/13_gds/post_route_residual_maxcap_eco_gds_candidate
+Output root: 4_Backend_ICC2/2_Output/13_gds/post_route_residual_maxcap_eco_gds_candidate
+Result: GDS/DEF/VG/SDC written; manifest statuses are 0; check_routes.after_filler reports open nets 0 and route DRC 0; legality/PG/timing are clean or positive.
+Issue reproduced: constraints.after_filler.rpt reports max_transition 0, min_capacitance 0, and max_capacitance 4 on n42733, n49555, ZBUF_1069_1170, and ZBUF_259_1196.
+Diagnosis: the 12_post_route_residual_maxcap_eco block is clean before filler, but filler insertion plus PG reconnect/re-extraction slightly increases extracted cap on four near-limit nets.
+Next action: create a pre-filler margin ECO rather than accepting this GDS artifact as the final clean candidate.
+```
+
+```text
+Stage: ICC2 pre-filler max-cap margin ECO
+Command: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.tcl
+Log: 4_Backend_ICC2/3_Log/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.log
+Report root: 4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin
+Output root: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export
+Saved ICC2 library: 4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib
+Failed sub-attempt: net-based set_max_capacitance produced SEL-002/SEL-005 messages and ECO made 0 changes because set_max_capacitance does not apply to net collections in this flow.
+Accepted fix: apply tighter max_cap to driver pins U77216/Y, U13303/Y, ZBUF_1069_inst_8294/Y, ZBUF_259_inst_8705/Y, and U7539/Y.
+ECO result: constraints.after_margin_targets.rpt intentionally created 5 max-cap violations; eco_opt inserted 5 NBUFFX2_RVT buffers; final constraints report max_transition 0, max_capacitance 0, min_capacitance 0.
+Final sanity result: check_routes.final.rpt open nets 0 and route DRC 0; check_legality.final.rpt TOTAL 0; PG connectivity floating objects 0; PG DRC no errors; qor.final.rpt reports setup slack 0.64 ns and no hold violations.
+```
+
+```text
+Stage: Formality R2N for pre-filler max-cap margin ECO netlist
+Command: env FM_RUN_TAG=post_route_prefiller_maxcap_margin FM_IMPL_NETLIST=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.vg FM_LOG=3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log 3_Formality/0_Script/run_fm_post_route_residual_maxcap_eco.sh
+Status: PASS_WITH_NOTE
+Reports: 3_Formality/4_Report/post_route_prefiller_maxcap_margin
+Session: 3_Formality/2_Output/post_route_prefiller_maxcap_margin/post_route_prefiller_maxcap_margin_fm_session.fss
+Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing compare points; 0 unmatched compare points.
+SVF guidance result: 2146 accepted, 0 rejected.
+Known notes: synopsys_auto_setup enabled; RTL interpretation warnings remain; one clock-gate latch not compared.
+```
+
+```text
+Stage: PrimeTime final SDF STA for pre-filler max-cap margin ECO netlist
+Command: env PT_RUN_TAG=post_route_prefiller_maxcap_margin PT_NETLIST=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.vg PT_SDC_FILE=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.sdc PT_SDF_FILE=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/export/ibex_mini_soc_top.post_route_prefiller_maxcap_margin.sdf 5_STA/0_Script/run_pt_post_route_residual_maxcap_eco_sdf.sh
+Status: PASS_WITH_NOTE
+Report root: 5_STA/4_Report/post_route_prefiller_maxcap_margin
+Log: 5_STA/3_Log/pt_post_route_prefiller_maxcap_margin_sdf.log
+Result: global_timing.rpt reports no setup violations and no hold violations; qor.rpt reports setup slack 0.67 ns, hold slack 0.03 ns, TNS 0, and total DRC cost 0.
+SDF result: read_sdf reported 0 errors; annotated_delay.rpt reports 1011366 / 1015056 delay arcs annotated, 3690 not annotated.
+Coverage: setup/hold 34884/34884 met, 0 violated; all checks 139601 met, 0 violated, 5535 untested.
+Known note: PT constraints.rpt reports PTE-057, so ICC2 saved-block reports remain the evidence for max_transition/max_cap electrical DRC.
+```
+
+```text
+Stage: GDS refresh from pre-filler max-cap margin ECO block
+Command: env SOURCE_CLEAN_ICC2_LIB=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib SRC_BLOCK=ibex_mini_soc_top_post_route_prefiller_maxcap_margin GDS_TAG=post_route_prefiller_maxcap_margin_gds_candidate 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.tcl
+Log: 4_Backend_ICC2/3_Log/13_gds/run_write_gds_residual_maxcap_clean.post_route_prefiller_maxcap_margin_gds_candidate.log
+Report root: 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate
+Output root: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate
+Manifest: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt
+Outputs: ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds, .def, .vg, .sdc
+File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M
+Post-filler route/electrical result: check_routes.after_filler.rpt reports open nets 0 and route DRC 0; constraints.after_filler.rpt reports max_transition 0, max_capacitance 0, min_capacitance 0; check_legality.after_filler.rpt succeeded with 0 illegal cells; pg_connectivity.after_filler.rpt reports VDD/VSS floating objects 0; pg_drc.after_filler.rpt has no reported PG DRC records; qor.after_filler.rpt reports setup slack 0.64 ns and no hold violations.
+Conclusion: accepted final educational GDS candidate for this phase. It is not signoff/tapeout ready because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology are not covered.
+```

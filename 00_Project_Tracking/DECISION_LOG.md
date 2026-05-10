@@ -272,3 +272,23 @@ Evidence: 4_Backend_ICC2/3_Log/12_post_route_residual_maxcap_eco/run_post_route_
 
 Final policy for this phase: accept 12_post_route_residual_maxcap_eco as the ICC2 internal post-route electrical/route clean candidate for this debug sequence. Do not claim signoff clean or tapeout ready because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology remain outside this evidence.
 ```
+
+## 2026-05-10 GDS Refresh And Pre-Filler Margin ECO
+
+Decision: supersede the first residual max-cap GDS refresh with a pre-filler margin ECO GDS candidate.
+
+Reason: `12_post_route_residual_maxcap_eco` was clean before filler and passed Formality/PrimeTime, but the first GDS refresh inserted fillers, reconnected PG, re-extracted, and reintroduced four tiny max-cap violations. This proved the remaining problem was not logic equivalence or pre-filler route cleanliness; it was a filler/re-extraction margin issue on near-limit nets.
+
+Evidence: `4_Backend_ICC2/4_Report/13_gds/post_route_residual_maxcap_eco_gds_candidate/constraints.after_filler.rpt` reports max_transition 0, min_capacitance 0, and max_capacitance 4 on `n42733`, `n49555`, `ZBUF_1069_1170`, and `ZBUF_259_1196`. The same GDS run reports open nets 0, route DRC 0, legality clean, PG clean, and positive timing.
+
+Rejected sub-attempt: a net-based `set_max_capacitance` target in `14_post_route_prefiller_maxcap_margin` produced `SEL-002/SEL-005` messages and no ECO changes because the command did not apply to net collections in this flow. The script was corrected to target driver pins.
+
+Accepted implementation: `4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh` applies tighter max-cap constraints to driver pins `U77216/Y`, `U13303/Y`, `ZBUF_1069_inst_8294/Y`, `ZBUF_259_inst_8705/Y`, and `U7539/Y`, then runs `eco_opt -types max_capacitance -physical_mode occupied_site`.
+
+Evidence: `constraints.after_margin_targets.rpt` intentionally reports 5 max-cap violations; the ECO log reports 5 inserted `NBUFFX2_RVT` buffers and remaining ECO violations 0. `4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin/constraints.final.rpt` reports max_transition 0, max_capacitance 0, and min_capacitance 0. `check_routes.final.rpt` reports open nets 0 and route DRC 0. Legality, PG, and timing sanity reports are clean or positive.
+
+Equivalence and STA evidence: `3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log` reports Verification SUCCEEDED, 34915 passing compare points, 0 failing, 0 unmatched, and SVF guidance 2146 accepted / 0 rejected. `5_STA/4_Report/post_route_prefiller_maxcap_margin/global_timing.rpt` reports no setup and no hold violations; `pt_post_route_prefiller_maxcap_margin_sdf.log` reports read_sdf errors 0.
+
+Final GDS evidence: `4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt` records write statuses 0. The GDS file is `4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds`, size 157M. `constraints.after_filler.rpt` reports max_transition 0, max_capacitance 0, and min_capacitance 0. `check_routes.after_filler.rpt` reports open nets 0 and route DRC 0. Legality, PG, and timing reports remain clean or positive.
+
+Final policy for this phase: accept `post_route_prefiller_maxcap_margin_gds_candidate` as the final educational GDS candidate. This does not create signoff/tapeout evidence; antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology remain outside scope.

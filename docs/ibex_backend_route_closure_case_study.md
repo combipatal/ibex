@@ -261,3 +261,58 @@ Practical lesson:
 ```text
 In implementation, a clean-looking timing result is not enough. Backend closure depends on consistent logical libraries, physical abstracts, techfile/via rules, synthesis cell-use policy, and DC/FM/backend handoff alignment. The important engineering step was keeping every experiment report-backed and rejecting fixes that only changed the DRC distribution without improving the objective pass/fail signal.
 ```
+
+## 9. Post-Route Electrical/GDS Follow-Up
+
+After the route-clean baseline and first educational GDS export, the after-filler electrical reports showed that route DRC clean was not the same as electrical DRC clean:
+
+```text
+First GDS candidate:
+4_Backend_ICC2/4_Report/08_gds/route_closure_gds_candidate/constraints.after_filler.rpt
+
+Result:
+max_transition 8
+max_capacitance 228
+```
+
+Bounded electrical cleanup sequence:
+
+```text
+09 route_opt: max_transition 0, max_capacitance 120
+10 max-cap ECO: max_capacitance 2, but route DRC regressed to 31
+11 route cleanup: route DRC 0, max_capacitance 2
+12 residual max-cap ECO: route DRC 0, max_transition 0, max_capacitance 0
+```
+
+The `12_post_route_residual_maxcap_eco` netlist then passed FM and PT:
+
+```text
+FM: Verification SUCCEEDED; 34915 passing; 0 failing; 0 unmatched
+PT: no setup/hold violations; read_sdf errors 0
+```
+
+Refreshing GDS directly from 12 exposed a final margin issue:
+
+```text
+13_gds/post_route_residual_maxcap_eco_gds_candidate:
+GDS written, route/PG/legal/timing checks clean, but after-filler max_capacitance 4
+```
+
+Accepted final fix:
+
+```text
+14_post_route_prefiller_maxcap_margin:
+apply driver-pin max-cap margin before filler
+eco_opt inserts 5 NBUFFX2_RVT buffers
+final ICC2 reports route DRC 0, max_transition 0, max_capacitance 0
+FM/PT pass on the 14 netlist
+13_gds/post_route_prefiller_maxcap_margin_gds_candidate writes GDS with after-filler route/electrical checks clean
+```
+
+Final educational GDS candidate:
+
+```text
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+```
+
+This strengthens the educational backend handoff, but it does not change the claim boundary: antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA remain outside the evidence.

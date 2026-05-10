@@ -138,6 +138,63 @@ The GDS export script was updated after this first candidate to also emit timing
 Antenna checking is not active because no antenna rules are defined.
 ```
 
+## Electrical-Clean GDS Refresh
+
+After post-route electrical DRC closure, a newer GDS candidate was generated through the 13/14 scripts:
+
+```text
+Pre-filler margin ECO:
+4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+
+Final GDS command:
+env SOURCE_CLEAN_ICC2_LIB=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib \
+    SRC_BLOCK=ibex_mini_soc_top_post_route_prefiller_maxcap_margin \
+    GDS_TAG=post_route_prefiller_maxcap_margin_gds_candidate \
+    4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh
+```
+
+Why this extra step exists:
+
+```text
+12_post_route_residual_maxcap_eco was clean before filler and passed FM/PT.
+The first GDS refresh from that block reintroduced 4 tiny max-cap violations after filler.
+14_post_route_prefiller_maxcap_margin adds driver-pin max-cap margin before filler to absorb the post-filler extraction shift.
+```
+
+Final output:
+
+```text
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.def
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.vg
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.sdc
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt
+File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M
+```
+
+Final after-filler checks:
+
+```text
+Report root: 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate
+check_routes.after_filler.rpt: 0 open nets, 0 signal DRC
+constraints.after_filler.rpt: max_transition 0, max_capacitance 0, min_capacitance 0
+check_legality.after_filler.rpt: legality succeeded
+pg_connectivity.after_filler.rpt: VDD/VSS floating objects 0
+pg_drc.after_filler.rpt: no reported PG DRC records
+qor.after_filler.rpt: setup slack 0.64 ns; no hold violations
+```
+
+FM/PT evidence for the source netlist:
+
+```text
+Formality log: 3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log
+FM result: Verification SUCCEEDED; 34915 passing; 0 failing; 0 unmatched
+PT report root: 5_STA/4_Report/post_route_prefiller_maxcap_margin
+PT result: no setup/hold violations; read_sdf errors 0
+```
+
+This `post_route_prefiller_maxcap_margin_gds_candidate` supersedes the earlier `route_closure_gds_candidate` for electrical-clean educational GDS handoff. It still does not prove signoff readiness.
+
 ## Claim Boundary
 
 Allowed after reports prove it:

@@ -47,6 +47,13 @@
 | Post-route max-cap ECO | ICC2/PT | PARTIAL_NOT_PROMOTED | 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/constraints.after_maxcap_eco.rpt | max_transition 0, max_capacitance 2, but route DRC regressed to 31; not accepted |
 | Final post-route cleanup | ICC2 | PARTIAL_ELECTRICAL_DRC_REMAINS | 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/check_routes.after_cleanup.rpt | route DRC recovered to 0; max_transition 0, max_capacitance 2 remains |
 | Residual max-cap ECO | ICC2/PT | ICC2_INTERNAL_ELECTRICAL_ROUTE_CLEAN_CANDIDATE | 4_Backend_ICC2/4_Report/12_post_route_residual_maxcap_eco/constraints.final.rpt | max_transition 0, max_capacitance 0, route DRC 0, legality/PG clean, timing positive |
+| Residual max-cap ECO FM | Formality | PASS_WITH_NOTE | 3_Formality/3_Log/fm_post_route_residual_maxcap_eco.log | Verification SUCCEEDED; 34915 passing, 0 failing, 0 unmatched |
+| Residual max-cap ECO PT | PrimeTime | PASS_WITH_NOTE | 5_STA/4_Report/post_route_residual_maxcap_eco/global_timing.rpt | No setup/hold violations; SDF read errors 0 |
+| Residual max-cap GDS refresh | ICC2 | SUPERSEDED_AFTER_FILLER_MAXCAP_REGRESSION | 4_Backend_ICC2/4_Report/13_gds/post_route_residual_maxcap_eco_gds_candidate/constraints.after_filler.rpt | GDS written, route/PG clean, but after-filler max_capacitance 4 |
+| Pre-filler max-cap margin ECO | ICC2/PT | ELECTRICAL_ROUTE_CLEAN_CANDIDATE | 4_Backend_ICC2/4_Report/14_post_route_prefiller_maxcap_margin/constraints.final.rpt | 5 driver-pin margin targets fixed by 5 NBUFFX2_RVT buffers; route/electrical/PG clean |
+| Pre-filler margin ECO FM | Formality | PASS_WITH_NOTE | 3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log | Verification SUCCEEDED; 34915 passing, 0 failing, 0 unmatched |
+| Pre-filler margin ECO PT | PrimeTime | PASS_WITH_NOTE | 5_STA/4_Report/post_route_prefiller_maxcap_margin/global_timing.rpt | No setup/hold violations; SDF read errors 0 |
+| Final electrical-clean GDS candidate | ICC2 | PASS_WITH_NOTE | 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/constraints.after_filler.rpt | GDS/DEF/VG/SDC written; after-filler route DRC 0, max_transition 0, max_capacitance 0; not signoff GDS |
 
 ## Backend Open Items
 
@@ -97,5 +104,5 @@ Post-filler GDS checks: check_routes.after_filler reports 0 open nets and 0 sign
 GDS caveat: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations, and antenna checking is not active because no antenna rules are defined. The GDS is educational only, not signoff/tapeout-ready.
 Post-route electrical DRC attempt: repeated route_opt reduced the GDS caveat to max_transition 0 and max_capacitance 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2 but introduced 31 route DRCs. Final route cleanup recovered route DRC to 0 with open nets 0, but max_capacitance 2 remained.
 Residual max-cap ECO: one approved final attempt from the final-cleanup block inserted 1 buffer and issued 1 size_cell command. Final reports show max_transition 0, max_capacitance 0, min_capacitance 0, route open nets 0, route DRC 0, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, and timing.max/min MET 0.64 ns / 0.04 ns.
-Strict backend strong-done: baseline route closure and educational GDS candidate are complete with documented caveats, and a separate ICC2 internal post-route electrical/route clean candidate now exists at 12_post_route_residual_maxcap_eco. Remaining signoff-class items are foundry DRC, LVS, antenna signoff, IR/EM, metal fill, and signoff STA methodology.
+Strict backend strong-done: baseline route closure is complete, the residual max-cap ECO passed FM/PT, and a refreshed educational GDS candidate from the pre-filler margin ECO has after-filler route/electrical/PG checks clean in ICC2 reports. Remaining signoff-class items are foundry DRC, LVS, antenna signoff, IR/EM, metal fill, and signoff STA methodology.
 ```
