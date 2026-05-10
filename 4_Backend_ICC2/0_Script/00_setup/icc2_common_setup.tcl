@@ -23,10 +23,24 @@ set NDM_RVT $NDM_DIR/saed32rvt_tt.ndm
 set NDM_LVT $NDM_DIR/saed32lvt_tt.ndm
 set NDM_HVT $NDM_DIR/saed32hvt_tt.ndm
 
+if {[info exists ::env(NDM_RVT)]} {
+  set NDM_RVT $::env(NDM_RVT)
+}
+if {[info exists ::env(NDM_LVT)]} {
+  set NDM_LVT $::env(NDM_LVT)
+}
+if {[info exists ::env(NDM_HVT)]} {
+  set NDM_HVT $::env(NDM_HVT)
+}
+
 set TECH_FILE $SAED32_ROOT/tech/milkyway/saed32nm_1p9m_mw.tf
 set TLUPLUS_MAX $SAED32_ROOT/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus
 set TLUPLUS_MIN $SAED32_ROOT/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus
 set TLUPLUS_MAP $SAED32_ROOT/tech/star_rcxt/saed32nm_tf_itf_tluplus.map
+
+if {[info exists ::env(TECH_FILE)] && $::env(TECH_FILE) ne ""} {
+  set TECH_FILE $::env(TECH_FILE)
+}
 
 set BACKEND_NETLIST $PROJECT_ROOT/2_Synthesis/2_Output/$RUN_TAG/$TOP_NAME.$RUN_TAG.vg
 set BACKEND_SDC     $PROJECT_ROOT/2_Synthesis/2_Output/$RUN_TAG/$TOP_NAME.$RUN_TAG.sdc
@@ -47,6 +61,19 @@ set POWERPLAN_REPORT_DIR $ICC2_ROOT/4_Report/03_powerplan
 set PLACE_REPORT_DIR $ICC2_ROOT/4_Report/04_place
 set CTS_REPORT_DIR $ICC2_ROOT/4_Report/05_cts
 set ROUTE_REPORT_DIR $ICC2_ROOT/4_Report/06_route
+
+if {[info exists ::env(ICC2_LIB_DIR)]} {
+  set ICC2_LIB_DIR $::env(ICC2_LIB_DIR)
+}
+
+if {[info exists ::env(ICC2_REPORT_ROOT)]} {
+  set INIT_REPORT_DIR $::env(ICC2_REPORT_ROOT)/01_init_design
+  set FLOORPLAN_REPORT_DIR $::env(ICC2_REPORT_ROOT)/02_floorplan
+  set POWERPLAN_REPORT_DIR $::env(ICC2_REPORT_ROOT)/03_powerplan
+  set PLACE_REPORT_DIR $::env(ICC2_REPORT_ROOT)/04_place
+  set CTS_REPORT_DIR $::env(ICC2_REPORT_ROOT)/05_cts
+  set ROUTE_REPORT_DIR $::env(ICC2_REPORT_ROOT)/06_route
+}
 
 foreach dir [list \
   $ICC2_ROOT/2_Output/00_setup \
@@ -75,4 +102,3 @@ foreach dir [list \
 
 set target_library [list $RVT_TT_DB $LVT_TT_DB $HVT_TT_DB]
 set link_library [list * $RVT_TT_DB $LVT_TT_DB $HVT_TT_DB]
-

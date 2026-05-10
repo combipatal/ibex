@@ -69,3 +69,17 @@ Legality result: check_legality.rpt reports TOTAL 0 violations.
 Timing result: timing.max worst reported slack MET 0.63 ns; timing.min worst reported slack MET 0.04 ns.
 Residual issue: PG connectivity remains not clean even though PG DRC is clean.
 ```
+
+## 2026-05-10 PG Residual Closure
+
+```text
+The residual PG issue above is historical.
+
+Production fix: explicit local M1-M2 rail stitches were added in 03_powerplan after compile_pg, with conflicting upper stacked PG vias removed only at the stitch windows.
+Evidence:
+- 4_Backend_ICC2/4_Report/03_powerplan/pg_rail_stitches.rpt reports removed_conflicting_vias=48 and created_vias=8.
+- 4_Backend_ICC2/4_Report/03_powerplan/pg_connectivity.rpt reports VDD/VSS floating objects 0.
+- 4_Backend_ICC2/4_Report/05_cts/pg_connectivity.rpt reports VDD/VSS floating objects 0.
+- 4_Backend_ICC2/4_Report/06_route/pg_connectivity.rpt reports VDD/VSS floating objects 0.
+Current CTS status after rerun: PASS_WITH_NOTE, with PG connectivity clean. Remaining open backend issue is route signal DRC, tracked in ROUTE_DIAGNOSIS_NOTES.md.
+```

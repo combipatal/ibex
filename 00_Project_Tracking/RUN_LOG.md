@@ -273,3 +273,560 @@ Known notes: log still includes many intermediate ZRT-763 overlap warnings durin
 Open issue: PG connectivity is still not clean. VDD reports 3358 floating std cells and VSS reports 415 floating std cells in 05_cts pg_connectivity.rpt. PG DRC remains clean.
 Next action: continue to route only with PG connectivity tracked as an open backend issue, or fix PG rail connectivity before route if strict backend strong-done criteria are required.
 ```
+
+```text
+Stage: ICC2 PG diagnosis - M7 offset sweep
+Command: 4_Backend_ICC2/0_Script/99_debug/run_pg_m7_offset_sweep.sh
+Status: PASS_WITH_NOTE
+Basis: debug copy of the accepted CTS design; production ICC2 block not modified.
+Result: M7 offset changes only shifted the VDD/VSS floating-cell distribution and did not produce a clean PG connectivity case.
+Observed range: best tested VSS case still had VDD 3412 floating std cells at offset 18; current offset 28 matched baseline shape with VDD 3358 and VSS 415 floating std cells.
+Conclusion: horizontal M7 offset alone is not the root fix.
+Next action: test lower-metal/stdcell rail interaction with an M2 sweep and modified LEF NDM probe.
+```
+
+```text
+Stage: ICC2 PG diagnosis - M2 sweep
+Command: 4_Backend_ICC2/0_Script/99_debug/run_pg_m2_sweep.sh
+Status: PASS_WITH_NOTE
+Basis: debug copy of the accepted CTS design; production ICC2 block not modified.
+Initial result: tested M2 pitch/offset variants with width fixed at 0.4 produced the same PG connectivity counts as baseline, VDD 3358 and VSS 415 floating std cells.
+Follow-up result: M2 pitch 20.0, offset 0.0, width 0.2 reduced VDD floating std cells to 0 and left VSS at 415.
+Conclusion: M2 pitch/offset alone is not the root fix, but M2 width/geometry is a primary cause axis for rail-to-mesh via cleanup.
+Next action: diagnose the remaining top-side VSS rail with M2 width 0.2 held fixed.
+```
+
+```text
+Stage: ICC2 modified LEF NDM build
+Command: 4_Backend_ICC2/0_Script/99_debug/build_modified_lef_ndm.sh
+Status: PASS_WITH_NOTE
+LEF source: /DATA/home/edu135/lib/libdir/LEF/modify
+Log path: 4_Backend_ICC2/3_Log/99_debug/build_modified_lef_ndm.log
+Outputs: 4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32rvt_tt.modified_lef.ndm, saed32lvt_tt.modified_lef.ndm, saed32hvt_tt.modified_lef.ndm
+Result: workspace checks succeeded and RVT/LVT/HVT modified-LEF NDM libraries were written.
+Known notes: NDM import warnings are recorded in the log, including LEF bus-bit and large M1 blockage warnings.
+Next action: run placement-aware PG probe using the modified-LEF NDM libraries.
+```
+
+```text
+Stage: ICC2 modified LEF PG probe
+Command: 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_pg_probe.sh
+Status: PASS_WITH_NOTE
+Basis: separate debug ICC2 library using modified-LEF NDMs; same DC topo netlist/SDC and same initial floorplan/PG strategy; production ICC2 block not modified.
+Log path: 4_Backend_ICC2/3_Log/99_debug/run_modified_lef_pg_probe.log
+Summary report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_pg_probe/summary.tsv
+PG connectivity report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_pg_probe/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_pg_probe/pg_drc.rpt
+Result: placement and legalization completed; compile_pg recognized 109713 standard cells; PG DRC reported no errors.
+Comparison: baseline CTS PG connectivity was VDD 3358 and VSS 415 floating std cells; modified-LEF probe reports VDD 3196 and VSS 396 floating std cells, with the same 7 VDD and 1 VSS floating wires.
+Conclusion: modified LEF NDM slightly changes the symptom but does not resolve the PG connectivity issue. No front-end/DC/FM rerun is required for this LEF-only physical abstract test, and switching production backend to modified LEF is not justified as a fix yet.
+Next action: diagnose stdcell rail-to-mesh/via access or row/rail alignment directly before route, or proceed to route only with PG connectivity explicitly classified as open.
+```
+
+```text
+Stage: ICC2 PG diagnosis - floating rail shape inspection
+Command: 4_Backend_ICC2/0_Script/99_debug/inspect_pg_floating_shapes.sh
+Status: PASS_WITH_NOTE
+Basis: debug copy of the accepted CTS design; production ICC2 block not modified.
+Report: 4_Backend_ICC2/4_Report/99_debug/pg_floating_shape_inspect/shape_summary.tsv
+Result: all listed floating objects are M1 lib_cell_pin_connect stdcell rails spanning the core width. The repeated VDD floating rail y locations are 327.618/367.746/407.874/448.002/488.130/528.258/568.386, and the residual VSS rail is y 827.546.
+Conclusion: the issue is isolated stdcell rail rows with zero vias to the higher PG network, not unconnected logical PG pins.
+Next action: hold M2 pitch 20/width 0.2 and test top-edge/M7/ring-boundary fixes for the remaining VSS rail.
+```
+
+```text
+Stage: ICC2 PG diagnosis - combined M2/M7 probes
+Command: 4_Backend_ICC2/0_Script/99_debug/run_pg_m2_sweep.sh with PG_M2_CASES and PG_M7_OFFSET overrides
+Status: PASS_WITH_NOTE
+Basis: debug copy of the accepted CTS design; production ICC2 block not modified.
+Best tested case: M2 pitch 20.0, offset 0.0, width 0.2 with M7 offset 28.0.
+Best result: VDD floating std cells 0; VSS floating std cells 415; VDD floating wires 0; VSS floating wires 1.
+Rejected variants: M7 offset 18 with M2 width 0.2 worsened VSS to 931; M7 offset 30 worsened VSS to 3443.
+Mesh boundary check: changing core mesh stop from innermost_ring to design_boundary kept the same best-case residual, VDD 0 and VSS 415.
+Conclusion: M2 width/geometry fixes the major VDD rail isolation, while the remaining VSS issue is a top-side rail stitch/parity issue. M7 offset alone and mesh stop boundary alone are not clean fixes.
+Next action: test targeted top-side VSS connection or ring/mesh stitch adjustment around PATH_11_483.
+```
+
+## 2026-05-10
+
+```text
+Stage: ICC2 PG diagnosis - baseline local rail stitch
+Command: 4_Backend_ICC2/0_Script/99_debug/probe_baseline_pg_local_stitches.sh
+Status: PASS_WITH_NOTE
+Basis: debug ICC2 library; production block not modified during probe.
+Log path: 4_Backend_ICC2/3_Log/99_debug/probe_baseline_pg_local_stitches.log
+Summary report: 4_Backend_ICC2/4_Report/99_debug/baseline_pg_local_stitches/summary.tsv
+Rejected attempt: creating M1-M2 stitch vias under existing M2-M7 via stacks fixed connectivity but left 12 same-net cut-spacing PG DRCs.
+Accepted attempt: remove local conflicting upper stacked vias first, then add explicit M1-M2 rail stitch vias.
+Result: removed 48 conflicting upper vias; created 8 M1-M2 stitch vias; VDD/VSS floating std cells 0; VDD/VSS floating wires 0; PG DRC errors 0.
+Conclusion: PG issue is a local rail-to-mesh via conflict/cleanup problem, not modified LEF, front-end logic, DC, or Formality mismatch.
+Next action: port the targeted stitch into production powerplan and rerun backend from powerplan onward.
+```
+
+```text
+Stage: ICC2 powerplan rerun with PG rail stitch fix
+Command: 4_Backend_ICC2/0_Script/03_powerplan/run_powerplan_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/03_powerplan/run_powerplan_initial.log
+Stitch report: 4_Backend_ICC2/4_Report/03_powerplan/pg_rail_stitches.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/03_powerplan/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/03_powerplan/pg_drc.rpt
+Result: production powerplan removed 48 local conflicting upper vias and added 8 M1-M2 rail stitches; VDD/VSS floating objects 0; PG DRC reports no errors.
+Next action: rerun placement and CTS from the corrected powerplan block.
+```
+
+```text
+Stage: ICC2 placement rerun after PG fix
+Command: 4_Backend_ICC2/0_Script/04_place/run_place_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/04_place/run_place_initial.log
+Legality report: 4_Backend_ICC2/4_Report/04_place/check_legality.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/04_place/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/04_place/pg_drc.rpt
+Timing report: 4_Backend_ICC2/4_Report/04_place/timing.rpt
+Result: legality TOTAL 0; VDD/VSS floating objects 0; PG DRC no errors; worst reported setup slack MET 0.07 ns.
+Known notes: route-analysis overlap warnings appear during placement, but final check_legality is clean.
+Next action: rerun CTS.
+```
+
+```text
+Stage: ICC2 CTS rerun after PG fix
+Command: 4_Backend_ICC2/0_Script/05_cts/run_cts_initial.sh
+Status: PASS_WITH_NOTE
+Log path: 4_Backend_ICC2/3_Log/05_cts/run_cts_initial.log
+Clock tree report: 4_Backend_ICC2/4_Report/05_cts/check_clock_trees.post.rpt
+Legality report: 4_Backend_ICC2/4_Report/05_cts/check_legality.rpt
+Timing max report: 4_Backend_ICC2/4_Report/05_cts/timing.max.rpt
+Timing min report: 4_Backend_ICC2/4_Report/05_cts/timing.min.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/05_cts/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/05_cts/pg_drc.rpt
+Result: clock tree compilation finished successfully; clock route detail routing finished with 0 open nets and 0 DRCs; legality TOTAL 0; VDD/VSS floating objects 0; PG DRC no errors.
+Timing result: timing.max worst reported slack MET 0.43 ns; timing.min worst reported slack MET 0.03 ns.
+Next action: run initial signal route.
+```
+
+```text
+Stage: ICC2 route
+Command: 4_Backend_ICC2/0_Script/06_route/run_route_initial.sh
+Status: COMPLETE_WITH_OPEN_SIGNAL_DRC
+Log path: 4_Backend_ICC2/3_Log/06_route/run_route_initial.log
+Route report: 4_Backend_ICC2/4_Report/06_route/check_routes.rpt
+Legality report: 4_Backend_ICC2/4_Report/06_route/check_legality.rpt
+Timing max report: 4_Backend_ICC2/4_Report/06_route/timing.max.rpt
+Timing min report: 4_Backend_ICC2/4_Report/06_route/timing.min.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/06_route/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/06_route/pg_drc.rpt
+Result: route_auto completed and block was saved; 0 open nets; legality TOTAL 0; VDD/VSS floating objects 0; PG DRC no errors.
+Timing result: timing.max worst reported slack MET 0.57 ns; timing.min worst reported slack MET 0.03 ns.
+Open issue: signal route DRC remains 720 in check_routes.rpt: Diff net spacing 251, Less than minimum area 24, Needs fat contact 347, Off-grid 92, Short 6.
+Diagnosis note: 00_Project_Tracking/ROUTE_DIAGNOSIS_NOTES.md
+Next action: diagnose route DRC closure with a targeted route-option or floorplan/utilization experiment; do not claim route DRC clean.
+```
+
+```text
+Stage: ICC2 route DRC diagnosis - detailed error data inspection
+Command: 4_Backend_ICC2/0_Script/99_debug/inspect_route_drc.sh
+Status: PASS_WITH_NOTE
+Basis: current routed ICC2 block opened for report-only debug; no save_block/save_lib executed.
+Log path: 4_Backend_ICC2/3_Log/99_debug/inspect_route_drc.log
+Report directory: 4_Backend_ICC2/4_Report/99_debug/route_drc_inspect
+Matrix report: 4_Backend_ICC2/4_Report/99_debug/route_drc_inspect/drc_matrix.rpt
+Result: all 720 signal-route DRCs are on M1/M2/VIA1. M1 has 263, M1-M2 has 347 Needs fat contact, M2 has 67, VIA1 has 43.
+Conclusion: route DRC is a lower-metal/pin-access/contact issue, not PG. Next route experiments should target via/contact/via-ladder or physical abstract setup before utilization sweeps.
+```
+
+```text
+Stage: ICC2 route DRC diagnosis - detail_extra probe
+Command: ROUTE_DRC_VARIANT=detail_extra 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: ABORTED_AFTER_DIAGNOSTIC_SIGNAL
+Basis: debug-only in-memory route_detail probe; production block not saved.
+Original log path: 4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.detail_extra.log
+Artifact note: this default log path was later reused by a modified-LEF detail_extra probe before ROUTE_DRC_VARIANT_LOG override support was added; use the recorded observation below as the retained result for this historical probe.
+Observation: additional detail routing reduced DRC from 720 to about 669 at iteration 40 and stayed around 660-680; iteration 46 summary was 671 DRCs.
+Conclusion: more detail-route iteration alone is not sufficient for closure.
+```
+
+```text
+Stage: ICC2 route DRC diagnosis - reroute_m2 probe
+Command: ROUTE_DRC_VARIANT=reroute_m2 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: ABORTED_AFTER_DIAGNOSTIC_SIGNAL
+Basis: debug-only in-memory reroute after removing signal/clock route shapes; production block not saved.
+Log path: 4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.reroute_m2.log
+Routability report: 4_Backend_ICC2/4_Report/99_debug/route_drc_variants/reroute_m2/check_routability.rpt
+Observation: min-routing-layer M2 reroute entered detail routing with DRC rising above 11000 before the probe was stopped.
+Conclusion: simply avoiding M1 makes pin-access/congestion much worse and is rejected as a route fix.
+```
+
+```text
+Stage: ICC2 route DRC diagnosis - fat_contact_effort probe
+Command: ROUTE_DRC_VARIANT=fat_contact_effort 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: ABORTED_AFTER_DIAGNOSTIC_SIGNAL
+Basis: debug-only in-memory route_detail probe; production block not saved.
+Log path: 4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.fat_contact_effort.log
+Option report: 4_Backend_ICC2/4_Report/99_debug/route_drc_variants/fat_contact_effort/app_options.after.rpt
+Observation: setting route.detail.fat_metal_forbidden_pitch_effort_level=high and route.detail.optimize_wire_via_effort_level=high reduced Needs fat contact as low as 239 at iteration 43, but Diff net spacing rose as high as 361 and total DRC remained around 660-672.
+Conclusion: the route options touch the suspected contact/fat-contact issue, but they are not a standalone production fix because they trade contact DRC for spacing DRC.
+```
+
+```text
+Stage: ICC2 modified-LEF full backend route debug
+Command: 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh
+Status: COMPLETE_WITH_RESIDUAL_SIGNAL_DRC
+Basis: debug-only full backend rerun with modified-LEF NDMs and separate ICC2 library/report/log roots; production ICC2 library was not overwritten.
+Modified NDM inputs: 4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32{rvt,lvt,hvt}_tt_modified.ndm
+ICC2 library output: 4_Backend_ICC2/2_Output/99_debug/modified_lef_route_flow/ibex_mini_soc_top_modified_lef_route_icc2_lib
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_route_flow
+Route log: 4_Backend_ICC2/3_Log/99_debug/modified_lef_route_flow/06_route.log
+Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_flow/06_route/check_routes.rpt
+Legality report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_flow/06_route/check_legality.rpt
+PG connectivity report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_flow/06_route/pg_connectivity.rpt
+PG DRC report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_flow/06_route/pg_drc.rpt
+Timing reports: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_flow/06_route/timing.max.rpt, timing.min.rpt
+Result: wrapper completed with MOD_LEF_ROUTE_FLOW DONE. Route reports 0 open nets and 41 signal DRCs: Diff net spacing 1, Off-grid 39, Short 1. Needs fat contact is eliminated in the final route report.
+Sanity checks: legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; route log reports check_pg_drc No errors found; timing.max worst slack MET 0.74 ns; timing.min worst slack MET 0.04 ns.
+Caveats: route is still not DRC clean; route log still reports CO default contact and MUX41X2_HVT/S0 via-region warnings; QoR still reports max transition/cap violations.
+Conclusion: modified LEF/physical abstract setup is a strong route-DRC root-cause direction and is much better than route-option-only probes, but it is not yet a clean production baseline.
+```
+
+```text
+Stage: ICC2 modified-LEF residual route DRC inspection
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_flow/ibex_mini_soc_top_modified_lef_route_icc2_lib ROUTE_DRC_INSPECT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_inspect 4_Backend_ICC2/0_Script/99_debug/inspect_route_drc.sh
+Status: PASS_WITH_NOTE
+Basis: report-only open of the modified-LEF routed debug block; no save_block/save_lib executed.
+Log path: 4_Backend_ICC2/3_Log/99_debug/inspect_route_drc.log
+Report directory: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_inspect
+Matrix report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_inspect/drc_matrix.rpt
+Result: residual 41 DRCs are all on M1/M2/VIA1. M1 has 3 total: Diff net spacing 1, Off-grid 1, Short 1. M2 has 19 Off-grid. VIA1 has 19 Off-grid.
+Observation: most residual Off-grid DRCs are paired M2/VIA1 entries at near-identical coordinates, consistent with a small set of off-grid via/metal placements rather than a broad route congestion issue.
+Next action: target residual off-grid cleanup/via snapping or localized DRC repair on the modified-LEF block before any broader utilization or route-option sweep.
+```
+
+```text
+Stage: ICC2 modified-LEF residual DRC cleanup probe - detail_extra
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_flow/ibex_mini_soc_top_modified_lef_route_icc2_lib ROUTE_DRC_VARIANT=detail_extra ROUTE_DRC_VARIANT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/detail_extra 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: PASS_WITH_NOTE
+Basis: debug-only in-memory incremental route_detail probe on the modified-LEF routed block; no save_block/save_lib executed.
+Log path: 4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.modified_lef_detail_extra.log
+Report directory: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/detail_extra
+Before report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/detail_extra/before_check_routes.rpt
+After report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/detail_extra/after_check_routes.rpt
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/detail_extra/summary.tsv
+Result: DRC reduced from 41 to 20 with 0 open nets. Final breakdown: Off-grid 19, Short 1.
+Conclusion: a small incremental detail-route cleanup removes about half of the residual modified-LEF DRCs, but still does not produce a DRC-clean route. Next work should inspect the remaining 19 Off-grid and 1 Short locations.
+```
+
+```text
+Stage: ICC2 modified-LEF cleanup saved candidate
+Command: 4_Backend_ICC2/0_Script/99_debug/save_modified_lef_detail_cleanup.sh
+Status: SAVED_CANDIDATE_WITH_RESIDUAL_SIGNAL_DRC
+Basis: debug-only copied ICC2 library; production ICC2 library was not overwritten.
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved/summary.tsv
+Result: after saved cleanup, 0 open nets and 20 signal DRCs: Off-grid 19, Short 1. Legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; route log check_pg_drc reports No errors found; timing.max slack MET 0.74 ns; timing.min slack MET 0.04 ns.
+Next action: inspect/fix 19 VIA1 Off-grid DRCs and 1 M1 Short before promotion.
+```
+
+```text
+Stage: ICC2 saved modified-LEF cleanup DRC inspection
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib ROUTE_DRC_INSPECT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_drc_inspect ROUTE_DRC_INSPECT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_route_drc.modified_lef_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_route_drc.sh
+Status: PASS_WITH_NOTE
+Basis: report-only open of saved debug cleanup candidate; no save_block/save_lib executed.
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_drc_inspect
+Matrix report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_drc_inspect/drc_matrix.rpt
+Via attribute report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_drc_inspect/offgrid_via_attrs.tsv
+Result: residual DRC matrix is VIA1 Off-grid 19 and M1 Short 1. All 19 Off-grid entries are VIA12SQ_C M1-M2 vias with array_size 2 1 / rows 2 / cols 1.
+Conclusion: Off-grid is tied to router-generated VIA12SQ_C 2-row array geometry, not via-center track snapping.
+```
+
+```text
+Stage: ICC2 residual VIA1 Off-grid probes on saved modified-LEF cleanup candidate
+Commands: probe_remove_offgrid_via1.sh, probe_shrink_offgrid_via1_array.sh, probe_replace_offgrid_via1_def.sh, and probe_route_drc_variant.sh variants via_array_off/via1_on_grid/via_ladder_clean/via1_offgrid_cost.
+Status: DIAGNOSED_NO_ACCEPTED_FIX
+Basis: debug-only in-memory probes; no save_block/save_lib executed.
+Key reports:
+- 4_Backend_ICC2/4_Report/99_debug/probe_remove_offgrid_via1_by_net_bbox_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_remove_offgrid_via1_repair_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_repair_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_replace_offgrid_via1_def_VIA12SQ_C_1x2_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via_array_off_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via1_on_grid_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via_ladder_clean_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via1_offgrid_cost20_cleanup_saved/summary.tsv
+Result: removing vias eliminates Off-grid but creates 14 open nets; shrinking to 1x1 eliminates Off-grid but creates open/fat-contact/min-area DRC; via_array_mode=off eliminates Off-grid but creates Needs fat contact 9 and Short 11; via_on_grid, via_ladder_clean, and off-grid cost max 20 are unchanged.
+Conclusion: no route-option or object-level probe produced a DRC-clean connected candidate.
+```
+
+```text
+Stage: ICC2 residual M1 Short inspection and targeted ECO probes
+Inspect command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib SHORT_INSPECT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_short_inspect SHORT_INSPECT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_short_area.modified_lef_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_short_area.sh
+ECO commands: probe_short_net_eco.sh with SHORT_ECO_NET=n48420 and modes eco_only, remove_detail_then_eco
+Status: DIAGNOSED_NO_ACCEPTED_FIX
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_short_inspect/short_area_objects.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_short_net_eco_n48420_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_short_net_remove_detail_eco_n48420_cleanup_saved/summary.tsv
+Result: short DRC object resolves to net n48420 near M1 detail route and VSS M1 lib_cell_pin_connect rail. Targeted route_eco and remove-detail-then-route_eco both end unchanged at 20 DRC = Off-grid 19 and Short 1.
+Conclusion: residual short is not fixed by ordinary route_eco on the DRC net.
+```
+
+```text
+Stage: ICC2 VIA12SQ_C row-limit NDM route probe
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via12sqc_row1_route_flow.sh
+Status: COMPLETE_WITH_RESIDUAL_SIGNAL_DRC_REJECTED
+Basis: debug-only backend run using project-local generated tech file with ContactCode "VIA12SQ_C" maxNumRowsNonTurning = 1.
+Generated tech: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via12sqc_row1/tech/saed32nm_1p9m_mw.via12sqc_row1.tf
+NDM build log: 4_Backend_ICC2/3_Log/99_debug/build_via12sqc_row1_ndm.log
+Route log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via12sqc_row1_route_flow
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via12sqc_row1_route_flow
+Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via12sqc_row1_route_flow/06_route/check_routes.rpt
+Result: 0 open nets; 41 DRC = Diff net spacing 1, Off-grid 39, Short 1. Legality TOTAL 0; PG connectivity clean; PG DRC no errors; timing.max slack MET 0.74 ns; timing.min slack MET 0.04 ns.
+Conclusion: row-limit tech-only change did not improve residual DRC; do not promote.
+```
+
+```text
+Stage: ICC2 residual VIA definition and split-via probes
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib VIA_DEF_INSPECT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_via_def_inspect2 4_Backend_ICC2/0_Script/99_debug/inspect_via_defs.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib SPLIT_VIA_PROBE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_cleanup_saved 4_Backend_ICC2/0_Script/99_debug/probe_split_offgrid_via1_array.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib SPLIT_VIA_PROBE_REPAIR=1 SPLIT_VIA_PROBE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_repair_cleanup_saved 4_Backend_ICC2/0_Script/99_debug/probe_split_offgrid_via1_array.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib SPLIT_VIA_AXIS=x SPLIT_VIA_PROBE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_x_cleanup_saved 4_Backend_ICC2/0_Script/99_debug/probe_split_offgrid_via1_array.sh
+Status: DIAGNOSED_NO_ACCEPTED_FIX
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_via_def_inspect2/via_defs.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_repair_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_split_offgrid_via1_array_x_cleanup_saved/summary.tsv
+Result: direct get_via_defs queries for VIA12SQ_C-style names return 0; y-axis split worsens to 115 DRC before repair and route_detail returns to original 20 DRC; x-axis split worsens to 167 DRC and creates 10 open nets.
+Conclusion: direct split/replacement ECO is not a viable residual DRC fix.
+```
+
+```text
+Stage: ICC2 extended cleanup on saved modified-LEF candidate
+Command: env MOD_LEF_CLEANUP_SRC_LIB=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib MOD_LEF_CLEANUP_LIB=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_iter50_saved/ibex_mini_soc_top_modified_lef_cleanup_iter50_icc2_lib MOD_LEF_CLEANUP_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_iter50_saved MOD_LEF_CLEANUP_LOG=4_Backend_ICC2/3_Log/99_debug/save_modified_lef_detail_cleanup_iter50.log MOD_LEF_CLEANUP_START_ITER=50 MOD_LEF_CLEANUP_MAX_ITER=50 4_Backend_ICC2/0_Script/99_debug/save_modified_lef_detail_cleanup.sh
+Status: SAVED_REJECTED_CANDIDATE
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_iter50_saved/ibex_mini_soc_top_modified_lef_cleanup_iter50_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_iter50_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_iter50_saved/summary.tsv
+Result: before 20 DRC/open0; after 21 DRC/open0 = Diff net spacing 1, Off-grid 20, Short 0.
+Conclusion: longer cleanup removes the one short but increases total/off-grid DRC; keep the previous 20-DRC saved candidate as best artifact.
+```
+
+```text
+Stage: ICC2 residual route-option combination probe on saved modified-LEF candidate
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib ROUTE_DRC_VARIANT=via_array_off_fat_contact ROUTE_DRC_VARIANT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via_array_off_fat_contact_cleanup_saved ROUTE_DRC_VARIANT_LOG=4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.via_array_off_fat_contact_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: REJECTED_NO_ACCEPTED_FIX
+Basis: debug-only in-memory probe; no save_block/save_lib executed.
+Script update: 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.tcl now supports via_array_off_fat_contact.
+Log: 4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.via_array_off_fat_contact_cleanup_saved.log
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via_array_off_fat_contact_cleanup_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_drc_variants/via_array_off_fat_contact_cleanup_saved/summary.tsv
+Result: Off-grid changed from 19 to 0, but total DRC stayed 20 with Needs fat contact 9 and Short 11; open nets stayed 0.
+Conclusion: combining via_array_mode=off with high fat-contact/wire-via route effort still trades DRC class rather than closing route DRC.
+```
+
+```text
+Stage: ICC2 residual Off-grid context inspection
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib OFFGRID_CONTEXT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_offgrid_context OFFGRID_CONTEXT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_offgrid_context.modified_lef_cleanup_saved.log bash 4_Backend_ICC2/0_Script/99_debug/inspect_offgrid_context.sh
+Status: PASS_WITH_NOTE
+Basis: debug-only read-only inspection; no save_block/save_lib executed.
+Scripts: 4_Backend_ICC2/0_Script/99_debug/inspect_offgrid_context.sh, 4_Backend_ICC2/0_Script/99_debug/inspect_offgrid_context.tcl
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_offgrid_context
+Context report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_route_cleanup_saved_offgrid_context/offgrid_context.tsv
+Result: each residual Off-grid location is near a NOR2 A1/VSS pin-access context; the A1 pin instances map to NOR2X0_HVT or NOR2X2_HVT in the synthesis netlist. NOR2 LEF macros compare identical between SAED32_EDK and libdir, so the residual is not explained by the OR2-only libdir LEF edits alone.
+Conclusion: residual DRC is lower-metal NOR2 pin-access/via-array behavior in dense placement, not a simple OR2 abstract mismatch.
+```
+
+```text
+Stage: ICC2 targeted NOR2 resize ECO probe
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_route_cleanup_saved/ibex_mini_soc_top_modified_lef_cleanup_icc2_lib NOR2_RESIZE_TARGET=NOR2X4_HVT NOR2_RESIZE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_resize_offgrid_nor2_x4_cleanup_saved NOR2_RESIZE_LOG=4_Backend_ICC2/3_Log/99_debug/probe_resize_offgrid_nor2_x4_cleanup_saved.log bash 4_Backend_ICC2/0_Script/99_debug/probe_resize_offgrid_nor2.sh
+Status: REJECTED_BREAKS_CONNECTIVITY
+Basis: debug-only in-memory ECO probe; no save_block/save_lib executed.
+Scripts: 4_Backend_ICC2/0_Script/99_debug/probe_resize_offgrid_nor2.sh, 4_Backend_ICC2/0_Script/99_debug/probe_resize_offgrid_nor2.tcl
+Report root: 4_Backend_ICC2/4_Report/99_debug/probe_resize_offgrid_nor2_x4_cleanup_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/probe_resize_offgrid_nor2_x4_cleanup_saved/summary.tsv
+Result: before 20 DRC/open0; after final check_routes 43 DRC/open19 = Diff net spacing 4, Less than minimum area 9, Off-grid 17, Short 8. During route_detail the best transient DRC was 17, but the final routed block is not connected.
+Conclusion: direct post-route resize of the 19 nearby NOR2 cells is not a valid fix.
+```
+
+```text
+Stage: DC topo NOR2 cell-use policy debug synthesis
+Command: env NOR2_POLICY_RUN_TAG=pre_backend_topo_nor2_no_x0x2_hvt 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.sh
+Status: PASS_WITH_PRE_BACKEND_DRC_NOTE
+Script: 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.tcl
+Log: 2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_no_x0x2_hvt.log
+Output root: 2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt
+Report root: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_no_x0x2_hvt
+Policy: NOR2X0_HVT and NOR2X2_HVT are set dont_use before compile_ultra.
+Evidence: nor2_dont_use_verify.rpt reports both cells dont_use=true; the mapped Verilog contains 0 NOR2X0_HVT/NOR2X2_HVT references.
+Outputs: ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.{ddc,vg,sdc,sdf}
+QoR note: post_compile.qor.rpt reports Design Area 414721.590708, Max Trans Violations 3354, Max Cap Violations 6804.
+Conclusion: valid debug handoff for a NOR2 cell-use policy experiment, but not a clean synthesis closure target.
+```
+
+```text
+Stage: ICC2 modified-LEF backend rerun with NOR2 cell-use policy netlist
+Command: env MOD_LEF_ROUTE_DEBUG_ROOT=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_route_flow MOD_LEF_ROUTE_REPORT_ROOT=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_route_flow MOD_LEF_ROUTE_LOG_ROOT=4_Backend_ICC2/3_Log/99_debug/modified_lef_nor2_policy_route_flow MOD_LEF_ROUTE_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_route_icc2_lib BACKEND_NETLIST=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.vg BACKEND_SDC=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.sdc 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh
+Status: COMPLETE_WITH_RESIDUAL_SIGNAL_DRC_REJECTED
+Basis: full debug backend rerun from init through route using modified-LEF NDMs and the NOR2-policy synthesis handoff.
+ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_route_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_route_flow
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_nor2_policy_route_flow
+Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_route_flow/06_route/check_routes.rpt
+Result: 0 open nets; 36 signal DRCs = Diff net spacing 2, Off-grid 34.
+Sanity checks: check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; pg_drc.rpt reports no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
+Conclusion: upstream NOR2X0_HVT/NOR2X2_HVT dont_use does not improve the current best route artifact. It is worse than the saved modified-LEF cleanup candidate at 20 DRC, so do not promote this policy.
+```
+
+```text
+Stage: ICC2 cleanup on NOR2-policy modified-LEF route candidate
+Command: env MOD_LEF_CLEANUP_SRC_LIB=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_route_icc2_lib MOD_LEF_CLEANUP_LIB=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib MOD_LEF_CLEANUP_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved MOD_LEF_CLEANUP_LOG=4_Backend_ICC2/3_Log/99_debug/save_modified_lef_nor2_policy_cleanup.log MOD_LEF_CLEANUP_START_ITER=40 MOD_LEF_CLEANUP_MAX_ITER=10 4_Backend_ICC2/0_Script/99_debug/save_modified_lef_detail_cleanup.sh
+Status: SAVED_CANDIDATE_WITH_RESIDUAL_SIGNAL_DRC
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved/summary.tsv
+Result: cleanup reduced the NOR2-policy route from 36 DRC/open0 to 19 DRC/open0 = Diff net spacing 2, Off-grid 17, Short 0.
+Sanity checks: check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; pg_drc.rpt reports no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
+Conclusion: this is the new best debug artifact by count, improving the previous saved 20-DRC candidate by one DRC, but it is still not DRC clean and is not promoted to production.
+```
+
+```text
+Stage: ICC2 residual DRC inspection on NOR2-policy cleanup candidate
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib ROUTE_DRC_INSPECT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved_drc_inspect ROUTE_DRC_INSPECT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_route_drc.modified_lef_nor2_policy_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_route_drc.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib OFFGRID_CONTEXT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved_offgrid_context OFFGRID_CONTEXT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_offgrid_context.modified_lef_nor2_policy_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_offgrid_context.sh
+Status: PASS_WITH_NOTE
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved_drc_inspect/drc_matrix.rpt
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_cleanup_saved_offgrid_context/offgrid_context.tsv
+Result: residual DRC matrix is Diff net spacing 2 and Off-grid 17. Off-grid distribution is M1 1 and VIA1 16; all Off-grid objects are associated with M1-M2 VIA12SQ_C route vias, but surrounding cell refs are now mixed and no longer a NOR2-only pattern.
+Conclusion: the original NOR2-only local root-cause hypothesis is not supported after the upstream rerun. The remaining issue is broader lower-metal pin-access/contact-code/via-array behavior.
+```
+
+```text
+Stage: ICC2 residual VIA/off-grid probes on NOR2-policy cleanup candidate
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib SHRINK_VIA_PROBE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_nor2_policy_cleanup_saved SHRINK_VIA_PROBE_LOG=4_Backend_ICC2/3_Log/99_debug/probe_shrink_offgrid_via1_array.nor2_policy_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_shrink_offgrid_via1_array.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib SHRINK_VIA_PROBE_REPAIR=1 SHRINK_VIA_PROBE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_repair_nor2_policy_cleanup_saved SHRINK_VIA_PROBE_LOG=4_Backend_ICC2/3_Log/99_debug/probe_shrink_offgrid_via1_array_repair.nor2_policy_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_shrink_offgrid_via1_array.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib ROUTE_DRC_VARIANT=via_array_off_fat_contact ROUTE_DRC_VARIANT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_route_drc_variants/via_array_off_fat_contact_cleanup_saved ROUTE_DRC_VARIANT_LOG=4_Backend_ICC2/3_Log/99_debug/probe_route_drc_variant.via_array_off_fat_contact_nor2_policy_cleanup_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_route_drc_variant.sh
+Status: DIAGNOSED_NO_ACCEPTED_FIX
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_nor2_policy_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_shrink_offgrid_via1_array_repair_nor2_policy_cleanup_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_route_drc_variants/via_array_off_fat_contact_cleanup_saved/summary.tsv
+Result: shrinking 17 VIA12SQ_C arrays changes the class but not the count: final check_routes remains 19 DRC/open0 with Diff net spacing 2, Needs fat contact 16, Off-grid 1. Adding route_detail repair gives the same final check_routes. via_array_off_fat_contact also remains 19 DRC/open0, trading into Diff net spacing 2, Needs fat contact 13, Off-grid 1, Short 3.
+Conclusion: on the new best candidate, direct via-array/ECO route probes still trade DRC classes rather than closing the remaining DRC.
+```
+
+```text
+Stage: ICC2 PG M2 offset route experiment on NOR2-policy handoff
+Command: env BACKEND_NETLIST=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.vg BACKEND_SDC=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.sdc MOD_LEF_ROUTE_DEBUG_ROOT=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_pg_m2_o25_route_flow MOD_LEF_ROUTE_REPORT_ROOT=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_pg_m2_o25_route_flow MOD_LEF_ROUTE_LOG_ROOT=4_Backend_ICC2/3_Log/99_debug/modified_lef_nor2_policy_pg_m2_o25_route_flow MOD_LEF_ROUTE_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_pg_m2_o25_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_pg_m2_o25_route_icc2_lib PG_M2_OFFSET=25.0 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh
+Status: REJECTED_PG_DRC_REGRESSION
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_pg_m2_o25_route_flow
+Result: signal check_routes had 32 DRC/open0, all Off-grid, but PG DRC reported 640 errors.
+Conclusion: naive M2 mesh offset is not acceptable. If this axis is revisited, PG mesh and fixed rail-stitch coordinates must move coherently.
+```
+
+```text
+Stage: ICC2 targeted Diff-net blockage ECO save
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib DIFF_BLOCKAGE_HALF_X=0.25 DIFF_BLOCKAGE_HALF_Y=1.20 DIFF_ECO_SAVE=1 DIFF_ECO_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved DIFF_ECO_LOG=4_Backend_ICC2/3_Log/99_debug/save_diff_net_blockage_eco_nor2_policy_cleanup.log 4_Backend_ICC2/0_Script/99_debug/probe_diff_net_blockage_eco.sh
+Status: SAVED_CANDIDATE_WITH_RESIDUAL_SIGNAL_DRC
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/summary.tsv
+Result: before 19 DRC/open0 = Diff net spacing 2, Off-grid 17; after 18 DRC/open0 = Off-grid 17, Short 1, Diff net spacing 0.
+Sanity checks: check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; pg_drc.rpt reports no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
+Conclusion: this is the new best debug artifact by total DRC count. It is still not DRC clean because Off-grid 17 and Short 1 remain.
+```
+
+```text
+Stage: ICC2 residual Short and Off-grid inspection on 18-DRC candidate
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib ROUTE_DRC_INSPECT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_drc_inspect ROUTE_DRC_INSPECT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_route_drc_diff_m2_blockage_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_route_drc.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib SHORT_INSPECT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_short_inspect SHORT_INSPECT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_short_area_diff_m2_blockage_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_short_area.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib OFFGRID_CONTEXT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_offgrid_context OFFGRID_CONTEXT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_offgrid_context_diff_m2_blockage_saved.log 4_Backend_ICC2/0_Script/99_debug/inspect_offgrid_context.sh
+Status: PASS_WITH_NOTE
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_drc_inspect/drc_matrix.rpt
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_short_inspect/short_area_objects.tsv
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved_offgrid_context/offgrid_context.tsv
+Result: residual matrix is Off-grid 17 and Short 1. Off-grid is M1 1 and VIA1 16. The Short is on net ZBUF_1454_851 near VSS M1 rail PATH_11_149 and rerouted reset-net M2/via objects.
+Conclusion: the Diff fix traded the previous reset-net spacing DRC into one reset-net/VSS-rail Short.
+```
+
+```text
+Stage: ICC2 residual ECO probes on 18-DRC candidate
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib DIFF_BLOCKAGE_LAYERS=M1 DIFF_BLOCKAGE_CX=781.05 DIFF_BLOCKAGE_CY=268.98 DIFF_BLOCKAGE_HALF_X=0.35 DIFF_BLOCKAGE_HALF_Y=0.25 DIFF_ECO_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_short_m1_blockage_on_diff_m2_saved DIFF_ECO_LOG=4_Backend_ICC2/3_Log/99_debug/probe_short_m1_blockage_on_diff_m2_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_diff_net_blockage_eco.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib OFFGRID_ECO_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_remove_offgrid_via1_route_eco_diff_m2_blockage_saved OFFGRID_ECO_LOG=4_Backend_ICC2/3_Log/99_debug/probe_remove_offgrid_via1_route_eco_diff_m2_blockage_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_remove_offgrid_via1_route_eco.sh
+Status: REJECTED_NO_ACCEPTED_FIX
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/probe_short_m1_blockage_on_diff_m2_saved/summary.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_remove_offgrid_via1_route_eco_diff_m2_blockage_saved/summary.tsv
+Result: M1 blockage removes the Short but worsens to 21 DRC = Diff net spacing 3, Off-grid 18. Removing 17 off-grid VIA1 objects creates 15 open nets; route_eco restores open nets to 0 but regenerates the same 18 DRC = Off-grid 17, Short 1.
+Conclusion: both probes are rejected. The current 18-DRC saved candidate remains the best debug artifact, and residual closure likely needs PDK-consistent lower-metal via/contact/pin-access rule work rather than object-level ECO.
+```
+
+```text
+Stage: ICC2 Off-grid bbox M2 blockage ECO probe on 18-DRC candidate
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib OFFGRID_BLOCKAGE_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_offgrid_bbox_m2_blockage_diff_m2_blockage_saved OFFGRID_BLOCKAGE_LOG=4_Backend_ICC2/3_Log/99_debug/probe_offgrid_bbox_m2_blockage_diff_m2_blockage_saved.log 4_Backend_ICC2/0_Script/99_debug/probe_offgrid_bbox_blockage_eco.sh
+Status: REJECTED_NO_TOTAL_DRC_IMPROVEMENT
+Script: 4_Backend_ICC2/0_Script/99_debug/probe_offgrid_bbox_blockage_eco.sh
+Report root: 4_Backend_ICC2/4_Report/99_debug/probe_offgrid_bbox_m2_blockage_diff_m2_blockage_saved
+Summary: 4_Backend_ICC2/4_Report/99_debug/probe_offgrid_bbox_m2_blockage_diff_m2_blockage_saved/summary.tsv
+Result: before 18 DRC/open0 = Off-grid 17, Short 1; after 18 DRC/open0 = Off-grid 0, Short 18.
+Conclusion: rejected. Blocking the Off-grid bbox locations proves the router can avoid the off-grid VIA1 placements, but it trades the exact residual class into shorts instead of closing the route. This reinforces lower-metal pin-access/contact legality as the active root-cause axis.
+```
+
+```text
+Stage: Modified-LEF NDM build probes with alternate SAED32 techfiles
+Commands:
+- env MOD_LEF_TECH_FILE=/DATA/home/edu135/lib/SAED32nm_PDK_04152022/techfiles/saed32nm_1p9m_mw.tf MOD_LEF_NDM_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_pdk_tf/ndm MOD_LEF_WORKSPACE_SUFFIX=ibex_libdir_modify_pdk_tf MOD_LEF_NDM_SUFFIX=modified_lef_pdk_tf lm_shell -f 4_Backend_ICC2/0_Script/99_debug/build_modified_lef_ndm.tcl -output_log_file 4_Backend_ICC2/3_Log/99_debug/build_modified_lef_pdk_tf_ndm.log
+- env MOD_LEF_TECH_FILE=/DATA/home/edu135/lib/SAED32_EDK/references/orca/icc/ref/tech/saed32nm_1p9m_mw.tf MOD_LEF_NDM_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_orca_tf/ndm MOD_LEF_WORKSPACE_SUFFIX=ibex_libdir_modify_orca_tf MOD_LEF_NDM_SUFFIX=modified_lef_orca_tf lm_shell -f 4_Backend_ICC2/0_Script/99_debug/build_modified_lef_ndm.tcl -output_log_file 4_Backend_ICC2/3_Log/99_debug/build_modified_lef_orca_tf_ndm.log
+Status: REJECTED_INPUT_TECHFILE_LOAD_FAILURE
+Logs:
+- 4_Backend_ICC2/3_Log/99_debug/build_modified_lef_pdk_tf_ndm.log
+- 4_Backend_ICC2/3_Log/99_debug/build_modified_lef_orca_tf_ndm.log
+Result: both alternate techfiles fail at create_workspace before any NDM is committed. PDK techfile fails with TECH-006 at line 356 and LIB-007. ORCA reference techfile fails with TECH-006 at line 405 and LIB-007.
+Conclusion: do not switch to those alternate techfiles directly in this flow. Any PDK/reference tech adoption would first need a tool-version-compatible techfile cleanup/import step, not a simple NDM rebuild.
+```
+
+```text
+Stage: ICC2 modified-LEF NOR2-policy clean backend rerun with lower core utilization
+Command: env CORE_UTILIZATION=0.55 BACKEND_NETLIST=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.vg BACKEND_SDC=2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.sdc MOD_LEF_ROUTE_DEBUG_ROOT=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_u055_route_flow MOD_LEF_ROUTE_REPORT_ROOT=4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_u055_route_flow MOD_LEF_ROUTE_LOG_ROOT=4_Backend_ICC2/3_Log/99_debug/modified_lef_nor2_policy_u055_route_flow MOD_LEF_ROUTE_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_u055_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_u055_route_icc2_lib 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh
+Status: REJECTED_DRC_AND_PG_CONNECTIVITY_REGRESSION
+Script update: 4_Backend_ICC2/0_Script/02_floorplan/run_floorplan_initial.tcl now supports CORE_UTILIZATION/CORE_ASPECT_RATIO/CORE_OFFSET_UM env overrides for controlled floorplan experiments.
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_nor2_policy_u055_route_flow
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_nor2_policy_u055_route_flow
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_u055_route_flow/ibex_mini_soc_top_modified_lef_nor2_policy_u055_route_icc2_lib
+Result: floorplan utilization was 0.5505, but final route utilization was 0.5972. check_routes reports 0 open nets and 36 signal DRCs = Diff net spacing 2, Off-grid 34. check_legality reports TOTAL 0. pg_drc reports no errors, but pg_connectivity reports VSS floating wires 1 and floating std cells 307. timing.max worst reported slack is MET 0.77 ns and timing.min worst reported slack is MET 0.03 ns.
+Conclusion: rejected. Lowering core utilization alone does not close the residual M1/M2/VIA1 route DRC and regresses PG connectivity. The current best debug artifact remains the 18-DRC diff-net blockage saved library.
+```
+
+```text
+Stage: Modified-LEF VIA1 pitch NDM build
+Command: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_ndm.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_ndm.sh
+Log: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_ndm.log
+Patched techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch/tech/saed32nm_1p9m_mw.via1_pitch.tf
+NDM outputs: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch/ndm/saed32rvt_tt.modified_lef_via1_pitch.ndm, saed32lvt_tt.modified_lef_via1_pitch.ndm, saed32hvt_tt.modified_lef_via1_pitch.ndm
+Probe: uncommented VIA1 pitch = 0.36 in a project-local copy of the current SAED32_EDK techfile while keeping the libdir modified LEFs.
+Warning: build log reports TECH-025 because VIA1 now has pitch together with onGrid/onWireTrack.
+Next action: route the NOR2-policy handoff against this debug NDM and compare against the 18-DRC best artifact.
+```
+
+```text
+Stage: ICC2 VIA1 pitch NDM NOR2-policy backend rerun
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_nor2_policy_route_flow.sh
+Status: REJECTED_NO_IMPROVEMENT
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_nor2_policy_route_flow.sh
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_nor2_policy_route_flow
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_nor2_policy_route_flow
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_nor2_policy_route_icc2_lib
+Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_nor2_policy_route_flow/06_route/check_routes.rpt
+Result: 0 open nets and 36 signal DRCs = Diff net spacing 2, Off-grid 34.
+Sanity checks: check_legality reports TOTAL 0; pg_connectivity reports VDD/VSS floating objects 0; pg_drc reports no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
+Conclusion: rejected. Adding VIA1 pitch to the current techfile does not resolve the residual Off-grid issue and is worse than the 18-DRC diff-net blockage saved artifact.
+```
