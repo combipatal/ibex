@@ -39,7 +39,7 @@ Status: COMPLETE_WITH_NOTES
 
 ```text
 Phase: B7 Route
-Status: COMPLETE_WITH_OPEN_SIGNAL_DRC
+Status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
 ```
 
 ## Checklist
@@ -69,7 +69,8 @@ Status: COMPLETE_WITH_OPEN_SIGNAL_DRC
 [x] Complete route
 [x] Complete post-route timing/report extraction
 [x] Test modified-LEF physical abstract direction for route DRC
-[ ] Resolve route signal DRC
+[x] Produce debug route candidate with 0 open nets and 0 signal DRC
+[ ] Promote DRC-clean candidate to production baseline after library-policy and Formality checks
 ```
 
 ## Current Notes
@@ -121,6 +122,11 @@ Off-grid bbox blockage probe: adding M2 signal blockages at all residual Off-gri
 Alternate techfile NDM probes: using the PDK or ORCA reference SAED32 techfile directly with the libdir modified LEFs failed Library Manager create_workspace with TECH-006/LIB-007 before NDM commit. These techfiles are not drop-in replacements in the current flow.
 Lower-utilization clean rerun: CORE_UTILIZATION=0.55 was tested from a clean modified-LEF NOR2-policy backend flow. It is rejected because final route worsened to 36 DRCs = Diff net spacing 2, Off-grid 34, and PG connectivity regressed to VSS floating wires 1/std cells 307. The 18-DRC diff-net blockage saved artifact remains the best debug artifact.
 VIA1 pitch techfile probe: project-local NDMs with VIA1 pitch = 0.36 built successfully, but the build reports TECH-025 because VIA1 onGrid/onWireTrack coexist. A clean NOR2-policy backend rerun with those NDMs finished with 0 open nets, legality TOTAL 0, PG connectivity clean, PG DRC no errors, timing.max slack MET 0.77 ns, timing.min slack MET 0.04 ns, and 36 signal DRCs = Diff net spacing 2, Off-grid 34. Rejected because it does not improve the 18-DRC best artifact.
-Residual DRC direction: direct route iteration, object-level VIA ECO probes, via-array route options, PG offset, and standalone NOR2 cell-use exclusion are exhausted for now; next work should inspect physical abstract/TF contact-code consistency around VIA12SQ_C and M1-M2 pin access or test a clean placement/pin-access policy against the 18-DRC artifact.
-Next phase: review/fix modified physical abstract/via-rule setup for VIA12SQ_C 2-row M1-M2 arrays and M1 pin-access/rail geometry; do not claim signoff-clean route until a saved route block check_routes reports 0 DRC.
+VIA1 pitch/no-track NDM probe: project-local techfile/NDM enabling VIA1 pitch = 0.36 and removing VIA1 onGrid/onWireTrack built successfully with no TECH-025/TECH-006/LIB-007/Fatal pattern in the build log.
+VIA1 pitch/no-track NOR2-policy route: clean backend rerun improved to 1 signal DRC/open0. The remaining Off-grid is an M1 pin-access issue near U6629/MUX41X2_HVT/S0. Post-route U6629 resize is rejected because it creates 14 DRC and 6 open nets.
+NOR2+MUX41 policy synthesis: debug DC handoff set NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use. Mapped netlist contains 0 of those cells and uses 126 MUX41X1_HVT instances. Formality R2N has not yet been rerun for this debug handoff.
+Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
+Current best debug route result: check_routes reports 0 open nets and 0 signal DRC; check_legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max slack MET 0.78 ns; timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
+Route promotion caveat: do not claim production/signoff clean yet. This candidate depends on a debug VIA1 no-track techfile policy and a new DC cell-use handoff that still needs Formality R2N before production promotion.
+Next phase: decide whether the VIA1 no-track techfile change and MUX41X2_HVT dont_use policy are acceptable for the project baseline; if yes, rerun Formality R2N for the NOR2+MUX41 handoff and promote the backend wrapper/report path from 99_debug into the baseline flow.
 ```

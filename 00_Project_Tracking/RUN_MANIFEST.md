@@ -463,3 +463,58 @@ Backend inputs: NOR2-policy netlist 2_Synthesis/2_Output/pre_backend_topo_nor2_n
 Result: 06_route/check_routes.rpt reports 0 open nets and 36 signal DRCs = Diff net spacing 2, Off-grid 34. Legality, PG connectivity, PG DRC, and ICC2 timing sanity checks are acceptable for debug.
 Conclusion: rejected; this probe does not improve over the 18-DRC diff-net blockage saved artifact.
 ```
+
+```text
+Modified-LEF VIA1 pitch/no-track NDM status: PASS_WITH_NOTE
+NDM build command: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_no_track_ndm.sh
+NDM build log: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log
+Patched techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
+NDM root: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
+Result: project-local techfile enables VIA1 pitch = 0.36 and removes VIA1 onGrid/onWireTrack; RVT/LVT/HVT NDMs were written. No TECH-025/TECH-006/LIB-007/Fatal pattern was found in the log.
+Use: debug backend route experiments only until production library policy is accepted.
+```
+
+```text
+ICC2 VIA1 pitch/no-track NOR2-policy route status: COMPLETE_WITH_ONE_RESIDUAL_SIGNAL_DRC
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_policy_route_flow.sh
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_policy_route_flow.sh
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow
+ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib
+Backend inputs: 2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.vg and matching SDC.
+Result: 0 open nets; 1 signal DRC = Off-grid 1. Legality/PG/timing sanity checks are acceptable for debug.
+Residual context: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/context.tsv identifies U6629/MUX41X2_HVT/S0.
+```
+
+```text
+ICC2 generic resize probe status: REJECTED_BREAKS_CONNECTIVITY
+Command: env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib RESIZE_INST_TARGET_REF=MUX41X1_HVT RESIZE_INST_LIST=U6629 RESIZE_INST_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1 RESIZE_INST_LOG=4_Backend_ICC2/3_Log/99_debug/probe_resize_instances.mux41x2_u6629_to_x1.log 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.sh
+Scripts: 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.sh, 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.tcl
+Summary: 4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1/summary.tsv
+Result: final DRC/open nets worsened to 14/6 after resizing U6629 to MUX41X1_HVT.
+Conclusion: rejected; use upstream cell-use policy, not post-route resize.
+```
+
+```text
+DC NOR2+MUX41 cell-use policy debug synthesis status: PASS_WITH_PRE_BACKEND_DRC_NOTE
+Command: env NOR2_POLICY_RUN_TAG=pre_backend_topo_nor2_mux41_no_x0x2_hvt NOR2_POLICY_DONT_USE="NOR2X0_HVT NOR2X2_HVT MUX41X2_HVT" NOR2_POLICY_LOG=2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.sh
+Scripts: 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.sh, 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.tcl
+Log: 2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log
+Output root: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Report root: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Key reports: nor2_dont_use_policy.rpt, nor2_dont_use_verify.rpt, post_compile.qor.rpt
+Result: NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT are dont_use=true and absent from mapped Verilog; MUX41X1_HVT count is 126.
+Use: debug backend input only until Formality R2N is rerun.
+```
+
+```text
+ICC2 VIA1 pitch/no-track NOR2+MUX41 route status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow
+ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
+Backend inputs: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC.
+Result: 0 open nets; 0 signal DRC; legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max MET 0.78 ns; timing.min MET 0.04 ns.
+Caveat: antenna checking is not active because no antenna rules are defined. This is not production-promoted until VIA1 no-track library policy and Formality R2N are handled.
+```

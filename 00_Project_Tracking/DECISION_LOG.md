@@ -200,3 +200,25 @@ Evidence: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_ndm.log shows the NDM b
 Current best artifact remains: 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_diff_m2_blockage_saved/ibex_mini_soc_top_modified_lef_nor2_policy_diff_m2_blockage_icc2_lib, with 0 open nets and 18 signal DRCs = Off-grid 17, Short 1.
 Next policy: treat the VIA1 pitch/onGrid/onWireTrack interaction as an input clue, not a fix. Continue physical abstract/contact-code review or a targeted placement/pin-access policy experiment against the 18-DRC comparison point.
 ```
+
+```text
+Decision: keep the VIA1 pitch/no-track NDM as the active debug route-closure direction, not an automatic production library change.
+Reason: enabling VIA1 pitch = 0.36 while removing VIA1 onGrid/onWireTrack from a project-local techfile copy eliminates the TECH-025 conflict and materially improves the clean backend route. The NOR2-policy route improved from the 18-DRC best artifact to 1 Off-grid/open0. However, removing onGrid/onWireTrack is a technology-rule interpretation change and must be explicitly accepted before production promotion.
+Evidence: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log shows workspace checks and NDM writes completed without TECH-025/TECH-006/LIB-007/Fatal. 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/06_route/check_routes.rpt reports 0 open nets and 1 signal DRC = Off-grid 1. Legality, PG connectivity, PG DRC, and timing sanity reports are acceptable for debug.
+Next policy: use this NDM only in debug wrappers until the VIA1 no-track techfile policy is reviewed and recorded as acceptable for the baseline.
+```
+
+```text
+Decision: do not use post-route U6629 MUX resize as the final one-DRC fix.
+Reason: the remaining Off-grid in the no-track NOR2-policy route is localized near U6629/MUX41X2_HVT/S0, but resizing U6629 to MUX41X1_HVT after route clears Off-grid by breaking routing quality and connectivity.
+Evidence: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/context.tsv identifies net n55676 near U6629/MUX41X2_HVT/S0. 4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1/summary.tsv reports final 14 DRC and 6 open nets after the resize probe.
+Next policy: if MUX41X2_HVT is the issue, handle it upstream as synthesis cell-use policy and rerun backend from a clean library.
+```
+
+```text
+Decision: create a debug DRC-clean candidate by combining VIA1 pitch/no-track NDM with upstream NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT dont_use.
+Reason: the one remaining Off-grid was tied to MUX41X2_HVT/S0 pin access. Removing MUX41X2_HVT upstream and rerunning clean backend with the no-track NDM produces a saved route block with 0 open nets and 0 signal DRC.
+Evidence: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt reports all three cells dont_use=true; the mapped Verilog has 0 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT references and 126 MUX41X1_HVT references. 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt reports 0 open nets and 0 signal DRC. check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; route log/check_pg_drc reports No errors found; timing.max/min reports MET 0.78 ns / 0.04 ns.
+Current best debug artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
+Promotion caveat: this is not yet the production baseline. Formality R2N has not been rerun for the NOR2+MUX41 debug handoff, and antenna checking is not active because no antenna rules are defined. Production promotion requires accepting the VIA1 no-track library policy, rerunning Formality, and moving the selected wrapper/report paths out of 99_debug.
+```

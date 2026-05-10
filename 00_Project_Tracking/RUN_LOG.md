@@ -830,3 +830,74 @@ Result: 0 open nets and 36 signal DRCs = Diff net spacing 2, Off-grid 34.
 Sanity checks: check_legality reports TOTAL 0; pg_connectivity reports VDD/VSS floating objects 0; pg_drc reports no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
 Conclusion: rejected. Adding VIA1 pitch to the current techfile does not resolve the residual Off-grid issue and is worse than the 18-DRC diff-net blockage saved artifact.
 ```
+
+```text
+Stage: Modified-LEF VIA1 pitch/no-track NDM build
+Command: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_no_track_ndm.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_no_track_ndm.sh
+Log: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log
+Patched techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
+NDM root: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
+Patch: in Layer "VIA1", enabled pitch = 0.36 and removed onWireTrack/onGrid from a project-local copy of the SAED32_EDK techfile.
+Result: LM workspace checks succeeded and RVT/LVT/HVT NDMs were written. No TECH-025/TECH-006/LIB-007/Fatal pattern was found in the build log.
+Known warnings: existing SAED32 LEF/DB import warnings and FRAM-066 large M1 blockage warnings remain.
+Next action: rerun a clean backend route using these NDMs and compare against the 18-DRC best artifact.
+```
+
+```text
+Stage: ICC2 VIA1 pitch/no-track NDM NOR2-policy backend rerun
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_policy_route_flow.sh
+Status: COMPLETE_WITH_ONE_RESIDUAL_SIGNAL_DRC
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_policy_route_flow.sh
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib
+Backend inputs: NOR2-policy netlist 2_Synthesis/2_Output/pre_backend_topo_nor2_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_no_x0x2_hvt.vg and matching SDC.
+Result: 06_route/check_routes.rpt reports 0 open nets and 1 signal DRC = Off-grid 1.
+Sanity checks: check_legality TOTAL 0; pg_connectivity VDD/VSS floating objects 0; pg_drc no errors; timing.max slack MET 0.77 ns; timing.min slack MET 0.04 ns.
+Conclusion: this superseded the 18-DRC saved artifact by count, but still was not route DRC clean.
+```
+
+```text
+Stage: ICC2 one-DRC context inspection and post-route MUX resize probe
+Commands:
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib DRC_CONTEXT_TYPE=Off-grid DRC_CONTEXT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context DRC_CONTEXT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_drc_context.modified_lef_via1_pitch_no_track_nor2_policy_route.Off-grid.log 4_Backend_ICC2/0_Script/99_debug/inspect_drc_context.sh
+- env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib RESIZE_INST_TARGET_REF=MUX41X1_HVT RESIZE_INST_LIST=U6629 RESIZE_INST_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1 RESIZE_INST_LOG=4_Backend_ICC2/3_Log/99_debug/probe_resize_instances.mux41x2_u6629_to_x1.log 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.sh
+Status: DIAGNOSED_NO_ACCEPTED_ECO_FIX
+Scripts: 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.sh, 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.tcl
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/drc_detail.rpt
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/context.tsv
+- 4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1/summary.tsv
+Result: the remaining Off-grid is M1 at bbox {799.4010 612.0100} {799.5110 612.0700}, net n55676, near U6629/MUX41X2_HVT/S0. Post-route resize of U6629 to MUX41X1_HVT cleared Off-grid but worsened the block to 14 DRC and 6 open nets.
+Conclusion: the residual DRC is a MUX41X2_HVT/S0 lower-metal pin-access case. Fixing it post-route is not acceptable; test upstream cell-use policy instead.
+```
+
+```text
+Stage: DC topo NOR2+MUX41 cell-use policy debug synthesis
+Command: env NOR2_POLICY_RUN_TAG=pre_backend_topo_nor2_mux41_no_x0x2_hvt NOR2_POLICY_DONT_USE="NOR2X0_HVT NOR2X2_HVT MUX41X2_HVT" NOR2_POLICY_LOG=2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.sh
+Status: PASS_WITH_PRE_BACKEND_DRC_NOTE
+Script: 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.tcl
+Log: 2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log
+Output root: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Report root: 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt
+Evidence: nor2_dont_use_verify.rpt reports NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use=true. The mapped Verilog has 0 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT references and 126 MUX41X1_HVT references.
+Outputs: ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.{ddc,vg,sdc,sdf}
+QoR note: post_compile.qor.rpt reports Design Area 414611.038071; pre-backend max transition/cap notes remain.
+Formality note: this debug handoff has not yet been promoted through Formality R2N.
+```
+
+```text
+Stage: ICC2 VIA1 pitch/no-track NDM NOR2+MUX41-policy backend rerun
+Command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Log root: 4_Backend_ICC2/3_Log/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow
+Saved ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
+Backend inputs: NOR2+MUX41-policy netlist 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC.
+Result: 06_route/check_routes.rpt reports 0 open nets and 0 signal DRC. Antenna checking is not active because no antenna rules are defined.
+Sanity checks: check_legality TOTAL 0; pg_connectivity VDD/VSS floating objects 0; route log/check_pg_drc reports No errors found; timing.max worst reported slack MET 0.78 ns; timing.min worst reported slack MET 0.04 ns.
+Important caveat: this is a debug DRC-clean candidate, not a promoted production baseline. Promotion requires deciding whether the VIA1 no-track techfile change is acceptable library policy and rerunning Formality R2N for the NOR2+MUX41 DC handoff.
+```

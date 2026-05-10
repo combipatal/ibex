@@ -819,3 +819,114 @@ Result:
 Evaluation:
 Rejected. Explicit VIA1 pitch does not reduce residual Off-grid; it produces the same 36-DRC class shape as the clean NOR2-policy route and remains worse than the current 18-DRC debug waypoint. This weakens the "missing VIA1 pitch alone" hypothesis. The next useful axis is still lower-metal physical abstract/contact-code consistency, especially the coexistence of VIA1 pitch/onGrid/onWireTrack and stdcell M1-M2 pin-access geometry, not another broad route iteration.
 ```
+
+## 2026-05-10 VIA1 Pitch/No-Track and MUX41 Policy Closure
+
+```text
+Hypothesis:
+The TECH-025 clue is not only missing VIA1 pitch; the coexistence of VIA1 pitch with onGrid/onWireTrack may be over-constraining generated M1-M2 route vias. If VIA1 pitch is enabled and VIA1 onGrid/onWireTrack are removed in a project-local techfile, then the residual Off-grid count should drop in a clean backend rerun.
+```
+
+```text
+Probe 1: build project-local no-track NDMs
+Script: 4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_no_track_ndm.sh
+Log: 4_Backend_ICC2/3_Log/99_debug/build_via1_pitch_no_track_ndm.log
+Patched techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
+NDM root: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
+Patch: in Layer "VIA1", enable pitch = 0.36 and remove onWireTrack/onGrid.
+Result: RVT/LVT/HVT NDMs were written. No TECH-025/TECH-006/LIB-007/Fatal pattern was found in the build log.
+Evaluation: supported enough to run backend. This remains a debug technology-policy probe.
+```
+
+```text
+Probe 2: clean backend rerun with no-track NDM and NOR2-policy netlist
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_policy_route_flow.sh
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow
+ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib
+Result:
+- check_routes: 0 open nets, 1 signal DRC = Off-grid 1.
+- Legality: TOTAL 0.
+- PG connectivity: VDD/VSS floating objects 0.
+- PG DRC: no errors.
+- Timing: max slack MET 0.77 ns; min slack MET 0.04 ns.
+
+Evaluation:
+Strongly supports the VIA1 onGrid/onWireTrack interaction hypothesis. The route improves from the 18-DRC best artifact to 1 residual Off-grid.
+```
+
+```text
+Residual one-DRC context:
+Inspection command:
+env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib DRC_CONTEXT_TYPE=Off-grid DRC_CONTEXT_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context DRC_CONTEXT_LOG=4_Backend_ICC2/3_Log/99_debug/inspect_drc_context.modified_lef_via1_pitch_no_track_nor2_policy_route.Off-grid.log 4_Backend_ICC2/0_Script/99_debug/inspect_drc_context.sh
+
+Reports:
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/drc_detail.rpt
+- 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_drc_context/context.tsv
+
+Finding:
+The remaining Off-grid is on M1 at bbox {799.4010 612.0100} {799.5110 612.0700}, net n55676, near U6629/MUX41X2_HVT/S0. Route logs also warn that MUX41X2_HVT/S0 has no valid via regions.
+```
+
+```text
+Rejected ECO:
+Command:
+env ICC2_LIB_DIR=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_policy_route_icc2_lib RESIZE_INST_TARGET_REF=MUX41X1_HVT RESIZE_INST_LIST=U6629 RESIZE_INST_REPORT_DIR=4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1 RESIZE_INST_LOG=4_Backend_ICC2/3_Log/99_debug/probe_resize_instances.mux41x2_u6629_to_x1.log 4_Backend_ICC2/0_Script/99_debug/probe_resize_instances.sh
+Summary: 4_Backend_ICC2/4_Report/99_debug/probe_resize_mux41x2_u6629_to_x1/summary.tsv
+Result: final check_routes worsened to 14 DRC and 6 open nets after resizing U6629 to MUX41X1_HVT.
+Evaluation: post-route resize is rejected. The MUX41 axis must be tested upstream through synthesis cell-use policy.
+```
+
+```text
+Hypothesis:
+If the final Off-grid is caused by MUX41X2_HVT/S0 pin access, then removing MUX41X2_HVT from the synthesized netlist and rerunning clean backend with the no-track NDM should eliminate the last Off-grid without creating opens.
+```
+
+```text
+Probe 3: DC debug handoff with NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT dont_use
+Command:
+env NOR2_POLICY_RUN_TAG=pre_backend_topo_nor2_mux41_no_x0x2_hvt NOR2_POLICY_DONT_USE="NOR2X0_HVT NOR2X2_HVT MUX41X2_HVT" NOR2_POLICY_LOG=2_Synthesis/3_Log/99_debug/run_dc_compile_topo_nor2_policy.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log 2_Synthesis/0_Script/99_debug/run_dc_compile_topo_nor2_policy.sh
+
+Evidence:
+- 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt reports all three cells dont_use=true.
+- The mapped Verilog contains 0 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT references.
+- The mapped Verilog contains 126 MUX41X1_HVT references.
+- 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/post_compile.qor.rpt reports Design Area 414611.038071.
+
+Caveat:
+This debug synthesis handoff has not yet been rerun through Formality R2N.
+```
+
+```text
+Probe 4: clean backend rerun with no-track NDM and NOR2+MUX41-policy netlist
+Script: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Report root: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow
+ICC2 library: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
+
+Result:
+- check_routes: 0 open nets, 0 signal DRC.
+- check_legality: TOTAL 0.
+- PG connectivity: VDD/VSS floating objects 0.
+- PG DRC: no errors.
+- Timing: max slack MET 0.78 ns; min slack MET 0.04 ns.
+- Antenna: no antenna rules defined, so antenna checking is not active.
+
+Evaluation:
+The combined hypothesis is supported. The remaining route DRC is fixed in a saved debug backend candidate. This is the first 0-open/0-signal-DRC saved route artifact, but not yet a production baseline because the no-track techfile and new DC handoff need policy/equivalence approval.
+```
+
+```text
+Updated conclusion:
+Current best debug route artifact:
+4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib
+
+Current best debug route evidence:
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_legality.rpt
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/pg_connectivity.rpt
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/pg_drc.rpt
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/timing.max.rpt
+4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/timing.min.rpt
+
+Next action:
+Decide whether to promote the VIA1 no-track techfile policy and MUX41X2_HVT dont_use policy. If yes, rerun Formality R2N on pre_backend_topo_nor2_mux41_no_x0x2_hvt, then move the selected backend wrapper/report path from 99_debug into the baseline flow.
+```
