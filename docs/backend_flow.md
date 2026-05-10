@@ -27,6 +27,7 @@ powerplan: PASS_WITH_NOTE, PG DRC clean, PG connectivity clean after rail stitch
 place: PASS_WITH_NOTE, legality clean, PG connectivity clean
 CTS: PASS_WITH_NOTE, clean single-process retry completed
 route: COMPLETE_WITH_OPEN_SIGNAL_DRC, 0 open nets, signal DRC 720
+debug DRC-clean candidate: 0 open nets, 0 signal DRC with modified-LEF VIA1 pitch/no-track NDMs and NOR2+MUX41 cell-use handoff
 ```
 
 CTS evidence:
@@ -51,14 +52,24 @@ PG connectivity reports VDD/VSS floating objects 0
 PG DRC reports no errors
 ```
 
-## Open Backend Issue
+## Current Route Closure State
 
 ```text
-Signal route DRC remains open after route.
+Official production route still has signal route DRC open.
 06_route check_routes.rpt: 0 open nets, 720 DRCs.
 DRC breakdown: Diff net spacing 251, Less than minimum area 24, Needs fat contact 347, Off-grid 92, Short 6.
 PG connectivity and PG DRC remain clean through route.
-Strict backend strong-done still requires route DRC cleanup.
+
+Debug DRC-clean candidate exists:
+- Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt
+- Result: 0 open nets, 0 signal DRC.
+- Legality: TOTAL 0.
+- PG connectivity: VDD/VSS floating objects 0.
+- PG DRC: no errors.
+- Timing: max slack MET 0.78 ns; min slack MET 0.04 ns.
+- Formality R2N for the matching NOR2+MUX41 synthesis handoff: PASS_WITH_NOTE.
+
+Strict backend strong-done requires accepting the VIA1 no-track library policy and promoting the selected debug wrapper/NDM setup into the baseline flow.
 ```
 
 ## PG Diagnosis Notes
@@ -105,8 +116,9 @@ Modified-LEF route debug:
 - rejected residual probes: removing off-grid vias creates 14 open nets; shrinking to 1x1 trades into open/fat-contact/min-area DRC; via_array_mode=off trades into Needs fat contact 9 and Short 11; via_on_grid/via_ladder_clean/off-grid cost do not change DRC; targeted n48420 route_eco does not remove the lone M1 Short.
 - NOR2 cell-use policy alone is rejected: a full modified-LEF backend rerun with NOR2X0_HVT/NOR2X2_HVT removed ended at 36 DRCs.
 - cleanup on that NOR2-policy route saved the current best debug artifact at 4_Backend_ICC2/2_Output/99_debug/modified_lef_nor2_policy_cleanup_saved/ibex_mini_soc_top_modified_lef_nor2_policy_cleanup_icc2_lib.
-- current best debug artifact reports 0 open nets and 19 residual DRCs: Diff net spacing 2 and Off-grid 17.
-- follow-up shrink-via and via_array_off_fat_contact probes on the 19-DRC candidate keep final check_routes at 19 DRCs by trading Off-grid into Needs fat contact/Short classes.
-Current diagnosis: lower-metal pin-access/contact physical abstract setup is the leading cause; M1 cannot simply be blocked, and fat-contact route effort alone trades contact DRC for spacing DRC. Modified LEF plus cleanup is the leading closure direction but is not promoted to production until the VIA12SQ_C 2-row via-array legality and M1 rail/pin-access geometry are corrected or a saved route sequence reports 0 DRC.
+- later 18-DRC and 1-DRC debug waypoints narrowed the remaining issue to VIA1 track policy and MUX41X2_HVT/S0 pin access.
+- project-local VIA1 pitch/no-track NDMs improved the NOR2-policy clean rerun to 1 Off-grid/open0.
+- excluding MUX41X2_HVT upstream and rerunning clean backend with the VIA1 pitch/no-track NDM produced the current DRC-clean debug candidate.
+Current diagnosis: lower-metal pin-access/contact physical abstract setup was the active route DRC cause. The current debug candidate closes signal DRC, but production promotion is gated by the backend library policy in docs/backend_library_policy.md.
 Initial route diagnosis: 00_Project_Tracking/ROUTE_DIAGNOSIS_NOTES.md
 ```

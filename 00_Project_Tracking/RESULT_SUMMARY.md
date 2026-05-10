@@ -38,6 +38,7 @@
 | NOR2+MUX41 cell-use synthesis debug | DC Graphical topo | PASS_WITH_PRE_BACKEND_DRC_NOTE | 2_Synthesis/4_Report/99_debug/pre_backend_topo_nor2_mux41_no_x0x2_hvt/nor2_dont_use_verify.rpt | MUX41X2_HVT removed; Formality R2N now passed |
 | NOR2+MUX41 Formality R2N | FM | PASS_WITH_NOTE | 3_Formality/3_Log/fm_r2n_topo.pre_backend_topo_nor2_mux41_no_x0x2_hvt.log | 34915 passing compare points; auto setup/RTL warnings remain |
 | VIA1 pitch/no-track NOR2+MUX41 route | ICC2 | DEBUG_ROUTE_DRC_CLEAN_CANDIDATE | 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt | 0 open nets and 0 signal DRC; debug candidate, not production-promoted |
+| Backend library policy | docs | RECORDED | docs/backend_library_policy.md | VIA1 no-track policy still needs explicit production acceptance |
 
 ## Backend Open Items
 
@@ -82,5 +83,5 @@ Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_le
 Current best debug route result: 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, timing.max slack MET 0.78 ns, timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
 Modified-LEF/no-track caveat: not promoted to production baseline yet. Production promotion now mainly requires a library-policy decision on the VIA1 no-track techfile change.
 Route timing for current official production route remains timing.max MET 0.57 ns and timing.min MET 0.03 ns; the DRC-clean result is still under 99_debug until promoted.
-Strict backend strong-done is conditionally open: a debug candidate has signal DRC 0, but production baseline promotion and equivalent handoff proof are not complete.
+Strict backend strong-done is conditionally open: a debug candidate has signal DRC 0 and Formality proof, but production baseline promotion is not complete.
 ```

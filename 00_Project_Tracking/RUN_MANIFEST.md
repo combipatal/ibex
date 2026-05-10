@@ -532,3 +532,12 @@ SVF: 2_Synthesis/2_Output/svf/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x
 Result: Verification SUCCEEDED; 34915 passing compare points; 0 failing; 0 unmatched compare points; SVF guidance 2146 accepted and 0 rejected.
 Caveat: synopsys_auto_setup and RTL interpretation warnings remain as in the official baseline.
 ```
+
+```text
+Backend library policy note status: RECORDED
+Document: docs/backend_library_policy.md
+Scope: records the current VIA1 pitch/no-track NDM as a candidate physical-library policy, not a production-promoted baseline.
+Key delta: Layer "VIA1" enables pitch = 0.36 and removes onWireTrack/onGrid from a project-local techfile copy.
+Evidence linked: NDM build log, DRC-clean route reports, PG/legal/timing sanity reports, and Formality R2N PASS.
+Open gate: explicit acceptance of the VIA1 no-track techfile/library policy before production promotion.
+```

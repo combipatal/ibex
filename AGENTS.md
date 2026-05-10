@@ -85,6 +85,7 @@ Current best backend debug route candidate uses project-local modified-LEF VIA1 
 Current best backend debug route artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
 Current best backend debug route result: 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, ICC2 timing.max MET 0.78 ns, timing.min MET 0.04 ns.
 Formality for NOR2+MUX41 debug handoff passed with 34915 passing compare points, 0 failing, 0 unmatched, and SVF guidance 2146 accepted / 0 rejected.
+VIA1 no-track library policy gate is recorded in docs/backend_library_policy.md.
 Promotion caveat: do not call this the production baseline until VIA1 no-track library policy is accepted.
 /DATA/home/edu135/ibex/.git is a read-only placeholder; use ./scripts/git_project.sh for .git_local.
 ```

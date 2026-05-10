@@ -71,6 +71,7 @@ Status: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
 [x] Test modified-LEF physical abstract direction for route DRC
 [x] Produce debug route candidate with 0 open nets and 0 signal DRC
 [x] Run Formality R2N on NOR2+MUX41 debug synthesis handoff
+[x] Record backend library policy gate for VIA1 no-track NDM
 [ ] Promote DRC-clean candidate to production baseline after VIA1 no-track library-policy decision
 ```
 
@@ -130,5 +131,6 @@ NOR2+MUX41 Formality R2N: passed. Verification SUCCEEDED with 34915 passing comp
 Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
 Current best debug route result: check_routes reports 0 open nets and 0 signal DRC; check_legality TOTAL 0; PG connectivity VDD/VSS floating objects 0; PG DRC no errors; timing.max slack MET 0.78 ns; timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
 Route promotion caveat: do not claim production/signoff clean yet. This candidate depends on a debug VIA1 no-track techfile policy; the logic-equivalence gate for the NOR2+MUX41 handoff has passed.
+Backend library policy note: docs/backend_library_policy.md records the exact VIA1 techfile delta, NDM source, route/FM evidence, and production promotion gate.
 Next phase: decide whether the VIA1 no-track techfile change is acceptable for the project baseline; if yes, promote the backend wrapper/report path from 99_debug into the baseline flow.
 ```
