@@ -263,4 +263,8 @@ Reason: route_opt reduced max_transition to 0 and max_capacitance to 120 but sta
 Evidence: 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter4/constraints.after_route_opt.rpt reports max_transition 0 and max_capacitance 120. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/constraints.after_maxcap_eco.rpt reports max_transition 0 and max_capacitance 2. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/check_routes.after_maxcap_eco.rpt reports open nets 0 and route DRC 31. The max-cap ECO log reports 55 inserted buffers and 65 size_cell commands.
 
 Policy: per project-owner instruction, stop deeper ECO repair from this result. Carry the electrical DRC caveat forward unless a later explicitly approved closure phase is opened.
+
+Update: one final bounded cleanup was approved and run after the max-cap ECO. It recovered route DRC to 0 and kept timing/legality/PG clean, but final ICC2 constraints still report max_capacitance 2. Evidence: 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/check_routes.after_cleanup.rpt reports open nets 0 and DRC 0; 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/constraints.after_cleanup.rpt reports max_transition 0 and max_capacitance 2.
+
+Final policy for this phase: stop here. Do not claim electrical DRC clean.
 ```

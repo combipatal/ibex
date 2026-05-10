@@ -42,6 +42,7 @@ So filler insertion added at most one max-cap violation; the main problem is mis
 | route_opt iter3 | max_transition 0, max_capacitance 120 | partial |
 | route_opt iter4 | max_transition 0, max_capacitance 120 | stalled |
 | max-cap ECO | max_transition 0, max_capacitance 2, route DRC 31 | not accepted |
+| final route cleanup | max_transition 0, max_capacitance 2, route DRC 0 | route recovered, electrical partial |
 
 ## Max-Cap ECO
 
@@ -97,11 +98,41 @@ Same net spacing: 5
 Short: 6
 ```
 
+## Final Cleanup
+
+Command:
+
+```text
+4_Backend_ICC2/0_Script/11_post_route_final_cleanup/run_post_route_final_cleanup.sh
+```
+
+Key output:
+
+```text
+ICC2 library: 4_Backend_ICC2/2_Output/11_post_route_final_cleanup/ibex_mini_soc_top_post_route_final_cleanup_icc2_lib
+Report root: 4_Backend_ICC2/4_Report/11_post_route_final_cleanup
+Export root: 4_Backend_ICC2/2_Output/11_post_route_final_cleanup/export
+```
+
+Final saved-block reports:
+
+```text
+check_routes.after_cleanup.rpt: open nets 0, route DRC 0
+constraints.after_cleanup.rpt: max_transition 0, max_capacitance 2, min_capacitance 0
+check_legality.after_cleanup.rpt: TOTAL 0
+pg_connectivity.after_cleanup.rpt: VDD/VSS floating objects 0
+pg_drc.after_cleanup.rpt: No errors found
+timing.max.after_cleanup.rpt: worst listed slack MET 0.64 ns
+timing.min.after_cleanup.rpt: worst listed slack MET 0.04 ns
+```
+
+The final cleanup recovers the route DRC regression caused by max-cap ECO, but the two small max-cap violations remain.
+
 ## Decision
 
-The max-cap ECO is not promoted. It greatly reduced electrical DRC but regressed signal route DRC and still left 2 max-cap violations in the final ICC2 report.
+The max-cap ECO plus final route cleanup is not an electrical-DRC-clean result. It greatly reduced electrical DRC and recovered signal route DRC, but still leaves 2 max-cap violations in the final ICC2 report.
 
-Per project-owner direction on 2026-05-10, do not continue deeper ECO repair from this point. Carry this as a documented residual issue.
+Per project-owner direction on 2026-05-10, this was the final bounded cleanup attempt. Carry the remaining 2 max-cap violations as a documented residual issue unless a later explicitly approved closure phase is opened.
 
 ## Current Accepted Baseline
 

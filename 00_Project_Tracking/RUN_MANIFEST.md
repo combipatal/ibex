@@ -622,3 +622,15 @@ Result: ECO inserted 55 buffers and resized 65 cells; final ICC2 reports max_tra
 Decision: not promoted; no further ECO repair per project-owner instruction.
 Document: docs/post_route_electrical_drc_closure_attempt.md
 ```
+
+```text
+Final post-route cleanup status: PARTIAL_ELECTRICAL_DRC_REMAINS
+Command: 4_Backend_ICC2/0_Script/11_post_route_final_cleanup/run_post_route_final_cleanup.sh
+Scripts: 4_Backend_ICC2/0_Script/11_post_route_final_cleanup/run_post_route_final_cleanup.sh, run_post_route_final_cleanup.tcl
+Log: 4_Backend_ICC2/3_Log/11_post_route_final_cleanup/run_post_route_final_cleanup.log
+Report root: 4_Backend_ICC2/4_Report/11_post_route_final_cleanup
+Output root: 4_Backend_ICC2/2_Output/11_post_route_final_cleanup/export
+ICC2 library: 4_Backend_ICC2/2_Output/11_post_route_final_cleanup/ibex_mini_soc_top_post_route_final_cleanup_icc2_lib
+Result: open nets 0, route DRC 0, legality 0, PG clean, timing positive, max_transition 0, max_capacitance 2.
+Decision: keep as final bounded cleanup artifact; do not claim electrical DRC clean.
+```

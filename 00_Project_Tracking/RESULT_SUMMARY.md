@@ -45,6 +45,7 @@
 | Educational GDS candidate export | ICC2 | PASS_WITH_NOTE | 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt | GDS/DEF/VG/SDC written; max transition/cap notes remain; not signoff GDS |
 | Post-route electrical DRC route_opt probe | ICC2 | PARTIAL_NOT_PROMOTED | 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter4/constraints.after_route_opt.rpt | max_transition 0, max_capacitance 120; route DRC still clean |
 | Post-route max-cap ECO | ICC2/PT | PARTIAL_NOT_PROMOTED | 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/constraints.after_maxcap_eco.rpt | max_transition 0, max_capacitance 2, but route DRC regressed to 31; not accepted |
+| Final post-route cleanup | ICC2 | PARTIAL_ELECTRICAL_DRC_REMAINS | 4_Backend_ICC2/4_Report/11_post_route_final_cleanup/check_routes.after_cleanup.rpt | route DRC recovered to 0; max_transition 0, max_capacitance 2 remains |
 
 ## Backend Open Items
 
@@ -93,6 +94,6 @@ Route-closure promotion rerun: 4_Backend_ICC2/0_Script/07_route_closure/run_rout
 Educational GDS candidate: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh exported GDS/DEF/netlist/SDC from the route-closure ICC2 library. GDS output is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
 Post-filler GDS checks: check_routes.after_filler reports 0 open nets and 0 signal DRC; check_legality.after_filler reports TOTAL 0; pg_connectivity.after_filler reports VDD/VSS floating objects 0; pg_drc.after_filler reports no errors.
 GDS caveat: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations, and antenna checking is not active because no antenna rules are defined. The GDS is educational only, not signoff/tapeout-ready.
-Post-route electrical DRC attempt: repeated route_opt reduced the GDS caveat to max_transition 0 and max_capacitance 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2 but introduced 31 route DRCs, so it is not promoted. No deeper ECO repair is planned under the current instruction.
+Post-route electrical DRC attempt: repeated route_opt reduced the GDS caveat to max_transition 0 and max_capacitance 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2 but introduced 31 route DRCs. Final route cleanup recovered route DRC to 0 with open nets 0, but max_capacitance 2 remains. Do not claim electrical DRC clean.
 Strict backend strong-done: baseline route closure and educational GDS candidate are complete with documented caveats. Remaining signoff-class items are foundry DRC, LVS, antenna signoff, IR/EM, metal fill, and signoff STA methodology.
 ```

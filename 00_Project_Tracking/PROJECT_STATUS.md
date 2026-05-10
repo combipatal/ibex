@@ -81,6 +81,7 @@ Status: COMPLETE_WITH_NOTES
 [x] Promote DRC-clean candidate wrapper/manifest path to baseline backend flow
 [x] Export educational GDS candidate from route-closure block
 [x] Attempt one post-route max-cap ECO and record non-promoted result
+[x] Attempt final route cleanup after max-cap ECO and verify residual max-cap status
 ```
 
 ## Current Notes
@@ -145,7 +146,7 @@ Route closure baseline promotion: 4_Backend_ICC2/0_Script/07_route_closure/run_r
 Educational GDS candidate: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh exported GDS/DEF/netlist/SDC from the route-closure block. GDS path is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
 GDS candidate checks: after-filler route DRC/open nets are clean, legality is clean, PG connectivity/PG DRC are clean, and qor.after_filler.rpt reports clk critical path slack 0.78 ns with no setup/hold violating paths.
 Remaining implementation notes: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules are absent, and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
-Post-route electrical DRC attempt: route_opt iterations reduced max_transition to 0 and max_capacitance to 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2, but final check_routes regressed to 31 route DRCs, so the ECO result is not promoted.
-Current decision: do not continue deeper ECO repair from the max-cap ECO result. Keep the route-closure/GDS artifacts as educational baselines with explicit electrical DRC caveats.
+Post-route electrical DRC attempt: route_opt iterations reduced max_transition to 0 and max_capacitance to 120, then stalled. A single max-cap ECO reduced final ICC2 max_capacitance to 2, but check_routes regressed to 31 route DRCs. Final cleanup recovered check_routes to open nets 0 and route DRC 0, with legality 0, PG clean, timing positive, max_transition 0, and max_capacitance 2.
+Current decision: do not continue deeper ECO repair from the final cleanup result. Keep the final cleanup artifact as a partial electrical DRC closure waypoint, not an electrical-clean baseline.
 Next phase: package the baseline results and optionally add signoff-style educational extensions. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC evidence.
 ```
