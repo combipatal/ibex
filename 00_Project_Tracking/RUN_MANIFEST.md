@@ -600,3 +600,25 @@ Coverage:
 - patched VIA1 techfile has pitch = 0.36 and no onGrid/onWireTrack in the VIA1 section
 Result: DRC_CLEAN_CANDIDATE_CHECK PASS
 ```
+
+```text
+Post-route electrical DRC route_opt probe status: PARTIAL_NOT_PROMOTED
+Command: 4_Backend_ICC2/0_Script/09_post_route_electrical_closure/run_post_route_electrical_drc.sh
+Scripts: 4_Backend_ICC2/0_Script/09_post_route_electrical_closure/run_post_route_electrical_drc.sh, run_post_route_electrical_drc.tcl
+Report roots: 4_Backend_ICC2/4_Report/09_post_route_electrical_closure*
+Result: max_transition 8 -> 0 and max_capacitance 228 -> 120 after route_opt iterations; iter4 stalled at 120.
+Conclusion: useful diagnostic/partial cleanup only, not a promoted clean result.
+```
+
+```text
+Post-route max-cap ECO status: PARTIAL_NOT_PROMOTED
+Command: 4_Backend_ICC2/0_Script/10_post_route_maxcap_eco/run_post_route_maxcap_eco.sh
+Scripts: 4_Backend_ICC2/0_Script/10_post_route_maxcap_eco/run_post_route_maxcap_eco.sh, run_post_route_maxcap_eco.tcl
+Log: 4_Backend_ICC2/3_Log/10_post_route_maxcap_eco/run_post_route_maxcap_eco.log
+Report root: 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco
+Output root: 4_Backend_ICC2/2_Output/10_post_route_maxcap_eco/export
+ICC2 library: 4_Backend_ICC2/2_Output/10_post_route_maxcap_eco/ibex_mini_soc_top_post_route_maxcap_eco_icc2_lib
+Result: ECO inserted 55 buffers and resized 65 cells; final ICC2 reports max_transition 0, max_capacitance 2, route DRC 31, open nets 0, legality 0, PG clean, timing positive.
+Decision: not promoted; no further ECO repair per project-owner instruction.
+Document: docs/post_route_electrical_drc_closure_attempt.md
+```

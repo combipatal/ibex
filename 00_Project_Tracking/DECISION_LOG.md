@@ -253,4 +253,14 @@ Implementation: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh co
 Evidence: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt records write_gds_status=0, write_def_status=0, write_verilog_status=0, and write_sdc_status=0. The GDS is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
 Post-filler checks: check_routes.after_filler.rpt reports 0 open nets and 0 signal DRC; check_legality.after_filler.rpt reports TOTAL 0; pg_connectivity.after_filler.rpt reports VDD/VSS floating objects 0; check_pg_drc reports No errors found.
 Known limitations: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA are not part of this export.
+
+## 2026-05-10 Post-Route Electrical DRC ECO Boundary
+
+Decision: do not promote the post-route max-cap ECO result.
+
+Reason: route_opt reduced max_transition to 0 and max_capacitance to 120 but stalled. A single `eco_opt -types max_capacitance` attempt reduced the final ICC2 max_capacitance count to 2, but the saved block regressed to 31 route DRCs. This is not a clean backend result.
+
+Evidence: 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter4/constraints.after_route_opt.rpt reports max_transition 0 and max_capacitance 120. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/constraints.after_maxcap_eco.rpt reports max_transition 0 and max_capacitance 2. 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco/check_routes.after_maxcap_eco.rpt reports open nets 0 and route DRC 31. The max-cap ECO log reports 55 inserted buffers and 65 size_cell commands.
+
+Policy: per project-owner instruction, stop deeper ECO repair from this result. Carry the electrical DRC caveat forward unless a later explicitly approved closure phase is opened.
 ```

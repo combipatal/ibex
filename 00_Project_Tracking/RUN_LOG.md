@@ -966,3 +966,37 @@ Post-filler result: check_routes.after_filler.rpt reports 0 open nets and 0 sign
 Timing/QoR note: qor.after_filler.rpt reports critical path slack 0.78 ns for clk and no setup/hold violating paths; constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 design-rule violations.
 Conclusion: educational GDS candidate export completed. It is not tapeout/signoff GDS; antenna rules are absent and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
 ```
+
+```text
+Stage: ICC2 post-route electrical DRC closure probe
+Command: 4_Backend_ICC2/0_Script/09_post_route_electrical_closure/run_post_route_electrical_drc.sh plus iter2/iter3/iter4 environment overrides
+Status: PARTIAL_NOT_PROMOTED
+Scripts: 4_Backend_ICC2/0_Script/09_post_route_electrical_closure/run_post_route_electrical_drc.sh, run_post_route_electrical_drc.tcl
+Report roots:
+- 4_Backend_ICC2/4_Report/09_post_route_electrical_closure
+- 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter2
+- 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter3
+- 4_Backend_ICC2/4_Report/09_post_route_electrical_closure_iter4
+Result: route_opt reduced electrical DRC from GDS after-filler max_transition 8/max_capacitance 228 to max_transition 0/max_capacitance 120, but iter4 made no further progress.
+Sanity checks at iter4: check_routes open nets 0 and DRC 0; check_legality TOTAL 0; PG connectivity floating objects 0; PG DRC no errors; timing.max/min MET 0.63 ns / 0.04 ns.
+Conclusion: repeated route_opt is only a partial electrical-DRC cleanup path and is not sufficient for a clean promoted result.
+```
+
+```text
+Stage: ICC2/PrimeTime post-route max-cap ECO attempt
+Command: 4_Backend_ICC2/0_Script/10_post_route_maxcap_eco/run_post_route_maxcap_eco.sh
+Status: PARTIAL_NOT_PROMOTED
+Scripts: 4_Backend_ICC2/0_Script/10_post_route_maxcap_eco/run_post_route_maxcap_eco.sh, run_post_route_maxcap_eco.tcl
+Log: 4_Backend_ICC2/3_Log/10_post_route_maxcap_eco/run_post_route_maxcap_eco.log
+Report root: 4_Backend_ICC2/4_Report/10_post_route_maxcap_eco
+Output root: 4_Backend_ICC2/2_Output/10_post_route_maxcap_eco/export
+Saved ICC2 library: 4_Backend_ICC2/2_Output/10_post_route_maxcap_eco/ibex_mini_soc_top_post_route_maxcap_eco_icc2_lib
+Source block: ibex_mini_soc_top_post_route_electrical_drc_iter4
+ECO block: ibex_mini_soc_top_post_route_maxcap_eco
+Result: eco_opt -types max_capacitance inserted 55 buffers and issued 65 size_cell commands. PrimeTime ECO internal summary reports remaining violations 0.
+Final saved-block ICC2 reports: constraints.after_maxcap_eco.rpt reports max_transition 0 and max_capacitance 2; check_routes.after_maxcap_eco.rpt reports open nets 0 and route DRC 31; check_legality reports TOTAL 0; PG connectivity floating objects are 0; PG DRC reports no errors; timing.max/min reports MET 0.64 ns / 0.04 ns.
+Residual max-cap nets: n39125 actual 16.12 vs required 16.00; n51648 actual 64.04 vs required 64.00.
+Route DRC breakdown after ECO: Diff net spacing 11, Less than minimum enclosed area 1, Off-grid 8, Same net spacing 5, Short 6.
+Conclusion: not accepted and not promoted. Per project-owner instruction, do not continue deeper ECO repair; carry this as a documented residual electrical/route DRC issue.
+Document: docs/post_route_electrical_drc_closure_attempt.md
+```
