@@ -10,7 +10,7 @@ Approval date: 2026-05-10
 Approval source: user project decision
 ```
 
-The current best route result depends on a project-local physical-library setup:
+The route-closure baseline depends on a project-local physical-library setup:
 
 ```text
 LEF source: /DATA/home/edu135/lib/libdir/LEF/modify
@@ -41,10 +41,13 @@ This removes the earlier `TECH-025` condition caused by enabling VIA1 pitch whil
 NDM build: PASS_WITH_NOTE
 NDM build evidence: build_via1_pitch_no_track_ndm.log writes RVT/LVT/HVT NDMs and has no TECH-025/TECH-006/LIB-007/Fatal pattern.
 
-Route candidate: DEBUG_ROUTE_DRC_CLEAN_CANDIDATE
-Route command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
-Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt
-Route result: 0 open nets, 0 signal DRC.
+Route closure baseline: PASS_WITH_NOTE
+Promoted route command: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+Promoted route report: 4_Backend_ICC2/4_Report/07_route_closure/06_route/check_routes.rpt
+Promoted route result: 0 open nets, 0 signal DRC.
+
+Original debug route command: 4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+Original debug route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt
 
 Sanity reports:
 - check_legality.rpt: TOTAL 0 violations
@@ -74,12 +77,12 @@ Accept the project-local VIA1 techfile interpretation: pitch = 0.36 with onGrid/
 Keep all result claims tied to the route/FM artifacts listed above.
 ```
 
-Remaining promotion work:
+Promotion completion:
 
 ```text
-Promote the selected scripts out of 99_debug or clearly mark the production wrapper that uses these exact NDMs.
-Update RUN_MANIFEST.md and RESULT_SUMMARY.md to identify the promoted backend baseline.
-Keep the route-clean claim bounded to the reports listed above until a promoted rerun or explicit baseline alias is recorded.
+4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh is the named baseline wrapper for the selected route-clean policy.
+RUN_MANIFEST.md and RESULT_SUMMARY.md identify the promoted backend route-closure baseline and the educational GDS candidate.
+Keep the route-clean claim bounded to the reports listed above until signoff-class checks are added.
 ```
 
 The policy approval removes the library-governance blocker. It does not by itself create antenna, LVS, IR/EM, ATPG, or silicon signoff evidence.

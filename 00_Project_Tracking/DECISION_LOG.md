@@ -237,3 +237,20 @@ Accepted policy: use /DATA/home/edu135/lib/libdir/LEF/modify physical abstracts 
 Evidence: docs/backend_library_policy.md records the exact techfile delta, NDM build evidence, route/FM evidence, and remaining claim boundary. docs/ibex_backend_route_closure_case_study.md records the 720-to-0 DRC closure path.
 Remaining work: promote or explicitly alias the selected 99_debug wrapper/manifest path as the baseline backend flow. This approval does not create antenna, LVS, IR/EM, ATPG, or silicon signoff evidence.
 ```
+
+```text
+Decision: promote the selected DRC-clean backend policy into a named route-closure baseline wrapper.
+Reason: after VIA1 no-track policy approval, the DRC-clean result needed a non-99_debug entry point and report path so later context resets can rerun and audit it without relying on an ad hoc debug artifact.
+Implementation: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh wraps the selected NOR2+MUX41 handoff, modified-LEF VIA1 pitch/no-track NDMs, and route flow into 4_Backend_ICC2/2_Output/07_route_closure and 4_Backend_ICC2/4_Report/07_route_closure.
+Evidence: 4_Backend_ICC2/4_Report/07_route_closure/06_route/check_routes.rpt reports 0 open nets and 0 signal DRC; check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; check_pg_drc reports No errors found; timing.max/min reports MET 0.78 ns / 0.04 ns.
+Claim boundary: antenna checking is still inactive because no antenna rules are defined. This is a route-closure baseline, not signoff clean.
+```
+
+```text
+Decision: allow an educational GDS candidate export from the route-closure block.
+Reason: for learning, it is useful to exercise filler insertion, PG reconnect, stream-out map/merge setup, and handoff artifact generation after route closure. The result must remain labeled as educational because signoff verification is incomplete.
+Implementation: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh copies the route-closure block to ibex_mini_soc_top_route_closure_gds_candidate, inserts SHFILL cells, reconnects PG, reruns route/legality/PG checks, and writes GDS/DEF/netlist/SDC plus a manifest.
+Evidence: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt records write_gds_status=0, write_def_status=0, write_verilog_status=0, and write_sdc_status=0. The GDS is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
+Post-filler checks: check_routes.after_filler.rpt reports 0 open nets and 0 signal DRC; check_legality.after_filler.rpt reports TOTAL 0; pg_connectivity.after_filler.rpt reports VDD/VSS floating objects 0; check_pg_drc reports No errors found.
+Known limitations: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA are not part of this export.
+```

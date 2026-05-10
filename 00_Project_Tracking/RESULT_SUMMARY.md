@@ -41,6 +41,8 @@
 | Backend library policy | docs | APPROVED_FOR_PROJECT_BASELINE_PROMOTION | docs/backend_library_policy.md | Wrapper/manifest promotion remains |
 | Backend route closure case study | docs | RECORDED | docs/ibex_backend_route_closure_case_study.md | Explains 720-to-0 DRC closure path and claim boundary |
 | DRC-clean candidate verifier | shell/report parser | PASS | 4_Backend_ICC2/0_Script/99_debug/check_drc_clean_candidate.sh | Checks saved reports/logs only; no EDA rerun |
+| Route-closure baseline promotion | ICC2 | PASS_WITH_NOTE | 4_Backend_ICC2/4_Report/07_route_closure/06_route/check_routes.rpt | 0 open nets/0 signal DRC; antenna rules absent |
+| Educational GDS candidate export | ICC2 | PASS_WITH_NOTE | 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt | GDS/DEF/VG/SDC written; max transition/cap notes remain; not signoff GDS |
 
 ## Backend Open Items
 
@@ -85,5 +87,9 @@ Current best debug route candidate: 4_Backend_ICC2/2_Output/99_debug/modified_le
 Current best debug route result: 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, timing.max slack MET 0.78 ns, timing.min slack MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
 Modified-LEF/no-track policy: accepted for project baseline promotion on 2026-05-10. The route-clean artifact remains under 99_debug until wrapper/manifest promotion or explicit baseline aliasing is recorded.
 Route timing for current official production route remains timing.max MET 0.57 ns and timing.min MET 0.03 ns; the DRC-clean result is still under 99_debug until promoted.
-Strict backend strong-done is conditionally open: a debug candidate has signal DRC 0, Formality proof, and approved VIA1 no-track policy, but production wrapper/manifest promotion is not complete.
+Route-closure promotion rerun: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh reran the selected policy as a named baseline wrapper. 4_Backend_ICC2/4_Report/07_route_closure/06_route/check_routes.rpt reports 0 open nets and 0 signal DRC; check_legality reports TOTAL 0; PG connectivity floating objects are 0; PG DRC reports no errors; timing.max/min reports MET 0.78 ns / 0.04 ns.
+Educational GDS candidate: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh exported GDS/DEF/netlist/SDC from the route-closure ICC2 library. GDS output is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
+Post-filler GDS checks: check_routes.after_filler reports 0 open nets and 0 signal DRC; check_legality.after_filler reports TOTAL 0; pg_connectivity.after_filler reports VDD/VSS floating objects 0; pg_drc.after_filler reports no errors.
+GDS caveat: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations, and antenna checking is not active because no antenna rules are defined. The GDS is educational only, not signoff/tapeout-ready.
+Strict backend strong-done: baseline route closure and educational GDS candidate are complete with documented caveats. Remaining signoff-class items are foundry DRC, LVS, antenna signoff, IR/EM, metal fill, and signoff STA methodology.
 ```

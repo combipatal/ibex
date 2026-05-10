@@ -65,11 +65,17 @@ STA basis: matching topo netlist/SDC/SDF; PrimeTime does not read SVF directly.
 Formality result: PASS_WITH_NOTE, 34915 passing compare points, 0 failing, 0 unmatched.
 SVF guidance note: DC topo emits hier_map guidance; FM accepted 2146 guidance commands and rejected 0.
 Known note: pre-backend timing has no setup/hold violations, but max cap/transition DRC remains for backend closure.
-Backend route note: current best 99_debug route candidate uses project-local modified-LEF VIA1 pitch/no-track NDMs plus a DC cell-use policy that sets NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use.
-Backend route artifact: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/ibex_mini_soc_top_modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_icc2_lib.
+Backend route note: baseline route closure uses project-local modified-LEF VIA1 pitch/no-track NDMs plus a DC cell-use policy that sets NOR2X0_HVT, NOR2X2_HVT, and MUX41X2_HVT dont_use.
+Backend route wrapper: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh.
+Backend route artifact: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib.
+Backend route reports: 4_Backend_ICC2/4_Report/07_route_closure/06_route.
 Backend route result: check_routes reports 0 open nets and 0 signal DRC; legality TOTAL 0; PG connectivity floating objects 0; PG DRC no errors; ICC2 timing.max MET 0.78 ns and timing.min MET 0.04 ns. Antenna checking is not active because no antenna rules are defined.
 Formality for NOR2+MUX41 handoff: PASS_WITH_NOTE, 34915 passing compare points, 0 failing, 0 unmatched, SVF guidance 2146 accepted and 0 rejected.
 VIA1 no-track library policy: accepted for project baseline promotion as of 2026-05-10; see docs/backend_library_policy.md.
 Route closure case study: docs/ibex_backend_route_closure_case_study.md.
-Promotion caveat: wrapper/manifest promotion or explicit baseline aliasing remains; do not claim signoff clean without antenna/LVS/IR/EM evidence.
+Educational GDS wrapper: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh.
+Educational GDS output: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds.
+Educational GDS reports: 4_Backend_ICC2/4_Report/08_gds/route_closure_gds_candidate.
+Educational GDS result: GDS/DEF/netlist/SDC written; post-filler route DRC/open clean, legality clean, PG clean, and qor.after_filler reports clk critical path slack 0.78 ns.
+GDS caveat: constraints.after_filler reports max_transition 8 and max_capacitance 228 violations; do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC/metal-fill/signoff STA evidence.
 ```

@@ -27,7 +27,8 @@ powerplan: PASS_WITH_NOTE, PG DRC clean, PG connectivity clean after rail stitch
 place: PASS_WITH_NOTE, legality clean, PG connectivity clean
 CTS: PASS_WITH_NOTE, clean single-process retry completed
 route: COMPLETE_WITH_OPEN_SIGNAL_DRC, 0 open nets, signal DRC 720
-debug DRC-clean candidate: 0 open nets, 0 signal DRC with modified-LEF VIA1 pitch/no-track NDMs and NOR2+MUX41 cell-use handoff
+route-closure baseline: PASS_WITH_NOTE, 0 open nets, 0 signal DRC with modified-LEF VIA1 pitch/no-track NDMs and NOR2+MUX41 cell-use handoff
+educational GDS candidate: PASS_WITH_NOTE, GDS/DEF/netlist/SDC exported from route-closure block
 ```
 
 CTS evidence:
@@ -55,12 +56,23 @@ PG DRC reports no errors
 ## Current Route Closure State
 
 ```text
-Official production route still has signal route DRC open.
+Historical official production route still has signal route DRC open.
 06_route check_routes.rpt: 0 open nets, 720 DRCs.
 DRC breakdown: Diff net spacing 251, Less than minimum area 24, Needs fat contact 347, Off-grid 92, Short 6.
 PG connectivity and PG DRC remain clean through route.
 
-Debug DRC-clean candidate exists:
+Promoted route-closure baseline exists:
+- Wrapper: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+- Route report: 4_Backend_ICC2/4_Report/07_route_closure/06_route/check_routes.rpt
+- ICC2 library: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib
+- Result: 0 open nets, 0 signal DRC.
+- Legality: TOTAL 0.
+- PG connectivity: VDD/VSS floating objects 0.
+- PG DRC: no errors.
+- Timing: max slack MET 0.78 ns; min slack MET 0.04 ns.
+- Antenna checking is not active because no antenna rules are defined.
+
+Original debug DRC-clean evidence:
 - Route report: 4_Backend_ICC2/4_Report/99_debug/modified_lef_via1_pitch_no_track_nor2_mux41_policy_route_flow/06_route/check_routes.rpt
 - Result: 0 open nets, 0 signal DRC.
 - Legality: TOTAL 0.
@@ -69,7 +81,15 @@ Debug DRC-clean candidate exists:
 - Timing: max slack MET 0.78 ns; min slack MET 0.04 ns.
 - Formality R2N for the matching NOR2+MUX41 synthesis handoff: PASS_WITH_NOTE.
 
-Strict backend strong-done requires accepting the VIA1 no-track library policy and promoting the selected debug wrapper/NDM setup into the baseline flow.
+Educational GDS candidate:
+- Wrapper: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh
+- Manifest: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt
+- GDS: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds
+- Companion outputs: DEF, Verilog, and SDC in the same output directory.
+- Post-filler checks: route DRC/open clean, legality clean, PG connectivity clean, PG DRC no errors.
+- QoR note: clk critical path slack 0.78 ns; constraints.after_filler reports max_transition 8 and max_capacitance 228 violations.
+
+Strict backend strong-done for educational baseline is complete with caveats. Do not claim signoff clean without antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA evidence.
 ```
 
 ## PG Diagnosis Notes

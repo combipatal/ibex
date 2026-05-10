@@ -230,14 +230,15 @@ Current policy state after user approval on 2026-05-10:
 
 ```text
 The VIA1 pitch/no-track techfile policy is accepted for this project baseline.
-The route-clean artifact remains under 99_debug until wrappers/manifests are promoted.
-Next action is to promote or clearly alias the selected NDM/script path as the baseline backend route closure path.
+The route-clean artifact was promoted to a named baseline wrapper/report path after policy approval.
+Baseline wrapper: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh.
+Baseline report root: 4_Backend_ICC2/4_Report/07_route_closure.
 ```
 
 Remaining claim boundary:
 
 ```text
-Allowed: route DRC-clean candidate with 0 opens, PG clean, legality clean, positive route timing, and matching Formality R2N.
+Allowed: route DRC-clean baseline with 0 opens, PG clean, legality clean, positive route timing, matching Formality R2N, and educational GDS candidate export.
 Not allowed yet: signoff-clean, antenna-clean, LVS-clean, IR/EM-clean, production-ready silicon claim.
 ```
 

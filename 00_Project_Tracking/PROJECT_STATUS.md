@@ -39,7 +39,12 @@ Status: COMPLETE_WITH_NOTES
 
 ```text
 Phase: B7 Route
-Status: ROUTE_DRC_CLEAN_CANDIDATE_POLICY_APPROVED
+Status: COMPLETE_WITH_NOTES
+```
+
+```text
+Phase: B8 Educational GDS candidate
+Status: COMPLETE_WITH_NOTES
 ```
 
 ## Checklist
@@ -73,7 +78,8 @@ Status: ROUTE_DRC_CLEAN_CANDIDATE_POLICY_APPROVED
 [x] Run Formality R2N on NOR2+MUX41 debug synthesis handoff
 [x] Record backend library policy gate for VIA1 no-track NDM
 [x] Accept VIA1 no-track library policy for project baseline promotion
-[ ] Promote DRC-clean candidate wrapper/manifest path to baseline backend flow
+[x] Promote DRC-clean candidate wrapper/manifest path to baseline backend flow
+[x] Export educational GDS candidate from route-closure block
 ```
 
 ## Current Notes
@@ -134,5 +140,9 @@ Current best debug route result: check_routes reports 0 open nets and 0 signal D
 Route policy update: VIA1 pitch/no-track techfile policy is accepted for project baseline promotion as of 2026-05-10. The clean route artifact is still under 99_debug until the wrapper/manifest path is promoted or explicitly aliased as the baseline flow.
 Backend library policy note: docs/backend_library_policy.md records the exact VIA1 techfile delta, NDM source, route/FM evidence, and accepted production promotion gate.
 Route closure case study: docs/ibex_backend_route_closure_case_study.md records the DRC breakdown, hypotheses, experiments, accepted candidate, production-promotion boundary, and interview explanation.
-Next phase: promote the selected backend wrapper/report path from 99_debug into the baseline flow, then prepare final result packaging. Do not claim signoff clean without antenna/LVS/IR/EM evidence.
+Route closure baseline promotion: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh reran the selected policy as a named baseline path. Report root 4_Backend_ICC2/4_Report/07_route_closure shows 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, timing.max MET 0.78 ns, and timing.min MET 0.04 ns.
+Educational GDS candidate: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh exported GDS/DEF/netlist/SDC from the route-closure block. GDS path is 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds, size 157M.
+GDS candidate checks: after-filler route DRC/open nets are clean, legality is clean, PG connectivity/PG DRC are clean, and qor.after_filler.rpt reports clk critical path slack 0.78 ns with no setup/hold violating paths.
+Remaining implementation notes: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations. Antenna rules are absent, and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
+Next phase: package the baseline results and optionally add signoff-style educational extensions. Do not claim signoff clean or tapeout-ready without antenna/LVS/IR/EM/foundry DRC evidence.
 ```

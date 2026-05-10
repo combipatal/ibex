@@ -206,6 +206,39 @@ fat_contact_effort result: reduced Needs fat contact as low as 239, but increase
 ```
 
 ```text
+ICC2 route-closure baseline status: PASS_WITH_NOTE
+Route-closure wrapper: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+Route-closure command: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+Route-closure log root: 4_Backend_ICC2/3_Log/07_route_closure
+Route-closure report root: 4_Backend_ICC2/4_Report/07_route_closure
+Route-closure ICC2 library: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib
+Route-closure handoff: 2_Synthesis/2_Output/pre_backend_topo_nor2_mux41_no_x0x2_hvt/ibex_mini_soc_top.pre_backend_topo_nor2_mux41_no_x0x2_hvt.vg and matching SDC
+Route-closure NDM root: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
+Route-closure techfile: 4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
+Route-closure result: 0 open nets, 0 signal DRC, legality TOTAL 0, PG connectivity floating objects 0, PG DRC no errors, timing.max MET 0.78 ns, timing.min MET 0.04 ns.
+Route-closure caveat: antenna checking is not active because no antenna rules are defined.
+```
+
+```text
+ICC2 GDS candidate export status: PASS_WITH_NOTE
+GDS wrapper: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh
+GDS Tcl: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.tcl
+GDS command: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh
+GDS log: 4_Backend_ICC2/3_Log/08_gds/run_write_gds_route_closure.route_closure_gds_candidate.log
+GDS input ICC2 library: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib
+GDS output root: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate
+GDS report root: 4_Backend_ICC2/4_Report/08_gds/route_closure_gds_candidate
+GDS output: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/ibex_mini_soc_top.route_closure_gds_candidate.gds
+GDS manifest: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate/gds_export_manifest.txt
+GDS companion outputs: ibex_mini_soc_top.route_closure_gds_candidate.vg, .def, .sdc
+GDS file sizes: GDS 157M, DEF 127M, Verilog 32M, SDC 13M.
+Post-filler checks: route DRC/open clean, legality clean, PG connectivity clean, PG DRC no errors.
+Timing/QoR: qor.after_filler.rpt reports clk critical path slack 0.78 ns and no setup/hold violating paths.
+Known design-rule notes: constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 violations.
+Claim boundary: educational GDS candidate only; not foundry/signoff DRC, LVS, antenna, IR/EM, metal-fill, or tapeout-ready.
+```
+
+```text
 ICC2 modified-LEF route debug status: COMPLETE_WITH_RESIDUAL_SIGNAL_DRC
 Command: 4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh
 Modified NDM inputs: 4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32rvt_tt_modified.ndm, saed32lvt_tt_modified.ndm, saed32hvt_tt_modified.ndm

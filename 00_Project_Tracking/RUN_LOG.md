@@ -934,3 +934,35 @@ Result: route closure case study records the baseline 720-DRC route, DRC breakdo
 Policy result: VIA1 pitch/no-track techfile policy is accepted for project baseline promotion as of 2026-05-10.
 Next action: promote or explicitly alias the selected 99_debug backend route wrapper/manifest path as the baseline flow; do not claim signoff clean without antenna/LVS/IR/EM evidence.
 ```
+
+```text
+Stage: ICC2 route-closure baseline promotion rerun
+Command: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh
+Log root: 4_Backend_ICC2/3_Log/07_route_closure
+Report root: 4_Backend_ICC2/4_Report/07_route_closure
+ICC2 library: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib
+Backend inputs: pre_backend_topo_nor2_mux41_no_x0x2_hvt netlist/SDC, modified-LEF VIA1 pitch/no-track NDMs, project-local VIA1 no-track techfile.
+Result: 06_route/check_routes.rpt reports 0 open nets and 0 signal DRC. Antenna checking is not active because no antenna rules are defined.
+Sanity checks: check_legality.rpt reports TOTAL 0; pg_connectivity.rpt reports VDD/VSS floating objects 0; check_pg_drc reports No errors found; timing.max slack MET 0.78 ns; timing.min slack MET 0.04 ns.
+Conclusion: the formerly 99_debug DRC-clean candidate has been rerun through a named baseline route-closure wrapper/report path. It is still not signoff clean because antenna/LVS/IR/EM/foundry DRC are outside this evidence.
+```
+
+```text
+Stage: ICC2 educational GDS candidate export
+Command: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh
+Status: PASS_WITH_NOTE
+Script: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.tcl
+Wrapper: 4_Backend_ICC2/0_Script/08_gds/run_write_gds_route_closure.sh
+Log: 4_Backend_ICC2/3_Log/08_gds/run_write_gds_route_closure.route_closure_gds_candidate.log
+Input ICC2 library: 4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib
+GDS block: ibex_mini_soc_top_route_closure_gds_candidate
+Output root: 4_Backend_ICC2/2_Output/08_gds/route_closure_gds_candidate
+Report root: 4_Backend_ICC2/4_Report/08_gds/route_closure_gds_candidate
+Outputs: ibex_mini_soc_top.route_closure_gds_candidate.gds, .vg, .def, .sdc, and gds_export_manifest.txt.
+File sizes: GDS 157M, DEF 127M, Verilog 32M, SDC 13M.
+Post-filler result: check_routes.after_filler.rpt reports 0 open nets and 0 signal DRC; check_legality.after_filler.rpt reports TOTAL 0; pg_connectivity.after_filler.rpt reports VDD/VSS floating objects 0; check_pg_drc reports No errors found.
+Timing/QoR note: qor.after_filler.rpt reports critical path slack 0.78 ns for clk and no setup/hold violating paths; constraints.after_filler.rpt reports max_transition 8 and max_capacitance 228 design-rule violations.
+Conclusion: educational GDS candidate export completed. It is not tapeout/signoff GDS; antenna rules are absent and LVS/foundry DRC/IR/EM/metal-fill/signoff STA are not performed.
+```
