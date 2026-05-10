@@ -44,3 +44,5 @@ moduleparamid
 /icc2_output.txt
 /lm_output.txt
 /check_workspace.ems
+/Synopsys_stack_trace_*.txt
+/legalizer_debug_plots/
