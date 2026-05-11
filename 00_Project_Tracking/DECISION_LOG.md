@@ -292,3 +292,22 @@ Equivalence and STA evidence: `3_Formality/3_Log/fm_post_route_prefiller_maxcap_
 Final GDS evidence: `4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt` records write statuses 0. The GDS file is `4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds`, size 157M. `constraints.after_filler.rpt` reports max_transition 0, max_capacitance 0, and min_capacitance 0. `check_routes.after_filler.rpt` reports open nets 0 and route DRC 0. Legality, PG, and timing reports remain clean or positive.
 
 Final policy for this phase: accept `post_route_prefiller_maxcap_margin_gds_candidate` as the final educational GDS candidate. This does not create signoff/tapeout evidence; antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology remain outside scope.
+
+## 2026-05-11 Project Closure
+
+Decision: close the project as `CLOSED_AS_EDUCATIONAL_FE_TO_BE_IMPLEMENTATION_FLOW`.
+
+Reason: the project has reached the intended educational FE-to-BE implementation milestone with saved, auditable evidence from RTL/config freeze through DC topo synthesis, Formality R2N, PrimeTime SDF STA, ICC2 backend route closure, post-route electrical ECO, and final educational GDS candidate export.
+
+Final candidate: `post_route_prefiller_maxcap_margin_gds_candidate`.
+
+Final GDS:
+`4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds`
+
+Recorded GDS size: `157M`.
+
+Evidence: DC topo synthesis completed; Formality R2N passed with 34915 passing compare points, 0 failing, 0 unmatched; route-closure baseline reports 0 open nets, 0 signal DRC, PG connectivity floating objects 0, PG DRC no errors, and timing.max/min positive at +0.78 ns / +0.04 ns; pre-filler margin ECO inserted 5 `NBUFFX2_RVT` buffers and reports max_transition 0, max_capacitance 0, min_capacitance 0, route DRC 0, legality clean, PG clean, and timing positive; PrimeTime SDF STA reports no setup/hold violations, SDF read errors 0, setup slack about +0.67 ns, and hold slack about +0.03 ns; final educational GDS after-filler checks report open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, and timing positive.
+
+Claim boundary: this is an educational GDS candidate and not tapeout-ready, not foundry signoff clean, and not a production signoff GDS. Antenna rules are absent and antenna was not verified. LVS, IR/EM, foundry signoff DRC, metal fill, and full signoff STA methodology were not performed or are not evidenced.
+
+Next policy: treat implementation as closed. Future work should be portfolio/report packaging or a separately scoped optional signoff-style extension, without weakening the claim boundary recorded in `00_Project_Tracking/PROJECT_CLOSURE.md`.

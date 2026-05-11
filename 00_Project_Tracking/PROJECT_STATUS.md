@@ -3,6 +3,15 @@
 ## Current Phase
 
 ```text
+Status: CLOSED_AS_EDUCATIONAL_FE_TO_BE_IMPLEMENTATION_FLOW
+Closure date: 2026-05-11
+Final candidate: post_route_prefiller_maxcap_margin_gds_candidate
+Meaning: Ibex Mini SoC FE-to-BE educational implementation flow is closed with saved DC/FM/PT/ICC2/GDS evidence.
+Claim boundary: educational GDS candidate only; not tapeout-ready, not foundry signoff clean, and not production signoff GDS.
+Next milestone: implementation closed; next work is portfolio/report packaging or optional signoff-style extension.
+```
+
+```text
 Phase: B0 Repository Intake
 Status: COMPLETE
 ```

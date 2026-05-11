@@ -1,5 +1,18 @@
 # Result Summary
 
+## Final Closure Summary
+
+```text
+Status: CLOSED_AS_EDUCATIONAL_FE_TO_BE_IMPLEMENTATION_FLOW
+Closure date: 2026-05-11
+Scope: Ibex Mini SoC FE-to-BE educational implementation flow
+Final candidate: post_route_prefiller_maxcap_margin_gds_candidate
+Final GDS: 4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+Recorded GDS size: 157M
+Final evidence: DC topo synthesis completed; Formality R2N passed with 34915 passing / 0 failing / 0 unmatched; route-closure baseline reports open nets 0, signal DRC 0, PG floating objects 0, PG DRC no errors, timing.max/min positive at +0.78 ns / +0.04 ns; pre-filler margin ECO inserted 5 NBUFFX2_RVT buffers and reports max_transition 0, max_capacitance 0, min_capacitance 0, route DRC 0, legality/PG clean; PrimeTime SDF STA reports no setup/hold violations, SDF read errors 0, setup slack about +0.67 ns, hold slack about +0.03 ns; final GDS after-filler reports open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, and timing positive.
+Claim boundary: educational GDS candidate only; not tapeout-ready, not foundry signoff clean, not production signoff GDS; antenna rules absent, LVS/IR/EM/foundry signoff DRC/metal fill/full signoff STA methodology not performed or not evidenced.
+```
+
 | Stage | Tool | Result | Key Report | Open Item |
 |---|---|---:|---|---|
 | RTL intake | git/filelist | PASS | docs/rtl_intake.md | Keep upstream commit/config frozen |
