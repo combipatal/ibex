@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ibex Mini SoC Backend Route And GDS Learning Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f5f7;
+      color: #1f2933;
+      font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.58;
+    }
+
+    body {
+      padding: 24px;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 18px;
+      padding: 16mm 14mm;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 8px;
+      color: #111827;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 22pt;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-top: 22px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #d1d5db;
+      font-size: 15pt;
+    }
+
+    h3 {
+      margin-top: 16px;
+      font-size: 12pt;
+    }
+
+    p {
+      margin: 7px 0;
+    }
+
+    ul,
+    ol {
+      margin: 7px 0 7px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    table {
+      width: 100%;
+      margin: 10px 0 14px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 9.15pt;
+    }
+
+    th,
+    td {
+      padding: 6px 7px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+      word-break: break-word;
+    }
+
+    th {
+      background: #eef2f7;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    code {
+      padding: 1px 4px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      color: #111827;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9.1pt;
+    }
+
+    pre {
+      margin: 9px 0 13px;
+      padding: 10px 11px;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: #f8fafc;
+      color: #111827;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.7pt;
+      line-height: 1.45;
+    }
+
+    .subtitle {
+      margin: 7px 0 18px;
+      color: #4b5563;
+      font-size: 12pt;
+      line-height: 1.45;
+    }
+
+    .summary-box,
+    .note-box {
+      margin: 12px 0 15px;
+      padding: 12px 14px;
+      border-radius: 7px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+    }
+
+    .note-box {
+      border-color: #fde68a;
+      background: #fffbeb;
+    }
+
+    .stage-gate {
+      margin: 13px 0 16px;
+      padding: 11px 13px;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 6px;
+      background: #f0fdf4;
+    }
+
+    .claim-box {
+      margin: 12px 0 15px;
+      padding: 12px 14px;
+      border-left: 4px solid #475569;
+      background: #f8fafc;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 13px 0;
+    }
+
+    .metric {
+      min-height: 58px;
+      padding: 9px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      background: #f9fafb;
+    }
+
+    .metric .label {
+      color: #64748b;
+      font-size: 8.6pt;
+    }
+
+    .metric .value {
+      margin-top: 3px;
+      color: #0f172a;
+      font-size: 12.5pt;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 8.5pt;
+      font-weight: 700;
+    }
+
+    .toc a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    .small {
+      color: #64748b;
+      font-size: 8.6pt;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+
+      .page {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: #111827;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Ibex Mini SoC FE-to-GDS Implementation Learning Report</h1>
+    <p class="subtitle">Front-End Flow, Backend Route Closure, Electrical ECO, and Educational GDS Candidate<br>Part 2: Backend Route And GDS Report</p>
+
+    <div class="summary-box">
+      <strong>현재 상태 요약</strong>
+      <p>최종 교육용 GDS 후보는 <code>post_route_prefiller_maxcap_margin_gds_candidate</code>이다. after-filler ICC2 reports 기준으로 open nets 0, signal route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, timing positive이다. matching post-route netlist는 Formality와 PrimeTime SDF STA도 통과했다.</p>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="label">Final route DRC</div>
+        <div class="value">0</div>
+      </div>
+      <div class="metric">
+        <div class="label">Open nets</div>
+        <div class="value">0</div>
+      </div>
+      <div class="metric">
+        <div class="label">Electrical DRC</div>
+        <div class="value">0/0/0</div>
+      </div>
+      <div class="metric">
+        <div class="label">Final GDS size</div>
+        <div class="value">157M</div>
+      </div>
+      <div class="metric">
+        <div class="label">Post-route FM</div>
+        <div class="value">PASS</div>
+      </div>
+      <div class="metric">
+        <div class="label">Post-route PT</div>
+        <div class="value">+0.67/+0.03</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>결과</th>
+          <th>근거 artifact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Final GDS</td>
+          <td><code>ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds</code>, 157M</td>
+          <td><code>4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate</code></td>
+        </tr>
+        <tr>
+          <td>After-filler route</td>
+          <td>open nets 0, signal DRC 0</td>
+          <td><code>4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/check_routes.after_filler.rpt</code></td>
+        </tr>
+        <tr>
+          <td>After-filler electrical</td>
+          <td>max_transition 0, max_capacitance 0, min_capacitance 0</td>
+          <td><code>constraints.after_filler.rpt</code></td>
+        </tr>
+        <tr>
+          <td>PG / legality</td>
+          <td>PG connectivity clean, PG DRC no records/errors, legality clean</td>
+          <td><code>pg_connectivity.after_filler.rpt</code>, <code>pg_drc.after_filler.rpt</code>, <code>check_legality.after_filler.rpt</code></td>
+        </tr>
+        <tr>
+          <td>Formality</td>
+          <td>Verification SUCCEEDED, 34915 passing, 0 failing, 0 unmatched</td>
+          <td><code>3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log</code></td>
+        </tr>
+        <tr>
+          <td>PrimeTime</td>
+          <td>No setup/hold violations, read_sdf errors 0, setup +0.67 ns, hold +0.03 ns</td>
+          <td><code>5_STA/4_Report/post_route_prefiller_maxcap_margin</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="claim-box">
+      <strong>Claim boundary.</strong> 이 결과는 교육용 backend strong-done 후보이다. tapeout-ready, signoff-clean, foundry DRC clean, LVS clean, antenna clean, IR/EM clean, metal-fill complete, production-ready silicon claim은 아직 할 수 없다.
+    </div>
+
+    <h2>목차</h2>
+    <ol class="toc">
+      <li><a href="#target">Backend Target And Final State</a></li>
+      <li><a href="#icc2-flow">ICC2 Baseline Flow</a></li>
+      <li><a href="#pg">Power Grid Diagnosis</a></li>
+      <li><a href="#drc720">Initial 720 DRC Analysis</a></li>
+      <li><a href="#experiments">Route DRC Experiments</a></li>
+      <li><a href="#library-policy">NDM And Library Policy</a></li>
+      <li><a href="#promotion">Route-Clean Baseline Promotion</a></li>
+      <li><a href="#electrical">Post-Route Electrical DRC Closure</a></li>
+      <li><a href="#fmpt">Formality And PrimeTime After ECO</a></li>
+      <li><a href="#gds">Final Educational GDS Export</a></li>
+      <li><a href="#judgement">Practical Judgement And Claim Boundary</a></li>
+      <li><a href="#appendix">Script And Report Appendix</a></li>
+    </ol>
+
+    <section id="target" class="page-break">
+      <h2>1. Backend Target And Final State</h2>
+      <p>Backend 목표는 DC topo handoff를 받아 SAED32 1p9m physical implementation을 끝까지 밀고 가는 것이었다. 목표는 full signoff가 아니라 auditable educational FE-to-GDS milestone이다. 즉, route, legality, PG, timing, Formality, PT, GDS export의 증거를 남기되, signoff domain은 명확히 제외한다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>초기 목표</th>
+            <th>최종 상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Technology</td>
+            <td>SAED32 1p9m, RVT/LVT/HVT</td>
+            <td>project-local modified-LEF + VIA1 pitch/no-track NDM policy accepted</td>
+          </tr>
+          <tr>
+            <td>Floorplan</td>
+            <td>55-60% utilization, 1:1 aspect</td>
+            <td>initial floorplan utilization 0.6004</td>
+          </tr>
+          <tr>
+            <td>Route</td>
+            <td>0 open, 0 DRC</td>
+            <td>final candidate 0 open, 0 signal DRC after filler</td>
+          </tr>
+          <tr>
+            <td>Electrical DRC</td>
+            <td>max tran/cap clean if feasible</td>
+            <td>final after-filler max_transition 0, max_capacitance 0, min_capacitance 0</td>
+          </tr>
+          <tr>
+            <td>GDS</td>
+            <td>educational stream-out</td>
+            <td>GDS/DEF/VG/SDC/manifest exported, 157M GDS</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>최종 산출물</h3>
+      <pre>GDS:
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds
+
+DEF:
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.def
+
+Verilog:
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.vg
+
+SDC:
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.sdc
+
+Manifest:
+4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/gds_export_manifest.txt</pre>
+    </section>
+
+    <section id="icc2-flow" class="page-break">
+      <h2>2. ICC2 Baseline Flow</h2>
+      <p>ICC2 flow는 stage별 wrapper를 두고 output/report/log root를 분리했다. 이 구조 덕분에 실패한 probe와 promoted baseline을 구분할 수 있었고, context reset 후에도 어느 run이 공식 evidence인지 추적할 수 있다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Script</th>
+            <th>핵심 결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NDM setup</td>
+            <td><code>4_Backend_ICC2/0_Script/00_setup/build_saed32_ndm.sh</code></td>
+            <td>SAED32 physical library를 ICC2용 NDM으로 준비</td>
+          </tr>
+          <tr>
+            <td>init_design</td>
+            <td><code>01_init_design/run_init_design_check.sh</code></td>
+            <td>DC topo netlist/SDC와 NDM을 이용해 ICC2 design lib 생성</td>
+          </tr>
+          <tr>
+            <td>floorplan</td>
+            <td><code>02_floorplan/run_floorplan_initial.sh</code></td>
+            <td>utilization 0.6004, 1:1 baseline</td>
+          </tr>
+          <tr>
+            <td>powerplan</td>
+            <td><code>03_powerplan/run_powerplan_initial.sh</code></td>
+            <td>PG rail stitch fix 후 PG connectivity clean</td>
+          </tr>
+          <tr>
+            <td>place</td>
+            <td><code>04_place/run_place_initial.sh</code></td>
+            <td>legality clean, PG clean</td>
+          </tr>
+          <tr>
+            <td>CTS</td>
+            <td><code>05_cts/run_cts_initial.sh</code></td>
+            <td>clock route DRC/open clean, timing +0.43/+0.03</td>
+          </tr>
+          <tr>
+            <td>route</td>
+            <td><code>06_route/run_route_initial.sh</code></td>
+            <td>0 open, PG/legality/timing positive, signal DRC 720</td>
+          </tr>
+          <tr>
+            <td>route closure</td>
+            <td><code>07_route_closure/run_route_closure_baseline.sh</code></td>
+            <td>approved policy로 0 open, 0 signal DRC baseline 생성</td>
+          </tr>
+          <tr>
+            <td>GDS</td>
+            <td><code>13_gds/run_write_gds_residual_maxcap_clean.sh</code></td>
+            <td>final margin ECO block에서 educational GDS export</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <strong>실무식 포인트.</strong> backend는 한 번의 ICC2 run이 아니라 evidence chain이다. init, floorplan, PG, place, CTS, route, ECO, GDS 각각에서 report root와 log root가 남아야 한다.
+      </div>
+    </section>
+
+    <section id="pg" class="page-break">
+      <h2>3. Power Grid Diagnosis</h2>
+      <p>초기 PG 문제는 modified LEF만으로 해결되지 않았다. floating connectivity object는 full-width M1 standard-cell rail이었고, 초기 M2 mesh geometry 때문에 rail-to-mesh via가 제거되는 패턴이었다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>시도</th>
+            <th>관찰</th>
+            <th>결정</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M7 offset sweep</td>
+            <td>VDD/VSS floating distribution만 변함</td>
+            <td>rejected</td>
+          </tr>
+          <tr>
+            <td>M2 sweep</td>
+            <td>baseline PG connectivity count 재현</td>
+            <td>rejected</td>
+          </tr>
+          <tr>
+            <td>modified-LEF PG probe</td>
+            <td>PG DRC clean이지만 VDD 3196, VSS 396 floating std cells</td>
+            <td>not sufficient</td>
+          </tr>
+          <tr>
+            <td>targeted rail stitch</td>
+            <td>conflicting upper vias 48개 제거, M1-M2 stitch via 8개 생성</td>
+            <td>accepted production fix</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pre>Accepted PG evidence:
+4_Backend_ICC2/4_Report/03_powerplan/pg_rail_stitches.rpt
+4_Backend_ICC2/4_Report/03_powerplan/pg_connectivity.rpt
+4_Backend_ICC2/4_Report/04_place/pg_connectivity.rpt
+4_Backend_ICC2/4_Report/05_cts/pg_connectivity.rpt
+4_Backend_ICC2/4_Report/06_route/pg_connectivity.rpt</pre>
+
+      <p>이 판단에서 중요한 점은 PG problem과 signal-route DRC problem을 분리한 것이다. PG가 clean해진 뒤에도 route DRC 720은 남았으므로, 다음 원인은 PG가 아니라 lower-metal signal routing/pin access로 좁혀졌다.</p>
+    </section>
+
+    <section id="drc720" class="page-break">
+      <h2>4. Initial 720 DRC Analysis</h2>
+      <p>첫 production route는 routed block을 저장했고 timing도 positive였지만 signal DRC가 720개 남았다. 이 상태는 “route completed”이지 “route clean”이 아니다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Initial route metric</th>
+            <th>값</th>
+            <th>근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Open nets</td>
+            <td>0</td>
+            <td><code>4_Backend_ICC2/4_Report/06_route/check_routes.rpt</code></td>
+          </tr>
+          <tr>
+            <td>Signal route DRC</td>
+            <td>720</td>
+            <td><code>check_routes.rpt</code></td>
+          </tr>
+          <tr>
+            <td>DRC breakdown</td>
+            <td>Diff net spacing 251, Less than minimum area 24, Needs fat contact 347, Off-grid 92, Short 6</td>
+            <td><code>RESULT_SUMMARY.md</code>, <code>docs/ibex_backend_route_closure_case_study.md</code></td>
+          </tr>
+          <tr>
+            <td>Legality</td>
+            <td>TOTAL 0</td>
+            <td><code>check_legality.rpt</code></td>
+          </tr>
+          <tr>
+            <td>PG</td>
+            <td>VDD/VSS floating objects 0, PG DRC no errors</td>
+            <td><code>pg_connectivity.rpt</code>, <code>pg_drc.rpt</code></td>
+          </tr>
+          <tr>
+            <td>Timing</td>
+            <td>setup +0.57 ns, hold +0.03 ns</td>
+            <td><code>timing.max.rpt</code>, <code>timing.min.rpt</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Hypothesis</h3>
+      <p>DRC matrix inspection에서 모든 violation이 M1/M2/VIA1에 집중되어 있었다. 특히 M1-M2 <code>Needs fat contact</code>가 347개로 가장 컸다. 이 관찰은 root cause를 global routing, timing, PG보다 lower-metal physical abstract, contact/via definition, standard-cell pin-access policy 쪽으로 이동시켰다.</p>
+
+      <div class="note-box">
+        <strong>진단 원칙.</strong> DRC total만 보지 않고 class와 layer matrix를 봐야 한다. total 720은 너무 크지만, M1/M2/VIA1에 집중된다는 사실이 해결 방향을 만든다.
+      </div>
+    </section>
+
+    <section id="experiments" class="page-break">
+      <h2>5. Route DRC Experiments</h2>
+      <p>route DRC closure는 한 번에 해결되지 않았다. 각 실험은 “가설, 실행, 결과, 채택 여부”로 기록되었다. 아래 표는 최종 문서화된 핵심 chronology이다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Run</th>
+            <th>Open</th>
+            <th>DRC</th>
+            <th>PG</th>
+            <th>Legality</th>
+            <th>Timing</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>production route</td>
+            <td>0</td>
+            <td>720</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>+0.57/+0.03</td>
+            <td>not clean</td>
+          </tr>
+          <tr>
+            <td>modified LEF</td>
+            <td>0</td>
+            <td>41</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>+0.74/+0.04</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>cleanup saved</td>
+            <td>0</td>
+            <td>20</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>positive</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>NOR2 policy</td>
+            <td>0</td>
+            <td>19</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>positive</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>diff blockage</td>
+            <td>0</td>
+            <td>18</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>+0.77/+0.04</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>VIA1 no-track + NOR2/MUX41</td>
+            <td>0</td>
+            <td>0</td>
+            <td>clean</td>
+            <td>0</td>
+            <td>+0.78/+0.04</td>
+            <td>debug clean candidate</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Rejected or limited experiments</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Experiment</th>
+            <th>결과</th>
+            <th>판단</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>extra detail routing</td>
+            <td>660-680 DRC range에서 oscillation</td>
+            <td>iteration만으로 불충분</td>
+          </tr>
+          <tr>
+            <td>M2-only reroute</td>
+            <td>DRC가 11000 이상으로 증가 후 abort</td>
+            <td>pin access 악화</td>
+          </tr>
+          <tr>
+            <td>fat_contact_effort</td>
+            <td>Needs fat contact는 줄지만 Diff net spacing 증가</td>
+            <td>DRC class trade, not closure</td>
+          </tr>
+          <tr>
+            <td>VIA12SQ_C row-limit / split-via ECO</td>
+            <td>open nets 또는 다른 DRC class로 trade</td>
+            <td>post-route via ECO 불안정</td>
+          </tr>
+          <tr>
+            <td>post-route NOR2/MUX resize</td>
+            <td>connectivity와 DRC 악화</td>
+            <td>cell-use policy는 upstream에서 처리해야 함</td>
+          </tr>
+          <tr>
+            <td>lower utilization 0.55</td>
+            <td>36 DRC 및 PG connectivity regression</td>
+            <td>density-only 원인이 아님</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Accepted debug direction</h3>
+      <p>Modified LEF가 Needs fat contact class를 제거했고, VIA1 pitch/no-track techfile이 Off-grid pattern을 크게 줄였다. 마지막 1 DRC는 MUX41X2_HVT/S0 pin-access context였고, upstream synthesis cell-use policy로 NOR2X0_HVT/NOR2X2_HVT/MUX41X2_HVT를 제외한 뒤 clean backend rerun에서 0 DRC에 도달했다.</p>
+
+      <pre>Accepted debug route wrapper:
+4_Backend_ICC2/0_Script/99_debug/run_via1_pitch_no_track_nor2_mux41_policy_route_flow.sh
+
+Evidence:
+check_routes.rpt: open nets 0, DRC 0
+check_legality.rpt: TOTAL 0
+pg_connectivity.rpt: VDD/VSS floating objects 0
+timing.max/min: +0.78/+0.04 ns
+FM for matching handoff: Verification SUCCEEDED</pre>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> route DRC root cause가 lower-metal physical abstract/VIA1 policy/cell-use interaction으로 좁혀졌고, 0 open/0 DRC debug candidate와 matching FM evidence가 생겼기 때문에 library policy 승인 단계로 넘어갈 수 있었다.
+      </div>
+    </section>
+
+    <section id="library-policy" class="page-break">
+      <h2>6. NDM And Library Policy</h2>
+      <p>route-clean result는 단순 router option이 아니라 project-local library/techfile interpretation에 의존했다. 따라서 바로 production baseline이라고 부르지 않고 policy approval gate를 두었다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>값</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LEF source</td>
+            <td><code>/DATA/home/edu135/lib/libdir/LEF/modify</code></td>
+          </tr>
+          <tr>
+            <td>Base techfile</td>
+            <td><code>/DATA/home/edu135/lib/SAED32_EDK/tech/milkyway/saed32nm_1p9m_mw.tf</code></td>
+          </tr>
+          <tr>
+            <td>Patched techfile</td>
+            <td><code>4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf</code></td>
+          </tr>
+          <tr>
+            <td>Delta</td>
+            <td>Layer <code>VIA1</code>: pitch 0.36 enable, <code>onWireTrack</code>/<code>onGrid</code> 제거</td>
+          </tr>
+          <tr>
+            <td>Policy decision</td>
+            <td>2026-05-10 user approval 후 project baseline promotion 허용</td>
+          </tr>
+          <tr>
+            <td>Policy doc</td>
+            <td><code>docs/backend_library_policy.md</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pre>Techfile delta concept:
+- /*pitch = 0.36*/
++ pitch = 0.36
+
+- onWireTrack = 1
+- onGrid = 1</pre>
+
+      <h3>Modified LEF / VIA1 no-track 변경 예시</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>변경 축</th>
+            <th>예시</th>
+            <th>route DRC 관점의 의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LEF source</td>
+            <td><code>/DATA/home/edu135/lib/libdir/LEF/modify/saed32nm_*_1p9m.lef</code></td>
+            <td>original SAED32_EDK LEF 대신 project-local physical abstract를 사용해 lower-metal pin/OBS/PG geometry 해석을 바꾼다.</td>
+          </tr>
+          <tr>
+            <td>VIA1 pitch enable</td>
+            <td><code>pitch = 0.36</code></td>
+            <td>router가 VIA1 pitch를 명시적으로 인식하게 해 M1-M2 via array/off-grid 판단을 안정화한다.</td>
+          </tr>
+          <tr>
+            <td>VIA1 no-track</td>
+            <td><code>onWireTrack</code>, <code>onGrid</code> rule 제거</td>
+            <td>pitch와 track/grid constraint가 동시에 걸려 TECH-025 또는 off-grid trade가 생기는 상황을 피한다.</td>
+          </tr>
+          <tr>
+            <td>Cell-use policy</td>
+            <td><code>NOR2X0_HVT</code>, <code>NOR2X2_HVT</code>, <code>MUX41X2_HVT</code> dont_use</td>
+            <td>residual pin-access hotspot cell을 upstream synthesis에서 피한다. post-route resize보다 안전하다.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>NDM build command 흐름</h3>
+      <p>NDM은 ICC2가 읽는 physical library format이다. 이 프로젝트는 먼저 techfile patch를 만들고, 그 techfile과 modified LEF, timing DB를 Library Manager가 workspace로 읽은 뒤 NDM으로 commit했다.</p>
+
+      <pre>Shell wrapper:
+4_Backend_ICC2/0_Script/99_debug/build_via1_pitch_no_track_ndm.sh
+
+Flow:
+1. base techfile 복사 및 VIA1 patch 생성
+2. MOD_LEF_TECH_FILE, MOD_LEF_NDM_DIR, MOD_LEF_NDM_SUFFIX environment 설정
+3. lm_shell -f 4_Backend_ICC2/0_Script/99_debug/build_modified_lef_ndm.tcl
+4. RVT/LVT/HVT 각각 create_workspace -> read_db -> read_lef -> check_workspace -> commit_workspace
+
+Core LM commands:
+create_workspace -technology $TECH_FILE -flow normal ...
+read_db $RVT_TT_DB
+read_lef $RVT_LEF
+check_workspace
+commit_workspace -output $NDM_DIR/saed32rvt_tt.modified_lef_via1_pitch_no_track.ndm -force</pre>
+
+      <div class="note-box">
+        <strong>왜 승인이 필요했는가.</strong> LEF/techfile을 바꿔 route DRC를 없애는 것은 강한 조치다. 학습용 project에서는 허용할 수 있지만, 실무에서는 PDK/library owner 승인, regression, signoff tool consistency 확인 없이 조용히 섞으면 안 된다.
+      </div>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> modified LEF와 VIA1 no-track NDM build가 fatal 없이 완료되고, route/FM evidence와 policy 문서가 남았기 때문에 debug-only result를 named baseline으로 승격할 수 있었다.
+      </div>
+    </section>
+
+    <section id="promotion" class="page-break">
+      <h2>7. Route-Clean Baseline Promotion</h2>
+      <p>policy approval 후 debug-only clean candidate를 그대로 “공식”이라고 부르지 않고 named baseline wrapper로 다시 실행했다. 이 단계는 실무적으로 중요하다. debug directory의 우연한 saved block이 아니라, 재실행 가능한 promoted path가 있어야 한다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>경로 / 결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wrapper</td>
+            <td><code>4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh</code></td>
+          </tr>
+          <tr>
+            <td>ICC2 library</td>
+            <td><code>4_Backend_ICC2/2_Output/07_route_closure/ibex_mini_soc_top_route_closure_icc2_lib</code></td>
+          </tr>
+          <tr>
+            <td>Report root</td>
+            <td><code>4_Backend_ICC2/4_Report/07_route_closure</code></td>
+          </tr>
+          <tr>
+            <td>Route</td>
+            <td>0 open nets, 0 signal DRC</td>
+          </tr>
+          <tr>
+            <td>Legality / PG</td>
+            <td>TOTAL 0, VDD/VSS floating objects 0, PG DRC no errors</td>
+          </tr>
+          <tr>
+            <td>Timing</td>
+            <td>setup +0.78 ns, hold +0.04 ns</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Route closure baseline script command-level 설명</h3>
+      <p><code>run_route_closure_baseline.sh</code>는 debug candidate를 그대로 복사하지 않는다. approved NDM, approved techfile, NOR2+MUX41 cell-use synthesis handoff를 environment로 지정하고 기존 backend route flow를 재실행한다.</p>
+
+      <pre>run_tag=pre_backend_topo_nor2_mux41_no_x0x2_hvt
+ndm_dir=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/ndm
+tech_file=4_Backend_ICC2/2_Output/99_debug/modified_lef_via1_pitch_no_track/tech/saed32nm_1p9m_mw.via1_pitch_no_track.tf
+
+env \
+  BACKEND_NETLIST=2_Synthesis/2_Output/${run_tag}/ibex_mini_soc_top.${run_tag}.vg \
+  BACKEND_SDC=2_Synthesis/2_Output/${run_tag}/ibex_mini_soc_top.${run_tag}.sdc \
+  MOD_LEF_ROUTE_DEBUG_ROOT=4_Backend_ICC2/2_Output/07_route_closure \
+  MOD_LEF_ROUTE_REPORT_ROOT=4_Backend_ICC2/4_Report/07_route_closure \
+  MOD_LEF_ROUTE_LOG_ROOT=4_Backend_ICC2/3_Log/07_route_closure \
+  MOD_LEF_ROUTE_NDM_DIR=$ndm_dir \
+  MOD_LEF_ROUTE_TECH_FILE=$tech_file \
+  4_Backend_ICC2/0_Script/99_debug/run_modified_lef_route_flow.sh</pre>
+
+      <table>
+        <thead>
+          <tr>
+            <th>내부 stage</th>
+            <th>실행되는 Tcl</th>
+            <th>PASS 기준</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01_init_design</td>
+            <td><code>run_init_design_check.tcl</code></td>
+            <td>netlist/SDC/NDM link, initial reports 생성</td>
+          </tr>
+          <tr>
+            <td>02_floorplan</td>
+            <td><code>run_floorplan_initial.tcl</code></td>
+            <td>utilization/floorplan reports 생성</td>
+          </tr>
+          <tr>
+            <td>03_powerplan</td>
+            <td><code>run_powerplan_initial.tcl</code></td>
+            <td>PG connectivity/PG DRC clean</td>
+          </tr>
+          <tr>
+            <td>04_place</td>
+            <td><code>run_place_initial.tcl</code></td>
+            <td>legality clean, PG clean</td>
+          </tr>
+          <tr>
+            <td>05_cts</td>
+            <td><code>run_cts_initial.tcl</code></td>
+            <td>clock route clean, timing positive</td>
+          </tr>
+          <tr>
+            <td>06_route</td>
+            <td><code>run_route_initial.tcl</code></td>
+            <td>0 open nets, 0 signal DRC, legality/PG/timing positive</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>이 promoted baseline에서 첫 GDS export를 수행했지만, after-filler <code>constraints.after_filler.rpt</code>가 max_transition 8, max_capacitance 228을 보고했다. 따라서 route DRC는 clean이어도 electrical DRC가 남아 있었고, 이 GDS는 최종 후보가 아니라 historical educational artifact로 격하되었다.</p>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> named route-closure baseline이 0 open/0 signal DRC/PG clean/legality clean/positive timing을 보고했기 때문에 GDS export와 post-route electrical closure 검토로 넘어갈 수 있었다.
+      </div>
+    </section>
+
+    <section id="electrical" class="page-break">
+      <h2>8. Post-Route Electrical DRC Closure</h2>
+      <p>첫 GDS 후보의 문제는 GDS writer 자체가 아니라 post-route electrical closure가 부족한 것이었다. filler 이전에도 route-closure block에서 max_transition 8, max_capacitance 227이 있었고, filler 후에는 max_capacitance가 228로 하나 늘었다.</p>
+
+      <h3>Electrical closure chronology</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Run</th>
+            <th>max_transition</th>
+            <th>max_capacitance</th>
+            <th>Route DRC</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>route closure baseline</td>
+            <td>8</td>
+            <td>227</td>
+            <td>0</td>
+            <td>not electrically clean</td>
+          </tr>
+          <tr>
+            <td>GDS after filler</td>
+            <td>8</td>
+            <td>228</td>
+            <td>0</td>
+            <td>not final</td>
+          </tr>
+          <tr>
+            <td>route_opt iter1</td>
+            <td>3</td>
+            <td>174</td>
+            <td>0</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>route_opt iter2</td>
+            <td>0</td>
+            <td>137</td>
+            <td>0</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>route_opt iter3/4</td>
+            <td>0</td>
+            <td>120</td>
+            <td>0</td>
+            <td>stalled</td>
+          </tr>
+          <tr>
+            <td>max-cap ECO</td>
+            <td>0</td>
+            <td>2</td>
+            <td>31</td>
+            <td>not accepted</td>
+          </tr>
+          <tr>
+            <td>final route cleanup</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>partial</td>
+          </tr>
+          <tr>
+            <td>residual max-cap ECO</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>ICC2 internal clean candidate</td>
+          </tr>
+          <tr>
+            <td>pre-filler margin ECO + final GDS</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>final educational candidate</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>왜 pre-filler margin ECO가 필요했나</h3>
+      <p><code>12_post_route_residual_maxcap_eco</code>는 filler 이전에는 clean이었고 FM/PT도 통과했다. 그러나 GDS refresh에서 filler insertion, PG reconnect, re-extraction 후 near-limit nets에 작은 cap 증가가 생겨 4개 max-cap violation이 다시 나타났다. 그래서 broad route cleanup 대신 driver-pin max-cap margin을 filler 전에 의도적으로 걸고 ECO를 수행했다.</p>
+
+      <pre>Accepted pre-filler margin ECO:
+4_Backend_ICC2/0_Script/14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh
+
+Target driver pins:
+U77216/Y 7.50
+U13303/Y 15.50
+ZBUF_1069_inst_8294/Y 15.50
+ZBUF_259_inst_8705/Y 15.50
+U7539/Y 7.50
+
+ECO result:
+5 NBUFFX2_RVT buffers inserted
+constraints.final.rpt: max_transition 0, max_capacitance 0, min_capacitance 0
+check_routes.final.rpt: open nets 0, route DRC 0</pre>
+
+      <p>여기서 핵심은 “나머지 2개를 쉽게 고칠 수 있나?”라는 질문에 대해 한 번만 더 작은 ECO를 시도하고, 안 되면 더 진행하지 않는다는 제한을 둔 점이다. 최종적으로는 작은 margin ECO가 성공했고, GDS after-filler에서도 electrical DRC가 clean하게 유지되었다.</p>
+
+      <h3>Post-route electrical ECO command-level 설명</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>목적</th>
+            <th>PASS 기준 / 산출물</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>copy_block</code>, <code>current_block</code></td>
+            <td>기존 clean block을 보존하고 ECO용 block을 분기한다.</td>
+            <td>원본 route/electrical evidence를 훼손하지 않음</td>
+          </tr>
+          <tr>
+            <td><code>check_routes</code>, <code>check_legality</code>, <code>report_constraints</code>, <code>report_qor</code></td>
+            <td>ECO 전 baseline 상태를 캡처한다.</td>
+            <td><code>*.before_margin.rpt</code> 생성</td>
+          </tr>
+          <tr>
+            <td><code>set_max_capacitance</code> on driver pins</td>
+            <td>filler 후 cap 증가를 흡수하도록 특정 driver pin에 margin target을 건다.</td>
+            <td><code>target_maxcap_pins.tsv</code>, <code>constraints.after_margin_targets.rpt</code></td>
+          </tr>
+          <tr>
+            <td><code>set_pt_options</code></td>
+            <td>ICC2 ECO가 PrimeTime engine을 사용하도록 PT 실행 경로와 work dir을 설정한다.</td>
+            <td><code>pt_options.rpt</code></td>
+          </tr>
+          <tr>
+            <td><code>eco_opt -types max_capacitance -physical_mode occupied_site</code></td>
+            <td>max-cap violation을 buffer insertion/sizing으로 고친다.</td>
+            <td>5개 <code>NBUFFX2_RVT</code> buffer 삽입, ECO violation 0</td>
+          </tr>
+          <tr>
+            <td><code>route_detail -incremental</code>, <code>route_eco</code></td>
+            <td>ECO 후 routing을 정리하고 open/DRC regression을 방지한다.</td>
+            <td><code>check_routes.final.rpt</code>: open 0, DRC 0</td>
+          </tr>
+          <tr>
+            <td><code>connect_pg_net</code>, <code>check_pg_connectivity</code>, <code>check_pg_drc</code></td>
+            <td>ECO cell과 PG network 연결을 다시 확인한다.</td>
+            <td>VDD/VSS floating 0, PG DRC no errors/records</td>
+          </tr>
+          <tr>
+            <td><code>write_verilog</code>, <code>write_def</code>, <code>write_sdc</code>, <code>write_sdf</code></td>
+            <td>FM/PT/GDS refresh에 쓸 ECO handoff를 내보낸다.</td>
+            <td><code>post_route_prefiller_maxcap_margin_manifest.txt</code> write statuses 0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> ECO 후 final reports가 max_transition 0, max_capacitance 0, route DRC 0, legality/PG clean, timing positive를 보였기 때문에 ECO netlist에 대해 Formality와 PrimeTime을 다시 수행할 수 있었다.
+      </div>
+    </section>
+
+    <section id="fmpt" class="page-break">
+      <h2>9. Formality And PrimeTime After ECO</h2>
+      <p>ECO로 netlist가 바뀌었기 때문에 final GDS source block에 대해 logic equivalence와 STA를 다시 확인했다. route/electrical clean만으로는 logic preservation을 말할 수 없다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>검증</th>
+            <th>입력 / 경로</th>
+            <th>결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Formality</td>
+            <td><code>3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log</code></td>
+            <td>Verification SUCCEEDED, 34915 passing, 0 failing, 0 unmatched, SVF guidance 2146 accepted / 0 rejected</td>
+          </tr>
+          <tr>
+            <td>PrimeTime SDF STA</td>
+            <td><code>5_STA/4_Report/post_route_prefiller_maxcap_margin</code></td>
+            <td>No setup/hold violations, read_sdf errors 0, setup slack +0.67 ns, hold slack +0.03 ns</td>
+          </tr>
+          <tr>
+            <td>SDF annotation</td>
+            <td><code>annotated_delay.rpt</code></td>
+            <td>1011366 / 1015056 arcs annotated, 3690 not annotated</td>
+          </tr>
+          <tr>
+            <td>Coverage</td>
+            <td><code>coverage.rpt</code></td>
+            <td>setup/hold coverage 100%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <strong>주의.</strong> PrimeTime log에는 not-annotated delay arc 관련 PTE warning이 남는다. 현재 claim은 saved PT reports 기준 no setup/hold violations와 read_sdf errors 0까지다. full signoff STA 방법론을 완료했다는 뜻은 아니다.
+      </div>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> final ECO netlist가 Formality와 PT SDF STA를 통과했기 때문에 그 block에서 GDS를 refresh해도 logic/timing provenance가 끊기지 않는다.
+      </div>
+    </section>
+
+    <section id="gds" class="page-break">
+      <h2>10. Final Educational GDS Export</h2>
+      <p>최종 GDS export는 <code>14_post_route_prefiller_maxcap_margin</code> ICC2 library를 source로 사용하고, <code>13_gds/run_write_gds_residual_maxcap_clean.sh</code> wrapper를 environment override와 함께 실행했다.</p>
+
+      <pre>env SOURCE_CLEAN_ICC2_LIB=4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/ibex_mini_soc_top_post_route_prefiller_maxcap_margin_icc2_lib \
+    SRC_BLOCK=ibex_mini_soc_top_post_route_prefiller_maxcap_margin \
+    GDS_TAG=post_route_prefiller_maxcap_margin_gds_candidate \
+    4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh</pre>
+
+      <h3>GDS export sequence</h3>
+      <ol>
+        <li>source ICC2 block copy</li>
+        <li>pre-filler route, legality, PG checks</li>
+        <li>stdcell filler insertion</li>
+        <li><code>connect_pg_net -automatic</code></li>
+        <li>after-filler route, legality, PG, electrical, timing reports</li>
+        <li><code>write_verilog</code>, <code>write_def</code>, <code>write_sdc</code></li>
+        <li><code>write_gds</code> with RVT/LVT/HVT stdcell GDS merge files</li>
+      </ol>
+
+      <h3>GDS export command-level 설명</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>목적</th>
+            <th>PASS 기준 / report</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>open_lib</code>, <code>copy_block</code>, <code>current_block</code></td>
+            <td>clean source block을 GDS export 전용 block으로 복사한다.</td>
+            <td>source ECO block 보존, GDS block 생성</td>
+          </tr>
+          <tr>
+            <td><code>check_routes</code>, <code>check_legality</code>, <code>check_pg_connectivity</code></td>
+            <td>filler 전 clean state를 확인한다.</td>
+            <td><code>*.before_filler.rpt</code></td>
+          </tr>
+          <tr>
+            <td><code>create_stdcell_fillers</code></td>
+            <td>빈 standard-cell row site를 filler cell로 채운다.</td>
+            <td><code>filler_lib_cells.rpt</code>, manifest <code>filler_status=0</code></td>
+          </tr>
+          <tr>
+            <td><code>connect_pg_net -automatic</code></td>
+            <td>filler와 existing cells의 PG 연결을 갱신한다.</td>
+            <td>manifest <code>pg_status=0</code></td>
+          </tr>
+          <tr>
+            <td><code>report_qor</code>, <code>report_timing</code>, <code>report_constraints</code></td>
+            <td>after-filler timing/electrical 상태를 다시 기록한다.</td>
+            <td>setup +0.64 ns, max_transition/cap 0</td>
+          </tr>
+          <tr>
+            <td><code>write_verilog</code>, <code>write_def</code>, <code>write_sdc</code></td>
+            <td>GDS와 같이 보관할 logical/physical/timing companion output을 생성한다.</td>
+            <td>manifest write statuses 0</td>
+          </tr>
+          <tr>
+            <td><code>write_gds -layer_map -merge_files</code></td>
+            <td>GDS map과 RVT/LVT/HVT stdcell GDS를 merge해 final GDS stream을 쓴다.</td>
+            <td>157M GDS 생성, <code>write_gds_status=0</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Output</th>
+            <th>Path</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GDS</td>
+            <td><code>4_Backend_ICC2/2_Output/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.gds</code></td>
+            <td>157M</td>
+          </tr>
+          <tr>
+            <td>DEF</td>
+            <td><code>.../ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.def</code></td>
+            <td>128M</td>
+          </tr>
+          <tr>
+            <td>Verilog</td>
+            <td><code>.../ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.vg</code></td>
+            <td>32M</td>
+          </tr>
+          <tr>
+            <td>SDC</td>
+            <td><code>.../ibex_mini_soc_top.post_route_prefiller_maxcap_margin_gds_candidate.sdc</code></td>
+            <td>13M</td>
+          </tr>
+          <tr>
+            <td>Manifest</td>
+            <td><code>.../gds_export_manifest.txt</code></td>
+            <td>2.7K</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Final after-filler checks</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Report</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>check_routes.after_filler.rpt</code></td>
+            <td>open nets 0, route DRC 0</td>
+          </tr>
+          <tr>
+            <td><code>constraints.after_filler.rpt</code></td>
+            <td>max_transition 0, max_capacitance 0, min_capacitance 0</td>
+          </tr>
+          <tr>
+            <td><code>check_legality.after_filler.rpt</code></td>
+            <td>legality succeeded / clean</td>
+          </tr>
+          <tr>
+            <td><code>pg_connectivity.after_filler.rpt</code></td>
+            <td>VDD/VSS floating objects 0</td>
+          </tr>
+          <tr>
+            <td><code>pg_drc.after_filler.rpt</code></td>
+            <td>no reported PG DRC records/errors</td>
+          </tr>
+          <tr>
+            <td><code>qor.after_filler.rpt</code></td>
+            <td>setup slack +0.64 ns, no hold violations in ICC2 QoR summary</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="stage-gate">
+        <strong>Stage gate.</strong> after-filler route/electrical/legality/PG/timing reports와 GDS/DEF/VG/SDC manifest가 모두 생성되었기 때문에 이 phase의 최종 교육용 GDS 후보로 고정할 수 있었다.
+      </div>
+    </section>
+
+    <section id="judgement" class="page-break">
+      <h2>11. Practical Judgement And Claim Boundary</h2>
+      <p>이 프로젝트의 backend 결과는 학습용으로는 강한 완료 상태다. route DRC, electrical DRC, legality, PG, FM, PT, GDS export가 모두 저장 artifact로 연결되어 있다. 다만 이것은 tapeout signoff package가 아니다.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>말할 수 있는 것</th>
+            <th>아직 말하면 안 되는 것</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ICC2 educational GDS candidate가 생성되었다.</td>
+            <td>tapeout-ready GDS다.</td>
+          </tr>
+          <tr>
+            <td>after-filler ICC2 route DRC/open nets는 clean report다.</td>
+            <td>foundry signoff DRC clean이다.</td>
+          </tr>
+          <tr>
+            <td>PG connectivity/PG DRC reports가 clean하다.</td>
+            <td>IR/EM signoff가 완료됐다.</td>
+          </tr>
+          <tr>
+            <td>post-route source netlist가 Formality를 통과했다.</td>
+            <td>LVS clean이다.</td>
+          </tr>
+          <tr>
+            <td>PrimeTime SDF STA에서 setup/hold violation이 없다.</td>
+            <td>multi-corner multi-mode signoff STA가 완료됐다.</td>
+          </tr>
+          <tr>
+            <td>antenna rules가 없어 antenna checking은 활성화되지 않았다.</td>
+            <td>antenna clean이다.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Interview explanation</h3>
+      <p>첫 route는 연결성과 timing은 양호했지만 720개 signal DRC가 있었다. DRC matrix를 분석해 M1/M2/VIA1 lower-metal pin-access/contact 문제로 좁혔고, 단순 route iteration, M2-only reroute, route option, post-route via ECO, lower utilization, post-route resize를 하나씩 반증했다. Modified LEF가 fat-contact class를 제거했고, VIA1 pitch/no-track techfile과 upstream cell-use policy가 Off-grid/MUX41 pin-access 문제를 제거했다. 이후 policy approval을 받아 named baseline으로 승격했고, GDS export 후 발견된 max transition/cap issue는 route_opt, ECO, cleanup, pre-filler margin ECO 순서로 닫았다. 최종 후보는 교육용으로는 clean하지만, signoff DRC/LVS/antenna/IR/EM/metal fill이 없으므로 production/tapeout claim은 하지 않는다.</p>
+    </section>
+
+    <section id="appendix" class="page-break">
+      <h2>12. Script And Report Appendix</h2>
+      <h3>Script별 학습 설명</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Script</th>
+            <th>목적</th>
+            <th>입력 block</th>
+            <th>핵심 command</th>
+            <th>생성 report</th>
+            <th>PASS 기준</th>
+            <th>다음 단계 evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>00_setup/build_saed32_ndm.sh</code></td>
+            <td>기본 SAED32 NDM 생성</td>
+            <td>SAED32 DB/LEF/TF</td>
+            <td><code>lm_shell</code>, <code>create_workspace</code>, <code>read_db</code>, <code>read_lef</code>, <code>commit_workspace</code></td>
+            <td><code>3_Log/00_setup/build_saed32_ndm.log</code></td>
+            <td>RVT/LVT/HVT NDM 생성, fatal 없음</td>
+            <td>ICC2 init_design에서 읽을 physical library</td>
+          </tr>
+          <tr>
+            <td><code>99_debug/build_via1_pitch_no_track_ndm.sh</code></td>
+            <td>modified LEF + VIA1 no-track policy NDM 생성</td>
+            <td>libdir modified LEF, patched TF</td>
+            <td><code>awk</code> techfile patch, <code>lm_shell</code>, <code>commit_workspace</code></td>
+            <td><code>3_Log/99_debug/build_via1_pitch_no_track_ndm.log</code></td>
+            <td>TECH-025/TECH-006/LIB-007/Fatal 없이 NDM 생성</td>
+            <td>route DRC clean candidate용 physical library</td>
+          </tr>
+          <tr>
+            <td><code>07_route_closure/run_route_closure_baseline.sh</code></td>
+            <td>approved route policy를 named baseline으로 재실행</td>
+            <td>NOR2+MUX41 handoff netlist/SDC, VIA1 no-track NDM</td>
+            <td>environment override 후 <code>run_modified_lef_route_flow.sh</code></td>
+            <td><code>4_Report/07_route_closure/06_route</code></td>
+            <td>open 0, DRC 0, legality 0, PG clean, timing positive</td>
+            <td>GDS export와 electrical DRC closure의 clean route source</td>
+          </tr>
+          <tr>
+            <td><code>09_post_route_electrical_closure/run_post_route_electrical_drc.sh</code></td>
+            <td>route_opt로 post-route max tran/cap 감소 시도</td>
+            <td>route-closure block</td>
+            <td><code>route_opt</code>, <code>report_constraints</code>, <code>check_routes</code></td>
+            <td><code>4_Report/09_post_route_electrical_closure_iter4</code></td>
+            <td>route DRC 유지하면서 electrical DRC 감소</td>
+            <td>max-cap ECO가 필요한지 판단하는 evidence</td>
+          </tr>
+          <tr>
+            <td><code>10_post_route_maxcap_eco/run_post_route_maxcap_eco.sh</code></td>
+            <td>큰 max-cap violation set에 대한 ECO 시도</td>
+            <td>route_opt 결과 block</td>
+            <td><code>eco_opt -types max_capacitance</code>, <code>write_verilog</code>, <code>write_sdf</code></td>
+            <td><code>4_Report/10_post_route_maxcap_eco</code></td>
+            <td>electrical 개선은 됐지만 route DRC 31로 not accepted</td>
+            <td>route cleanup 필요성 입증</td>
+          </tr>
+          <tr>
+            <td><code>11_post_route_final_cleanup/run_post_route_final_cleanup.sh</code></td>
+            <td>max-cap ECO 후 route DRC 회복</td>
+            <td>10_post_route_maxcap_eco block</td>
+            <td><code>route_detail</code>, <code>route_eco</code>, <code>check_routes</code></td>
+            <td><code>4_Report/11_post_route_final_cleanup</code></td>
+            <td>route DRC 0 회복, max_cap 2 residual</td>
+            <td>bounded residual max-cap ECO source</td>
+          </tr>
+          <tr>
+            <td><code>12_post_route_residual_maxcap_eco/run_post_route_residual_maxcap_eco.sh</code></td>
+            <td>남은 2개 max-cap violation closure</td>
+            <td>11_post_route_final_cleanup block</td>
+            <td><code>eco_opt</code>, <code>route_detail</code>, <code>route_eco</code>, <code>write_sdf</code></td>
+            <td><code>4_Report/12_post_route_residual_maxcap_eco</code></td>
+            <td>route/electrical/PG/legality clean</td>
+            <td>FM/PT 및 GDS refresh 후보</td>
+          </tr>
+          <tr>
+            <td><code>14_post_route_prefiller_maxcap_margin/run_post_route_prefiller_maxcap_margin.sh</code></td>
+            <td>filler 후 cap 증가를 흡수하는 driver-pin margin ECO</td>
+            <td>12_post_route_residual_maxcap_eco block</td>
+            <td><code>set_max_capacitance</code>, <code>eco_opt</code>, <code>route_eco</code>, <code>connect_pg_net</code></td>
+            <td><code>4_Report/14_post_route_prefiller_maxcap_margin</code></td>
+            <td>max_transition/cap 0, route DRC 0, PG/legality clean</td>
+            <td>final GDS source block and FM/PT source netlist</td>
+          </tr>
+          <tr>
+            <td><code>13_gds/run_write_gds_residual_maxcap_clean.sh</code></td>
+            <td>clean block에서 filler 삽입 후 GDS/DEF/VG/SDC export</td>
+            <td>14_post_route_prefiller_maxcap_margin block</td>
+            <td><code>create_stdcell_fillers</code>, <code>connect_pg_net</code>, <code>write_gds</code>, <code>write_def</code></td>
+            <td><code>4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate</code></td>
+            <td>after-filler open 0, DRC 0, electrical 0, PG clean, write statuses 0</td>
+            <td>final educational GDS candidate</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>경로 목록</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>분류</th>
+            <th>경로</th>
+            <th>역할</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Backend flow doc</td>
+            <td><code>docs/backend_flow.md</code></td>
+            <td>backend baseline, route closure, final GDS 상태 요약</td>
+          </tr>
+          <tr>
+            <td>Route case study</td>
+            <td><code>docs/ibex_backend_route_closure_case_study.md</code></td>
+            <td>720-to-0 DRC closure chronology와 interview explanation</td>
+          </tr>
+          <tr>
+            <td>Library policy</td>
+            <td><code>docs/backend_library_policy.md</code></td>
+            <td>modified LEF/VIA1 no-track policy approval boundary</td>
+          </tr>
+          <tr>
+            <td>GDS export doc</td>
+            <td><code>docs/gds_candidate_export.md</code></td>
+            <td>GDS stream-out sequence, outputs, claim boundary</td>
+          </tr>
+          <tr>
+            <td>Electrical DRC doc</td>
+            <td><code>docs/post_route_electrical_drc_closure_attempt.md</code></td>
+            <td>max transition/cap closure attempts and final margin ECO</td>
+          </tr>
+          <tr>
+            <td>NDM setup</td>
+            <td><code>4_Backend_ICC2/0_Script/00_setup</code></td>
+            <td>SAED32 NDM build and common setup</td>
+          </tr>
+          <tr>
+            <td>Initial backend</td>
+            <td><code>4_Backend_ICC2/0_Script/01_init_design</code> to <code>06_route</code></td>
+            <td>init, floorplan, powerplan, place, CTS, route baseline</td>
+          </tr>
+          <tr>
+            <td>Route closure baseline</td>
+            <td><code>4_Backend_ICC2/0_Script/07_route_closure/run_route_closure_baseline.sh</code></td>
+            <td>approved DRC-clean route baseline wrapper</td>
+          </tr>
+          <tr>
+            <td>Post-route ECO</td>
+            <td><code>09_post_route_electrical_closure</code>, <code>10_post_route_maxcap_eco</code>, <code>11_post_route_final_cleanup</code>, <code>12_post_route_residual_maxcap_eco</code>, <code>14_post_route_prefiller_maxcap_margin</code></td>
+            <td>electrical DRC closure sequence</td>
+          </tr>
+          <tr>
+            <td>Final GDS</td>
+            <td><code>4_Backend_ICC2/0_Script/13_gds/run_write_gds_residual_maxcap_clean.sh</code></td>
+            <td>final educational GDS candidate export</td>
+          </tr>
+          <tr>
+            <td>Final GDS reports</td>
+            <td><code>4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate</code></td>
+            <td>after-filler route/electrical/legality/PG/timing evidence</td>
+          </tr>
+          <tr>
+            <td>Final FM/PT</td>
+            <td><code>3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log</code>, <code>5_STA/4_Report/post_route_prefiller_maxcap_margin</code></td>
+            <td>logic equivalence and SDF STA evidence for final source netlist</td>
+          </tr>
+          <tr>
+            <td>Tracking</td>
+            <td><code>00_Project_Tracking/PROJECT_STATUS.md</code>, <code>RESULT_SUMMARY.md</code>, <code>RUN_LOG.md</code>, <code>RUN_MANIFEST.md</code>, <code>DECISION_LOG.md</code></td>
+            <td>audit trail and rerun context</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="summary-box">
+        <strong>Backend 결론</strong>
+        <p>최종 후보는 교육용 FE-to-GDS milestone으로 유지할 수 있다. 다음 단계는 signoff-style 확장으로 넘어갈 수 있지만, 이 phase의 공식 결론은 “ICC2 after-filler route/electrical/PG clean educational GDS candidate with FM/PT evidence”까지다.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

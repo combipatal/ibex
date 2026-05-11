@@ -1122,3 +1122,49 @@ File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M
 Post-filler route/electrical result: check_routes.after_filler.rpt reports open nets 0 and route DRC 0; constraints.after_filler.rpt reports max_transition 0, max_capacitance 0, min_capacitance 0; check_legality.after_filler.rpt succeeded with 0 illegal cells; pg_connectivity.after_filler.rpt reports VDD/VSS floating objects 0; pg_drc.after_filler.rpt has no reported PG DRC records; qor.after_filler.rpt reports setup slack 0.64 ns and no hold violations.
 Conclusion: accepted final educational GDS candidate for this phase. It is not signoff/tapeout ready because antenna rules, foundry DRC, LVS, IR/EM, metal fill, and signoff STA methodology are not covered.
 ```
+
+```text
+Stage: HTML learning report generation
+Command: read ibex_html_report_prompt.md and generate HTML reports from saved project evidence
+Status: RECORDED
+Outputs:
+- ibex_frontend_flow_report.html
+- ibex_backend_route_gds_report.html
+Source evidence:
+- AGENTS.md
+- init/context_bootstrap.md
+- 2026-05-09_103000-ibex-mini-soc-implementation-flow.md
+- 00_Project_Tracking/PROJECT_STATUS.md
+- 00_Project_Tracking/RESULT_SUMMARY.md
+- docs/ibex_config.md
+- docs/backend_flow.md
+- docs/ibex_backend_route_closure_case_study.md
+- docs/post_route_electrical_drc_closure_attempt.md
+- docs/gds_candidate_export.md
+- saved DC/FM/PT/ICC2 report roots cited inside the HTML reports
+Result: two Korean A4-print HTML reports were generated. They summarize front-end handoff, backend route DRC closure, post-route electrical ECO, Formality/PrimeTime evidence, final educational GDS candidate, and explicit claim boundaries.
+Note: no EDA tool was rerun for this documentation step.
+```
+
+```text
+Stage: HTML learning report command-level expansion
+Command: update ibex_frontend_flow_report.html and ibex_backend_route_gds_report.html per review notes
+Status: RECORDED
+Outputs updated:
+- ibex_frontend_flow_report.html
+- ibex_backend_route_gds_report.html
+Frontend additions:
+- Mini SoC block diagram and stronger module composition table
+- DC topo command explanations: set_svf, write DDC/Verilog/SDC/SDF, and related compile/report commands
+- Formality command explanations: reference read, implementation read, set_top, set_svf, match, verify
+- PrimeTime command explanations: read_verilog, link_design, read_sdc, read_sdf, update_timing concept, report_timing, report_constraint
+- stage gates explaining why each stage can hand off to the next
+Backend additions:
+- modified LEF / VIA1 no-track example
+- NDM build command flow
+- route-closure baseline command-level explanation
+- post-route electrical ECO command-level explanation
+- GDS export command-level explanation
+- appendix expanded from path list to script-by-script learning table with purpose, input block, key command, report, PASS criterion, and next-stage evidence
+Note: documentation-only update; no EDA tool rerun.
+```

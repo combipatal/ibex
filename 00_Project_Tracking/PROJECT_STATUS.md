@@ -90,6 +90,7 @@ Status: COMPLETE_WITH_NOTES
 [x] Run Formality on pre-filler margin ECO netlist
 [x] Run PrimeTime SDF STA on pre-filler margin ECO netlist
 [x] Export final educational GDS candidate with after-filler route/electrical reports clean
+[x] Generate Korean A4-print HTML learning reports for front-end flow and backend/GDS flow
 ```
 
 ## Current Notes

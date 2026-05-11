@@ -54,6 +54,7 @@
 | Pre-filler margin ECO FM | Formality | PASS_WITH_NOTE | 3_Formality/3_Log/fm_post_route_prefiller_maxcap_margin.log | Verification SUCCEEDED; 34915 passing, 0 failing, 0 unmatched |
 | Pre-filler margin ECO PT | PrimeTime | PASS_WITH_NOTE | 5_STA/4_Report/post_route_prefiller_maxcap_margin/global_timing.rpt | No setup/hold violations; SDF read errors 0 |
 | Final electrical-clean GDS candidate | ICC2 | PASS_WITH_NOTE | 4_Backend_ICC2/4_Report/13_gds/post_route_prefiller_maxcap_margin_gds_candidate/constraints.after_filler.rpt | GDS/DEF/VG/SDC written; after-filler route DRC 0, max_transition 0, max_capacitance 0; not signoff GDS |
+| HTML learning reports | docs | RECORDED | ibex_frontend_flow_report.html, ibex_backend_route_gds_report.html | Korean A4-print reports generated and expanded with script command explanations, stage gates, backend NDM/LEF/ECO/GDS learning notes; no EDA rerun |
 
 ## Backend Open Items
 

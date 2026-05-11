@@ -734,3 +734,23 @@ File sizes: GDS 157M, DEF 128M, Verilog 32M, SDC 13M.
 After-filler result: open nets 0, route DRC 0, max_transition 0, max_capacitance 0, min_capacitance 0, legality clean, PG clean, timing positive.
 Claim boundary: final educational GDS candidate for this phase only; antenna/foundry DRC/LVS/IR/EM/metal-fill/signoff STA remain absent.
 ```
+
+```text
+HTML learning reports status: RECORDED
+Command: read ibex_html_report_prompt.md and generate two A4-print HTML reports from saved evidence
+Outputs:
+- ibex_frontend_flow_report.html
+- ibex_backend_route_gds_report.html
+Scope: documentation only; no EDA rerun.
+Evidence base: current project tracking files, docs, RTL/config/filelist/constraint paths, and saved DC/FM/PT/ICC2 logs/reports referenced in the reports.
+```
+
+```text
+HTML learning reports expansion status: RECORDED
+Command: revise HTML reports to include command-level script learning notes and stage gates
+Updated outputs:
+- ibex_frontend_flow_report.html
+- ibex_backend_route_gds_report.html
+Scope: documentation only; no EDA rerun.
+Verification: rg checks confirmed Mini SoC block diagram, DC/FM/PT command notes, stage gates, modified LEF/VIA1 no-track notes, NDM build flow, route/ECO/GDS command-level sections, and script-by-script backend appendix are present.
+```
