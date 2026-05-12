@@ -1,0 +1,16 @@
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-3
+Date   : Sun May 10 22:53:04 2026
+****************************************
+
+
+
+
+
+
+Warning: Transition times on not annotated delay arcs havebeen set to zero. Cannot perform max_transition checking. (PTE-057)
+1

@@ -1,0 +1,10 @@
+NET VDD total_shapes 316
+NET VDD layer M1 shapes 249
+NET VDD layer M2 shapes 21
+NET VDD layer M7 shapes 23
+NET VDD layer M8 shapes 23
+NET VSS total_shapes 313
+NET VSS layer M1 shapes 249
+NET VSS layer M2 shapes 20
+NET VSS layer M7 shapes 22
+NET VSS layer M8 shapes 22

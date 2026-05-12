@@ -1,0 +1,2 @@
+case	m2_pitch	m2_offset	m2_width	m7_offset	mesh_stop	vdd_floating_std_cells	vss_floating_std_cells	vdd_floating_wires	vss_floating_wires	pg_drc_errors
+p20_o00_w0p2_mesh_boundary	20.0	0.0	0.2	28	design_boundary	0	415	0	1	SKIP

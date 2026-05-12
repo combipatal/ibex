@@ -1,0 +1,671 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 20
+        -report_by design
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 17:10:27 2026
+****************************************
+
+  Startpoint: u_timer_compare_q_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_timer_rdata_q_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.23      0.23
+
+  u_timer_compare_q_reg_3_/CLK (DFFASX1_HVT)       0.00      0.23 r
+  u_timer_compare_q_reg_3_/Q (DFFASX1_HVT)         0.20      0.43 f
+  U82734/Y (AO222X1_HVT)                           0.06      0.49 f
+  u_timer_rdata_q_reg_3_/D (DFFARX1_HVT)           0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.34      0.34
+  u_timer_rdata_q_reg_3_/CLK (DFFARX1_HVT)         0.00      0.34 r
+  clock uncertainty                                0.10      0.44
+  library hold time                                0.01      0.45
+  data required time                                         0.45
+  ------------------------------------------------------------------------
+  data required time                                         0.45
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_181__29_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_181__29_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.28      0.28
+
+  u_dmem_mem_reg_181__29_/CLK (DFFX1_HVT)          0.00      0.28 r
+  u_dmem_mem_reg_181__29_/Q (DFFX1_HVT)            0.18      0.46 f
+  U37712/Y (AO22X1_HVT)                            0.05      0.51 f
+  u_dmem_mem_reg_181__29_/D (DFFX1_HVT)            0.00      0.51 f
+  data arrival time                                          0.51
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.35      0.35
+  u_dmem_mem_reg_181__29_/CLK (DFFX1_HVT)          0.00      0.35 r
+  clock uncertainty                                0.10      0.45
+  library hold time                                0.02      0.47
+  data required time                                         0.47
+  ------------------------------------------------------------------------
+  data required time                                         0.47
+  data arrival time                                         -0.51
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_261__22_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_261__22_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_261__22_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_261__22_/Q (DFFX1_HVT)            0.18      0.43 f
+  U34113/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_261__22_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_261__22_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_228__30_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_228__30_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.28      0.28
+
+  u_dmem_mem_reg_228__30_/CLK (DFFX1_HVT)          0.00      0.28 r
+  u_dmem_mem_reg_228__30_/Q (DFFX1_HVT)            0.18      0.46 f
+  U35537/Y (AO22X1_HVT)                            0.05      0.51 f
+  u_dmem_mem_reg_228__30_/D (DFFX1_HVT)            0.00      0.51 f
+  data arrival time                                          0.51
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.35      0.35
+  u_dmem_mem_reg_228__30_/CLK (DFFX1_HVT)          0.00      0.35 r
+  clock uncertainty                                0.10      0.45
+  library hold time                                0.02      0.47
+  data required time                                         0.47
+  ------------------------------------------------------------------------
+  data required time                                         0.47
+  data arrival time                                         -0.51
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_264__21_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_264__21_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_264__21_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_264__21_/Q (DFFX1_HVT)            0.18      0.44 f
+  U33922/Y (AO22X1_HVT)                            0.05      0.49 f
+  u_dmem_mem_reg_264__21_/D (DFFX1_HVT)            0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_264__21_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_262__17_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_262__17_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_262__17_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_262__17_/Q (DFFX1_HVT)            0.18      0.43 f
+  U34066/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_262__17_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_262__17_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_266__17_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_266__17_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.25      0.25
+
+  u_dmem_mem_reg_266__17_/CLK (DFFX1_HVT)          0.00      0.25 r
+  u_dmem_mem_reg_266__17_/Q (DFFX1_HVT)            0.17      0.43 f
+  U33834/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_266__17_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.31      0.31
+  u_dmem_mem_reg_266__17_/CLK (DFFX1_HVT)          0.00      0.31 r
+  clock uncertainty                                0.10      0.41
+  library hold time                                0.02      0.43
+  data required time                                         0.43
+  ------------------------------------------------------------------------
+  data required time                                         0.43
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_50__2_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_50__2_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_50__2_/CLK (DFFX1_HVT)            0.00      0.26 r
+  u_dmem_mem_reg_50__2_/Q (DFFX1_HVT)              0.18      0.44 f
+  U43515/Y (AO22X1_HVT)                            0.05      0.49 f
+  u_dmem_mem_reg_50__2_/D (DFFX1_HVT)              0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_50__2_/CLK (DFFX1_HVT)            0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_264__17_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_264__17_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_264__17_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_264__17_/Q (DFFX1_HVT)            0.18      0.44 f
+  U33918/Y (AO22X1_HVT)                            0.05      0.49 f
+  u_dmem_mem_reg_264__17_/D (DFFX1_HVT)            0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_264__17_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_381__22_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_381__22_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_381__22_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_381__22_/Q (DFFX1_HVT)            0.18      0.43 f
+  U28710/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_381__22_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_381__22_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_116__17_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_116__17_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_116__17_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_116__17_/Q (DFFX1_HVT)            0.18      0.43 f
+  U40627/Y (AO22X1_HVT)                            0.05      0.49 f
+  u_dmem_mem_reg_116__17_/D (DFFX1_HVT)            0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_116__17_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_58__21_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_58__21_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.25      0.25
+
+  u_dmem_mem_reg_58__21_/CLK (DFFX1_HVT)           0.00      0.25 r
+  u_dmem_mem_reg_58__21_/Q (DFFX1_HVT)             0.18      0.43 f
+  U43218/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_58__21_/D (DFFX1_HVT)             0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.31      0.31
+  u_dmem_mem_reg_58__21_/CLK (DFFX1_HVT)           0.00      0.31 r
+  clock uncertainty                                0.10      0.41
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_285__16_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_285__16_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_285__16_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_285__16_/Q (DFFX1_HVT)            0.17      0.43 f
+  U32998/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_285__16_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_285__16_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_210__28_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_210__28_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.28      0.28
+
+  u_dmem_mem_reg_210__28_/CLK (DFFX1_HVT)          0.00      0.28 r
+  u_dmem_mem_reg_210__28_/Q (DFFX1_HVT)            0.18      0.45 f
+  U36370/Y (AO22X1_HVT)                            0.05      0.50 f
+  u_dmem_mem_reg_210__28_/D (DFFX1_HVT)            0.00      0.50 f
+  data arrival time                                          0.50
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.34      0.34
+  u_dmem_mem_reg_210__28_/CLK (DFFX1_HVT)          0.00      0.34 r
+  clock uncertainty                                0.10      0.44
+  library hold time                                0.02      0.46
+  data required time                                         0.46
+  ------------------------------------------------------------------------
+  data required time                                         0.46
+  data arrival time                                         -0.50
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_0__29_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_0__29_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.27      0.27
+
+  u_dmem_mem_reg_0__29_/CLK (DFFX1_HVT)            0.00      0.27 r
+  u_dmem_mem_reg_0__29_/Q (DFFX1_HVT)              0.17      0.45 f
+  U45796/Y (AO22X1_HVT)                            0.05      0.50 f
+  u_dmem_mem_reg_0__29_/D (DFFX1_HVT)              0.00      0.50 f
+  data arrival time                                          0.50
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.33      0.33
+  u_dmem_mem_reg_0__29_/CLK (DFFX1_HVT)            0.00      0.33 r
+  clock uncertainty                                0.10      0.43
+  library hold time                                0.02      0.45
+  data required time                                         0.45
+  ------------------------------------------------------------------------
+  data required time                                         0.45
+  data arrival time                                         -0.50
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_24__17_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_24__17_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_24__17_/CLK (DFFX1_HVT)           0.00      0.26 r
+  u_dmem_mem_reg_24__17_/Q (DFFX1_HVT)             0.18      0.43 f
+  U44695/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_24__17_/D (DFFX1_HVT)             0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_24__17_/CLK (DFFX1_HVT)           0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_380__16_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_380__16_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_380__16_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_380__16_/Q (DFFX1_HVT)            0.18      0.43 f
+  U28745/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_380__16_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_380__16_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_373__18_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_373__18_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.25      0.25
+
+  u_dmem_mem_reg_373__18_/CLK (DFFX1_HVT)          0.00      0.25 r
+  u_dmem_mem_reg_373__18_/Q (DFFX1_HVT)            0.17      0.43 f
+  U29027/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_373__18_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.31      0.31
+  u_dmem_mem_reg_373__18_/CLK (DFFX1_HVT)          0.00      0.31 r
+  clock uncertainty                                0.10      0.41
+  library hold time                                0.02      0.43
+  data required time                                         0.43
+  ------------------------------------------------------------------------
+  data required time                                         0.43
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_262__16_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_262__16_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_262__16_/CLK (DFFX1_HVT)          0.00      0.26 r
+  u_dmem_mem_reg_262__16_/Q (DFFX1_HVT)            0.18      0.43 f
+  U34065/Y (AO22X1_HVT)                            0.05      0.48 f
+  u_dmem_mem_reg_262__16_/D (DFFX1_HVT)            0.00      0.48 f
+  data arrival time                                          0.48
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_262__16_/CLK (DFFX1_HVT)          0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.48
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: u_dmem_mem_reg_4__16_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_dmem_mem_reg_4__16_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.26      0.26
+
+  u_dmem_mem_reg_4__16_/CLK (DFFX1_HVT)            0.00      0.26 r
+  u_dmem_mem_reg_4__16_/Q (DFFX1_HVT)              0.18      0.44 f
+  U45614/Y (AO22X1_HVT)                            0.05      0.49 f
+  u_dmem_mem_reg_4__16_/D (DFFX1_HVT)              0.00      0.49 f
+  data arrival time                                          0.49
+
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  u_dmem_mem_reg_4__16_/CLK (DFFX1_HVT)            0.00      0.32 r
+  clock uncertainty                                0.10      0.42
+  library hold time                                0.02      0.44
+  data required time                                         0.44
+  ------------------------------------------------------------------------
+  data required time                                         0.44
+  data arrival time                                         -0.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+1

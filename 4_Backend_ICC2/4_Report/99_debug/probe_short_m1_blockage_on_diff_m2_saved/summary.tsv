@@ -1,0 +1,2 @@
+net	layers	cx	cy	half_x	half_y	before_total	before_open_nets	before_diff_net_spacing	before_off_grid	after_total	after_open_nets	after_diff_net_spacing	after_less_than_min_area	after_needs_fat_contact	after_off_grid	after_same_net_spacing	after_short
+ZBUF_1454_851	M1	781.05	268.98	0.35	0.25	18	0	0	17	21	0	3	0	0	18	0	0

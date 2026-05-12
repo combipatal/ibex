@@ -1,0 +1,87 @@
+ 
+****************************************
+Report : qor
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sun May 10 16:39:23 2026
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              78.00
+  Critical Path Length:          9.61
+  Critical Path Slack:           0.22
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          8
+  Hierarchical Port Count:        817
+  Leaf Cell Count:             109711
+  Buf/Inv Cell Count:            8382
+  Buf Cell Count:                4560
+  Inv Cell Count:                3822
+  CT Buf/Inv Cell Count:            1
+  Combinational Cell Count:     74827
+  Sequential Cell Count:        34884
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   182797.901569
+  Noncombinational Area:
+                        231813.136502
+  Buf/Inv Area:          14473.247106
+  Total Buffer Area:          9466.86
+  Total Inverter Area:        5006.38
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  Net XLength        :     1544333.12
+  Net YLength        :     2033220.00
+  -----------------------------------
+  Cell Area:            414611.038071
+  Design Area:          414611.038071
+  Net Length        :      3577553.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:        110307
+  Nets With Violations:          6832
+  Max Trans Violations:          3424
+  Max Cap Violations:            6793
+  -----------------------------------
+
+
+  Hostname: SGP3
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   34.64
+  Logic Optimization:                 20.80
+  Mapping Optimization:              106.31
+  -----------------------------------------
+  Overall Compile Time:              502.09
+  Overall Compile Wall Clock Time:   507.34
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

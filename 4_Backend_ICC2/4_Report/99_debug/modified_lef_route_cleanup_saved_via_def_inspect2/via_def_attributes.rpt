@@ -1,0 +1,134 @@
+****************************************
+Report : List of Attribute Definitions
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:16:07 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+bottom_via_def            via_def    collection A           via_def
+cut_height                via_def    distance   A,S         
+cut_layer_names           via_def    string     A,S         
+cut_layers                via_def    collection A,S         layer
+cut_pattern               via_def    string     A,S         
+cut_pattern_size          via_def    string     A           
+cut_width                 via_def    distance   A,S         
+full_name                 via_def    string     A,S         
+is_autogen                via_def    boolean    A           
+is_compound_tsv           via_def    boolean    A           
+is_default                via_def    boolean    A,S         
+is_excluded_for_signal_route via_def boolean    A,S         
+is_fat_wire_via_only      via_def    boolean    A,S         
+is_redundant_via_insertion_only via_def boolean A,S         
+lower_enclosure_height    via_def    distance   A,S         
+lower_enclosure_width     via_def    distance   A,S         
+lower_layer               via_def    collection A           layer
+lower_layer_name          via_def    string     A           
+lower_mask_pattern        via_def    string     A,S         alternate_columns, alternate_rows, alternating, uniform
+mask_pattern              via_def    string     A,S         alternate_columns, alternate_rows, alternating, uniform
+min_columns               via_def    int        A,S         
+min_cut_spacing           via_def    distance   A,S         
+min_cut_x_spacing         via_def    distance   A           
+min_cut_y_spacing         via_def    distance   A           
+min_rows                  via_def    int        A,S         
+name                      via_def    string     A,S         
+object_class              via_def    string     A           
+owner                     via_def    collection A           block tech
+shapes                    via_def    collection A,S         poly_rect
+source_type               via_def    string     A           generated, generated_for_special_nets, multiple_cut, multiple_cut_fixed, single_cut, single_cut_fixed
+top_via_def               via_def    collection A           via_def
+tsv_keepout_spacing       via_def    distance   A,S         
+upper_enclosure_height    via_def    distance   A,S         
+upper_enclosure_width     via_def    distance   A,S         
+upper_layer               via_def    collection A           layer
+upper_layer_name          via_def    string     A           
+upper_mask_pattern        via_def    string     A,S         alternate_columns, alternate_rows, alternating, uniform
+via_def_type              via_def    string     A           
+xy_min_cut_spacing        via_def    coord      A,S         
+****************************************
+Report : List of Attribute Definitions
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:16:07 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+array_size                via        string     A,S         
+bbox                      via        rect       A           
+bounding_box              via        collection A           bounding_box
+custom_route_flow         via        string     A,S         
+custom_shield_net1_associated via    string     A,S         
+custom_shield_net2_associated via    string     A,S         
+cut_layer_names           via        string     A           
+cut_layers                via        collection A           layer
+cut_mask_constraint       via        string     A,S         no_mask, mask_one, mask_two, mask_three, mask_four, same_mask, mask_five, mask_six, mask_seven, mask_eight, mask_nine, mask_ten, mask_eleven, mask_twelve, mask_thirteen, mask_fourteen, mask_fifteen, inherit_mask
+cut_pattern               via        string     A,S         
+cut_pattern_size          via        string     A           
+design_name               via        string     A           
+full_name                 via        string     A           
+groups                    via        collection A           group
+has_net                   via        boolean    A           
+height                    via        distance   A           
+ignore_ndr_spacing        via        boolean    A,S         
+in_edit_group             via        boolean    A           
+is_cut_mask_fixed         via        boolean    A,S         
+is_default_via            via        boolean    A           
+is_fixed                  via        boolean    A           
+is_lower_mask_fixed       via        boolean    A,S         
+is_parallel_wire          via        boolean    A           
+is_pattern_must_join      via        boolean    A           
+is_shadow                 via        boolean    A           
+is_upper_mask_fixed       via        boolean    A,S         
+is_via_ladder             via        boolean    A           
+is_via_staple             via        boolean    A,S         
+lower_layer               via        collection A           layer
+lower_layer_bounding_box  via        collection A           bounding_box
+lower_layer_name          via        string     A           
+lower_mask_constraint     via        string     A,S         no_mask, mask_one, mask_two, mask_three, mask_four, same_mask, inherit_mask
+name                      via        string     A           
+net                       via        collection A,S         net
+net_type                  via        string     A           analog_ground, analog_power, analog_signal, clock, deep_nwell, deep_pwell, ground, nwell, power, pwell, reset, scan, signal, tie_high, tie_low, unset
+number_of_columns         via        int        A,S         
+number_of_rows            via        int        A,S         
+object_class              via        string     A           
+object_id                 via        int        A           
+offset                    via        coord      A,S         
+orientation               via        string     A,S         R0, R90, R180, R270, MX, MXR90, MY, MYR90
+origin                    via        coord      A,S         
+owner                     via        collection A,S         port lib_pin terminal net
+parent_block              via        collection A           block
+parent_block_cell         via        collection A           cell
+parent_cell               via        collection A           cell
+physical_status           via        string     A,S         application_fixed, fixed, locked, minor_change, unrestricted
+pnet_ignore               via        boolean    A,S         
+rule_type                 via        string     A,S         default, net_non_default, none, shape_non_default
+shadow_status             via        string     A,S         copied_down, copied_up, normal, pulled_up, pushed_down, virtual_flat
+shape_use                 via        string     A,S         area_fill, core_wire, detail_route, follow_pin, global_route, lib_cell_pin_connect, macro_pin_connect, opc, partial_parallel_route, pg_augmentation, rdl, ring, shield_route, stripe, taper, trunk, user_route, zero_skew
+shapes                    via        collection A           poly_rect
+tag                       via        string     A,S         
+top_block                 via        collection A           block
+upper_layer               via        collection A           layer
+upper_layer_bounding_box  via        collection A           bounding_box
+upper_layer_name          via        string     A           
+upper_mask_constraint     via        string     A,S         no_mask, mask_one, mask_two, mask_three, mask_four, same_mask, inherit_mask
+via_def                   via        collection A,S         via_def
+via_def_name              via        string     A           
+via_type                  via        string     A           
+width                     via        distance   A           
+x_pitch                   via        distance   A,S         
+y_pitch                   via        distance   A,S         
+0

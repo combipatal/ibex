@@ -1,0 +1,20 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : matrix
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:04:04 2026
+****************************************
+
+                       | M1    M1-M2   M2   VIA1  | TOTALS BY TYPE
+---------------------------------------------------------------------
+Diff net spacing       | 251   -       -    -     | 251
+Less than minimum area | -     -       24   -     | 24
+Needs fat contact      | -     347     -    -     | 347
+Off-grid               | 7     -       42   43    | 92
+Short                  | 5     -       1    -     | 6
+---------------------------------------------------------------------
+                       | M1    M1-M2   M2   VIA1  | 720
+TOTALS BY LAYER        | 263   347     67   43    |
+1

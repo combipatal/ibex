@@ -1,0 +1,18 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 16:23:35 2026
+****************************************
+
+Error ID          : 0
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 1
+Description       :  -- 
+Status            : error
+Bbox              : {799.4010 612.0100} {799.5110 612.0700}
+
+1

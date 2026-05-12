@@ -1,0 +1,66 @@
+**************************************************
+Report         : setup_status
+
+Reference      : r:/WORK/ibex_mini_soc_top
+Implementation : i:/WORK/ibex_mini_soc_top
+Version        : W-2024.09-SP5
+Date           : Sun May 10 21:56:10 2026
+**************************************************
+
+ #### Design Information ####
+
+ # Design Settings #
+
+ set_top reference design:      r:/WORK/ibex_mini_soc_top
+ set_top implementation design: i:/WORK/ibex_mini_soc_top
+ set_reference_design:          r:/WORK/ibex_mini_soc_top
+ set_implementation_design:     i:/WORK/ibex_mini_soc_top
+
+ # Design Statistics Ref(Imp)  #
+
+ Ports:                          131(131)
+ Registers:                      34968(34884)
+ Black boxes:                    0(0)
+   - Unresolved modules :        0(0)
+   - User specified     :        0(0)
+ Undriven nets :                 0(13)
+ Multiply-driven nets:           0(0)
+
+ #### HDL Read Message Summary ####
+
+ Message ID:          Occurrences:  Ref(Imp)
+ ----------------------------------------------------
+
+ #### User Specified Setup ####
+
+ Command Name:          Result:  Ref(Imp)
+ ----------------------------------------------------
+ set_black_box             :       0(   0)
+ set_clock                 :       1(   1)
+ set_compare_rule          :       0(   0)
+ set_constant              :       0(   0)
+ set_constraint            :       0(   0)
+ set_cutpoint              :       0(   0)
+ set_dont_cut              :       0(   0)
+ set_dont_match_points     :       0(   0)
+ set_dont_verify_points    :       0(   0)
+ set_factor_point          :       0(   0)
+ set_input_value_range     :       0(   0)
+ set_inv_push              :       0(   0)
+ set_user_match            :       0(   0)
+ set_verify_points         :       0(   0)
+ change_link               :       0(   0)
+ create_design             :       0(   0)
+ create_cell               :       0(   0)
+ create_net                :       0(   0)
+ create_port               :       0(   0)
+ create_primitive          :       0(   0)
+ connect_net               :       0(   0)
+ disconnect_net            :       0(   0)
+ invert_pin                :       0(   0)
+ remove_cell               :       0(   0)
+ remove_net                :       0(   0)
+ remove_port               :       0(   0)
+ rewire_connection         :       0(   0)
+ set_dont_reverse          :       0(   0)
+1

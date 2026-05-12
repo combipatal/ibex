@@ -1,0 +1,3034 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 20
+        -report_by design
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:10:30 2026
+****************************************
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_20_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U6516/Y (NAND2X2_HVT)                            0.12      8.02 f
+  U42085/Y (NBUFFX2_HVT)                           0.08      8.11 f
+  U42086/Y (INVX4_HVT)                             0.04      8.15 r
+  U6621/Y (NAND2X0_HVT)                            0.15      8.31 f
+  U42090/Y (INVX2_HVT)                             0.10      8.41 r
+  U6842/Y (NAND2X0_HVT)                            0.16      8.57 f
+  U6843/Y (INVX2_HVT)                              0.08      8.65 r
+  U6844/Y (NAND3X0_HVT)                            0.18      8.82 f
+  U6845/Y (OA21X1_HVT)                             0.15      8.98 f
+  U6920/Y (AND2X1_HVT)                             0.08      9.05 f
+  U6922/Y (AND2X1_HVT)                             0.05      9.10 f
+  U6926/Y (NAND4X0_HVT)                            0.04      9.14 r
+  U6927/Y (AO221X1_HVT)                            0.15      9.28 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_20_/D (DFFX2_HVT)
+                                                   0.00      9.28 r
+  data arrival time                                          9.28
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_20_/CLK (DFFX2_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.08     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.28
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.74
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_23_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U6516/Y (NAND2X2_HVT)                            0.12      8.02 f
+  U42085/Y (NBUFFX2_HVT)                           0.08      8.11 f
+  U42086/Y (INVX4_HVT)                             0.04      8.15 r
+  U6621/Y (NAND2X0_HVT)                            0.15      8.31 f
+  U42090/Y (INVX2_HVT)                             0.10      8.41 r
+  U6842/Y (NAND2X0_HVT)                            0.16      8.57 f
+  U6843/Y (INVX2_HVT)                              0.08      8.65 r
+  U6844/Y (NAND3X0_HVT)                            0.18      8.82 f
+  U6845/Y (OA21X1_HVT)                             0.15      8.98 f
+  U8922/Y (NAND4X0_HVT)                            0.06      9.04 r
+  U8923/Y (OR2X1_HVT)                              0.08      9.12 r
+  U8924/Y (AO21X1_HVT)                             0.07      9.19 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_23_/D (DFFX2_HVT)
+                                                   0.00      9.19 r
+  data arrival time                                          9.19
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_23_/CLK (DFFX2_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.08     10.02
+  data required time                                        10.02
+  ------------------------------------------------------------------------
+  data required time                                        10.02
+  data arrival time                                         -9.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.83
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__14_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7514/Y (AO222X1_HVT)                            0.14      9.19 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__14_/D (DFFX1_HVT)
+                                                   0.00      9.19 r
+  data arrival time                                          9.19
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__14_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.84
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__8_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7523/Y (AO222X1_HVT)                            0.13      9.19 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__8_/D (DFFX1_HVT)
+                                                   0.00      9.19 r
+  data arrival time                                          9.19
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__8_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.19
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.84
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__23_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7505/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__23_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__23_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.84
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__9_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7522/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__9_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__9_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.84
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__1_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7530/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__1_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__1_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__18_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7510/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__18_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__18_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__0_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7531/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__0_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__0_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__29_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7496/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__29_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__29_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__31_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7494/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__31_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__31_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__13_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7518/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__13_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__13_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_err_q_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7532/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_err_q_reg_0_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_err_q_reg_0_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__11_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7520/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__11_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__11_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__7_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7524/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__7_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__7_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__10_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7521/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__10_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__10_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__28_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7500/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__28_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__28_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__15_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7513/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__15_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__15_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__30_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7495/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__30_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__30_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+
+  Startpoint: u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__27_ (rising edge-triggered flip-flop clocked by clk)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (propagated)                 0.24      0.24
+
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/CLK (DFFX1_HVT)
+                                                   0.00      0.24 r
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_alu_id_o_reg_5_/Q (DFFX1_HVT)
+                                                   0.21      0.45 f
+  U3031/Y (INVX1_HVT)                              0.05      0.50 r
+  U3043/Y (AND2X1_HVT)                             0.07      0.57 r
+  U3045/Y (AO222X1_HVT)                            0.14      0.72 r
+  U3046/Y (AND4X1_HVT)                             0.14      0.86 r
+  U3047/Y (OA221X1_HVT)                            0.10      0.96 r
+  U3048/Y (AND2X1_HVT)                             0.07      1.03 r
+  U3060/Y (AND2X1_HVT)                             0.07      1.10 r
+  U3062/Y (AO222X1_HVT)                            0.16      1.26 r
+  U3063/Y (OA21X1_HVT)                             0.09      1.35 r
+  U3066/Y (NAND2X0_HVT)                            0.10      1.45 f
+  U3067/Y (INVX2_HVT)                              0.08      1.53 r
+  U44717/Y (AO222X1_HVT)                           0.21      1.74 r
+  U7965/Y (NAND2X0_HVT)                            0.06      1.80 f
+  ZBUF_8063_inst_1951/Y (NBUFFX2_HVT)              0.09      1.88 f
+  U8239/Y (AO22X1_HVT)                             0.08      1.96 f
+  U8240/Y (NAND3X0_HVT)                            0.05      2.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U44/CO (FADDX1_HVT)
+                                                   0.15      2.16 r
+  u_ibex_top_u_ibex_core_add_x_479/U45/CO (FADDX2_HVT)
+                                                   0.12      2.28 r
+  u_ibex_top_u_ibex_core_add_x_479/U46/CO (FADDX1_HVT)
+                                                   0.12      2.40 r
+  u_ibex_top_u_ibex_core_add_x_479/U40/CO (FADDX2_HVT)
+                                                   0.12      2.52 r
+  u_ibex_top_u_ibex_core_add_x_479/U42/CO (FADDX1_HVT)
+                                                   0.11      2.63 r
+  u_ibex_top_u_ibex_core_add_x_479/U47/CO (FADDX2_HVT)
+                                                   0.12      2.75 r
+  u_ibex_top_u_ibex_core_add_x_479/U48/CO (FADDX1_HVT)
+                                                   0.12      2.87 r
+  u_ibex_top_u_ibex_core_add_x_479/U49/CO (FADDX1_HVT)
+                                                   0.11      2.98 r
+  u_ibex_top_u_ibex_core_add_x_479/U50/CO (FADDX1_HVT)
+                                                   0.11      3.09 r
+  u_ibex_top_u_ibex_core_add_x_479/U51/CO (FADDX2_HVT)
+                                                   0.12      3.21 r
+  u_ibex_top_u_ibex_core_add_x_479/U52/CO (FADDX1_HVT)
+                                                   0.11      3.32 r
+  u_ibex_top_u_ibex_core_add_x_479/U53/CO (FADDX1_HVT)
+                                                   0.12      3.44 r
+  u_ibex_top_u_ibex_core_add_x_479/U54/CO (FADDX1_HVT)
+                                                   0.12      3.55 r
+  u_ibex_top_u_ibex_core_add_x_479/U55/CO (FADDX1_HVT)
+                                                   0.12      3.67 r
+  u_ibex_top_u_ibex_core_add_x_479/U56/CO (FADDX1_HVT)
+                                                   0.11      3.78 r
+  u_ibex_top_u_ibex_core_add_x_479/U57/CO (FADDX1_HVT)
+                                                   0.11      3.90 r
+  u_ibex_top_u_ibex_core_add_x_479/U58/CO (FADDX1_HVT)
+                                                   0.11      4.01 r
+  u_ibex_top_u_ibex_core_add_x_479/U59/CO (FADDX1_HVT)
+                                                   0.11      4.12 r
+  u_ibex_top_u_ibex_core_add_x_479/U60/CO (FADDX2_HVT)
+                                                   0.12      4.24 r
+  u_ibex_top_u_ibex_core_add_x_479/U61/CO (FADDX1_HVT)
+                                                   0.12      4.35 r
+  u_ibex_top_u_ibex_core_add_x_479/U62/CO (FADDX2_HVT)
+                                                   0.12      4.47 r
+  u_ibex_top_u_ibex_core_add_x_479/U63/CO (FADDX1_HVT)
+                                                   0.11      4.59 r
+  u_ibex_top_u_ibex_core_add_x_479/U64/CO (FADDX1_HVT)
+                                                   0.11      4.70 r
+  u_ibex_top_u_ibex_core_add_x_479/U65/CO (FADDX1_HVT)
+                                                   0.11      4.81 r
+  u_ibex_top_u_ibex_core_add_x_479/U66/CO (FADDX1_HVT)
+                                                   0.11      4.92 r
+  u_ibex_top_u_ibex_core_add_x_479/U67/CO (FADDX1_HVT)
+                                                   0.11      5.04 r
+  u_ibex_top_u_ibex_core_add_x_479/U68/CO (FADDX1_HVT)
+                                                   0.11      5.15 r
+  u_ibex_top_u_ibex_core_add_x_479/U69/CO (FADDX1_HVT)
+                                                   0.11      5.26 r
+  u_ibex_top_u_ibex_core_add_x_479/U70/CO (FADDX1_HVT)
+                                                   0.11      5.38 r
+  u_ibex_top_u_ibex_core_add_x_479/U71/CO (FADDX1_HVT)
+                                                   0.11      5.49 r
+  u_ibex_top_u_ibex_core_add_x_479/U72/CO (FADDX1_HVT)
+                                                   0.12      5.61 r
+  u_ibex_top_u_ibex_core_add_x_479/U43/S (FADDX1_HVT)
+                                                   0.20      5.80 f
+  U31467/Y (INVX2_HVT)                             0.04      5.85 r
+  U3435/Y (NAND4X0_HVT)                            0.11      5.96 f
+  U3441/Y (NOR4X1_HVT)                             0.13      6.09 r
+  U42471/Y (NAND4X0_HVT)                           0.13      6.22 f
+  U31517/Y (INVX2_HVT)                             0.06      6.28 r
+  U3444/Y (MUX21X1_HVT)                            0.12      6.40 r
+  U3445/Y (NAND2X0_HVT)                            0.05      6.45 f
+  U3446/Y (OA22X1_HVT)                             0.08      6.53 f
+  U3447/Y (AO221X1_HVT)                            0.13      6.66 f
+  U3448/Y (NOR4X1_HVT)                             0.11      6.77 r
+  U3449/Y (INVX1_HVT)                              0.03      6.79 f
+  U3450/Y (AND2X1_HVT)                             0.05      6.84 f
+  U3465/Y (AND2X1_HVT)                             0.06      6.90 f
+  U3466/Y (AND2X1_HVT)                             0.05      6.95 f
+  U3470/Y (AND2X2_HVT)                             0.08      7.03 f
+  U3471/Y (AND3X1_HVT)                             0.09      7.12 f
+  U3475/Y (NAND4X0_HVT)                            0.05      7.17 r
+  U5408/Y (AO21X1_HVT)                             0.10      7.27 r
+  U5409/Y (NAND4X0_HVT)                            0.17      7.44 f
+  U5420/Y (NAND2X0_HVT)                            0.10      7.54 r
+  U5421/Y (NAND2X0_HVT)                            0.10      7.64 f
+  U5422/Y (INVX1_HVT)                              0.03      7.67 r
+  U5427/Y (AND4X1_HVT)                             0.13      7.80 r
+  U6503/Y (AND2X2_HVT)                             0.11      7.90 r
+  U7405/Y (AO21X1_HVT)                             0.06      7.97 r
+  U7406/Y (AND4X1_HVT)                             0.11      8.07 r
+  U7407/Y (NAND4X0_HVT)                            0.11      8.18 f
+  U7408/Y (NAND3X0_HVT)                            0.11      8.29 r
+  U7409/Y (NAND3X0_HVT)                            0.16      8.45 f
+  U7412/Y (INVX1_HVT)                              0.06      8.51 r
+  U7480/Y (NAND2X0_HVT)                            0.15      8.65 f
+  U7481/Y (INVX2_HVT)                              0.07      8.72 r
+  U7484/Y (OA222X1_HVT)                            0.19      8.91 r
+  U6278/Y (AND2X4_HVT)                             0.14      9.05 r
+  U7501/Y (AO222X1_HVT)                            0.13      9.18 r
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__27_/D (DFFX1_HVT)
+                                                   0.00      9.18 r
+  data arrival time                                          9.18
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (propagated)                 0.20     10.20
+  u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__27_/CLK (DFFX1_HVT)
+                                                   0.00     10.20 r
+  clock uncertainty                               -0.10     10.10
+  library setup time                              -0.07     10.03
+  data required time                                        10.03
+  ------------------------------------------------------------------------
+  data required time                                        10.03
+  data arrival time                                         -9.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.85
+
+
+1

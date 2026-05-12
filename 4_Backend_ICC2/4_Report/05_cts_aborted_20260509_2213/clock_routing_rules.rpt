@@ -1,0 +1,7 @@
+****************************************
+ Report : clock routing rules
+ Design : ibex_mini_soc_top
+ Date   : Sat May  9 22:03:17 2026
+****************************************
+   Clock: clk (mode default); Net Type: all;      Rule: default rule; Min Layer: M4; Max Layer: M6
+

@@ -1,0 +1,20 @@
+name	net	via_def	origin	bbox	array_size	rows	cols	offset	cut_pattern	shape_use	physical_status
+VIA_SA_15760	ZBUF_2071_6	VIA12SQ_C	393.6160 268.5200	{393.5610 268.3890} {393.6710 268.6510}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15716	n47209	VIA12SQ_C	760.6960 291.9280	{760.6410 291.7970} {760.7510 292.0590}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15713	n46355	VIA12SQ_C	743.6720 309.8640	{743.6170 309.7330} {743.7270 309.9950}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15714	n46411	VIA12SQ_C	741.5440 306.5200	{741.4890 306.3890} {741.5990 306.6510}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15706	n4111	VIA12SQ_C	780.3040 309.8640	{780.2490 309.7330} {780.3590 309.9950}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15724	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]	VIA12SQ_C	713.2720 315.3360	{713.2170 315.2050} {713.3270 315.4670}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15725	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]	VIA12SQ_C	713.8800 318.6800	{713.8250 318.5490} {713.9350 318.8110}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15704	n4111	VIA12SQ_C	776.5040 315.3360	{776.4490 315.2050} {776.5590 315.4670}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15705	n4111	VIA12SQ_C	778.4800 315.3360	{778.4250 315.2050} {778.5350 315.4670}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15728	u_ibex_top_u_ibex_core_instr_rdata_alu_id[26]	VIA12SQ_C	789.2720 315.3360	{789.2170 315.2050} {789.3270 315.4670}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15711	n6576	VIA12SQ_C	736.5280 332.0560	{736.4730 331.9250} {736.5830 332.1870}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15703	n2871	VIA12SQ_C	780.3040 335.4000	{780.2490 335.2690} {780.3590 335.5310}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15712	n6821	VIA12SQ_C	743.2160 343.3040	{743.1610 343.1730} {743.2710 343.4350}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15707	n4612	VIA12SQ_C	747.7760 423.5600	{747.7210 423.4290} {747.8310 423.6910}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15720	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	VIA12SQ_C	762.6720 459.1280	{762.6170 458.9970} {762.7270 459.2590}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15708	n5567	VIA12SQ_C	791.2480 452.4400	{791.1930 452.3090} {791.3030 452.5710}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15710	n5613	VIA12SQ_C	801.5840 455.7840	{801.5290 455.6530} {801.6390 455.9150}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15721	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	VIA12SQ_C	767.6880 463.6880	{767.6330 463.5570} {767.7430 463.8190}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted
+VIA_SA_15722	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	VIA12SQ_C	768.2960 462.4720	{768.2410 462.3410} {768.3510 462.6030}	2 1	2	1	0.0000 0.0000	1 1 1 1	detail_route	unrestricted

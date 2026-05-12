@@ -1,0 +1,6 @@
+offset	floating_subnets	vdd_floating_std_cells	vss_floating_std_cells	vdd_floating_wires	vss_floating_wires	pg_drc_errors
+17.5	10	3407	1807	7	4	0
+18.5	10	3392	1964	7	4	0
+27.5	10	3406	2220	7	5	0
+28.5	10	3400	1911	7	4	0
+29.5	10	1032	3306	3	7	0

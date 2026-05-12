@@ -1,0 +1,91 @@
+ 
+****************************************
+Report : area
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sat May  9 20:16:00 2026
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_tt1p05v25c (File: /DATA/home/edu135/lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1p05v25c.db)
+
+Number of ports:                         7946
+Number of nets:                          4809
+Number of cells:                         2281
+Number of combinational cells:           1727
+Number of sequential cells:               485
+Number of macros/black boxes:               0
+Number of buf/inv:                        289
+Number of references:                      13
+
+Combinational area:               4342.304451
+Buf/Inv area:                      490.752081
+Noncombinational area:            3390.281031
+Macro/Black Box area:                0.000000
+Net Interconnect area:            1971.506776
+
+Total cell area:                  7732.585482
+Total area:                       9704.092258
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ibex_mini_soc_top                 7732.5855    100.0   149.9450     7.1160  0.0000  ibex_mini_soc_top
+u_decoder                           36.0884      0.5    36.0884     0.0000  0.0000  simple_decoder
+u_dmem                               7.1160      0.1     0.0000     7.1160  0.0000  simple_dmem
+u_gpio                             326.0668      4.2    91.2377   234.8291  0.0000  gpio
+u_ibex_top                        6817.1588     88.2     0.0000     7.1160  0.0000  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+u_ibex_top/core_clock_gate_i         8.3868      0.1     3.3039     5.0829  0.0000  prim_clock_gating
+u_ibex_top/gen_regfile_ff.register_file_i
+                                   391.6359      5.1   163.9229   227.7130  0.0000  ibex_register_file_ff_0_00000020_0_147242
+u_ibex_top/u_ibex_core            6410.0201     82.9     2.2873     0.0000  0.0000  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+u_ibex_top/u_ibex_core/cs_registers_i
+                                  2201.9037     28.5   136.9836     0.0000  0.0000  ibex_cs_registers_0_00000001_0_0_0_0_00000000_00000028_0_00000000_00000004_0_0_2_0_00000000_00000000_197242
+u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i
+                                   673.7358      8.7    10.1658   455.4261  0.0000  ibex_counter_CounterWidth64
+u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/add_x_1
+                                   208.1439      2.7   208.1439     0.0000  0.0000  ibex_counter_CounterWidth64_DW01_inc_J11_0
+u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i
+                                   844.7747     10.9   181.2047   455.4261  0.0000  ibex_counter_CounterWidth64_ProvideValUpd1
+u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/add_x_1
+                                   208.1439      2.7   208.1439     0.0000  0.0000  ibex_counter_CounterWidth64_ProvideValUpd1_DW01_inc_J10_0
+u_ibex_top/u_ibex_core/cs_registers_i/u_mepc_csr
+                                   305.9894      4.0    85.3924   220.5970  0.0000  ibex_csr_32_0_0_6
+u_ibex_top/u_ibex_core/cs_registers_i/u_mtvec_csr
+                                   240.4202      3.1    69.6355   170.7848  0.0000  ibex_csr_32_0_00000001
+u_ibex_top/u_ibex_core/ex_block_i  919.2389     11.9    63.0277     0.0000  0.0000  ibex_ex_block_2_0_0
+u_ibex_top/u_ibex_core/ex_block_i/alu_i
+                                   856.2111     11.1   656.4540     0.0000  0.0000  ibex_alu_RV32B0
+u_ibex_top/u_ibex_core/ex_block_i/alu_i/add_x_4
+                                   199.7572      2.6   199.7572     0.0000  0.0000  ibex_alu_RV32B0_DW01_add_J12_0
+u_ibex_top/u_ibex_core/id_stage_i  322.5087      4.2   184.7627     7.1160  0.0000  ibex_id_stage_0_2_0_0_0_0_0_0
+u_ibex_top/u_ibex_core/id_stage_i/controller_i
+                                    99.8786      1.3    57.1824    42.6962  0.0000  ibex_controller_0_0_0
+u_ibex_top/u_ibex_core/id_stage_i/decoder_i
+                                    30.7514      0.4    30.7514     0.0000  0.0000  ibex_decoder_0_2_0_0
+u_ibex_top/u_ibex_core/if_stage_i 1732.7538     22.4   243.9782   291.2490  0.0000  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+u_ibex_top/u_ibex_core/if_stage_i/compressed_decoder_i
+                                    21.8564      0.3    21.8564     0.0000  0.0000  ibex_compressed_decoder_3_0
+u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i
+                                  1175.6702     15.2   193.4036   226.6965  0.0000  ibex_prefetch_buffer_0
+u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/add_x_1
+                                    99.1162      1.3    99.1162     0.0000  0.0000  ibex_prefetch_buffer_0_DW01_add_J12_0
+u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i
+                                   656.4540      8.5   247.0280   305.4811  0.0000  ibex_fetch_fifo_00000002_0
+u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/add_x_13
+                                   103.9449      1.3   103.9449     0.0000  0.0000  ibex_fetch_fifo_00000002_0_DW01_add_J7_0
+u_ibex_top/u_ibex_core/load_store_unit_i
+                                  1136.0237     14.7   680.5976   455.4261  0.0000  ibex_load_store_unit_0_00000020
+u_ibex_top/u_ibex_core/wb_stage_i   95.3040      1.2    95.3040     0.0000  0.0000  ibex_wb_stage_0_0_0
+u_imem                              60.4863      0.8    24.9061    35.5802  0.0000  simple_imem
+u_timer                            328.6082      4.2    93.7791   234.8291  0.0000  timer
+--------------------------------  ---------  -------  ---------  ---------  ------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                 4342.3045  3390.2810  0.0000
+
+1

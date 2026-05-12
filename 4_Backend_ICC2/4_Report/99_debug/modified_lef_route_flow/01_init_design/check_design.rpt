@@ -1,0 +1,55 @@
+****************************************
+ Report : check_design
+ Options: { netlist design_mismatch timing }
+ Design : ibex_mini_soc_top
+ Version: W-2024.09-SP2
+ Date   : Sun May 10 01:36:42 2026
+****************************************
+
+Running atomic-check 'netlist'
+****************************************
+Report : check_netlist
+        -cells
+        -nets
+        -ports
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:36:42 2026
+****************************************
+1
+Running atomic-check 'design_mismatch'
+****************************************
+Report : Data Mismatches
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:36:43 2026
+****************************************
+No mismatches exist on the design.
+1
+Running atomic-check 'timing'
+1
+
+  *** EMS Message summary ***
+  ----------------------------------------------------------------------------------------------------
+  Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+  DCHK-004     Warn   101        In design '%design', input pin '%object' of hierarchical cell '%...
+  DCHK-005     Warn   101        In design '%design', a pin '%object' on submodule '%parentObject...
+  DCHK-009     Warn   134        In design '%design', '%object' net '%parentObject' driven by %ex...
+  DCHK-010     Warn   60         In design '%design', '%object' net '%parentObject' has no drivers.
+  DCHK-017     Warn   125        In design '%design', input port '%object' is unloaded.
+  DCHK-021     Warn   13         In design '%design', net connected to output port '%object' is n...
+  DCHK-045     Warn   4          In design '%design', the output pin '%object' of hierarchical ce...
+  TCK-001      Warn   1845       The reported endpoint '%endpoint' is unconstrained. Reason: '%re...
+  TCK-012      Warn   1          The input port '%port' has no clock_relative delay specified. Mo...
+  ----------------------------------------------------------------------------------------------------
+  Total 2384 EMS messages : 0 errors, 2384 warnings, 0 info.
+  ----------------------------------------------------------------------------------------------------
+
+  *** Non-EMS message summary *** 
+  ----------------------------------------------------------------------------------------------------
+   Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+       PVT-032   Info          1 Corner %s: no PVT mismatches.
+  ----------------------------------------------------------------------------------------------------
+  Total 1 non-EMS messages : 0 errors, 0 warnings, 1 info.
+  ----------------------------------------------------------------------------------------------------

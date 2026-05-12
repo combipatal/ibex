@@ -1,0 +1,18 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 13:57:53 2026
+****************************************
+
+Error ID          : 1
+Error Type        : Short
+Error Layer       : M1 (11)
+Number of errors  : 1
+Description       :  -- 
+Status            : error
+Bbox              : {780.9130 268.9010} {781.0630 269.0510}
+
+1

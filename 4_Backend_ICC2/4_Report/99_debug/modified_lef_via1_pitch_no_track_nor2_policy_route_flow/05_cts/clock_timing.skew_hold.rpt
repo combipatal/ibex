@@ -1,0 +1,77 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 20
+        -hold
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 16:09:44 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+  Clock Pin                                          Latency      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  u_imem_mem_reg_71__25_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_25_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_39__29_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_29_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_39__25_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_25_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_71__29_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_29_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_39__31_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_31_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_55__26_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_26_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_87__26_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_26_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_39__26_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_26_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_71__26_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_26_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_71__31_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_31_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_87__29_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_29_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_71__28_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_28_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_39__28_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_28_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_55__29_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_29_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_356__28_/CLK                           0.12              rp-+    default
+  u_imem_rdata_q_reg_28_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_55__28_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_28_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_87__28_/CLK                            0.12              rp-+    default
+  u_imem_rdata_q_reg_28_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_288__20_/CLK                           0.12              rp-+    default
+  u_imem_rdata_q_reg_20_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_336__23_/CLK                           0.12              rp-+    default
+  u_imem_rdata_q_reg_23_/CLK                            0.28      0.17    rp-+    default
+
+  u_imem_mem_reg_304__23_/CLK                           0.12              rp-+    default
+  u_imem_rdata_q_reg_23_/CLK                            0.28      0.17    rp-+    default
+
+---------------------------------------------------------------------------------------------------
+1

@@ -1,0 +1,202 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:04:04 2026
+****************************************
+
+Error ID          : 391
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {563.3700 604.2330} {563.4300 604.3430}
+
+Error ID          : 51
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {169.8420 192.9210} {169.9020 193.0310}
+
+Error ID          : 53
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {171.9700 192.9210} {172.0300 193.0310}
+
+Error ID          : 76
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {110.4100 326.6810} {110.4700 326.7910}
+
+Error ID          : 119
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {831.3460 470.4730} {831.4060 470.5830}
+
+Error ID          : 138
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {832.8660 478.9850} {832.9260 479.0950}
+
+Error ID          : 152
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {832.7140 493.8810} {832.7740 493.9910}
+
+Error ID          : 637
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {783.4660 656.2170} {783.5260 656.3270}
+
+Error ID          : 689
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {838.3380 731.3050} {838.3980 731.4150}
+
+Error ID          : 455
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {735.2820 614.2650} {735.3420 614.3750}
+
+Error ID          : 475
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {777.8420 612.7450} {777.9020 612.8550}
+
+Error ID          : 480
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {795.7780 607.5770} {795.8380 607.6870}
+
+Error ID          : 702
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {849.2820 761.4010} {849.3420 761.5110}
+
+Error ID          : 707
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {846.2420 764.7450} {846.3020 764.8550}
+
+Error ID          : 277
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {845.9380 534.0090} {845.9980 534.1190}
+
+Error ID          : 535
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {722.3620 620.9530} {722.4220 621.0630}
+
+Error ID          : 543
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {739.2340 620.9530} {739.2940 621.0630}
+
+Error ID          : 547
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {770.6980 619.4330} {770.7580 619.5430}
+
+Error ID          : 553
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {777.3860 619.4330} {777.4460 619.5430}
+
+Error ID          : 317
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {118.7700 565.9290} {118.8300 566.0390}
+
+Error ID          : 350
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {725.5540 577.4810} {725.6140 577.5910}
+
+Error ID          : 376
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {824.3540 589.3370} {824.4140 589.4470}
+
+Error ID          : 204
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {840.6180 512.4250} {840.6780 512.5350}
+
+Error ID          : 247
+Error Type        : Less than minimum area
+Error Layer       : M2 (13)
+Number of errors  : 24
+Description       :  -- 
+Status            : error
+Bbox              : {843.6580 522.4570} {843.7180 522.5670}
+
+1

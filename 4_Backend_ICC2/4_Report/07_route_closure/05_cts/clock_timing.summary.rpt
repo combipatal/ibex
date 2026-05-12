@@ -1,0 +1,41 @@
+****************************************
+Report : clock timing
+        -type summary
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 19:03:11 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+                                                                                 Corner
+---------------------------------------------------------------------------------------------------
+  Maximum setup launch latency:
+      u_dmem_mem_reg_248__31_/CLK                              0.36       rp-+    default
+
+  Minimum setup capture latency:
+      u_dmem_mem_reg_35__2_/CLK                                0.11       rp-+    default
+
+  Minimum hold launch latency:
+      u_dmem_mem_reg_35__2_/CLK                                0.11       rp-+    default
+
+  Maximum hold capture latency:
+      u_dmem_mem_reg_248__31_/CLK                              0.36       rp-+    default
+
+  Maximum active transition:
+      u_dmem_mem_reg_236__27_/CLK                              0.09       rp-+    default
+
+  Minimum active transition:
+      u_ibex_top_core_clock_gate_i_en_latch_reg/CLK            0.02       rpi-    default
+
+  Maximum setup skew:
+      u_timer_enable_q_reg/CLK                                            rp-+    default
+      u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                               0.19       rp-+    default
+
+  Maximum hold skew:
+      u_dmem_mem_reg_424__24_/CLK                                         rp-+    default
+      u_dmem_rdata_q_reg_24_/CLK                               0.24       rp-+    default
+
+
+1

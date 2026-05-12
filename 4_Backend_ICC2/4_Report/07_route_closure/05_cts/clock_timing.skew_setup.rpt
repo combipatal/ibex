@@ -1,0 +1,94 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 20
+        -setup
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 19:03:19 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+  Clock Pin                                          Latency      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  u_timer_enable_q_reg/CLK                              0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_30_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_24_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_26_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_compare_q_reg_26_/CLK                         0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_27_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_compare_q_reg_30_/CLK                         0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_25_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_15_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_gpio_rdata_q_reg_29_/CLK                            0.36              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_16__rf_reg_q_reg_5_/CLK
+                                                        0.17      0.19    rp-+    default
+
+  u_timer_enable_q_reg/CLK                              0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_30_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_24_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_dmem_mem_reg_0__30_/CLK                             0.36              rp-+    default
+  u_dmem_rdata_q_reg_30_/CLK                            0.17      0.19    rp-+    default
+
+  u_timer_count_q_reg_27_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_compare_q_reg_30_/CLK                         0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_26_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_compare_q_reg_26_/CLK                         0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_timer_count_q_reg_25_/CLK                           0.35              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_0_/CLK
+                                                        0.16      0.19    rp-+    default
+
+  u_dmem_mem_reg_120__26_/CLK                           0.36              rp-+    default
+  u_dmem_rdata_q_reg_26_/CLK                            0.17      0.19    rp-+    default
+
+  u_dmem_mem_reg_0__26_/CLK                             0.36              rp-+    default
+  u_dmem_rdata_q_reg_26_/CLK                            0.17      0.19    rp-+    default
+
+---------------------------------------------------------------------------------------------------
+1

@@ -1,0 +1,5 @@
+source_block=ibex_mini_soc_top
+work_block=ibex_mini_soc_top_post_route_electrical_drc
+icc2_lib=4_Backend_ICC2/2_Output/09_post_route_electrical_closure/ibex_mini_soc_top_post_route_electrical_drc_icc2_lib
+report_dir=4_Backend_ICC2/4_Report/09_post_route_electrical_closure
+command=route_opt

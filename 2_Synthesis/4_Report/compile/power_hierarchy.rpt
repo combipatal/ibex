@@ -1,0 +1,136 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sat May  9 20:16:00 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_tt1p05v25c (File: /DATA/home/edu135/lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1p05v25c.db)
+
+
+Operating Conditions: tt1p05v25c   Library: saed32rvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+ibex_mini_soc_top      8000              saed32rvt_tt1p05v25c
+simple_imem            ForQA             saed32rvt_tt1p05v25c
+simple_decoder         ForQA             saed32rvt_tt1p05v25c
+simple_dmem            ForQA             saed32rvt_tt1p05v25c
+gpio                   8000              saed32rvt_tt1p05v25c
+timer                  8000              saed32rvt_tt1p05v25c
+ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                       8000              saed32rvt_tt1p05v25c
+prim_clock_gating      ForQA             saed32rvt_tt1p05v25c
+ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                       8000              saed32rvt_tt1p05v25c
+ibex_register_file_ff_0_00000020_0_147242
+                       8000              saed32rvt_tt1p05v25c
+ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                       8000              saed32rvt_tt1p05v25c
+ibex_id_stage_0_2_0_0_0_0_0_0
+                       8000              saed32rvt_tt1p05v25c
+ibex_ex_block_2_0_0    8000              saed32rvt_tt1p05v25c
+ibex_load_store_unit_0_00000020
+                       8000              saed32rvt_tt1p05v25c
+ibex_wb_stage_0_0_0    ForQA             saed32rvt_tt1p05v25c
+ibex_cs_registers_0_00000001_0_0_0_0_00000000_00000028_0_00000000_00000004_0_0_2_0_00000000_00000000_197242
+                       8000              saed32rvt_tt1p05v25c
+ibex_prefetch_buffer_0 8000              saed32rvt_tt1p05v25c
+ibex_compressed_decoder_3_0
+                       ForQA             saed32rvt_tt1p05v25c
+ibex_decoder_0_2_0_0   ForQA             saed32rvt_tt1p05v25c
+ibex_controller_0_0_0  ForQA             saed32rvt_tt1p05v25c
+ibex_alu_RV32B0        8000              saed32rvt_tt1p05v25c
+ibex_csr_32_0_0_6      8000              saed32rvt_tt1p05v25c
+ibex_csr_32_0_00000001 8000              saed32rvt_tt1p05v25c
+ibex_counter_CounterWidth64
+                       8000              saed32rvt_tt1p05v25c
+ibex_counter_CounterWidth64_ProvideValUpd1
+                       8000              saed32rvt_tt1p05v25c
+ibex_fetch_fifo_00000002_0
+                       8000              saed32rvt_tt1p05v25c
+ibex_prefetch_buffer_0_DW01_add_J12_0
+                       ForQA             saed32rvt_tt1p05v25c
+ibex_alu_RV32B0_DW01_add_J12_0
+                       ForQA             saed32rvt_tt1p05v25c
+ibex_counter_CounterWidth64_DW01_inc_J11_0
+                       8000              saed32rvt_tt1p05v25c
+ibex_counter_CounterWidth64_ProvideValUpd1_DW01_inc_J10_0
+                       8000              saed32rvt_tt1p05v25c
+ibex_fetch_fifo_00000002_0_DW01_add_J7_0
+                       ForQA             saed32rvt_tt1p05v25c
+
+
+Global Operating Voltage = 1.05 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ibex_mini_soc_top                        25.118  190.969 3.25e+07  248.564 100.0
+  u_ibex_top (ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0)
+                                         24.971  142.638 2.87e+07  196.328  79.0
+    gen_regfile_ff.register_file_i (ibex_register_file_ff_0_00000020_0_147242)
+                                          0.148   10.727 1.71e+06   12.580   5.1
+    u_ibex_core (ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255)
+                                          7.880  130.960 2.69e+07  165.768  66.7
+      cs_registers_i (ibex_cs_registers_0_00000001_0_0_0_0_00000000_00000028_0_00000000_00000004_0_0_2_0_00000000_00000000_197242)
+                                          2.487   62.158 1.06e+07   75.212  30.3
+        minstret_counter_i (ibex_counter_CounterWidth64_ProvideValUpd1)
+                                          0.395   21.461 4.08e+06   25.938  10.4
+          add_x_1 (ibex_counter_CounterWidth64_ProvideValUpd1_DW01_inc_J10_0)
+                                          0.000 7.15e-05 1.25e+06    1.252   0.5
+        mcycle_counter_i (ibex_counter_CounterWidth64)
+                                          0.496   22.025 3.49e+06   26.012  10.5
+          add_x_1 (ibex_counter_CounterWidth64_DW01_inc_J11_0)
+                                       3.37e-02    0.246 1.25e+06    1.528   0.6
+        u_mtvec_csr (ibex_csr_32_0_00000001)
+                                          0.275    8.078 1.07e+06    9.419   3.8
+        u_mepc_csr (ibex_csr_32_0_0_6)    0.396   10.443 1.37e+06   12.204   4.9
+      wb_stage_i (ibex_wb_stage_0_0_0) 3.22e-05 1.23e-03 3.22e+05    0.323   0.1
+      load_store_unit_i (ibex_load_store_unit_0_00000020)
+                                          0.387   21.466 4.53e+06   26.387  10.6
+      ex_block_i (ibex_ex_block_2_0_0)    0.000 4.28e-03 2.90e+06    2.904   1.2
+        alu_i (ibex_alu_RV32B0)           0.000 4.28e-03 2.73e+06    2.732   1.1
+          add_x_4 (ibex_alu_RV32B0_DW01_add_J12_0)
+                                          0.000    0.000 5.40e+05    0.540   0.2
+      id_stage_i (ibex_id_stage_0_2_0_0_0_0_0_0)
+                                          0.942    3.772 1.09e+06    5.801   2.3
+        controller_i (ibex_controller_0_0_0)
+                                          0.818    3.226 3.41e+05    4.385   1.8
+        decoder_i (ibex_decoder_0_2_0_0)
+                                       5.85e-04 1.12e-03 1.02e+05    0.104   0.0
+      if_stage_i (ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255)
+                                          4.064   43.558 7.51e+06   55.134  22.2
+        compressed_decoder_i (ibex_compressed_decoder_3_0)
+                                       5.20e-02 4.23e-02 6.15e+04    0.156   0.1
+        gen_prefetch_buffer.prefetch_buffer_i (ibex_prefetch_buffer_0)
+                                          2.822   28.714 5.22e+06   36.756  14.8
+          add_x_1 (ibex_prefetch_buffer_0_DW01_add_J12_0)
+                                       4.47e-02    0.231 5.90e+05    0.866   0.3
+          fifo_i (ibex_fetch_fifo_00000002_0)
+                                          1.938   16.906 2.80e+06   21.645   8.7
+            add_x_13 (ibex_fetch_fifo_00000002_0_DW01_add_J7_0)
+                                       5.27e-02    0.218 6.11e+05    0.882   0.4
+    core_clock_gate_i (prim_clock_gating)
+                                         16.938    0.284 4.81e+04   17.270   6.9
+  u_timer (timer)                      7.40e-02   21.792 1.44e+06   23.310   9.4
+  u_gpio (gpio)                        4.96e-05   21.790 1.43e+06   23.221   9.3
+  u_dmem (simple_dmem)                 3.15e-05    0.660 3.59e+04    0.696   0.3
+  u_decoder (simple_decoder)              0.000    0.000 8.76e+04 8.76e-02   0.0
+  u_imem (simple_imem)                 7.24e-02    3.427 2.35e+05    3.734   1.5
+1

@@ -1,0 +1,3 @@
+stage	total_drc	open_nets	diff_net_spacing	less_than_min_area	needs_fat_contact	off_grid	same_net_spacing	short
+before	36	0	2	0	0	34	0	0
+after	19	0	2	0	0	17	0	0

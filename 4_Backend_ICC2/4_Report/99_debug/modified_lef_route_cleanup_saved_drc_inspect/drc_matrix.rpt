@@ -1,0 +1,17 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : matrix
+Version: W-2024.09-SP2
+Date   : Sun May 10 08:44:32 2026
+****************************************
+
+                | M1  VIA1  | TOTALS BY TYPE
+-----------------------------------------------
+Off-grid        | -   19    | 19
+Short           | 1   -     | 1
+-----------------------------------------------
+                | M1  VIA1  | 20
+TOTALS BY LAYER | 1   19    |
+1

@@ -1,0 +1,91 @@
+### help_app_options route.auto_via_ladder.*
+route.auto_via_ladder.allow_neighbor_ripup_in_dense_area # Allow ripup neighboring via ladder and try extra insertion in dense area
+route.auto_via_ladder.allow_patching     # try to repair min length DRCs during via ladder insertion (default true)
+route.auto_via_ladder.allow_samenet_intersection # Allow via ladders to intersect existing samenet wiring (default false)
+route.auto_via_ladder.allow_via_array_as_single_cut # Allow a via array to be used in place of a single cut in a via ladder if the array is needed to satisfy a DRC rule (default true)
+route.auto_via_ladder.apply_app_options_to_insert_via_ladders_command # Override insert_via_ladders command line options with route.auto_via_ladder.* app option settings (default true)
+route.auto_via_ladder.auto_stagger       # allow automatic staggering when inserting via ladders without an explicit maxNumStaggerTrksTbl set in the ViaRule template (default true)
+route.auto_via_ladder.auto_stagger_for_em_via_ladder_max_number_stagger_tracks_per_level # set maximum stagger value of for_electromigration via ladders for any one level when auto staggering (default 9)
+route.auto_via_ladder.auto_stagger_max_number_stagger_tracks_per_level # set maximum stagger value for any one level when auto staggering (default 9)
+route.auto_via_ladder.bias_top_layer_to_samenet_connection # strongly prefer creation of via ladder top layer row that overlaps existing samenet preroutes (default false)
+route.auto_via_ladder.check_drcs_on_existing_via_ladders # Check DRCs on existing via ladders and remove and replace ladders that have DRCs (default false)
+route.auto_via_ladder.clean              # Remove existing via ladders before inserting new via ladders (default false)
+route.auto_via_ladder.connect_within_metal # force via ladder shapes not to stick out of pin shapes and its extensions (default false)
+route.auto_via_ladder.connect_within_metal_for_em_via_ladder # specific control for EM via ladder only, determine whether to connect within metals (default true)
+route.auto_via_ladder.connect_within_metal_for_via_ladder # specific control for via ladder only, determine whether to connect within metals (default same_as_global)
+route.auto_via_ladder.connect_within_pin_mode # limit via drop location on pin shape (default : {all off})
+route.auto_via_ladder.default_width_ndr_promotable_on_nonreserved_tracks # promote default width NDR to non-reserved track with track width (default true)
+route.auto_via_ladder.enable_em_to_performance_via_ladder_update # enable update via ladder while there is prior performance type via ladder in the constraint list for the pin (default true)
+route.auto_via_ladder.generate_center_track_on_off_grid_pattern_must_join_pin_shapes # auto-generate a centered track on any PMJ pin shape without a user-defined centered track (default false)
+route.auto_via_ladder.generate_track_width_by_layer_name # list of {layerName width} pairs to specify a width constraint on auto-generated tracks for via ladder insertion
+route.auto_via_ladder.ignore_min_max_layer_constraints # ignore min/max layer constraints during via ladder insertion (default true)
+route.auto_via_ladder.ignore_routing_shape_drcs # Ignore all DRCs with routing shapes (default true)
+route.auto_via_ladder.misalign_adjacent_pattern_must_join # discourage adjacent pattern must join to be inserted on the same track (default false)
+route.auto_via_ladder.ndr_mode           # controls how via ladder insertion will honor NDR width requirements (default top_layer_only)
+route.auto_via_ladder.pattern_must_join_max_number_stagger_tracks # set maximum stagger value of auto-generated via ladder template for pattern must join insertion (default 0)
+route.auto_via_ladder.pattern_must_join_over_pin_layer # set level of auto-generated via ladder template for pattern must join insertion (default 1)
+route.auto_via_ladder.pin_access_aware   # consider pin accessibility for neighboring pins during via ladder insertion (default true)
+route.auto_via_ladder.relax_pin_layer_metal_spacing_rules # waive some metal spacing rules on pin layers that may be later resolved with patching (default true)
+route.auto_via_ladder.report_all_via_ladders # report all via ladder verification outputs (default true)
+route.auto_via_ladder.report_via_ladder_in_area_with_drc_threshold # threshold for DRC count near a via ladder that will trigger reporting of a 'Via Ladder In Area with DRCs' DRC (default -1)
+route.auto_via_ladder.shift_vias_on_transition_layers # automatically shift big vias on transition layers (default true)
+route.auto_via_ladder.strictly_honor_cut_table # strictly honor user-specified cut requirements in ViaRule cut table (default false)
+route.auto_via_ladder.top_layer_to_samenet_min_nonzero_distance # min non-zero distance between top layer row and samenet preroutes when bias_top_layer_to_samenet_connection direct connection is not possible
+route.auto_via_ladder.update_during_route # turn on the verify/remove/insert stages in routing (default true)
+route.auto_via_ladder.update_on_route_eco_nets_only # only update via ladders for the nets specified in route_eco -nets (default false)
+route.auto_via_ladder.update_on_route_group_nets_only # only update via ladders for the nets specified in route_group -nets (default true)
+route.auto_via_ladder.update_pattern_must_join_during_route # turn on the pattern must join stages in routing (default true)
+route.auto_via_ladder.user_debug         # print extra details about via ladder failures (default false)
+route.auto_via_ladder.verbose            # verbose output during via ladder insertion (default false)
+
+### report_app_options route.auto_via_ladder.*
+****************************************
+Report : app_option
+Design : NO_DESIGN
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:25:35 2026
+****************************************
+Name                                                                                     Type                    Value      User-value   User-default System-default             Scope      Status     Source
+---------------------------------------------------------------------------------------- ----------------------- ---------- ------------ ------------ -------------------------- ---------- ---------- ----------
+route.auto_via_ladder.allow_neighbor_ripup_in_dense_area                                 bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.allow_patching                                                     bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.allow_samenet_intersection                                         bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.allow_via_array_as_single_cut                                      bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.apply_app_options_to_insert_via_ladders_command                    bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.auto_stagger                                                       bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.auto_stagger_for_em_via_ladder_max_number_stagger_tracks_per_level integer                 --         --           --           15                         block      normal     --
+route.auto_via_ladder.auto_stagger_max_number_stagger_tracks_per_level                   integer                 --         --           --           9                          block      normal     --
+route.auto_via_ladder.bias_top_layer_to_samenet_connection                               bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.check_drcs_on_existing_via_ladders                                 bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.clean                                                              bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.connect_within_metal                                               bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.connect_within_metal_for_em_via_ladder                             enum                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.connect_within_metal_for_via_ladder                                enum                    --         --           --           same_as_global             block      normal     --
+route.auto_via_ladder.connect_within_pin_mode                                            list_of {string string} --         --           --           {all off} {via_ladder off} {pattern_must_join off} -|- block      normal     --
+route.auto_via_ladder.default_width_ndr_promotable_on_nonreserved_tracks                 bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.enable_em_to_performance_via_ladder_update                         bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.generate_center_track_on_off_grid_pattern_must_join_pin_shapes     bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.generate_track_width_by_layer_name                                 list_of {string float}  --         --           --           --                         block      normal     --
+route.auto_via_ladder.ignore_min_max_layer_constraints                                   bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.ignore_routing_shape_drcs                                          bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.misalign_adjacent_pattern_must_join                                bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.ndr_mode                                                           enum                    --         --           --           top_layer_only             block      normal     --
+route.auto_via_ladder.pattern_must_join_max_number_stagger_tracks                        list_of integer         --         --           --           --                         block      normal     --
+route.auto_via_ladder.pattern_must_join_over_pin_layer                                   integer                 --         --           --           1                          block      normal     --
+route.auto_via_ladder.pin_access_aware                                                   bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.relax_pin_layer_metal_spacing_rules                                bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.report_all_via_ladders                                             bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.report_via_ladder_in_area_with_drc_threshold                       integer                 --         --           --           -1                         block      normal     --
+route.auto_via_ladder.shift_vias_on_transition_layers                                    bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.strictly_honor_cut_table                                           bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.top_layer_to_samenet_min_nonzero_distance                          float                   --         --           --           0                          block      normal     --
+route.auto_via_ladder.update_during_route                                                bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.update_on_route_eco_nets_only                                      bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.update_on_route_group_nets_only                                    bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.update_pattern_must_join_during_route                              bool                    --         --           --           true                       block      normal     --
+route.auto_via_ladder.user_debug                                                         bool                    --         --           --           false                      block      normal     --
+route.auto_via_ladder.verbose                                                            bool                    --         --           --           false                      block      normal     --
+---------------------------------------------------------------------------------------- ----------------------- ---------- ------------ ------------ -------------------------- ---------- ---------- ----------
+
+There are additional internal differences.
+0

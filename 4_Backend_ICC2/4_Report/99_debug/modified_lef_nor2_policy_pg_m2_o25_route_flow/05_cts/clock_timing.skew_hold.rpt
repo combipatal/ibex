@@ -1,0 +1,97 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 20
+        -hold
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 13:23:01 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+  Clock Pin                                          Latency      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  u_timer_compare_q_reg_9_/CLK                          0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_3__rf_reg_q_reg_7_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_29__rf_reg_q_reg_13_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_19__rf_reg_q_reg_9_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_9__rf_reg_q_reg_8_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_9__rf_reg_q_reg_12_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_19__rf_reg_q_reg_8_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_3__rf_reg_q_reg_13_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_15__rf_reg_q_reg_12_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_29__rf_reg_q_reg_9_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_15__rf_reg_q_reg_8_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_9__rf_reg_q_reg_10_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_19__rf_reg_q_reg_10_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_10_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_3__rf_reg_q_reg_8_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_15__rf_reg_q_reg_10_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_3__rf_reg_q_reg_9_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_12_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_29__rf_reg_q_reg_8_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_13_/CLK
+                                                        0.33      0.16    rp-+    default
+
+  u_dmem_rdata_q_reg_15_/CLK                            0.17              rp-+    default
+  u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_29__rf_reg_q_reg_10_/CLK
+                                                        0.33      0.16    rp-+    default
+
+---------------------------------------------------------------------------------------------------
+1

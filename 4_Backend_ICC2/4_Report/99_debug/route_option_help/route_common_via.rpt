@@ -1,0 +1,65 @@
+### help_app_options route.common.*via*
+route.common.concurrent_redundant_via_effort_level # effort level to insert redundant vias concurrently during routing
+route.common.concurrent_redundant_via_mode # whether and how to insert redundant vias concurrently during routing
+route.common.create_nets_for_floating_pins_pattern_must_join_via_ladder # create a net for any pin without a net that has a pattern_must_join attribute or via ladder constraint
+route.common.eco_route_concurrent_redundant_via_effort_level # how hard to try to insert redundant vias concurrently during eco routing
+route.common.eco_route_concurrent_redundant_via_mode # whether and how to insert redundant vias concurrently during eco routing
+route.common.extra_via_cost_multiplier_by_layer_name # list of {layerName value} pairs. extra multiplier for via cost
+route.common.extra_via_off_grid_cost_multiplier_by_layer_name # extra multiplier for vias off of metal routing grid
+route.common.filter_redundant_via_mapping # filter the redundant via mapping to avoid trying vias that are more likely to generate DRCs (default: true)
+route.common.freeze_via_to_frozen_layer_by_layer_name # freeze vias accessing an adjacent frozen layer
+route.common.number_of_vias_over_global_backside_max_layer # control access to layers above global backside max layer
+route.common.number_of_vias_over_global_max_layer # control access to layers above global max layer
+route.common.number_of_vias_over_net_max_layer # control access to layers above net max layer
+route.common.number_of_vias_under_global_backside_min_layer # control access to layers below global backside min layer
+route.common.number_of_vias_under_global_min_layer # control access to layers below global min layer
+route.common.number_of_vias_under_net_min_layer # control access to layers below net min layer
+route.common.post_detail_route_redundant_via_insertion # perform redundant via insertion automatically after detail route
+route.common.redundant_via_exclude_weight_group_by_layer_name # list of { {cutLayerName { <weight> <weight> ... }} {cutLayerName2 { <weight> ... }} ... }
+route.common.redundant_via_include_weight_group_by_layer_name # list of { {cutLayerName { <weight> <weight> ... }} {cutLayerName2 { <weight> ... }} ... }
+route.common.rotate_default_vias         # control whether or not to rotate the default vias
+route.common.support_staple_vias_during_routing # support vias with staple_vias property during routing
+route.common.treat_via_array_as_big_via  # treat via array as big via
+route.common.via_array_mode              # control the types of via arrays that will be used during routing and redundant via insertion
+route.common.via_ladder_top_layer_overrides_net_min_layer # override net min layer according to via ladder top layer
+route.common.via_on_grid_by_layer_name   # list of {layerName true/false} pairs set the onGrid rule on the cut layer
+route.common.write_instance_via_color    # write instance via colors
+
+### report_app_options route.common.*via*
+****************************************
+Report : app_option
+Design : NO_DESIGN
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:25:35 2026
+****************************************
+Name                                                                    Type                    Value      User-value   User-default System-default Scope      Status     Source
+----------------------------------------------------------------------- ----------------------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+route.common.concurrent_redundant_via_effort_level                      enum                    --         --           --           low            block      normal     --
+route.common.concurrent_redundant_via_mode                              enum                    --         --           --           off            block      normal     --
+route.common.create_nets_for_floating_pins_pattern_must_join_via_ladder bool                    --         --           --           false          block      normal     --
+route.common.eco_route_concurrent_redundant_via_effort_level            enum                    --         --           --           low            block      normal     --
+route.common.eco_route_concurrent_redundant_via_mode                    enum                    --         --           --           off            block      normal     --
+route.common.extra_via_cost_multiplier_by_layer_name                    list_of {string float}  --         --           --           --             block      normal     --
+route.common.extra_via_off_grid_cost_multiplier_by_layer_name           list_of {string float}  --         --           --           --             block      normal     --
+route.common.filter_redundant_via_mapping                               bool                    --         --           --           true           block      normal     --
+route.common.freeze_via_to_frozen_layer_by_layer_name                   list_of {string string} --         --           --           --             block      normal     --
+route.common.number_of_vias_over_global_backside_max_layer              integer                 --         --           --           1              block      normal     --
+route.common.number_of_vias_over_global_max_layer                       integer                 --         --           --           1              block      normal     --
+route.common.number_of_vias_over_net_max_layer                          integer                 --         --           --           1              block      normal     --
+route.common.number_of_vias_under_global_backside_min_layer             integer                 --         --           --           1              block      normal     --
+route.common.number_of_vias_under_global_min_layer                      integer                 --         --           --           1              block      normal     --
+route.common.number_of_vias_under_net_min_layer                         integer                 --         --           --           1              block      normal     --
+route.common.post_detail_route_redundant_via_insertion                  enum                    --         --           --           off            block      normal     --
+route.common.redundant_via_exclude_weight_group_by_layer_name           list_of string          --         --           --           --             block      normal     --
+route.common.redundant_via_include_weight_group_by_layer_name           list_of string          --         --           --           --             block      normal     --
+route.common.rotate_default_vias                                        bool                    --         --           --           true           block      normal     --
+route.common.support_staple_vias_during_routing                         bool                    --         --           --           false          block      normal     --
+route.common.treat_via_array_as_big_via                                 bool                    --         --           --           false          block      normal     --
+route.common.via_array_mode                                             enum                    --         --           --           all            block      normal     --
+route.common.via_ladder_top_layer_overrides_net_min_layer               bool                    --         --           --           false          block      normal     --
+route.common.via_on_grid_by_layer_name                                  list_of {string string} --         --           --           --             block      normal     --
+route.common.write_instance_via_color                                   bool                    --         --           --           false          block      normal     --
+----------------------------------------------------------------------- ----------------------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+
+There are additional internal differences.
+0

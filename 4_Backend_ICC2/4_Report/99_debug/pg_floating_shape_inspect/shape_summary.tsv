@@ -1,0 +1,9 @@
+shape_id	found	object_name	full_name	layer	mask_constraint	shape_use	net_name	bbox	owner
+PATH_11_184	1		PATH_11_184	M1	no_mask	lib_cell_pin_connect		{20.0000 327.6180} {851.2880 327.6780}	_sel5
+PATH_11_208	1		PATH_11_208	M1	no_mask	lib_cell_pin_connect		{20.0000 367.7460} {851.2880 367.8060}	_sel7
+PATH_11_232	1		PATH_11_232	M1	no_mask	lib_cell_pin_connect		{20.0000 407.8740} {851.2880 407.9340}	_sel9
+PATH_11_256	1		PATH_11_256	M1	no_mask	lib_cell_pin_connect		{20.0000 448.0020} {851.2880 448.0620}	_sel11
+PATH_11_280	1		PATH_11_280	M1	no_mask	lib_cell_pin_connect		{20.0000 488.1300} {851.2880 488.1900}	_sel13
+PATH_11_304	1		PATH_11_304	M1	no_mask	lib_cell_pin_connect		{20.0000 528.2580} {851.2880 528.3180}	_sel15
+PATH_11_328	1		PATH_11_328	M1	no_mask	lib_cell_pin_connect		{20.0000 568.3860} {851.2880 568.4460}	_sel17
+PATH_11_483	1		PATH_11_483	M1	no_mask	lib_cell_pin_connect		{20.0000 827.5460} {851.2880 827.6060}	_sel19

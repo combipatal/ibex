@@ -1,0 +1,4 @@
+stage	removed_vias	changed_nets	total	open_nets	diff_net_spacing	less_than_min_area	needs_fat_contact	off_grid	same_net_spacing	short
+before	0	0	18	0	0	0	0	17	0	1
+after_remove	17	15	1	15	0	0	0	0	0	1
+after_eco	17	15	18	0	0	0	0	17	0	1

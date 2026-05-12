@@ -1,0 +1,26 @@
+****************************************
+Report : report_utilization
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 13:02:42 2026
+****************************************
+Utilization Ratio:			0.6005
+Utilization options:
+ - Area calculation based on:		site_row of block ibex_mini_soc_top
+ - Categories of objects excluded:	hard_macros macro_keepouts soft_macros io_cells hard_blockages 
+Total Area:				690913.3370
+Total Capacity Area:			690913.3370
+Total Area of cells:			414891.6049
+Area of excluded objects:
+ - hard_macros         :		0.0000
+ - macro_keepouts      :		0.0000
+ - soft_macros         :		0.0000
+ - io_cells            :		0.0000
+ - hard_blockages      :		0.0000
+Total Area of excluded objects:		0.0000
+Ratio of excluded objects:		0.0000
+
+Utilization of site-rows with:
+ - Site 'unit':				0.6005
+
+0.6005

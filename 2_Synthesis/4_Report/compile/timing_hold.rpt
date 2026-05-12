@@ -1,0 +1,2193 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 50
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sat May  9 20:16:00 2026
+****************************************
+
+Operating Conditions: tt1p05v25c   Library: saed32rvt_tt1p05v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_counter_CounterWidth64
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]/CLK (DFFARX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]/QN (DFFARX1_HVT)
+                                                          0.15       0.15 f
+  u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]/D (DFFARX1_HVT)
+                                                          0.01       0.16 f
+  data arrival time                                                  0.16
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/cs_registers_i/mcycle_counter_i/counter_q_reg[0]/CLK (DFFARX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.03       0.13
+  data required time                                                 0.13
+  --------------------------------------------------------------------------
+  data required time                                                 0.13
+  data arrival time                                                 -0.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+  Startpoint: u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_counter_CounterWidth64_ProvideValUpd1
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]/CLK (DFFARX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]/QN (DFFARX1_HVT)
+                                                          0.15       0.15 f
+  u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/U77/Y (AO22X1_HVT)
+                                                          0.07       0.22 f
+  u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]/D (DFFARX1_HVT)
+                                                          0.01       0.23 f
+  data arrival time                                                  0.23
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/cs_registers_i/minstret_counter_i/counter_q_reg[0]/CLK (DFFARX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.09
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U99/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U54/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[31]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U55/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[30]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U56/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[29]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U57/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[28]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U58/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[27]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U59/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[26]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U60/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[25]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U62/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[24]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U63/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[23]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U64/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[22]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U65/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[21]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U66/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[20]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U67/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[19]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U68/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[18]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U69/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[17]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U70/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[16]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U71/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[15]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U72/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[14]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U73/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[13]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U74/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U75/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[11]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U76/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[10]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U77/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[9]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U78/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[8]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U79/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[7]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U80/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[6]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U81/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[5]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U82/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[4]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U83/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[3]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U84/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[2]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U85/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/pc_id_o_reg[1]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U100/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][4]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U87/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[22]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U88/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[20]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U89/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[17]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U90/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[16]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U92/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[10]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U93/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[9]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U98/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U101/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][0]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U92/Y (AO222X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][0]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][0]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U95/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U96/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_alu_id_o_reg[4]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/U91/Y (AO22X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/instr_rdata_id_o_reg[12]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[2]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U93/Y (AO222X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[1]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/err_q_reg[1]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.14
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[2][1]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U95/Y (AO222X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][1]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][1]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.14
+
+
+  Startpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[0][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+                     8000                  saed32rvt_tt1p05v25c
+  ibex_fetch_fifo_00000002_0
+                     8000                  saed32rvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][4]/CLK (DFFX1_HVT)
+                                                          0.00       0.00 r
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[1][4]/Q (DFFX1_HVT)
+                                                          0.20       0.20 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/U84/Y (AO222X1_HVT)
+                                                          0.06       0.26 f
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[0][4]/D (DFFX1_HVT)
+                                                          0.01       0.27 f
+  data arrival time                                                  0.27
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.10       0.10
+  u_ibex_top/u_ibex_core/if_stage_i/gen_prefetch_buffer.prefetch_buffer_i/fifo_i/rdata_q_reg[0][4]/CLK (DFFX1_HVT)
+                                                          0.00       0.10 r
+  library hold time                                       0.04       0.14
+  data required time                                                 0.14
+  --------------------------------------------------------------------------
+  data required time                                                 0.14
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.14
+
+
+1

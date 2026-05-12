@@ -1,0 +1,11 @@
+
+PrimeTime options
+------------------------------------------------------------
+PrimeTime executable  : /tools/synopsys/prime/W-2024.09-SP5-3/bin/pt_shell
+Host option           : 
+Pre-link script       : 
+Post-link script      : 
+Hold fix buffers      : 
+Work directory        : /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/14_post_route_prefiller_maxcap_margin/pt_work
+write_def options     :  -include_tech_via_definitions
+

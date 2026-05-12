@@ -1,18 +1,18 @@
 # Upstream RTL clone. Keep source revision recorded, do not upload vendor RTL here.
 /rtl/ibex/
 
+# Local agent/project bootstrap notes. Keep these local; publish stable docs instead.
+/AGENTS.md
+/2026-05-09_103000-ibex-mini-soc-implementation-flow.md
+
 # EDA generated outputs and local tool state.
 /2_Synthesis/2_Output/
 /2_Synthesis/3_Log/
-/2_Synthesis/4_Report/
 /3_Formality/2_Output/
 /3_Formality/3_Log/
-/3_Formality/4_Report/
 /4_Backend_ICC2/2_Output/
 /4_Backend_ICC2/3_Log/
-/4_Backend_ICC2/4_Report/
 /5_STA/3_Log/
-/5_STA/4_Report/
 /runs/
 /reports/
 
@@ -38,6 +38,17 @@ formality*_svf/
 moduleparamid
 /2_Synthesis/work_*/
 /2_Synthesis/mw_lib/
+
+# Keep generated reports auditable in project history while excluding heavy
+# databases, logs, and waveform/tool scratch files.
+!/2_Synthesis/4_Report/
+!/2_Synthesis/4_Report/**
+!/3_Formality/4_Report/
+!/3_Formality/4_Report/**
+!/4_Backend_ICC2/4_Report/
+!/4_Backend_ICC2/4_Report/**
+!/5_STA/4_Report/
+!/5_STA/4_Report/**
 
 # ICC2/LIBRARY_MANAGER scratch files in project root.
 /.graph_data.txt

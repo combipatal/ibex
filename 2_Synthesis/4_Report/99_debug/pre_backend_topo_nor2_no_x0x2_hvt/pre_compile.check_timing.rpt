@@ -1,0 +1,79 @@
+Module: DW01_inc_width32, Ports: 64, Input: 32, Output: 32, Inout: 0
+Module: DW01_inc_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp6_width32, Ports: 71, Input: 65, Output: 6, Inout: 0
+Module: DW01_cmp6_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width2, Ports: 8, Input: 6, Output: 2, Inout: 0
+Module: DW01_cmp2_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_add_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_add_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_cmp2_width5, Ports: 14, Input: 12, Output: 2, Inout: 0
+Module: DW01_cmp2_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_dec_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_dec_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_sub_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width9, Ports: 29, Input: 19, Output: 10, Inout: 0
+Module: DW01_sub_width9, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width5, Ports: 10, Input: 5, Output: 5, Inout: 0
+Module: DW01_inc_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_add_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width7, Ports: 23, Input: 15, Output: 8, Inout: 0
+Module: DW01_add_width7, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_add_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width34, Ports: 104, Input: 69, Output: 35, Inout: 0
+Module: DW01_add_width34, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_sub_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_sub_width5, Ports: 17, Input: 11, Output: 6, Inout: 0
+Module: DW01_sub_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW_rash_A_width33_SH_width5, Ports: 73, Input: 40, Output: 33, Inout: 0
+Module: DW_rash_A_width33_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW02_mult_A_width17_B_width17, Ports: 69, Input: 35, Output: 34, Inout: 0
+Module: DW02_mult_A_width17_B_width17, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+  Allocating blocks in 'DW02_mult_A_width17_B_width17'
+Module: DW01_MUX, Ports: 4, Input: 3, Output: 1, Inout: 0
+Module: DW01_MUX, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width2, Ports: 7, Input: 5, Output: 2, Inout: 0
+Module: DW01_mmux_width2, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width3, Ports: 10, Input: 7, Output: 3, Inout: 0
+Module: DW01_mmux_width3, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width4, Ports: 13, Input: 9, Output: 4, Inout: 0
+Module: DW01_mmux_width4, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_mmux_width5, Ports: 16, Input: 11, Output: 5, Inout: 0
+Module: DW01_mmux_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width32, Ports: 98, Input: 65, Output: 33, Inout: 0
+Module: DW01_add_width32, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_ash_A_width32_SH_width5, Ports: 71, Input: 39, Output: 32, Inout: 0
+Module: DW01_ash_A_width32_SH_width5, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_inc_width64, Ports: 128, Input: 64, Output: 64, Inout: 0
+Module: DW01_inc_width64, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Module: DW01_add_width31, Ports: 95, Input: 63, Output: 32, Inout: 0
+Module: DW01_add_width31, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Updating design information... (UID-85)
+Warning: Design 'ibex_mini_soc_top' contains 10 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+Warning: There are 1 input ports have no clock_relative delay specified, the command set_input_delay without -clock option will be ignored. (TIM-216)
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+1

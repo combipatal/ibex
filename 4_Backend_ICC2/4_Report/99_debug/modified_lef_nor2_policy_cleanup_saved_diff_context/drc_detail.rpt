@@ -1,0 +1,26 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 13:00:18 2026
+****************************************
+
+Error ID          : 1
+Error Type        : Diff net spacing
+Error Layer       : M1 (11)
+Number of errors  : 2
+Description       :  -- 
+Status            : error
+Bbox              : {779.4390 268.8960} {779.5130 269.0560}
+
+Error ID          : 2
+Error Type        : Diff net spacing
+Error Layer       : M2 (13)
+Number of errors  : 2
+Description       :  -- 
+Status            : error
+Bbox              : {779.4940 269.0170} {779.6300 269.0870}
+
+1

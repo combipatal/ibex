@@ -1,0 +1,39 @@
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 117273
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 315
+Number of VDD Vias: 7898
+Number of VDD Terminals: 8
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 7
+  Number of floating vias: 0
+  Number of floating std cells: 3376
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 313
+Number of VSS Vias: 7564
+Number of VSS Terminals: 8
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 5
+  Number of floating vias: 0
+  Number of floating std cells: 2398
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Successfully written connectivity statistics to /DATA/home/edu135/ibex/4_Backend_ICC2/4_Report/99_debug/pg_m7_offset_sweep/offset_32/pg_connectivity_detail.rpt.
+Overall runtime: 2 seconds.
+{PATH_11_31 PATH_11_55 PATH_11_79 PATH_11_103 PATH_11_127 PATH_11_306 PATH_11_330 PATH_11_354 PATH_11_378 PATH_11_402 PATH_11_426 PATH_11_450}

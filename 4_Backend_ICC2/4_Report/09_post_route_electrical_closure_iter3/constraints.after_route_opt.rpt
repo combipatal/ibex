@@ -1,0 +1,443 @@
+****************************************
+Report : constraint
+        -all_violators
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 20:43:49 2026
+****************************************
+
+   late_timing
+   -----------
+
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+No paths.
+
+   early_timing
+   -----------
+
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+No paths.
+
+   Mode: default Corner: default
+   Scenario: default
+   max_transition                                                              
+                             Required        Actual                            
+   Net                      Transition     Transition        Slack  Violation  
+  ---------------------------------------------------------------------------
+   n48499                       0.09           0.09           0.00  (MET)      
+
+  ---------------------------------------------------------------------------
+   Number of max_transition violation(s): 0
+
+   Mode: default Corner: default
+   Scenario: default
+   max_capacitance                                                             
+                             Required        Actual                            
+   Net                      Capacitance    Capacitance       Slack  Violation  
+  ---------------------------------------------------------------------------
+   n52558                      64.00          64.10          -0.10  (VIOLATED) 
+     PIN : U30701/Y            64.00          64.10          -0.10  (VIOLATED) 
+
+   n16013                       8.00           8.10          -0.10  (VIOLATED) 
+     PIN : U17847/Y             8.00           8.10          -0.10  (VIOLATED) 
+
+   u_ibex_top_u_ibex_core_ex_block_i_gen_multdiv_fast_multdiv_i_md_state_q[1]
+                                8.00           8.10          -0.10  (VIOLATED) 
+     PIN : u_ibex_top_u_ibex_core_ex_block_i_gen_multdiv_fast_multdiv_i_md_state_q_reg_1_/Q
+                                8.00           8.10          -0.10  (VIOLATED) 
+
+   n48884                      16.00          16.10          -0.10  (VIOLATED) 
+     PIN : U9436/Y             16.00          16.10          -0.10  (VIOLATED) 
+
+   n27944                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U45704/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n15547                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U17307/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n40479                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U75080/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n52739                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U31661/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n3196                        8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U2882/Y              8.00           8.09          -0.09  (VIOLATED) 
+
+   u_ibex_top_u_ibex_core_cs_registers_i_n[237]
+                                8.00           8.09          -0.09  (VIOLATED) 
+     PIN : u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_10_/Q
+                                8.00           8.09          -0.09  (VIOLATED) 
+
+   n45340                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U79705/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n32378                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U65251/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n52834                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U32269/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   n10663                       8.00           8.09          -0.09  (VIOLATED) 
+     PIN : U12593/Y             8.00           8.09          -0.09  (VIOLATED) 
+
+   ZBUF_1916_1051              64.00          64.09          -0.09  (VIOLATED) 
+     PIN : ZBUF_1916_inst_6194/Y
+                               64.00          64.09          -0.09  (VIOLATED) 
+
+   n50187                      32.00          32.09          -0.09  (VIOLATED) 
+     PIN : U18095/Y            32.00          32.09          -0.09  (VIOLATED) 
+
+   ZBUF_1145_484               32.00          32.09          -0.09  (VIOLATED) 
+     PIN : ZBUF_1145_inst_3622/Y
+                               32.00          32.09          -0.09  (VIOLATED) 
+
+   n44092                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U78583/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n21901                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U25301/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n22862                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U28533/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n3151                        8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U3021/Y              8.00           8.08          -0.08  (VIOLATED) 
+
+   n54701                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U41533/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   ZBUF_2815_1058              64.00          64.08          -0.08  (VIOLATED) 
+     PIN : ZBUF_2815_inst_6381/Y
+                               64.00          64.08          -0.08  (VIOLATED) 
+
+   n53034                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U32995/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n52857                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U32301/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   n36355                       8.00           8.08          -0.08  (VIOLATED) 
+     PIN : U67247/Y             8.00           8.08          -0.08  (VIOLATED) 
+
+   ZBUF_1881_1063              16.00          16.08          -0.08  (VIOLATED) 
+     PIN : ZBUF_1881_inst_6465/Y
+                               16.00          16.08          -0.08  (VIOLATED) 
+
+   n48891                      16.00          16.08          -0.08  (VIOLATED) 
+     PIN : U9448/Y             16.00          16.08          -0.08  (VIOLATED) 
+
+   n54031                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U37968/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n23846                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U31882/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n26843                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U42206/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   u_ibex_top_u_ibex_core_DP_OP_899J3_122_459/n1569
+                               16.00          16.07          -0.07  (VIOLATED) 
+     PIN : u_ibex_top_u_ibex_core_DP_OP_899J3_122_459/U734/Y
+                               16.00          16.07          -0.07  (VIOLATED) 
+
+   n47254                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U81443/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n50167                      32.00          32.07          -0.07  (VIOLATED) 
+     PIN : U18062/Y            32.00          32.07          -0.07  (VIOLATED) 
+
+   n44583                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U78999/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n47061                      16.00          16.07          -0.07  (VIOLATED) 
+     PIN : U4634/Y             16.00          16.07          -0.07  (VIOLATED) 
+
+   n21538                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U23989/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n41728                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U76331/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n23250                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U29974/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n52214                       8.00           8.07          -0.07  (VIOLATED) 
+     PIN : U28714/Y             8.00           8.07          -0.07  (VIOLATED) 
+
+   n40604                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U75219/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n49456                      16.00          16.06          -0.06  (VIOLATED) 
+     PIN : U12189/Y            16.00          16.06          -0.06  (VIOLATED) 
+
+   n47715                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_31_/QN
+                                8.00           8.06          -0.06  (VIOLATED) 
+
+   n55155                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U43183/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n53561                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U35628/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   ZBUF_2_342                  16.00          16.06          -0.06  (VIOLATED) 
+     PIN : ZBUF_2_inst_2190/Y
+                               16.00          16.06          -0.06  (VIOLATED) 
+
+   n55272                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U43735/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n55389                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U44488/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n53307                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U34304/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n53998                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U37789/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n25865                       8.00           8.06          -0.06  (VIOLATED) 
+     PIN : U38909/Y             8.00           8.06          -0.06  (VIOLATED) 
+
+   n18634                       8.00           8.05          -0.05  (VIOLATED) 
+     PIN : U20338/Y             8.00           8.05          -0.05  (VIOLATED) 
+
+   n49514                      32.00          32.05          -0.05  (VIOLATED) 
+     PIN : U13236/Y            32.00          32.05          -0.05  (VIOLATED) 
+
+   n23322                       8.00           8.05          -0.05  (VIOLATED) 
+     PIN : U30151/Y             8.00           8.05          -0.05  (VIOLATED) 
+
+   n50549                      16.00          16.05          -0.05  (VIOLATED) 
+     PIN : U19519/Y            16.00          16.05          -0.05  (VIOLATED) 
+
+   ZBUF_269_476                16.00          16.05          -0.05  (VIOLATED) 
+     PIN : ZBUF_269_inst_3311/Y
+                               16.00          16.05          -0.05  (VIOLATED) 
+
+   n25750                       8.00           8.05          -0.05  (VIOLATED) 
+     PIN : U38503/Y             8.00           8.05          -0.05  (VIOLATED) 
+
+   ZBUF_2349_887               32.00          32.05          -0.05  (VIOLATED) 
+     PIN : ZBUF_2349_inst_5367/Y
+                               32.00          32.05          -0.05  (VIOLATED) 
+
+   n45695                       8.00           8.05          -0.05  (VIOLATED) 
+     PIN : U79989/Y             8.00           8.05          -0.05  (VIOLATED) 
+
+   n28498                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U48091/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   n26337                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U40446/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   n53549                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U35609/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   ZBUF_966_887                16.00          16.04          -0.04  (VIOLATED) 
+     PIN : ZBUF_966_inst_5349/Y
+                               16.00          16.04          -0.04  (VIOLATED) 
+
+   n25726                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U38383/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   n42934                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U77413/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   ZBUF_1998_1137              16.00          16.04          -0.04  (VIOLATED) 
+     PIN : ZBUF_1998_inst_7393/Y
+                               16.00          16.04          -0.04  (VIOLATED) 
+
+   n27863                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U45387/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   n33218                       8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U67791/Y             8.00           8.04          -0.04  (VIOLATED) 
+
+   n7868                        8.00           8.04          -0.04  (VIOLATED) 
+     PIN : U9785/Y              8.00           8.04          -0.04  (VIOLATED) 
+
+   n49410                      16.00          16.03          -0.03  (VIOLATED) 
+     PIN : U12127/Y            16.00          16.03          -0.03  (VIOLATED) 
+
+   n48564                      32.00          32.03          -0.03  (VIOLATED) 
+     PIN : U8478/Y             32.00          32.03          -0.03  (VIOLATED) 
+
+   n12852                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U14684/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n53178                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U33787/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n27719                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U45128/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n45218                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U79561/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   ZBUF_2_414                  16.00          16.03          -0.03  (VIOLATED) 
+     PIN : ZBUF_2_inst_2303/Y
+                               16.00          16.03          -0.03  (VIOLATED) 
+
+   n5553                        8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U6665/Y              8.00           8.03          -0.03  (VIOLATED) 
+
+   n44748                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U79234/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n29223                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U51252/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n53076                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U33289/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n55522                      16.00          16.03          -0.03  (VIOLATED) 
+     PIN : U45255/Y            16.00          16.03          -0.03  (VIOLATED) 
+
+   ZBUF_2_1095                 16.00          16.03          -0.03  (VIOLATED) 
+     PIN : ZBUF_2_inst_6735/Y
+                               16.00          16.03          -0.03  (VIOLATED) 
+
+   n27203                       8.00           8.03          -0.03  (VIOLATED) 
+     PIN : U43441/Y             8.00           8.03          -0.03  (VIOLATED) 
+
+   n36557                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U71165/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n54340                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U39551/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n25476                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U37585/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n14373                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U16202/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n38523                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U73123/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n44746                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U79222/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   ZBUF_1191_436               16.00          16.02          -0.02  (VIOLATED) 
+     PIN : ZBUF_1191_inst_2353/Y
+                               16.00          16.02          -0.02  (VIOLATED) 
+
+   n21976                       8.00           8.02          -0.02  (VIOLATED) 
+     PIN : U25543/Y             8.00           8.02          -0.02  (VIOLATED) 
+
+   n49364                      16.00          16.01          -0.01  (VIOLATED) 
+     PIN : U12067/Y            16.00          16.01          -0.01  (VIOLATED) 
+
+   n27306                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U43789/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n21324                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U23220/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n20527                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U22109/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n43448                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U77931/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n9492                        8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U11311/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n23218                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U29843/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n25544                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U37773/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   ZBUF_2_169                  16.00          16.01          -0.01  (VIOLATED) 
+     PIN : ZBUF_2_inst_1999/Y
+                               16.00          16.01          -0.01  (VIOLATED) 
+
+   ZBUF_1152_1058              64.00          64.01          -0.01  (VIOLATED) 
+     PIN : ZBUF_1152_inst_6380/Y
+                               64.00          64.01          -0.01  (VIOLATED) 
+
+   n24173                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U33049/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n27181                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U43341/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   ZBUF_511_684                16.00          16.01          -0.01  (VIOLATED) 
+     PIN : ZBUF_511_inst_4575/Y
+                               16.00          16.01          -0.01  (VIOLATED) 
+
+   ZBUF_32_869                 32.00          32.00          -0.00  (VIOLATED) 
+     PIN : ZBUF_32_inst_4987/Y
+                               32.00          32.00          -0.00  (VIOLATED) 
+
+   n22478                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U27223/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n56666                      16.00          16.00          -0.00  (VIOLATED) 
+     PIN : U46662/Y            16.00          16.00          -0.00  (VIOLATED) 
+
+   n26735                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U41890/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   ropt_net_502                16.00          16.00          -0.00  (VIOLATED) 
+     PIN : ropt_mt_inst_9210/Y
+                               16.00          16.00          -0.00  (VIOLATED) 
+
+   n26100                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U39837/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   u_ibex_top_u_ibex_core_debug_ebreakm
+                                8.00           8.00          -0.00  (VIOLATED) 
+     PIN : u_ibex_top_u_ibex_core_cs_registers_i_u_dcsr_csr_rdata_q_reg_15_/Q
+                                8.00           8.00          -0.00  (VIOLATED) 
+
+   n39468                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U73963/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n24000                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U32368/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n21774                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U24849/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n21714                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U24685/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   ZBUF_599_443                32.00          32.00          -0.00  (VIOLATED) 
+     PIN : ZBUF_599_inst_2579/Y
+                               32.00          32.00          -0.00  (VIOLATED) 
+
+   n53632                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U36108/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n22810                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U28421/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+   n17712                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U9381/Y              8.00           8.00          -0.00  (VIOLATED) 
+
+   n35835                       8.00           8.00          -0.00  (VIOLATED) 
+     PIN : U70321/Y             8.00           8.00          -0.00  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 120
+
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+  Mode: default
+  Corner: default
+  Scenario: default
+
+  ---------------------------------------------------------------------------
+   Number of min_pulse_width violation(s): 0
+   Total number of violation(s): 120
+1

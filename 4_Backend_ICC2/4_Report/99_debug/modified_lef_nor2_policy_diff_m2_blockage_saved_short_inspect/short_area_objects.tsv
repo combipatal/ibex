@@ -1,0 +1,8 @@
+label	idx	name	class	layer	bbox	net	shape_use	physical_status	owner
+short_error	1	1	drc_error		{780.9130 268.9010} {781.0630 269.0510}	NA	NA	NA	NA
+short_drc_object_1	1	ZBUF_1454_851	net		{778.9870 262.3800} {794.7090 304.1330}			unrestricted	
+near_shape_1	1	PATH_11_149	shape	M1	{20.0000 269.0980} {851.4400 269.1580}	VSS	lib_cell_pin_connect	unrestricted	VSS
+near_shape_1	2	PATH_15_183899	shape	M3	{772.5240 268.9480} {789.3000 269.0040}	n55029	detail_route	unrestricted	n55029
+near_shape_1	3	PATH_15_357306	shape	M3	{781.1880 268.6440} {784.1320 268.7000}	ZBUF_1454_851	detail_route	unrestricted	ZBUF_1454_851
+near_shape_1	4	PATH_13_675907	shape	M2	{781.1880 268.6440} {781.2440 269.0040}	ZBUF_1454_851	detail_route	unrestricted	ZBUF_1454_851
+near_via_1	1	VIA_S_1100835	via		{781.1610 268.6170} {781.2710 268.7270}	ZBUF_1454_851	detail_route	unrestricted	ZBUF_1454_851

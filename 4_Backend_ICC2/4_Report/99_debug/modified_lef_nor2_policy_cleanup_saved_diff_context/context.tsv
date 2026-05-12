@@ -1,0 +1,33 @@
+label	error_idx	idx	name	class	layer	bbox	net	ref_name	lib_cell	shape_use	via_def	owner
+drc_error	1	0	1	drc_error		{779.4390 268.8960} {779.5130 269.0560}	NA	NA	NA	NA	NA	NA
+drc_object	1	1	ZBUF_1454_851	net		{778.9870 262.3800} {794.7090 304.1330}						
+drc_object	1	2	VSS	net		{0.0000 0.0000} {871.4400 870.9840}						
+near_cell	1	1	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_	cell		{777.7570 267.3550} {782.2430 269.1580}		DFFARX1_HVT	_sel13			
+near_cell	1	2	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_	cell		{776.8450 269.0980} {781.3310 270.9010}		DFFARX1_HVT	_sel14			
+near_pin	1	1	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_/RSTB	pin	M1 CO	{779.5950 268.9110} {780.7250 269.0400}	ZBUF_1454_851					
+near_pin	1	2	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_/VSS	pin	M1 CO	{777.8720 268.6670} {782.1280 269.1580}	VSS					
+near_pin	1	3	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_/RSTB	pin	M1 CO	{778.6830 269.2160} {779.8130 269.3450}	ZBUF_758_812					
+near_pin	1	4	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_/VSS	pin	M1 CO	{776.9600 269.0980} {781.2160 269.5890}	VSS					
+near_shape	1	1	PATH_25_49	shape	M8	{779.5000 10.0000} {780.5000 860.9840}	VSS			stripe		VSS
+near_shape	1	2	PATH_13_102	shape	M2	{779.8000 10.0000} {780.2000 860.9840}	VSS			stripe		VSS
+near_shape	1	3	PATH_11_149	shape	M1	{20.0000 269.0980} {851.4400 269.1580}	VSS			lib_cell_pin_connect		VSS
+near_shape	1	4	PATH_13_3262	shape	M2	{779.3640 268.1880} {779.4200 277.6680}	n2274			detail_route		n2274
+near_shape	1	5	PATH_15_183899	shape	M3	{772.5240 268.9480} {789.3000 269.0040}	n55029			detail_route		n55029
+near_shape	1	6	PATH_13_669541	shape	M2	{779.5160 265.9080} {779.5720 269.0040}	ZBUF_1454_851			detail_route		ZBUF_1454_851
+near_via	1	1	VIA_SA_12208	via		{779.5250 269.0730} {780.4750 269.1830}	VSS			lib_cell_pin_connect	VIA12SQ_C	VSS
+drc_error	2	0	2	drc_error		{779.4940 269.0170} {779.6300 269.0870}	NA	NA	NA	NA	NA	NA
+drc_object	2	1	ZBUF_1454_851	net		{778.9870 262.3800} {794.7090 304.1330}						
+drc_object	2	2	VSS	net		{0.0000 0.0000} {871.4400 870.9840}						
+near_cell	2	1	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_	cell		{777.7570 267.3550} {782.2430 269.1580}		DFFARX1_HVT	_sel43			
+near_cell	2	2	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_	cell		{776.8450 269.0980} {781.3310 270.9010}		DFFARX1_HVT	_sel44			
+near_pin	2	1	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_/RSTB	pin	M1 CO	{779.5950 268.9110} {780.7250 269.0400}	ZBUF_1454_851					
+near_pin	2	2	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_27_/VSS	pin	M1 CO	{777.8720 268.6670} {782.1280 269.1580}	VSS					
+near_pin	2	3	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_/RSTB	pin	M1 CO	{778.6830 269.2160} {779.8130 269.3450}	ZBUF_758_812					
+near_pin	2	4	u_ibex_top_gen_regfile_ff_register_file_i_g_rf_flops_13__rf_reg_q_reg_17_/VSS	pin	M1 CO	{776.9600 269.0980} {781.2160 269.5890}	VSS					
+near_shape	2	1	PATH_25_49	shape	M8	{779.5000 10.0000} {780.5000 860.9840}	VSS			stripe		VSS
+near_shape	2	2	PATH_13_102	shape	M2	{779.8000 10.0000} {780.2000 860.9840}	VSS			stripe		VSS
+near_shape	2	3	PATH_11_149	shape	M1	{20.0000 269.0980} {851.4400 269.1580}	VSS			lib_cell_pin_connect		VSS
+near_shape	2	4	PATH_13_3262	shape	M2	{779.3640 268.1880} {779.4200 277.6680}	n2274			detail_route		n2274
+near_shape	2	5	PATH_15_183899	shape	M3	{772.5240 268.9480} {789.3000 269.0040}	n55029			detail_route		n55029
+near_shape	2	6	PATH_13_669541	shape	M2	{779.5160 265.9080} {779.5720 269.0040}	ZBUF_1454_851			detail_route		ZBUF_1454_851
+near_via	2	1	VIA_SA_12208	via		{779.5250 269.0730} {780.4750 269.1830}	VSS			lib_cell_pin_connect	VIA12SQ_C	VSS

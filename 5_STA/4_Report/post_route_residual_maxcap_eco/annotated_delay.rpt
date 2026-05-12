@@ -1,0 +1,20 @@
+****************************************
+Report : annotated_delay
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-3
+Date   : Sun May 10 22:02:17 2026
+****************************************
+
+                             |           |           |    NOT    |
+    Delay type               |    Total  | Annotated | Annotated |
+-----------------------------+-----------+-----------+-----------+
+cell arcs                    |   601461  |   599552  |     1909  |
+cell arcs (unconnected)      |    71889  |    70108  |     1781  |
+internal net arcs            |   340955  |   340955  |        0  |
+net arcs from primary inputs |      709  |      709  |        0  |
+net arcs to primary outputs  |       32  |       32  |        0  |
+-----------------------------+-----------+-----------+-----------+
+                             |  1015046  |  1011356  |     3690  |
+
+
+1

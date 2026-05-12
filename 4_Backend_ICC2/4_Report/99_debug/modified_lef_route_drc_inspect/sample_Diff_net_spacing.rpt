@@ -1,0 +1,18 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 02:13:58 2026
+****************************************
+
+Error ID          : 40
+Error Type        : Diff net spacing
+Error Layer       : M1 (11)
+Number of errors  : 1
+Description       :  -- 
+Status            : error
+Bbox              : {800.4920 464.8960} {800.6890 464.9790}
+
+1

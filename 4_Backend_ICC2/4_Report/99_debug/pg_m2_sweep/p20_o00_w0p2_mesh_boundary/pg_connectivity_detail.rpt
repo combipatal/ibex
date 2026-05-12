@@ -1,0 +1,138 @@
+*****************************************************************
+**********Net VDD Connectivity Stats**************************
+*****************************************************************
+
+  Number of disjoint networks: 1
+
+  **************(main network)***********
+    Number of wires: 336
+    Number of vias: 15313
+    Number of std cells: 117273
+    Number of hard macros: 0
+    Number of I/O pads: 0
+    Number of terminals: 8
+    Number of hierarchical blocks: 0
+  ***************************************
+
+  Number of floating std cells: 0
+    
+
+  *********************************
+
+  Number of floating hard macros: 0
+    
+
+  *********************************
+
+  Number of floating I/O pads: 0
+    
+
+  *********************************
+
+  Number of floating terminals: 0
+
+
+  *********************************
+
+  Number of floating hierarchical blocks: 0
+    
+
+  *********************************
+
+  Number of std cells with unconnected port: 0
+    
+
+  *********************************
+
+  Number of hard macros with unconnected port: 0
+    
+
+  *********************************
+
+  Number of I/O pads with unconnected port: 0
+    
+
+  *********************************
+
+  Number of std cells with unconnected port: 0
+    
+
+
+***********End of Net VDD***********
+
+*****************************************************************
+**********Net VSS Connectivity Stats**************************
+*****************************************************************
+
+  Number of disjoint networks: 2
+
+  **************(main network)***********
+    Number of wires: 334
+    Number of vias: 15520
+    Number of std cells: 116858
+    Number of hard macros: 0
+    Number of I/O pads: 0
+    Number of terminals: 8
+    Number of hierarchical blocks: 0
+  ***************************************
+
+  *****sub-network 1*****************
+    Number of wires: 1
+    Number of vias: 0
+    Number of terminals: 0
+    Number of std cells: 415
+      u_imem_mem_reg_45__8_, U27121, U53966, U67359, u_imem_mem_reg_394__29_, U68744, U74796, U64026, U64029, u_imem_mem_reg_106__21_, U78202, u_imem_mem_reg_93__6_, U52802, U62679, U73105, U78842, U65313, U76647, U57059, u_imem_mem_reg_61__30_, U78245, U76645, U69341, u_imem_mem_reg_394__17_, ZBUF_2_inst_5142, ZBUF_2_inst_5145, u_imem_mem_reg_74__19_, U29092, U73083, ZBUF_2_inst_5736, U62573, u_imem_mem_reg_74__4_, U54768, U75490, U75492, ZBUF_2_inst_5721, u_imem_mem_reg_330__10_, ZBUF_2_inst_5138, u_imem_mem_reg_410__30_, u_imem_mem_reg_221__24_, U77465, u_imem_mem_reg_42__7_, U58608, U74562, U78504, U58604, U55468, u_imem_mem_reg_458__29_, u_imem_mem_reg_221__3_, ZBUF_2_inst_5759, U77119, u_imem_mem_reg_173__16_, U70424, u_imem_mem_reg_29__21_, U57946, U76310, U77463, U72326, U72673, U70265, ZBUF_2_inst_4097, u_imem_mem_reg_313__30_, u_imem_mem_reg_301__1_, ZBUF_2_inst_4270, u_imem_mem_reg_301__0_, u_imem_mem_reg_502__22_, u_imem_mem_reg_282__18_, U57062, u_imem_mem_reg_105__26_, u_imem_mem_reg_349__24_, U73843, U74880, u_imem_mem_reg_333__16_, U53308, u_imem_mem_reg_157__27_, ZBUF_548_inst_3530, U9706, U60583, U53960, U53958, u_imem_mem_reg_74__12_, U63971, u_imem_mem_reg_74__8_, U77214, U77216, U77561, U54754, U80282, ZBUF_222_inst_4748, u_imem_mem_reg_109__26_, U62564, U73841, U54603, u_imem_mem_reg_333__25_, u_imem_mem_reg_240__6_, u_imem_mem_reg_346__2_, U80280, U74266, U57309, U57306, U53956, u_imem_mem_reg_106__18_, u_imem_mem_reg_206__6_, U63983, U75575, U57245, U77746, U14415, U65321, u_imem_mem_reg_106__27_, U62687, u_imem_mem_reg_45__14_, U78495, U65162, u_imem_mem_reg_45__4_, u_imem_mem_reg_42__14_, u_imem_mem_reg_330__2_, U69916, U73093, U48800, u_imem_mem_reg_25__29_, U54767, U75143, ZBUF_2_inst_5710, U54765, U54761, u_imem_mem_reg_330__6_, U76308, U80281, U53964, U64002, u_imem_mem_reg_26__20_, U63995, U53961, u_imem_mem_reg_61__31_, u_imem_mem_reg_361__30_, u_imem_mem_reg_74__16_, ZBUF_2_inst_5705, U62571, u_imem_mem_reg_189__4_, U63953, u_imem_mem_reg_42__0_, u_imem_mem_reg_502__21_, U27188, U48801, U74192, u_imem_mem_reg_314__15_, U49736, U79585, U79587, U79583, U53408, U79116, u_imem_mem_reg_61__0_, U50115, U27136, u_imem_mem_reg_190__13_, U73018, U66025, U49734, U77823, u_imem_mem_reg_26__19_, u_imem_mem_reg_298__30_, u_imem_mem_reg_93__11_, U61315, U50759, U63203, U70341, u_imem_mem_reg_93__9_, U70340, u_imem_mem_reg_118__1_, U65996, U62716, u_imem_mem_reg_301__10_, ZBUF_436_inst_3529, U56905, u_imem_mem_reg_105__17_, u_imem_mem_reg_234__4_, u_imem_mem_reg_314__31_, u_imem_mem_reg_157__28_, U63206, U14444, U11925, u_imem_mem_reg_174__6_, U65997, U78681, U72388, U53318, u_imem_mem_reg_490__20_, U46330, U79029, U78766, U51640, U29097, U51642, U46333, u_imem_mem_reg_25__27_, U12016, U62717, U72745, u_imem_mem_reg_93__10_, u_imem_mem_reg_314__30_, U61313, U66034, u_imem_mem_reg_25__21_, U63199, u_imem_mem_reg_109__31_, u_imem_mem_reg_158__6_, U66037, U50118, U63194, U63196, U69815, u_imem_mem_reg_242__12_, u_imem_mem_reg_394__20_, U57079, ZBUF_2_inst_5714, U52646, U75961, ZBUF_2_inst_5089, U69353, ZBUF_2_inst_5715, u_imem_mem_reg_173__28_, U69352, u_imem_mem_reg_502__30_, u_imem_mem_reg_285__23_, U56911, U56913, U65303, U56912, U73566, U75832, U65299, U72028, ZBUF_1048_inst_5725, u_imem_mem_reg_157__10_, U27441, u_imem_mem_reg_242__5_, u_imem_mem_reg_118__0_, U65988, U70162, U52650, u_imem_mem_reg_9__20_, u_imem_mem_reg_106__26_, u_imem_mem_reg_330__8_, u_imem_mem_reg_157__16_, u_imem_mem_reg_45__5_, U68409, u_imem_mem_reg_237__29_, U62574, U61226, U68268, ZBUF_2_inst_5182, u_imem_mem_reg_317__21_, ZBUF_2_inst_2652, U46322, ZBUF_412_inst_3617, ZBUF_2_inst_5150, U56109, U73194, U60571, u_imem_mem_reg_301__30_, u_imem_mem_reg_314__13_, U68908, u_imem_mem_reg_189__10_, u_imem_mem_reg_93__15_, u_imem_mem_reg_45__6_, U59205, U50756, U62572, U75405, U52158, U43151, U69826, U69331, U11931, U53965, U74281, ZBUF_911_inst_4659, U70091, u_imem_mem_reg_222__6_, U72398, u_imem_mem_reg_93__4_, U78187, u_imem_mem_reg_301__9_, u_imem_mem_reg_45__1_, U78407, u_imem_mem_reg_93__16_, U70264, u_imem_mem_reg_282__22_, u_imem_mem_reg_410__20_, u_imem_mem_reg_42__9_, u_imem_mem_reg_189__14_, U62565, u_imem_mem_reg_330__7_, U48805, U59895, U68904, U61316, u_imem_mem_reg_442__25_, U57395, U71845, ZBUF_144_inst_4570, ZBUF_456_inst_4846, u_imem_mem_reg_154__12_, U56908, U67806, ZBUF_2_inst_2145, U76223, u_imem_mem_reg_362__17_, U56914, ZBUF_510_inst_4832, ZBUF_2_inst_5712, u_imem_mem_reg_281__30_, U57085, U57084, U68071, U57083, U68072, U68074, U72499, ZBUF_2_inst_5086, U68075, ZBUF_2_inst_5692, u_imem_mem_reg_45__13_, U73744, u_imem_mem_reg_190__6_, U12186, U51701, U71157, u_imem_mem_reg_298__0_, U74794, u_imem_mem_reg_333__7_, U68092, U52111, U74662, U57064, ZBUF_2_inst_5727, u_imem_mem_reg_109__19_, U77910, U67719, U76297, U67710, U76299, ZBUF_2_inst_5749, U73494, u_imem_mem_reg_45__11_, U63198, ZBUF_2_inst_2154, U68410, U65156, U65164, U66030, U53324, U77563, U79015, u_imem_mem_reg_45__9_, U72735, U71578, U64538, u_imem_mem_reg_105__21_, u_imem_mem_reg_246__6_, U63222, U59248, U69170, U71568, U65989, u_imem_mem_reg_330__9_, U80269, U79190, U56906, U63202, U79105, U66029, u_imem_mem_reg_301__3_, U59252, u_imem_mem_reg_45__2_, U79933, u_imem_mem_reg_330__16_, U65999, U78506, U68820, U63962, U71853, U74620, u_imem_mem_reg_141__8_, U10735, u_imem_mem_reg_9__19_, U68094, U54151, U71841, u_imem_mem_reg_317__19_, u_imem_mem_reg_301__26_, U54609, U46835, ZBUF_229_inst_5569, U79922, U9501, U27446, U77203, u_imem_mem_reg_301__5_, u_imem_mem_reg_333__10_, u_imem_mem_reg_330__5_, U80019, U58610, U75230, U75228, U57924, U57926, ZBUF_863_inst_4437, ZBUF_2_inst_5186, U76213, U76209, U59847, ZBUF_157_inst_3162, 
+    Number of hard macros: 0
+      
+    Number of I/O pads: 0
+      
+    Number of hierarchical blocks: 0
+      
+  *******************************
+
+  Number of floating std cells: 0
+    
+
+  *********************************
+
+  Number of floating hard macros: 0
+    
+
+  *********************************
+
+  Number of floating I/O pads: 0
+    
+
+  *********************************
+
+  Number of floating terminals: 0
+
+
+  *********************************
+
+  Number of floating hierarchical blocks: 0
+    
+
+  *********************************
+
+  Number of std cells with unconnected port: 415
+    u_imem_mem_reg_502__21_, u_imem_mem_reg_502__22_, u_imem_mem_reg_502__30_, u_imem_mem_reg_490__20_, u_imem_mem_reg_458__29_, u_imem_mem_reg_442__25_, u_imem_mem_reg_410__20_, u_imem_mem_reg_410__30_, u_imem_mem_reg_394__17_, u_imem_mem_reg_394__20_, u_imem_mem_reg_394__29_, u_imem_mem_reg_362__17_, u_imem_mem_reg_361__30_, u_imem_mem_reg_349__24_, u_imem_mem_reg_333__7_, u_imem_mem_reg_333__10_, u_imem_mem_reg_333__16_, u_imem_mem_reg_333__25_, u_imem_mem_reg_330__2_, u_imem_mem_reg_330__5_, u_imem_mem_reg_330__6_, u_imem_mem_reg_330__7_, u_imem_mem_reg_330__8_, u_imem_mem_reg_330__9_, u_imem_mem_reg_330__10_, u_imem_mem_reg_330__16_, u_imem_mem_reg_317__19_, u_imem_mem_reg_317__21_, u_imem_mem_reg_314__13_, u_imem_mem_reg_314__15_, u_imem_mem_reg_314__30_, u_imem_mem_reg_314__31_, u_imem_mem_reg_313__30_, u_imem_mem_reg_301__0_, u_imem_mem_reg_301__1_, u_imem_mem_reg_301__3_, u_imem_mem_reg_301__5_, u_imem_mem_reg_301__9_, u_imem_mem_reg_301__10_, u_imem_mem_reg_301__26_, u_imem_mem_reg_301__30_, u_imem_mem_reg_298__0_, u_imem_mem_reg_298__30_, u_imem_mem_reg_285__23_, u_imem_mem_reg_282__18_, u_imem_mem_reg_282__22_, u_imem_mem_reg_281__30_, u_imem_mem_reg_246__6_, u_imem_mem_reg_242__5_, u_imem_mem_reg_242__12_, u_imem_mem_reg_240__6_, u_imem_mem_reg_237__29_, u_imem_mem_reg_234__4_, u_imem_mem_reg_222__6_, u_imem_mem_reg_221__3_, u_imem_mem_reg_221__24_, u_imem_mem_reg_206__6_, u_imem_mem_reg_190__6_, u_imem_mem_reg_190__13_, u_imem_mem_reg_189__4_, u_imem_mem_reg_189__10_, u_imem_mem_reg_189__14_, u_imem_mem_reg_174__6_, u_imem_mem_reg_173__16_, u_imem_mem_reg_173__28_, u_imem_mem_reg_158__6_, u_imem_mem_reg_157__10_, u_imem_mem_reg_157__16_, u_imem_mem_reg_157__27_, u_imem_mem_reg_157__28_, u_imem_mem_reg_154__12_, u_imem_mem_reg_141__8_, u_imem_mem_reg_118__0_, u_imem_mem_reg_118__1_, u_imem_mem_reg_109__19_, u_imem_mem_reg_109__26_, u_imem_mem_reg_109__31_, u_imem_mem_reg_106__18_, u_imem_mem_reg_106__21_, u_imem_mem_reg_106__26_, u_imem_mem_reg_106__27_, u_imem_mem_reg_105__17_, u_imem_mem_reg_105__21_, u_imem_mem_reg_105__26_, u_imem_mem_reg_93__4_, u_imem_mem_reg_93__6_, u_imem_mem_reg_93__9_, u_imem_mem_reg_93__10_, u_imem_mem_reg_93__11_, u_imem_mem_reg_93__15_, u_imem_mem_reg_93__16_, u_imem_mem_reg_74__4_, u_imem_mem_reg_74__8_, u_imem_mem_reg_74__12_, u_imem_mem_reg_74__16_, u_imem_mem_reg_74__19_, u_imem_mem_reg_61__0_, u_imem_mem_reg_61__30_, u_imem_mem_reg_61__31_, u_imem_mem_reg_45__1_, u_imem_mem_reg_45__2_, u_imem_mem_reg_45__4_, u_imem_mem_reg_45__5_, u_imem_mem_reg_45__6_, u_imem_mem_reg_45__8_, u_imem_mem_reg_45__9_, u_imem_mem_reg_45__11_, u_imem_mem_reg_45__13_, u_imem_mem_reg_45__14_, u_imem_mem_reg_42__0_, u_imem_mem_reg_42__7_, u_imem_mem_reg_42__9_, u_imem_mem_reg_42__14_, u_imem_mem_reg_29__21_, u_imem_mem_reg_26__19_, u_imem_mem_reg_26__20_, u_imem_mem_reg_25__21_, u_imem_mem_reg_25__27_, u_imem_mem_reg_25__29_, u_imem_mem_reg_9__19_, u_imem_mem_reg_9__20_, U46322, U46330, U46333, U46835, U48800, U48801, U48805, U50115, U50118, U50756, U50759, U51640, U51642, U51701, U52111, U52158, U52646, U52650, U52802, U53308, U53318, U53324, U53408, U53956, U53958, U53960, U53961, U53964, U53965, U53966, U54151, U54603, U54609, U54754, U54761, U54765, U54767, U54768, U55468, U56109, U56905, U56906, U56908, U56911, U56912, U56913, U56914, U57059, U57062, U57064, U57079, U57083, U57084, U57085, U57245, U57306, U57309, U57395, U57924, U57926, U57946, U58604, U58608, U58610, U59205, U59248, U59252, U59847, U59895, U60571, U60583, U61226, U61313, U61315, U61316, U62564, U62565, U62571, U62572, U62573, U62574, U62679, U62687, U62716, U62717, U63194, U63196, U63198, U63199, U63202, U63203, U63206, U63222, U63953, U63962, U63971, U63983, U63995, U64002, U64026, U64029, U64538, U65156, U65162, U65164, U65299, U65303, U65313, U65321, U65988, U65989, U65996, U65997, U65999, U66025, U66029, U66030, U66034, U66037, U67359, U67710, U67719, U67806, U68071, U68072, U68074, U68075, U68092, U68094, U68268, U68409, U68410, U68744, U68820, U68904, U68908, U69170, U69331, U69341, U69352, U69353, U69815, U69826, U69916, U70091, U70162, U70264, U70265, U70340, U70341, U70424, U71157, U71568, U71578, U71841, U71845, U71853, U72028, U72326, U72388, U72398, U72499, U72673, U72735, U72745, U73018, U73083, U73093, U73105, U73194, U73494, U73566, U73744, U73841, U73843, U74192, U74266, U74281, U74562, U74620, U74662, U74794, U74796, U74880, U75143, U75228, U75230, U75405, U75490, U75492, U75575, U75832, U75961, U76209, U76213, U76223, U76297, U76299, U76308, U76310, U76645, U76647, U77119, U77203, U77214, U77216, U77463, U77465, U77561, U77563, U77746, U77823, U77910, U78187, U78202, U78245, U78407, U78495, U78504, U78506, U78681, U78766, U78842, U79015, U79029, U79105, U79116, U79190, U79583, U79585, U79587, U79922, U80019, U80269, U80281, U80282, u_imem_mem_reg_346__2_, U80280, U79933, U14444, U14415, U12186, U12016, U11931, U11925, U10735, U9706, U9501, U27441, U27446, U27188, U27121, U27136, U43151, U29097, U29092, U49734, U49736, ZBUF_2_inst_2145, ZBUF_2_inst_2154, ZBUF_2_inst_2652, ZBUF_157_inst_3162, ZBUF_436_inst_3529, ZBUF_548_inst_3530, ZBUF_412_inst_3617, ZBUF_2_inst_4097, ZBUF_2_inst_4270, ZBUF_863_inst_4437, ZBUF_144_inst_4570, ZBUF_911_inst_4659, ZBUF_222_inst_4748, ZBUF_510_inst_4832, ZBUF_456_inst_4846, ZBUF_2_inst_5086, ZBUF_2_inst_5089, ZBUF_2_inst_5138, ZBUF_2_inst_5142, ZBUF_2_inst_5145, ZBUF_2_inst_5150, ZBUF_2_inst_5182, ZBUF_2_inst_5186, ZBUF_229_inst_5569, ZBUF_2_inst_5692, ZBUF_2_inst_5705, ZBUF_2_inst_5710, ZBUF_2_inst_5712, ZBUF_2_inst_5714, ZBUF_2_inst_5715, ZBUF_2_inst_5721, ZBUF_1048_inst_5725, ZBUF_2_inst_5727, ZBUF_2_inst_5736, ZBUF_2_inst_5749, ZBUF_2_inst_5759, 
+
+  *********************************
+
+  Number of hard macros with unconnected port: 0
+    
+
+  *********************************
+
+  Number of I/O pads with unconnected port: 0
+    
+
+  *********************************
+
+  Number of std cells with unconnected port: 0
+    
+
+
+***********End of Net VSS***********
+

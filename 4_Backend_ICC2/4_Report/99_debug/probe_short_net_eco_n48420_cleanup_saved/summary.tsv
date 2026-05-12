@@ -1,0 +1,2 @@
+net	mode	before_total	before_open_nets	before_off_grid	before_short	after_total	after_open_nets	after_diff_net_spacing	after_less_than_min_area	after_needs_fat_contact	after_off_grid	after_short
+n48420	eco_only	20	0	19	1	20	0	0	0	0	19	1

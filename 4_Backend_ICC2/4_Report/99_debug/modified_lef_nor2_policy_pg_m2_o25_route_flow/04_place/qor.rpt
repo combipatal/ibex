@@ -1,0 +1,106 @@
+****************************************
+Report : qor
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 13:08:40 2026
+****************************************
+
+
+Scenario           'default'
+Timing Path Group  '**in2reg_default**'
+----------------------------------------
+Levels of Logic:                      7
+Critical Path Length:              5.04
+Critical Path Slack:               4.85
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  '**reg2out_default**'
+----------------------------------------
+Levels of Logic:                      0
+Critical Path Length:              0.57
+Critical Path Slack:               8.33
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     79
+Critical Path Length:              9.76
+Critical Path Slack:               0.05
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              8
+Hierarchical Port Count:            833
+Leaf Cell Count:                 109693
+Buf/Inv Cell Count:                8355
+Buf Cell Count:                    4531
+Inv Cell Count:                    3824
+Combinational Cell Count:         74809
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:            34884
+   Integrated Clock-Gating Cell Count:                     0
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       34884
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           183081.27
+Noncombinational Area:        231810.33
+Buf/Inv Area:                  14528.90
+Total Buffer Area:              9521.25
+Total Inverter Area:            5007.65
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                 1688676.60
+Net YLength:                 1372776.30
+----------------------------------------
+Cell Area (netlist):                         414891.60
+Cell Area (netlist and physical only):       414891.60
+Net Length:                  3061452.90
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:            110374
+Nets with Violations:             10486
+Max Trans Violations:              3764
+Max Cap Violations:               10458
+----------------------------------------
+
+1

@@ -1,0 +1,177 @@
+ Info: Initializing timer in CLOCK_SYN_REPORT_MODE
+Information: The value of option cts.compile.enable_cell_relocation has been overridden to "leaf_only" to support latency-driven placement. (CTS-973)
+****************************************
+Report : clock qor
+        -type drc_violators
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 00:33:05 2026
+****************************************
+
+Attributes
+===========
+M Master Clock
+G Generated Clock
+& Internal Generated Clock
+U User Defined Skew Group
+D Default Skew Group
+* Generated Clock Balanced Separately
+
+==========================================
+==== DRC Reporting for Corner default ====
+==========================================
+
+======================================================================= Summary Table for Corner default =======================================================================
+Clock /                               Attrs      Sink  DRC Count Max Slack Tot Slack DRC Count Max Slack Tot Slack DRC Count Max Slack Tot Slack DRC Count Max Slack Tot Slack
+Skew Group                                      Count     Trans     Trans     Trans       Cap       Cap       Cap    Fanout    Fanout    Fanout  Netlength Netlength Netlength
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+clk                                       M     34884         0        --        --        28     -2.69    -27.22         0        --        --         0        --        --
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+All Clocks                                      34884         0        --      0.00        28     -2.69    -27.22         0        --      0.00         0        --      0.00
+
+
+Legends for CTS Tags Column
+===========================
+
+clk        =  master clock source point
+gclk       =  generated clock source point
+sink       =  default sinks of clock for CTS, not user defined balance points
+icg        =  input of an ICG
+bal        =  user defined clock balance point
+e_ign      =  user defined explicit ignore point
+i_ign      =  CTS derived implicit ignore point
+trans      =  transition violation
+cap        =  capacitance violation
+dt_lib     =  library specified dont_touch on cell
+dt_cell    =  set_dont_touch on cell
+dt_net     =  set_dont_touch on net
+dt_mv_cell =  MV derived dont_touch on cell
+dt_mv_net  =  MV derived dont_touch on net
+dt_subtree =  dont_touch_subtree derived dont_touch
+hier       =  on hierarchy boundary or inside physical hierarchy
+
+
+Showing all datapoints per clock / skew group
+============================= Transition Violation Details Table for Corner default =============================
+Clock /                                Net Name/           Trans DRC    Trans     Trans     Limit      CTS Tags
+Skew Group                             Pin/Port Name          Slack     Value     Limit      Type
+-----------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+
+
+
+Showing all datapoints per clock / skew group
+============================ Capacitance Violation Details Table for Corner default =============================
+Clock /                                Net Name/            Cap DRC       Cap       Cap     Limit      CTS Tags
+Skew Group                             Pin/Port Name          Slack     Value     Limit      Type
+-----------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+clk
+                               --(N)   ZCTSNET_767            -2.69     66.69     64.00                cap
+                               --  (P)   ZCTSINV_449853_9841/Y
+                                                              -2.69     66.69     64.00                cap
+                               --(N)   ZCTSNET_556            -2.37     66.37     64.00                cap
+                               --  (P)   ZCTSINV_1115595_9630/Y
+                                                              -2.37     66.37     64.00                cap
+                               --(N)   ZCTSNET_662            -2.21     66.21     64.00                cap
+                               --  (P)   ZCTSINV_539728_9736/Y
+                                                              -2.21     66.21     64.00                cap
+                               --(N)   ZCTSNET_758            -1.98     65.98     64.00                cap
+                               --  (P)   ZCTSINV_439058_9832/Y
+                                                              -1.98     65.98     64.00                cap
+                               --(N)   ZCTSNET_338            -1.70     65.70     64.00                cap
+                               --  (P)   ZCTSINV_1005422_9412/Y
+                                                              -1.70     65.70     64.00                cap
+                               --(N)   ZCTSNET_679            -1.46     65.46     64.00                cap
+                               --  (P)   ZCTSINV_527081_9753/Y
+                                                              -1.46     65.46     64.00                cap
+                               --(N)   ZCTSNET_829            -1.44     65.44     64.00                cap
+                               --  (P)   ZCTSINV_645891_9903/Y
+                                                              -1.44     65.44     64.00                cap
+                               --(N)   ZCTSNET_588            -1.43     65.43     64.00                cap
+                               --  (P)   ZCTSINV_1061307_9662/Y
+                                                              -1.43     65.43     64.00                cap
+                               --(N)   ZCTSNET_24             -1.36     65.36     64.00                cap
+                               --  (P)   ZCTSBUF_31458_9098/Y
+                                                              -1.36     65.36     64.00                cap
+                               --(N)   ZCTSNET_654            -1.32     65.32     64.00                cap
+                               --  (P)   ZCTSINV_518639_9728/Y
+                                                              -1.32     65.32     64.00                cap
+                               --(N)   ZCTSNET_643            -1.22     65.22     64.00                cap
+                               --  (P)   ZCTSINV_569161_9717/Y
+                                                              -1.22     65.22     64.00                cap
+                               --(N)   ZCTSNET_658            -1.14     65.14     64.00                cap
+                               --  (P)   ZCTSINV_514220_9732/Y
+                                                              -1.14     65.14     64.00                cap
+                               --(N)   ZCTSNET_64             -0.90     64.90     64.00                cap
+                               --  (P)   ZCTSINV_244416_9138/Y
+                                                              -0.90     64.90     64.00                cap
+                               --(N)   ZCTSNET_554            -0.83     64.83     64.00                cap
+                               --  (P)   ZCTSINV_1111051_9628/Y
+                                                              -0.83     64.83     64.00                cap
+                               --(N)   ZCTSNET_595            -0.81     64.81     64.00                cap
+                               --  (P)   ZCTSINV_1056780_9669/Y
+                                                              -0.81     64.81     64.00                cap
+                               --(N)   ZCTSNET_85             -0.70     64.70     64.00                cap
+                               --  (P)   ZCTSBUF_181790_9159/Y
+                                                              -0.70     64.70     64.00                cap
+                               --(N)   ZCTSNET_561            -0.66     64.66     64.00                cap
+                               --  (P)   ZCTSINV_1102040_9635/Y
+                                                              -0.66     64.66     64.00                cap
+                               --(N)   ZCTSNET_420            -0.57     64.57     64.00                cap
+                               --  (P)   ZCTSBUF_899537_9494/Y
+                                                              -0.57     64.57     64.00                cap
+                               --(N)   ZCTSNET_305            -0.45     64.45     64.00                cap
+                               --  (P)   ZCTSINV_375689_9379/Y
+                                                              -0.45     64.45     64.00                cap
+                               --(N)   ZCTSNET_279            -0.43     64.43     64.00                cap
+                               --  (P)   ZCTSINV_384804_9353/Y
+                                                              -0.43     64.43     64.00                cap
+                               --(N)   ZCTSNET_926            -0.40     64.40     64.00                cap
+                               --  (P)   ZCTSINV_802784_10000/Y
+                                                              -0.40     64.40     64.00                cap
+                               --(N)   ZCTSNET_905            -0.39     64.39     64.00                cap
+                               --  (P)   ZCTSINV_776448_9979/Y
+                                                              -0.39     64.39     64.00                cap
+                               --(N)   ZCTSNET_304            -0.23     64.23     64.00                cap
+                               --  (P)   ZCTSINV_377233_9378/Y
+                                                              -0.23     64.23     64.00                cap
+                               --(N)   ZCTSNET_637            -0.20     64.20     64.00                cap
+                               --  (P)   ZCTSINV_588459_9711/Y
+                                                              -0.20     64.20     64.00                cap
+                               --(N)   ZCTSNET_390            -0.17     64.17     64.00                cap
+                               --  (P)   ZCTSINV_933316_9464/Y
+                                                              -0.17     64.17     64.00                cap
+                               --(N)   ZCTSNET_683            -0.15     64.15     64.00                cap
+                               --  (P)   ZCTSINV_528708_9757/Y
+                                                              -0.15     64.15     64.00                cap
+                               --(N)   ZCTSNET_930            -0.01     64.01     64.00                cap
+                               --  (P)   ZCTSINV_797821_10004/Y
+                                                              -0.01     64.01     64.00                cap
+                               --(N)   ZCTSNET_545            -0.01     64.01     64.00                cap
+                               --  (P)   ZCTSINV_1084363_9619/Y
+                                                              -0.01     64.01     64.00                cap
+
+
+
+Showing all datapoints per clock / skew group
+=============================== Fanout Violation Details Table for Corner default ===============================
+Clock /                                Net Name/           Fanout DRC
+                                                                       Fanout    Fanout     Limit      CTS Tags
+Skew Group                             Pin/Port Name          Slack     Value     Limit      Type
+-----------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+
+
+
+Showing all datapoints per clock / skew group
+============================= Net Length Violation Details Table for Corner default =============================
+Clock /                                Net Name/           Netlength DRC
+                                                                     Netlength Netlength    Limit      CTS Tags
+Skew Group                             Pin/Port Name          Slack     Value     Limit      Type
+-----------------------------------------------------------------------------------------------------------------
+### Mode: default, Scenario: default
+
+
+1

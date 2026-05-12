@@ -1,0 +1,17 @@
+### help_app_options route.common.*fat*
+route.common.wide_macro_pin_as_fat_wire  # control if the wide macro/pad pin should have implicit depth same as its width
+
+### report_app_options route.common.*fat*
+****************************************
+Report : app_option
+Design : NO_DESIGN
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:25:35 2026
+****************************************
+Name                                    Type       Value      User-value   User-default System-default Scope      Status     Source
+--------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+route.common.wide_macro_pin_as_fat_wire bool       --         --           --           false          block      normal     --
+--------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+
+There are additional internal differences.
+0

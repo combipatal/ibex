@@ -1,0 +1,17 @@
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1010 bbox={839.5480 327.5730} {840.4520 328.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 327.648 via_def=VIA12SQ_C object=VIA_S_0
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1136 bbox={839.5480 367.5730} {840.4520 368.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 367.776 via_def=VIA12SQ_C object=VIA_S_1
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1262 bbox={839.5480 407.5730} {840.4520 408.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 407.904 via_def=VIA12SQ_C object=VIA_S_2
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1388 bbox={839.5480 447.5730} {840.4520 448.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 448.032 via_def=VIA12SQ_C object=VIA_S_3
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1514 bbox={839.5480 487.5730} {840.4520 488.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 488.160 via_def=VIA12SQ_C object=VIA_S_4
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1640 bbox={839.5480 527.5730} {840.4520 528.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 528.288 via_def=VIA12SQ_C object=VIA_S_5
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1766 bbox={839.5480 567.5730} {840.4520 568.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 568.416 via_def=VIA12SQ_C object=VIA_S_6
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5048 bbox={819.5480 827.5730} {820.4520 828.4270} lower_layer=M7 upper_layer=M8
+PASS net=VSS point=820.0 827.576 via_def=VIA12SQ_C object=VIA_S_7
+SUMMARY removed_conflicting_vias=8 created_stitch_vias=8

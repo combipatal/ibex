@@ -1,0 +1,31 @@
+****************************************
+Report : app_option
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:40:24 2026
+****************************************
+Name                        Type       Value      User-value   User-default System-default Scope      Status     Source
+--------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+route.common.via_array_mode enum       all        --           --           all            block      normal     --
+--------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+****************************************
+Report : app_option
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:40:24 2026
+****************************************
+Name                                                Type       Value      User-value   User-default System-default Scope      Status     Source
+--------------------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+route.detail.fat_metal_forbidden_pitch_effort_level enum       off        --           --           off            block      normal     --
+--------------------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+****************************************
+Report : app_option
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 10:40:24 2026
+****************************************
+Name                                        Type       Value      User-value   User-default System-default Scope      Status     Source
+------------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+route.detail.optimize_wire_via_effort_level enum       low        --           --           low            block      normal     --
+------------------------------------------- ---------- ---------- ------------ ------------ -------------- ---------- ---------- ----------
+1

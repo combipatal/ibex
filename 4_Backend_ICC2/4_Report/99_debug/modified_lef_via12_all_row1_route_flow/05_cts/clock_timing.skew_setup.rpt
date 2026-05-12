@@ -1,0 +1,97 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 20
+        -setup
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 12:37:55 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+  Clock Pin                                          Latency      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_17_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_21_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_28_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_18_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_19_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_23_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_24_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_25_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_28_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_if_stage_i_pc_id_o_reg_26_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_29_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_27_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_25_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_27_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_24_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_25_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mepc_csr_rdata_q_reg_26_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_load_store_unit_i_addr_last_q_reg_26_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_28_/CLK
+                                                        0.14      0.17    rp-+    default
+
+  unmapped_rvalid_q_reg/CLK                             0.31              rp-+    default
+  u_ibex_top_u_ibex_core_cs_registers_i_u_mtval_csr_rdata_q_reg_19_/CLK
+                                                        0.14      0.17    rp-+    default
+
+---------------------------------------------------------------------------------------------------
+1

@@ -1,0 +1,5 @@
+run_tag	pre_backend_topo_nor2_mux41_no_x0x2_hvt
+dont_use_list	NOR2X0_HVT NOR2X2_HVT MUX41X2_HVT
+NOR2X0_HVT	1
+NOR2X2_HVT	1
+MUX41X2_HVT	1

@@ -1,0 +1,109 @@
+****************************************
+Report : qor
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 18:48:47 2026
+****************************************
+Information: The RC mode used is VR for design 'ibex_mini_soc_top'. (NEX-022)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 110305, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 110303, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+
+
+Scenario           'default'
+Timing Path Group  '**in2reg_default**'
+----------------------------------------
+Levels of Logic:                      7
+Critical Path Length:              4.44
+Critical Path Slack:               5.46
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  '**reg2out_default**'
+----------------------------------------
+Levels of Logic:                      0
+Critical Path Length:              0.57
+Critical Path Slack:               8.33
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                     78
+Critical Path Length:              9.85
+Critical Path Slack:              -0.02
+Critical Path Clk Period:         10.00
+Total Negative Slack:             -0.14
+No. of Violating Paths:              17
+Worst Hold Violation:              0.00
+Total Hold Violation:              0.00
+No. of Hold Violations:               0
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              8
+Hierarchical Port Count:            833
+Leaf Cell Count:                 109711
+Buf/Inv Cell Count:                8382
+Buf Cell Count:                    4560
+Inv Cell Count:                    3822
+Combinational Cell Count:         74827
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:            34884
+   Integrated Clock-Gating Cell Count:                     0
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       34884
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           182967.92
+Noncombinational Area:        231813.13
+Buf/Inv Area:                  14473.25
+Total Buffer Area:              9466.86
+Total Inverter Area:            5006.38
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                 1713689.79
+Net YLength:                 1338886.07
+----------------------------------------
+Cell Area (netlist):                         414781.05
+Cell Area (netlist and physical only):       414781.05
+Net Length:                  3052575.86
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:            110392
+Nets with Violations:             10494
+Max Trans Violations:              3854
+Max Cap Violations:               10468
+----------------------------------------
+
+1

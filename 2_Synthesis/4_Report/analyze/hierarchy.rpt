@@ -1,0 +1,150 @@
+ 
+****************************************
+Report : hierarchy
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sat May  9 20:11:18 2026
+****************************************
+
+Information: This design contains unmapped logic. (RPT-7)
+
+ibex_mini_soc_top
+    GTECH_AND2                                                                                                                                                                                                                                                                                                                                                                                                                                gtech
+    GTECH_BUF                                                                                                                                                                                                                 gtech
+    GTECH_NOT                                                                                                                                                                                                                 gtech
+    GTECH_OR2                                                                                                                                                                                                                 gtech
+    gpio
+        GTECH_AND2                                                                                                                                                                                                            gtech
+        GTECH_BUF                                                                                                                                                                                                             gtech
+        GTECH_NOT                                                                                                                                                                                                             gtech
+        GTECH_OR2                                                                                                                                                                                                             gtech
+    ibex_top_0_0_4_0_40_0_2_0_3_0_0_0_0_0_0_0_1_0_0_0
+        GTECH_NOT                                                                                                                                                                                                             gtech
+        GTECH_OR2                                                                                                                                                                                                             gtech
+        ibex_core_0_00000000_00000004_0_00000000_00000028_0_2_0_3_0_0_0_0_0_00000020_00000016_00000040_0_0_00000001_0_ac533bf4_0_0_0_00000020_0_00000020_1a110000_00000fff_1a110800_1a110808_00000000_00000000_559255
+            GTECH_AND2                                                                                                                                                                                                        gtech
+            GTECH_BUF                                                                                                                                                                                                         gtech
+            GTECH_NOT                                                                                                                                                                                                         gtech
+            GTECH_OR2                                                                                                                                                                                                         gtech
+            ibex_cs_registers_0_00000001_0_0_0_0_00000000_00000028_0_00000000_00000004_0_0_2_0_00000000_00000000_197242
+                GTECH_AND2                                                                                                                                                                                                    gtech
+                GTECH_BUF                                                                                                                                                                                                     gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+                ibex_counter_CounterWidth64
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                ibex_counter_CounterWidth64_ProvideValUpd1
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                ibex_csr_3_0_020242
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_6_0_557242
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_7_0_0
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_8_0_0
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_18_0_0
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_32_0_0
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_32_0_00000001
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                ibex_csr_32_0_790242
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+            ibex_ex_block_2_0_0
+                GTECH_BUF                                                                                                                                                                                                     gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+                ibex_alu_RV32B0
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                    GTECH_XOR2                                                                                                                                                                                                gtech
+                ibex_multdiv_fast_RV32M2
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                    GTECH_XOR2                                                                                                                                                                                                gtech
+            ibex_id_stage_0_2_0_0_0_0_0_0
+                GTECH_AND2                                                                                                                                                                                                    gtech
+                GTECH_BUF                                                                                                                                                                                                     gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+                ibex_controller_0_0_0
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                ibex_decoder_0_2_0_0
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+            ibex_if_stage_1a110800_1a110808_0_0_3_0_0_00000020_00000016_00000040_0_0_ac533bf4_0_0_00000020_559255
+                GTECH_AND2                                                                                                                                                                                                    gtech
+                GTECH_BUF                                                                                                                                                                                                     gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+                ibex_compressed_decoder_3_0
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                ibex_prefetch_buffer_0
+                    GTECH_AND2                                                                                                                                                                                                gtech
+                    GTECH_BUF                                                                                                                                                                                                 gtech
+                    GTECH_NOT                                                                                                                                                                                                 gtech
+                    GTECH_OR2                                                                                                                                                                                                 gtech
+                    ibex_fetch_fifo_00000002_0
+                        GTECH_AND2                                                                                                                                                                                            gtech
+                        GTECH_BUF                                                                                                                                                                                             gtech
+                        GTECH_NOT                                                                                                                                                                                             gtech
+                        GTECH_OR2                                                                                                                                                                                             gtech
+            ibex_load_store_unit_0_00000020
+                GTECH_AND2                                                                                                                                                                                                    gtech
+                GTECH_BUF                                                                                                                                                                                                     gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+            ibex_wb_stage_0_0_0
+                GTECH_AND2                                                                                                                                                                                                    gtech
+                GTECH_NOT                                                                                                                                                                                                     gtech
+                GTECH_OR2                                                                                                                                                                                                     gtech
+        ibex_register_file_ff_0_00000020_0_147242
+            GTECH_AND2                                                                                                                                                                                                        gtech
+            GTECH_BUF                                                                                                                                                                                                         gtech
+            GTECH_NOT                                                                                                                                                                                                         gtech
+            GTECH_OR2                                                                                                                                                                                                         gtech
+        prim_buf_Width4
+            GTECH_NOT                                                                                                                                                                                                         gtech
+        prim_clock_gating
+            GTECH_AND2                                                                                                                                                                                                        gtech
+            GTECH_NOT                                                                                                                                                                                                         gtech
+            GTECH_OR2                                                                                                                                                                                                         gtech
+    simple_decoder
+        GTECH_AND2                                                                                                                                                                                                            gtech
+        GTECH_BUF                                                                                                                                                                                                             gtech
+        GTECH_NOT                                                                                                                                                                                                             gtech
+        GTECH_OR2                                                                                                                                                                                                             gtech
+    simple_dmem
+        GTECH_AND2                                                                                                                                                                                                            gtech
+        GTECH_BUF                                                                                                                                                                                                             gtech
+        GTECH_NOT                                                                                                                                                                                                             gtech
+    simple_imem
+        GTECH_AND2                                                                                                                                                                                                            gtech
+        GTECH_BUF                                                                                                                                                                                                             gtech
+        GTECH_NOT                                                                                                                                                                                                             gtech
+        GTECH_OR2                                                                                                                                                                                                             gtech
+    timer
+        GTECH_AND2                                                                                                                                                                                                            gtech
+        GTECH_BUF                                                                                                                                                                                                             gtech
+        GTECH_NOT                                                                                                                                                                                                             gtech
+        GTECH_OR2                                                                                                                                                                                                             gtech
+1

@@ -1,0 +1,366 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP5-5
+Date:        Sat May  9 21:15:48 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    138
+    Unconnected ports (LINT-28)                                   138
+
+Cells                                                             105
+    Connected to power or ground (LINT-32)                        101
+    Nets connected to multiple pins on same cell (LINT-33)          4
+--------------------------------------------------------------------------------
+
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', port 'imem_waddr_i[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top_DW01_inc_J4_0', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_inc_J3_0', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_inc_J3_1', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'A[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'A[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'B[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'SUM[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'A[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'SUM[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'A[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'A[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'SUM[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'H13945677562857465990_DW01_add_J3_11', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[0]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[31]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_190' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[0]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[31]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 1. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_422' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_479' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[33]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_479' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[0]' is connected to logic 1. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_479' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[33]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_479' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[30]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[29]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[28]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[27]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[26]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[25]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[24]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[23]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[22]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[21]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[20]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[19]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[18]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[17]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[13]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[12]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[11]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[10]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[9]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[7]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', a pin on submodule 'u_ibex_top/u_ibex_core/add_x_550' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ibex_mini_soc_top', the same net is connected to more than one pin on submodule 'u_ibex_top/u_ibex_core/add_x_190'. (LINT-33)
+   Net 'u_ibex_top/u_ibex_core/load_store_unit_i/ls_fsm_ns[0]' is connected to pins 'A[0]', 'B[31]'', 'B[30]', 'B[29]', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'B[1]', 'B[0]', 'CI'.
+Warning: In design 'ibex_mini_soc_top', the same net is connected to more than one pin on submodule 'u_ibex_top/u_ibex_core/add_x_422'. (LINT-33)
+   Net 'u_ibex_top/u_ibex_core/load_store_unit_i/ls_fsm_ns[0]' is connected to pins 'A[0]', 'B[31]'', 'B[30]', 'B[29]', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'B[2]', 'B[0]', 'CI'.
+Warning: In design 'ibex_mini_soc_top', the same net is connected to more than one pin on submodule 'u_ibex_top/u_ibex_core/add_x_479'. (LINT-33)
+   Net 'u_ibex_top/u_ibex_core/load_store_unit_i/ls_fsm_ns[0]' is connected to pins 'A[33]', 'B[33]'', 'CI'.
+Warning: In design 'ibex_mini_soc_top', the same net is connected to more than one pin on submodule 'u_ibex_top/u_ibex_core/add_x_550'. (LINT-33)
+   Net 'u_ibex_top/u_ibex_core/load_store_unit_i/ls_fsm_ns[0]' is connected to pins 'B[30]', 'B[29]'', 'B[28]', 'B[27]', 'B[26]', 'B[25]', 'B[24]', 'B[23]', 'B[22]', 'B[21]', 'B[20]', 'B[19]', 'B[18]', 'B[17]', 'B[16]', 'B[15]', 'B[14]', 'B[13]', 'B[12]', 'B[11]', 'B[10]', 'B[9]', 'B[8]', 'B[7]', 'B[6]', 'B[5]', 'B[4]', 'B[3]', 'B[2]', 'CI'.
+1

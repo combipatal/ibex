@@ -1,0 +1,57 @@
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1015 bbox={839.8270 327.5730} {840.1730 328.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1014 bbox={839.8270 327.5730} {840.1730 328.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1013 bbox={839.8270 327.5730} {840.1730 328.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1012 bbox={839.8270 327.5730} {840.1730 328.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1011 bbox={839.8270 327.5730} {840.1730 328.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,327.648 object=VIA_SA_1010 bbox={839.5480 327.5730} {840.4520 328.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 327.648 via_def=VIA12SQ_C object=VIA_S_0
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1141 bbox={839.8270 367.5730} {840.1730 368.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1140 bbox={839.8270 367.5730} {840.1730 368.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1139 bbox={839.8270 367.5730} {840.1730 368.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1138 bbox={839.8270 367.5730} {840.1730 368.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1137 bbox={839.8270 367.5730} {840.1730 368.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,367.776 object=VIA_SA_1136 bbox={839.5480 367.5730} {840.4520 368.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 367.776 via_def=VIA12SQ_C object=VIA_S_1
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1267 bbox={839.8270 407.5730} {840.1730 408.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1266 bbox={839.8270 407.5730} {840.1730 408.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1265 bbox={839.8270 407.5730} {840.1730 408.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1264 bbox={839.8270 407.5730} {840.1730 408.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1263 bbox={839.8270 407.5730} {840.1730 408.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,407.904 object=VIA_SA_1262 bbox={839.5480 407.5730} {840.4520 408.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 407.904 via_def=VIA12SQ_C object=VIA_S_2
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1393 bbox={839.8270 447.5730} {840.1730 448.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1392 bbox={839.8270 447.5730} {840.1730 448.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1391 bbox={839.8270 447.5730} {840.1730 448.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1390 bbox={839.8270 447.5730} {840.1730 448.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1389 bbox={839.8270 447.5730} {840.1730 448.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,448.032 object=VIA_SA_1388 bbox={839.5480 447.5730} {840.4520 448.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 448.032 via_def=VIA12SQ_C object=VIA_S_3
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1519 bbox={839.8270 487.5730} {840.1730 488.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1518 bbox={839.8270 487.5730} {840.1730 488.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1517 bbox={839.8270 487.5730} {840.1730 488.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1516 bbox={839.8270 487.5730} {840.1730 488.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1515 bbox={839.8270 487.5730} {840.1730 488.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,488.160 object=VIA_SA_1514 bbox={839.5480 487.5730} {840.4520 488.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 488.160 via_def=VIA12SQ_C object=VIA_S_4
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1645 bbox={839.8270 527.5730} {840.1730 528.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1644 bbox={839.8270 527.5730} {840.1730 528.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1643 bbox={839.8270 527.5730} {840.1730 528.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1642 bbox={839.8270 527.5730} {840.1730 528.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1641 bbox={839.8270 527.5730} {840.1730 528.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,528.288 object=VIA_SA_1640 bbox={839.5480 527.5730} {840.4520 528.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 528.288 via_def=VIA12SQ_C object=VIA_S_5
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1771 bbox={839.8270 567.5730} {840.1730 568.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1770 bbox={839.8270 567.5730} {840.1730 568.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1769 bbox={839.8270 567.5730} {840.1730 568.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1768 bbox={839.8270 567.5730} {840.1730 568.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1767 bbox={839.8270 567.5730} {840.1730 568.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VDD point=840.0,568.416 object=VIA_SA_1766 bbox={839.5480 567.5730} {840.4520 568.4270} lower_layer=M7 upper_layer=M8
+PASS net=VDD point=840.0 568.416 via_def=VIA12SQ_C object=VIA_S_6
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5053 bbox={819.8270 827.5730} {820.1730 828.4270} lower_layer=M6 upper_layer=M7
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5052 bbox={819.8270 827.5730} {820.1730 828.4270} lower_layer=M5 upper_layer=M6
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5051 bbox={819.8270 827.5730} {820.1730 828.4270} lower_layer=M4 upper_layer=M5
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5050 bbox={819.8270 827.5730} {820.1730 828.4270} lower_layer=M3 upper_layer=M4
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5049 bbox={819.8270 827.5730} {820.1730 828.4270} lower_layer=M2 upper_layer=M3
+REMOVE net=VSS point=820.0,827.576 object=VIA_SA_5048 bbox={819.5480 827.5730} {820.4520 828.4270} lower_layer=M7 upper_layer=M8
+PASS net=VSS point=820.0 827.576 via_def=VIA12SQ_C object=VIA_S_7
+SUMMARY removed_conflicting_vias=48 created_stitch_vias=8

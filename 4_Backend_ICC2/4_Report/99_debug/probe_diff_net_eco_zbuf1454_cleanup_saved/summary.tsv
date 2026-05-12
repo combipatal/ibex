@@ -1,0 +1,2 @@
+net	mode	before_total	before_open_nets	before_off_grid	before_short	after_total	after_open_nets	after_diff_net_spacing	after_less_than_min_area	after_needs_fat_contact	after_off_grid	after_short
+ZBUF_1454_851	remove_detail_then_eco	19	0	17	0	19	0	2	0	0	17	0

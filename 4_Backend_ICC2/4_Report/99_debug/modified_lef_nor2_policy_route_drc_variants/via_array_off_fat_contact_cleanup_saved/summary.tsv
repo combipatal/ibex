@@ -1,0 +1,2 @@
+variant	total_drc	open_nets	diff_net_spacing	less_than_min_area	needs_fat_contact	off_grid	short
+via_array_off_fat_contact	19	0	2	0	13	1	3

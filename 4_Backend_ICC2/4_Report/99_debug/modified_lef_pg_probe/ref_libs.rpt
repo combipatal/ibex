@@ -1,0 +1,15 @@
+****************************************
+Report : Reference Library Report
+Library: ibex_mini_soc_top_modified_lef_icc2_lib
+Version: W-2024.09-SP2
+Date   : Sat May  9 23:33:32 2026
+****************************************
+
+    Name                      Path                                                                                                            Location
+    --------------------------------------------------------------------------------------------------------------------------------------------------
+*+  saed32rvt_tt.modified_lef /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32rvt_tt.modified_lef.ndm /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32rvt_tt.modified_lef.ndm
+*+  saed32lvt_tt.modified_lef /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32lvt_tt.modified_lef.ndm /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32lvt_tt.modified_lef.ndm
+*+  saed32hvt_tt.modified_lef /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32hvt_tt.modified_lef.ndm /DATA/home/edu135/ibex/4_Backend_ICC2/2_Output/99_debug/modified_lef_pg_probe/ndm/saed32hvt_tt.modified_lef.ndm
+    "*" = Library currently open
+    "+" = Library has technology information
+1

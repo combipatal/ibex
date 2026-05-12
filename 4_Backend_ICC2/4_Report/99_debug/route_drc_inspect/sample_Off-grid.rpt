@@ -1,0 +1,746 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : detailed
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:04:04 2026
+****************************************
+
+Error ID          : 388
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {838.0390 592.6600} {838.1290 592.7610}
+
+Error ID          : 397
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {744.5520 593.9730} {744.6120 594.2350}
+
+Error ID          : 398
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {744.5570 594.0030} {744.6070 594.2050}
+
+Error ID          : 432
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {554.3820 612.6990} {554.4320 612.9010}
+
+Error ID          : 433
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {554.4020 612.7450} {554.4620 612.8550}
+
+Error ID          : 435
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {552.1250 609.3550} {552.1750 609.5570}
+
+Error ID          : 436
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {552.1200 609.3250} {552.1800 609.5870}
+
+Error ID          : 440
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {564.1100 607.5310} {564.1600 607.7330}
+
+Error ID          : 59
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {566.6920 216.1310} {566.7420 216.3330}
+
+Error ID          : 60
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {566.6620 216.1260} {566.7720 216.3380}
+
+Error ID          : 62
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {742.4040 254.8910} {742.4540 255.0930}
+
+Error ID          : 63
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {742.3740 254.8860} {742.4840 255.0980}
+
+Error ID          : 64
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {457.8600 293.1950} {457.9100 293.3970}
+
+Error ID          : 65
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {457.8300 293.1900} {457.9400 293.4020}
+
+Error ID          : 158
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {841.8390 490.5670} {841.9290 490.6680}
+
+Error ID          : 170
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {690.5720 517.0910} {690.6220 517.2930}
+
+Error ID          : 635
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {784.7270 660.8070} {784.8910 660.8620}
+
+Error ID          : 654
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {834.5430 661.1620} {834.6230 661.3180}
+
+Error ID          : 656
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {829.6790 662.8840} {829.7690 662.9850}
+
+Error ID          : 441
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {564.1300 607.5770} {564.1900 607.6870}
+
+Error ID          : 448
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {690.5920 609.3250} {690.6520 609.5870}
+
+Error ID          : 449
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {690.5970 609.3550} {690.6470 609.5570}
+
+Error ID          : 452
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {719.3540 607.3790} {719.4040 607.5810}
+
+Error ID          : 453
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {719.3240 607.3740} {719.4340 607.5860}
+
+Error ID          : 498
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {272.2680 620.9070} {272.3180 621.1090}
+
+Error ID          : 499
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {272.2380 620.9020} {272.3480 621.1140}
+
+Error ID          : 697
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.6140 753.1420} {817.7240 753.3540}
+
+Error ID          : 698
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.6440 753.1470} {817.6940 753.3490}
+
+Error ID          : 709
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {832.8440 798.1390} {832.8940 798.3410}
+
+Error ID          : 710
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {832.8140 798.1340} {832.9240 798.3460}
+
+Error ID          : 711
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {821.5980 808.1710} {821.6480 808.3730}
+
+Error ID          : 712
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {821.6180 808.2170} {821.6780 808.3270}
+
+Error ID          : 713
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.9480 804.8270} {817.9980 805.0290}
+
+Error ID          : 714
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.9180 804.8220} {818.0280 805.0340}
+
+Error ID          : 715
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {829.8040 806.6510} {829.8540 806.8530}
+
+Error ID          : 716
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {829.7740 806.6460} {829.8840 806.8580}
+
+Error ID          : 717
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.0360 814.8590} {817.0860 815.0610}
+
+Error ID          : 718
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {817.0060 814.8540} {817.1160 815.0660}
+
+Error ID          : 289
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {712.5820 555.9980} {712.6920 556.2100}
+
+Error ID          : 290
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {712.6120 556.0030} {712.6620 556.2050}
+
+Error ID          : 296
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {720.4180 552.6590} {720.4680 552.8610}
+
+Error ID          : 297
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {720.3880 552.6540} {720.4980 552.8660}
+
+Error ID          : 571
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {708.1740 637.4700} {708.2840 637.6820}
+
+Error ID          : 572
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {708.2040 637.4750} {708.2540 637.6770}
+
+Error ID          : 573
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {712.5820 632.7580} {712.6920 632.9700}
+
+Error ID          : 574
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {712.6120 632.7630} {712.6620 632.9650}
+
+Error ID          : 575
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {711.2140 636.1020} {711.3240 636.3140}
+
+Error ID          : 576
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {711.2440 636.1070} {711.2940 636.3090}
+
+Error ID          : 577
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.0060 637.4700} {703.1160 637.6820}
+
+Error ID          : 578
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.0360 637.4750} {703.0860 637.6770}
+
+Error ID          : 579
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.3100 636.1020} {703.4200 636.3140}
+
+Error ID          : 580
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.3400 636.1070} {703.3900 636.3090}
+
+Error ID          : 582
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {720.6680 636.2590} {720.7180 636.4610}
+
+Error ID          : 583
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {720.6380 636.2540} {720.7480 636.4660}
+
+Error ID          : 516
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {683.7320 620.7550} {683.7820 620.9570}
+
+Error ID          : 517
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {683.7020 620.7500} {683.8120 620.9620}
+
+Error ID          : 518
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {685.4040 620.7550} {685.4540 620.9570}
+
+Error ID          : 519
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {685.3740 620.7500} {685.4840 620.9620}
+
+Error ID          : 520
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {687.2530 622.8830} {687.3030 623.0850}
+
+Error ID          : 521
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {687.2480 622.8530} {687.3080 623.1150}
+
+Error ID          : 522
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {701.5360 620.8770} {701.5960 621.1390}
+
+Error ID          : 523
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {701.5410 620.9070} {701.5910 621.1090}
+
+Error ID          : 524
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {702.2460 624.2460} {702.3560 624.4580}
+
+Error ID          : 525
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {702.2760 624.2510} {702.3260 624.4530}
+
+Error ID          : 526
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {702.7020 627.5900} {702.8120 627.8020}
+
+Error ID          : 527
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {702.7320 627.5950} {702.7820 627.7970}
+
+Error ID          : 528
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.2080 620.8770} {703.2680 621.1390}
+
+Error ID          : 529
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {703.2130 620.9070} {703.2630 621.1090}
+
+Error ID          : 536
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {716.6860 624.2460} {716.7960 624.4580}
+
+Error ID          : 537
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {716.7160 624.2510} {716.7660 624.4530}
+
+Error ID          : 321
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {697.7410 566.0350} {697.7910 566.2370}
+
+Error ID          : 322
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {697.7360 566.0050} {697.7960 566.2670}
+
+Error ID          : 323
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {708.9340 559.3420} {709.0440 559.5540}
+
+Error ID          : 324
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {708.9640 559.3470} {709.0140 559.5490}
+
+Error ID          : 336
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {126.5000 575.9150} {126.5500 576.1170}
+
+Error ID          : 337
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {126.4700 575.9100} {126.5800 576.1220}
+
+Error ID          : 341
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {701.8200 570.5950} {701.8700 570.7970}
+
+Error ID          : 342
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {701.7900 570.5900} {701.9000 570.8020}
+
+Error ID          : 356
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {754.5640 580.6270} {754.6140 580.8290}
+
+Error ID          : 357
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {754.5340 580.6220} {754.6440 580.8340}
+
+Error ID          : 362
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {472.4720 589.2610} {472.5320 589.5230}
+
+Error ID          : 363
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {472.4770 589.2910} {472.5270 589.4930}
+
+Error ID          : 368
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {753.1960 582.7550} {753.2460 582.9570}
+
+Error ID          : 369
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {753.1660 582.7500} {753.2760 582.9620}
+
+Error ID          : 370
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {757.4520 582.7550} {757.5020 582.9570}
+
+Error ID          : 371
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {757.4220 582.7500} {757.5320 582.9620}
+
+Error ID          : 372
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {760.6140 585.9420} {760.7240 586.1540}
+
+Error ID          : 373
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {760.6440 585.9470} {760.6940 586.1490}
+
+Error ID          : 207
+Error Type        : Off-grid
+Error Layer       : VIA1 (12)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {692.0920 525.9070} {692.1420 526.1090}
+
+Error ID          : 208
+Error Type        : Off-grid
+Error Layer       : M2 (13)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {692.0620 525.9020} {692.1720 526.1140}
+
+Error ID          : 212
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {736.0480 530.3910} {736.2510 530.4460}
+
+Error ID          : 222
+Error Type        : Off-grid
+Error Layer       : M1 (11)
+Number of errors  : 92
+Description       :  -- 
+Status            : error
+Bbox              : {739.5130 527.1940} {739.6230 527.2540}
+
+1

@@ -1,0 +1,70 @@
+****************************************
+Report : constraint
+        -all_violators
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 22:09:02 2026
+****************************************
+
+   late_timing
+   -----------
+
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+No paths.
+
+   early_timing
+   -----------
+
+Endpoint                         Path Delay     Path Required       CRP    Slack Group    Scenario
+----------------------------------------------------------------------------------------------------------
+No paths.
+
+   Mode: default Corner: default
+   Scenario: default
+   max_transition                                                              
+                             Required        Actual                            
+   Net                      Transition     Transition        Slack  Violation  
+  ---------------------------------------------------------------------------
+   n48499                       0.09           0.09           0.00  (MET)      
+
+  ---------------------------------------------------------------------------
+   Number of max_transition violation(s): 0
+
+   Mode: default Corner: default
+   Scenario: default
+   max_capacitance                                                             
+                             Required        Actual                            
+   Net                      Capacitance    Capacitance       Slack  Violation  
+  ---------------------------------------------------------------------------
+   n42733                       8.00           8.01          -0.01  (VIOLATED) 
+     PIN : U77216/Y             8.00           8.01          -0.01  (VIOLATED) 
+
+   n49555                      16.00          16.01          -0.01  (VIOLATED) 
+     PIN : U13303/Y            16.00          16.01          -0.01  (VIOLATED) 
+
+   ZBUF_1069_1170              16.00          16.00          -0.00  (VIOLATED) 
+     PIN : ZBUF_1069_inst_8294/Y
+                               16.00          16.00          -0.00  (VIOLATED) 
+
+   ZBUF_259_1196               16.00          16.00          -0.00  (VIOLATED) 
+     PIN : ZBUF_259_inst_8705/Y
+                               16.00          16.00          -0.00  (VIOLATED) 
+
+  ---------------------------------------------------------------------------
+   Number of max_capacitance violation(s): 4
+
+
+   Mode: default Corner: default
+   Scenario: default
+  ---------------------------------------------------------------------------
+   Number of min_capacitance violation(s): 0
+
+  Mode: default
+  Corner: default
+  Scenario: default
+
+  ---------------------------------------------------------------------------
+   Number of min_pulse_width violation(s): 0
+   Total number of violation(s): 4
+1

@@ -1,0 +1,39 @@
+****************************************
+Report : clock timing
+        -type latency
+        -launch
+        -nworst 20
+        -hold
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 17:00:56 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+                                                 --- Latency ---
+  Clock Pin                             Trans   Source   Offset  Network    Total            Corner
+---------------------------------------------------------------------------------------------------
+  u_dmem_mem_reg_35__2_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_83__3_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_115__3_/CLK             0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_35__4_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_428__28_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_67__4_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_424__28_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_424__26_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_460__26_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_35__1_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_67__6_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_35__3_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_35__5_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_35__6_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_67__7_/CLK              0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_460__28_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_428__26_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_424__29_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_424__24_/CLK            0.04     0.00       --     0.11     0.11 rp-+      default
+  u_dmem_mem_reg_115__6_/CLK             0.04     0.00       --     0.11     0.11 rp-+      default
+---------------------------------------------------------------------------------------------------
+1

@@ -1,0 +1,245 @@
+label	idx	name	class	layer	bbox	net	ref_name	lib_cell	shape_use	via_def	owner
+offgrid_error_1	0	0	drc_error		{393.5910 268.4190} {393.6410 268.6210}	NA	NA	NA	NA	NA	NA
+drc_object_1	1	ZBUF_2071_6	net		{378.8170 266.3370} {728.0710 304.5990}						
+near_cell_1	1	U9155	cell		{392.1570 265.7540} {394.1630 267.5570}		AND3X4_HVT	saed32hvt_tt.modified_lef/AND3X4_HVT			
+near_cell_1	2	U24857	cell		{392.5890 269.0980} {393.5790 270.9010}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_cell_1	3	U23508	cell		{393.9570 265.7540} {395.8590 267.5570}		AND2X4_HVT	saed32hvt_tt.modified_lef/AND2X4_HVT			
+near_cell_1	4	U9571	cell		{394.8690 269.0980} {396.4670 270.9010}		AND2X2_HVT	saed32hvt_tt.modified_lef/AND2X2_HVT			
+near_cell_1	5	U9173	cell		{391.3730 267.3550} {393.1230 269.1580}		AND4X1_HVT	saed32hvt_tt.modified_lef/AND4X1_HVT			
+near_cell_1	6	U9161	cell		{393.3490 269.0980} {395.0990 270.9010}		AND4X1_HVT	saed32hvt_tt.modified_lef/AND4X1_HVT			
+near_cell_1	7	ZBUF_1974_inst_3790	cell		{388.4850 265.7540} {392.3630 267.5570}		NBUFFX16_HVT	saed32hvt_tt.modified_lef/NBUFFX16_HVT			
+near_cell_1	8	ZBUF_264_inst_7752	cell		{391.0720 269.0980} {392.8190 270.9010}		NBUFFX4_HVT	saed32hvt_tt.modified_lef/NBUFFX4_HVT			
+near_pin_1	1	U23131/A1	pin	M1 CO	{393.2570 268.3130} {393.4290 268.4970}	n51465					
+near_pin_1	2	U23131/VSS	pin	M1 CO	{393.0080 268.7170} {394.9840 269.1580}	VSS					
+near_shape_1	1	PATH_23_23	shape	M7	{10.0000 267.5000} {861.5920 268.5000}	VSS			stripe		VSS
+near_shape_1	2	PATH_19_1901	shape	M5	{369.8760 268.6440} {399.4200 268.7000}	n17756			detail_route		n17756
+near_shape_1	3	PATH_11_24056	shape	M1	{393.1300 268.3380} {393.3730 268.3980}	n51465			detail_route		n51465
+near_shape_1	4	PATH_15_41070	shape	M3	{392.8280 268.6440} {400.7880 268.7000}	n7792			detail_route		n7792
+near_shape_1	5	PATH_15_130355	shape	M3	{391.9160 268.3400} {393.4920 268.3960}	n51465			detail_route		n51465
+near_shape_1	6	PATH_15_130356	shape	M3	{393.4360 268.3400} {394.4040 268.3960}	n51465			detail_route		n51465
+near_shape_1	7	PATH_13_300958	shape	M2	{393.2840 268.3400} {393.4920 268.3960}	n51465			detail_route		n51465
+near_shape_1	8	PATH_13_565129	shape	M2	{393.5880 268.4920} {394.2520 268.5480}	ZBUF_2071_6			detail_route		ZBUF_2071_6
+offgrid_error_2	0	1	drc_error		{760.6710 291.8270} {760.7210 292.0290}	NA	NA	NA	NA	NA	NA
+drc_object_2	1	n47209	net		{729.3290 286.5580} {763.0930 319.1680}						
+near_cell_2	1	U81251	cell		{761.6450 289.1620} {763.6990 290.9790}		AO221X1_HVT	saed32hvt_tt.modified_lef/AO221X1_HVT			
+near_cell_2	2	U81252	cell		{759.9730 289.1620} {761.7230 290.9790}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_2	3	U80599	cell		{760.4290 292.5060} {762.4830 294.3090}		NAND4X1_HVT	saed32hvt_tt.modified_lef/NAND4X1_HVT			
+near_cell_2	4	U3856	cell		{757.9970 290.7630} {760.0510 292.5660}		NAND4X1_HVT	saed32hvt_tt.modified_lef/NAND4X1_HVT			
+near_cell_2	5	ZBUF_92_inst_6908	cell		{759.2130 292.5060} {760.6590 294.3090}		NBUFFX2_HVT	saed32hvt_tt.modified_lef/NBUFFX2_HVT			
+near_pin_2	1	U80571/A1	pin	M1 CO	{760.3370 291.7210} {760.5090 291.9050}	n46345					
+near_pin_2	2	U80571/VSS	pin	M1 CO	{760.0880 292.1490} {761.6080 292.5660}	VSS					
+near_shape_2	1	PATH_25_48	shape	M8	{759.5000 13.0000} {760.5000 857.9840}	VDD			stripe		VDD
+near_shape_2	2	PATH_21_1125	shape	M6	{760.5160 269.2520} {760.5720 304.5720}	n47138			detail_route		n47138
+near_shape_2	3	PATH_15_84367	shape	M3	{759.6040 291.7480} {760.5720 291.8040}	n46345			detail_route		n46345
+near_shape_2	4	PATH_13_202198	shape	M2	{760.5160 291.7480} {760.5720 293.0200}	n46345			detail_route		n46345
+near_shape_2	5	PATH_13_205334	shape	M2	{760.8200 289.3160} {760.8760 314.3000}	n47095			detail_route		n47095
+near_shape_2	6	PATH_13_205982	shape	M2	{760.6680 291.9000} {760.7240 293.1720}	n47209			detail_route		n47209
+near_via_2	1	VIA_S_311995	via		{760.9450 292.0250} {761.0550 292.1350}	n46919			detail_route	VIA23SQ_C	n46919
+offgrid_error_3	0	2	drc_error		{743.6470 309.7630} {743.6970 309.9650}	NA	NA	NA	NA	NA	NA
+drc_object_3	1	n46355	net		{743.5530 304.3750} {744.3450 309.9950}						
+near_cell_3	1	U80611	cell		{743.7090 310.8270} {747.2830 312.6300}		MUX41X1_HVT	saed32hvt_tt.modified_lef/MUX41X1_HVT			
+near_cell_3	2	U80628	cell		{741.4290 309.2260} {743.1790 311.0430}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_3	3	U80704	cell		{740.6690 307.4690} {742.4190 309.2860}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_3	4	U80740	cell		{744.4690 309.2260} {745.4590 311.0290}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_cell_3	5	U80856	cell		{740.3650 310.8270} {743.9390 312.6300}		MUX41X1_HVT	saed32hvt_tt.modified_lef/MUX41X1_HVT			
+near_pin_3	1	U80632/A1	pin	M1 CO	{743.3130 309.8870} {743.4850 310.0710}	n46356					
+near_pin_3	2	U80632/VSS	pin	M1 CO	{743.0640 309.2260} {744.5840 309.6430}	VSS					
+near_shape_3	1	PATH_17_9498	shape	M4	{743.4920 296.3080} {743.5480 321.5960}	n47018			detail_route		n47018
+near_shape_3	2	PATH_15_84636	shape	M3	{742.1240 309.9880} {751.1480 310.0440}	n46438			detail_route		n46438
+near_shape_3	3	PATH_15_84683	shape	M3	{738.1720 309.6840} {744.7640 309.7400}	n46490			detail_route		n46490
+near_shape_3	4	PATH_13_202288	shape	M2	{743.6440 307.7080} {743.7000 309.8920}	n46355			detail_route		n46355
+near_shape_3	5	PATH_13_203158	shape	M2	{743.4920 300.7160} {743.5480 311.5640}	n46557			detail_route		n46557
+offgrid_error_4	0	3	drc_error		{741.5190 306.4190} {741.5690 306.6210}	NA	NA	NA	NA	NA	NA
+drc_object_4	1	n46411	net		{741.4250 304.3750} {742.8250 306.6510}						
+near_cell_4	1	U80631	cell		{742.9490 304.1250} {744.6990 305.9420}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_4	2	U80692	cell		{737.6290 304.1390} {741.2030 305.9420}		MUX41X1_HVT	saed32hvt_tt.modified_lef/MUX41X1_HVT			
+near_cell_4	3	U80702	cell		{742.7970 305.8820} {746.3710 307.6850}		MUX41X1_HVT	saed32hvt_tt.modified_lef/MUX41X1_HVT			
+near_cell_4	4	U80704	cell		{740.6690 307.4690} {742.4190 309.2860}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_4	5	U80707	cell		{741.4290 304.1250} {743.1790 305.9420}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_pin_4	1	U80708/A1	pin	M1 CO	{741.1850 306.5430} {741.3570 306.7270}	n46412					
+near_pin_4	2	U80708/VSS	pin	M1 CO	{740.9360 305.8820} {742.4560 306.2990}	VSS					
+near_shape_4	1	PATH_21_1134	shape	M6	{741.6680 242.5000} {741.7240 318.5560}	n47388			detail_route		n47388
+near_shape_4	2	PATH_15_84638	shape	M3	{735.2840 306.6440} {751.6040 306.7000}	n46443			detail_route		n46443
+near_shape_4	3	PATH_13_202624	shape	M2	{741.5160 305.7320} {741.5720 306.5480}	n46411			detail_route		n46411
+near_shape_4	4	PATH_13_276858	shape	M2	{741.6680 298.4360} {741.7240 309.1320}	n50734			detail_route		n50734
+near_via_4	1	VIA_SA_15715	via		{741.1850 306.4650} {741.2950 306.7270}	n46412			detail_route	VIA12SQ_C	n46412
+offgrid_error_5	0	4	drc_error		{780.2790 309.7630} {780.3290 309.9650}	NA	NA	NA	NA	NA	NA
+drc_object_5	1	n4111	net		{774.0170 309.7330} {780.6630 315.4670}						
+near_cell_5	1	U3082	cell		{780.0370 307.4830} {781.0270 309.2860}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_cell_5	2	U3083	cell		{780.7970 307.4690} {783.1550 309.2860}		AOI221X1_HVT	saed32hvt_tt.modified_lef/AOI221X1_HVT			
+near_cell_5	3	U3113	cell		{780.6450 310.8270} {782.2430 312.6300}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_5	4	U3114	cell		{777.9090 310.8270} {779.3450 312.6300}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_5	5	U4191	cell		{777.9080 307.4690} {780.1350 309.2860}		OA222X1_HVT	saed32hvt_tt.modified_lef/OA222X1_HVT			
+near_pin_5	1	U44775/A1	pin	M1 CO	{780.4910 309.8870} {780.6630 310.0710}	n2966					
+near_pin_5	2	U44775/VSS	pin	M1 CO	{779.2400 309.2260} {780.9120 309.6430}	VSS					
+near_shape_5	1	PATH_25_49	shape	M8	{779.5000 10.0000} {780.5000 860.9840}	VSS			stripe		VSS
+near_shape_5	2	PATH_13_102	shape	M2	{779.8000 10.0000} {780.2000 860.9840}	VSS			stripe		VSS
+near_shape_5	3	PATH_19_3947	shape	M5	{776.9320 309.9880} {790.9720 310.0440}	n46363			detail_route		n46363
+near_shape_5	4	PATH_11_6584	shape	M1	{780.5470 309.9860} {780.7900 310.0460}	n2966			detail_route		n2966
+near_shape_5	5	PATH_15_84454	shape	M3	{777.2360 309.9880} {782.3080 310.0440}	n46362			detail_route		n46362
+near_shape_5	6	PATH_13_97094	shape	M2	{780.2760 309.8360} {780.6360 309.8920}	n4111			detail_route		n4111
+offgrid_error_6	0	5	drc_error		{713.2470 315.2350} {713.2970 315.4370}	NA	NA	NA	NA	NA	NA
+drc_object_6	1	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]	net		{711.8490 315.2050} {721.8840 325.8280}						
+near_cell_6	1	U80533	cell		{711.6370 315.9140} {713.0730 317.7170}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_6	2	U80534	cell		{712.7010 312.5700} {714.4510 314.3870}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_6	3	U80535	cell		{714.6770 312.5700} {715.8190 314.3730}		NAND2X0_HVT	saed32hvt_tt.modified_lef/NAND2X0_HVT			
+near_cell_6	4	U81061	cell		{711.7890 312.5700} {712.9310 314.3730}		NAND2X0_HVT	saed32hvt_tt.modified_lef/NAND2X0_HVT			
+near_cell_6	5	U80552	cell		{714.7010 315.9140} {716.7070 317.7170}		AND3X4_HVT	saed32hvt_tt.modified_lef/AND3X4_HVT			
+near_cell_6	6	ZBUF_190_inst_5500	cell		{711.3330 314.1710} {712.7790 315.9740}		NBUFFX2_HVT	saed32hvt_tt.modified_lef/NBUFFX2_HVT			
+near_pin_6	1	U80531/A1	pin	M1 CO	{712.9130 315.1290} {713.0850 315.3130}	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[0]					
+near_pin_6	2	U80531/VSS	pin	M1 CO	{712.6640 315.5330} {714.6400 315.9740}	VSS					
+near_shape_6	1	PATH_19_47570	shape	M5	{704.2760 315.4600} {722.2680 315.5160}	ZBUF_60_827			detail_route		ZBUF_60_827
+near_shape_6	2	PATH_15_84236	shape	M3	{708.5320 315.1560} {715.2760 315.2120}	n46308			detail_route		n46308
+near_shape_6	3	PATH_13_542699	shape	M2	{713.2440 315.3080} {713.3000 317.0360}	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]			detail_route		u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]
+near_via_6	1	VIA_SA_15726	via		{712.7610 315.2810} {713.0230 315.3910}	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[0]			detail_route	VIA12SQ_C	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[0]
+offgrid_error_7	0	6	drc_error		{713.8550 318.5790} {713.9050 318.7810}	NA	NA	NA	NA	NA	NA
+drc_object_7	1	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]	net		{711.8490 315.2050} {721.8840 325.8280}						
+near_cell_7	1	u_dmem_mem_reg_213__23_	cell		{711.7890 319.2580} {715.9710 321.0610}		DFFX1_HVT	saed32hvt_tt.modified_lef/DFFX1_HVT			
+near_cell_7	2	U80528	cell		{714.8290 317.5150} {716.2650 319.3180}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_7	3	U80533	cell		{711.6370 315.9140} {713.0730 317.7170}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_7	4	U80538	cell		{711.4850 317.5150} {713.2110 319.3180}		AND3X2_HVT	saed32hvt_tt.modified_lef/AND3X2_HVT			
+near_cell_7	5	U80552	cell		{714.7010 315.9140} {716.7070 317.7170}		AND3X4_HVT	saed32hvt_tt.modified_lef/AND3X4_HVT			
+near_pin_7	1	U80526/A1	pin	M1 CO	{713.5210 318.4730} {713.6930 318.6570}	n47724					
+near_pin_7	2	U80526/VSS	pin	M1 CO	{713.2720 318.9010} {714.7920 319.3180}	VSS					
+near_shape_7	1	PATH_15_265880	shape	M3	{712.1800 318.5000} {718.9240 318.5560}	u_ibex_top_u_ibex_core_load_store_unit_i_data_type_q[1]			detail_route		u_ibex_top_u_ibex_core_load_store_unit_i_data_type_q[1]
+near_shape_7	2	PATH_13_542700	shape	M2	{713.8520 316.9800} {713.9080 318.7080}	u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]			detail_route		u_ibex_top_u_ibex_core_load_store_unit_i_rdata_offset_q[1]
+near_via_7	1	VIA_SA_15717	via		{713.3690 318.6250} {713.6310 318.7350}	n47724			detail_route	VIA12SQ_C	n47724
+offgrid_error_8	0	7	drc_error		{776.4790 315.2350} {776.5290 315.4370}	NA	NA	NA	NA	NA	NA
+drc_object_8	1	n4111	net		{774.0170 309.7330} {780.6630 315.4670}						
+near_cell_8	1	U3107	cell		{773.9370 314.1570} {775.7080 315.9740}		OA22X1_HVT	saed32hvt_tt.modified_lef/OA22X1_HVT			
+near_cell_8	2	U3393	cell		{775.0210 315.9140} {776.4570 317.7170}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_8	3	U3396	cell		{773.6530 315.9140} {775.2510 317.7170}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_8	4	U4639	cell		{773.6530 312.5700} {775.2500 314.3730}		AND3X1_HVT	saed32hvt_tt.modified_lef/AND3X1_HVT			
+near_cell_8	5	U4847	cell		{776.2370 315.9140} {778.5950 317.7310}		AO222X2_HVT	saed32hvt_tt.modified_lef/AO222X2_HVT			
+near_cell_8	6	U4110	cell		{777.7570 314.1710} {779.9630 315.9740}		NOR2X4_HVT	saed32hvt_tt.modified_lef/NOR2X4_HVT			
+near_pin_8	1	U4214/A1	pin	M1 CO	{776.1450 315.1290} {776.3170 315.3130}	n2966					
+near_pin_8	2	U4214/VSS	pin	M1 CO	{775.8960 315.5330} {777.8720 315.9740}	VSS					
+near_shape_8	1	PATH_19_613	shape	M5	{772.9800 315.4600} {790.3640 315.5160}	n4303			detail_route		n4303
+near_shape_8	2	PATH_13_94469	shape	M2	{776.4760 313.0280} {776.5320 315.3640}	n4111			detail_route		n4111
+offgrid_error_9	0	8	drc_error		{778.4550 315.2350} {778.5050 315.4370}	NA	NA	NA	NA	NA	NA
+drc_object_9	1	n4111	net		{774.0170 309.7330} {780.6630 315.4670}						
+near_cell_9	1	U3112	cell		{779.1250 312.5700} {780.5610 314.3730}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_9	2	U4847	cell		{776.2370 315.9140} {778.5950 317.7310}		AO222X2_HVT	saed32hvt_tt.modified_lef/AO222X2_HVT			
+near_cell_9	3	U4214	cell		{775.7810 314.1710} {777.9870 315.9740}		NOR2X4_HVT	saed32hvt_tt.modified_lef/NOR2X4_HVT			
+near_cell_9	4	ZBUF_1560_inst_1956	cell		{778.8240 315.9140} {780.5710 317.7170}		NBUFFX4_HVT	saed32hvt_tt.modified_lef/NBUFFX4_HVT			
+near_pin_9	1	U4110/A1	pin	M1 CO	{778.1210 315.1290} {778.2930 315.3130}	n2966					
+near_pin_9	2	U4110/VSS	pin	M1 CO	{777.8720 315.5330} {779.8480 315.9740}	VSS					
+near_shape_9	1	PATH_19_613	shape	M5	{772.9800 315.4600} {790.3640 315.5160}	n4303			detail_route		n4303
+near_shape_9	2	PATH_17_34315	shape	M4	{778.4520 269.2520} {778.5080 343.1800}	ZBUF_2_3			detail_route		ZBUF_2_3
+near_shape_9	3	PATH_13_97093	shape	M2	{778.6040 312.7240} {778.6600 315.3640}	n4111			detail_route		n4111
+near_shape_9	4	PATH_13_105557	shape	M2	{778.3000 310.5960} {778.3560 322.6600}	n6898			detail_route		n6898
+near_shape_9	5	PATH_15_186003	shape	M3	{777.6920 315.1560} {781.2440 315.2120}	n54889			detail_route		n54889
+offgrid_error_10	0	9	drc_error		{789.2470 315.2350} {789.2970 315.4370}	NA	NA	NA	NA	NA	NA
+drc_object_10	1	u_ibex_top_u_ibex_core_instr_rdata_alu_id[26]	net		{788.0920 315.2050} {795.1030 324.1780}						
+near_cell_10	1	U3052	cell		{789.7650 312.5700} {790.9070 314.3730}		NAND2X0_HVT	saed32hvt_tt.modified_lef/NAND2X0_HVT			
+near_cell_10	2	U3056	cell		{790.6770 312.5700} {792.1130 314.3730}		AND2X1_HVT	saed32hvt_tt.modified_lef/AND2X1_HVT			
+near_cell_10	3	U3071	cell		{787.4850 315.9140} {789.0830 317.7170}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_10	4	U3076	cell		{786.8770 314.1710} {788.4750 315.9740}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_10	5	U4179	cell		{789.1570 315.9140} {791.5150 317.7310}		AO222X2_HVT	saed32hvt_tt.modified_lef/AO222X2_HVT			
+near_pin_10	1	U3055/A1	pin	M1 CO	{788.9130 315.1290} {789.0850 315.3130}	n2925					
+near_pin_10	2	U3055/VSS	pin	M1 CO	{788.6640 315.5570} {790.1840 315.9740}	VSS					
+near_shape_10	1	PATH_19_613	shape	M5	{772.9800 315.4600} {790.3640 315.5160}	n4303			detail_route		n4303
+near_shape_10	2	PATH_17_9398	shape	M4	{789.0920 306.6440} {789.1480 342.2680}	n46756			detail_route		n46756
+near_shape_10	3	PATH_15_185991	shape	M3	{779.3640 315.4600} {790.2120 315.5160}	n54888			detail_route		n54888
+near_shape_10	4	PATH_13_544054	shape	M2	{789.2440 315.3080} {789.3000 317.3400}	u_ibex_top_u_ibex_core_instr_rdata_alu_id[26]			detail_route		u_ibex_top_u_ibex_core_instr_rdata_alu_id[26]
+offgrid_error_11	0	10	drc_error		{736.5030 331.9550} {736.5530 332.1570}	NA	NA	NA	NA	NA	NA
+drc_object_11	1	n6576	net		{735.4390 313.3050} {779.8130 332.5440}						
+near_cell_11	1	U3015	cell		{734.7410 332.6340} {735.8830 334.4370}		INVX2_HVT	saed32hvt_tt.modified_lef/INVX2_HVT			
+near_cell_11	2	U3017	cell		{736.4130 332.6340} {738.0110 334.4370}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_11	3	U4013	cell		{737.7810 329.2900} {740.5950 331.0930}		AND4X4_RVT	saed32rvt_tt.modified_lef/AND4X4_RVT			
+near_cell_11	4	U3100	cell		{734.1330 330.8910} {736.0350 332.6940}		NAND2X2_HVT	saed32hvt_tt.modified_lef/NAND2X2_HVT			
+near_cell_11	5	U3014	cell		{737.3250 330.8910} {738.3150 332.6940}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_pin_11	1	U7945/A1	pin	M1 CO	{736.1690 331.8490} {736.3410 332.0330}	n6577					
+near_pin_11	2	U7945/VSS	pin	M1 CO	{735.9200 332.2770} {737.4400 332.6940}	VSS					
+near_shape_11	1	PATH_11_7532	shape	M1	{736.0420 331.8740} {736.2850 331.9340}	n6577			detail_route		n6577
+near_shape_11	2	PATH_15_39021	shape	M3	{736.0440 331.8760} {737.4680 331.9320}	n6577			detail_route		n6577
+near_shape_11	3	PATH_13_104390	shape	M2	{735.7400 332.0280} {736.5560 332.0840}	n6576			detail_route		n6576
+offgrid_error_12	0	11	drc_error		{780.2790 335.2990} {780.3290 335.5010}	NA	NA	NA	NA	NA	NA
+drc_object_12	1	n2871	net		{780.2490 335.2690} {798.9030 337.5590}						
+near_cell_12	1	u_ibex_top_u_ibex_core_add_x_422/U49	cell		{777.3460 335.9780} {779.4620 337.7810}		HADDX1_HVT	saed32hvt_tt.modified_lef/HADDX1_HVT			
+near_cell_12	2	u_ibex_top_u_ibex_core_add_x_422/U50	cell		{780.3860 332.6340} {782.5020 334.4370}		HADDX1_HVT	saed32hvt_tt.modified_lef/HADDX1_HVT			
+near_cell_12	3	U7811	cell		{780.7970 335.9780} {782.5470 337.7950}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_12	4	u_ibex_top_u_ibex_core_if_stage_i_instr_rdata_id_o_reg_14_	cell		{775.3250 332.6340} {780.1150 334.4370}		DFFX2_HVT	saed32hvt_tt.modified_lef/DFFX2_HVT			
+near_pin_12	1	U2900/A1	pin	M1 CO	{780.4910 335.1930} {780.6630 335.3770}	u_ibex_top_u_ibex_core_id_stage_i_imm_u_type[15]					
+near_pin_12	2	U2900/VSS	pin	M1 CO	{779.3920 335.6210} {780.9120 336.0380}	VSS					
+near_shape_12	1	PATH_25_49	shape	M8	{779.5000 10.0000} {780.5000 860.9840}	VSS			stripe		VSS
+near_shape_12	2	PATH_13_102	shape	M2	{779.8000 10.0000} {780.2000 860.9840}	VSS			stripe		VSS
+near_shape_12	3	PATH_15_33534	shape	M3	{780.4280 335.5240} {798.8760 335.5800}	n2871			detail_route		n2871
+near_via_12	1	VIA_SA_15727	via		{780.5530 335.3450} {780.8150 335.4550}	u_ibex_top_u_ibex_core_id_stage_i_imm_u_type[15]			detail_route	VIA12SQ_C	u_ibex_top_u_ibex_core_id_stage_i_imm_u_type[15]
+offgrid_error_13	0	12	drc_error		{743.1910 343.2030} {743.2410 343.4050}	NA	NA	NA	NA	NA	NA
+drc_object_13	1	n6821	net		{743.0970 339.4720} {748.9570 405.3750}						
+near_cell_13	1	u_ibex_top_u_ibex_core_cs_registers_i_u_dscratch0_csr_rdata_q_reg_14_	cell		{737.9330 340.9230} {742.4190 342.7260}		DFFARX1_HVT	saed32hvt_tt.modified_lef/DFFARX1_HVT			
+near_cell_13	2	u_ibex_top_u_ibex_core_cs_registers_i_u_mscratch_csr_rdata_q_reg_10_	cell		{738.5410 344.2670} {743.0270 346.0700}		DFFARX1_HVT	saed32hvt_tt.modified_lef/DFFARX1_HVT			
+near_cell_13	3	u_ibex_top_u_ibex_core_id_stage_i_controller_i_store_err_q_reg	cell		{742.7970 344.2670} {747.2830 346.0700}		DFFARX1_HVT	saed32hvt_tt.modified_lef/DFFARX1_HVT			
+near_cell_13	4	U3020	cell		{743.7090 340.9090} {745.4590 342.7260}		AO21X1_HVT	saed32hvt_tt.modified_lef/AO21X1_HVT			
+near_pin_13	1	U8321/A1	pin	M1 CO	{742.8570 343.3270} {743.0290 343.5110}	u_ibex_top_u_ibex_core_load_store_unit_i_data_we_q					
+near_pin_13	2	U8321/VSS	pin	M1 CO	{742.6080 342.6660} {744.1280 343.0830}	VSS					
+near_shape_13	1	PATH_15_39351	shape	M3	{743.3400 343.1240} {743.8520 343.1800}	n6821			detail_route		n6821
+offgrid_error_14	0	14	drc_error		{747.7510 423.4590} {747.8010 423.6610}	NA	NA	NA	NA	NA	NA
+drc_object_14	1	n4612	net		{747.1130 423.4290} {749.0470 426.1990}						
+near_cell_14	1	U4957	cell		{749.0290 424.5230} {750.3220 426.3260}		NAND3X0_HVT	saed32hvt_tt.modified_lef/NAND3X0_HVT			
+near_cell_14	2	U5111	cell		{747.9650 424.5230} {749.2580 426.3260}		NAND3X0_HVT	saed32hvt_tt.modified_lef/NAND3X0_HVT			
+near_cell_14	3	U5426	cell		{746.2930 424.5090} {748.0430 426.3260}		AO21X1_HVT	saed32hvt_tt.modified_lef/AO21X1_HVT			
+near_cell_14	4	U8695	cell		{744.9250 424.5230} {746.5230 426.3260}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_14	5	U8892	cell		{749.0290 422.9220} {750.3220 424.7250}		NAND3X0_HVT	saed32hvt_tt.modified_lef/NAND3X0_HVT			
+near_cell_14	6	U7598	cell		{744.9250 422.9220} {747.1310 424.7390}		AO221X2_HVT	saed32hvt_tt.modified_lef/AO221X2_HVT			
+near_pin_14	1	U5112/A1	pin	M1 CO	{747.4170 423.5830} {747.5890 423.7670}	u_ibex_top_u_ibex_core_id_stage_i_controller_i_ctrl_fsm_cs[0]					
+near_pin_14	2	U5112/VSS	pin	M1 CO	{747.1680 422.9220} {748.6880 423.3390}	VSS					
+near_shape_14	1	PATH_15_40267	shape	M3	{746.0760 423.3800} {749.1720 423.4360}	n7446			detail_route		n7446
+near_shape_14	2	PATH_13_97611	shape	M2	{747.7480 423.5320} {747.8040 425.2600}	n4612			detail_route		n4612
+offgrid_error_15	0	15	drc_error		{762.6470 459.0270} {762.6970 459.2290}	NA	NA	NA	NA	NA	NA
+drc_object_15	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	net		{761.3390 438.1260} {768.3510 463.8190}						
+near_cell_15	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_1__17_	cell		{763.7730 457.9630} {767.9550 459.7660}		DFFX1_HVT	saed32hvt_tt.modified_lef/DFFX1_HVT			
+near_cell_15	2	U7556	cell		{759.9730 456.3620} {762.1790 458.1790}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_15	3	U7560	cell		{759.9730 459.7060} {762.1790 461.5230}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_pin_15	1	U6115/A1	pin	M1 CO	{762.3130 458.9210} {762.4850 459.1050}	n54907					
+near_pin_15	2	U6115/VSS	pin	M1 CO	{762.0640 459.3490} {763.7360 459.7660}	VSS					
+near_shape_15	1	PATH_13_542048	shape	M2	{762.6440 459.1000} {763.1560 459.1560}	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]			detail_route		u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]
+near_via_15	1	VIA_SA_15718	via		{762.1610 459.0730} {762.4230 459.1830}	n54907			detail_route	VIA12SQ_C	n54907
+offgrid_error_16	0	16	drc_error		{791.2230 452.3390} {791.2730 452.5410}	NA	NA	NA	NA	NA	NA
+drc_object_16	1	n5567	net		{785.4170 452.3090} {791.3030 457.9290}						
+near_cell_16	1	U6606	cell		{792.6530 449.6740} {793.6430 451.4770}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_cell_16	2	U6727	cell		{789.0050 451.2610} {790.7550 453.0780}		AO22X1_HVT	saed32hvt_tt.modified_lef/AO22X1_HVT			
+near_cell_16	3	U6729	cell		{789.4610 449.6740} {791.0590 451.4770}		OR2X1_HVT	saed32hvt_tt.modified_lef/OR2X1_HVT			
+near_cell_16	4	U45800	cell		{792.0480 451.2750} {793.7950 453.0780}		NBUFFX4_HVT	saed32hvt_tt.modified_lef/NBUFFX4_HVT			
+near_pin_16	1	U6697/A1	pin	M1 CO	{790.8890 452.2330} {791.0610 452.4170}	n5568					
+near_pin_16	2	U6697/VSS	pin	M1 CO	{790.6400 452.6610} {792.1600 453.0780}	VSS					
+near_shape_16	1	PATH_19_923	shape	M5	{784.5320 452.2600} {792.4920 452.3160}	n7467			detail_route		n7467
+near_shape_16	2	PATH_17_28909	shape	M4	{791.2200 405.7480} {791.2760 461.4360}	n55643			detail_route		n55643
+near_shape_16	3	PATH_15_40530	shape	M3	{789.2440 452.5640} {794.6200 452.6200}	n7530			detail_route		n7530
+near_shape_16	4	PATH_13_98390	shape	M2	{791.2200 452.4120} {791.2760 454.5960}	n5567			detail_route		n5567
+near_via_16	1	VIA_SA_15709	via		{790.7370 452.3850} {790.9990 452.4950}	n5568			detail_route	VIA12SQ_C	n5568
+offgrid_error_17	0	17	drc_error		{801.5590 455.6830} {801.6090 455.8850}	NA	NA	NA	NA	NA	NA
+drc_object_17	1	n5613	net		{785.1130 455.2730} {801.6390 461.2730}						
+near_cell_17	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_0__8_	cell		{800.2530 456.3620} {804.4350 458.1650}		DFFX1_HVT	saed32hvt_tt.modified_lef/DFFX1_HVT			
+near_cell_17	2	U6776	cell		{802.0770 453.0180} {803.0670 454.8210}		INVX1_HVT	saed32hvt_tt.modified_lef/INVX1_HVT			
+near_cell_17	3	U45809	cell		{796.9090 453.0180} {800.7870 454.8210}		MUX41X2_HVT	saed32hvt_tt.modified_lef/MUX41X2_HVT			
+near_pin_17	1	U6769/A1	pin	M1 CO	{801.2250 455.5770} {801.3970 455.7610}	n5614					
+near_pin_17	2	U6769/VSS	pin	M1 CO	{800.9760 456.0050} {802.4960 456.4220}	VSS					
+near_shape_17	1	PATH_13_101010	shape	M2	{801.5560 455.3000} {801.6120 455.8120}	n5613			detail_route		n5613
+near_shape_17	2	PATH_13_101152	shape	M2	{801.7080 451.9560} {801.7640 458.2440}	n5646			detail_route		n5646
+offgrid_error_18	0	18	drc_error		{767.6630 463.5870} {767.7130 463.7890}	NA	NA	NA	NA	NA	NA
+drc_object_18	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	net		{761.3390 438.1260} {768.3510 463.8190}						
+near_cell_18	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_1__10_	cell		{762.8610 461.3070} {767.0430 463.1100}		DFFX1_HVT	saed32hvt_tt.modified_lef/DFFX1_HVT			
+near_cell_18	2	U7563	cell		{764.9890 463.0500} {767.1950 464.8670}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_18	3	U7570	cell		{767.4210 464.6370} {769.6270 466.4540}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_18	4	U7571	cell		{768.6370 463.0500} {770.8430 464.8670}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_18	5	U3121	cell		{767.5730 461.3070} {769.4750 463.1100}		NOR2X2_HVT	saed32hvt_tt.modified_lef/NOR2X2_HVT			
+near_pin_18	1	U3117/A1	pin	M1 CO	{767.3290 463.7110} {767.5010 463.8950}	n54907					
+near_pin_18	2	U3117/VSS	pin	M1 CO	{767.0800 463.0500} {768.7520 463.4670}	VSS					
+near_shape_18	1	PATH_19_13729	shape	M5	{758.9960 463.8120} {770.9080 463.8680}	instr_rdata[8]			detail_route		instr_rdata[8]
+near_shape_18	2	PATH_11_29752	shape	M1	{767.2020 463.8100} {767.4450 463.8700}	n54907			detail_route		n54907
+near_shape_18	3	PATH_15_186164	shape	M3	{765.8360 463.5080} {771.8200 463.5640}	n54905			detail_route		n54905
+near_shape_18	4	PATH_15_186180	shape	M3	{765.3800 463.8120} {769.0840 463.8680}	n54906			detail_route		n54906
+near_shape_18	5	PATH_13_542196	shape	M2	{767.6600 462.5960} {767.7160 463.7160}	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]			detail_route		u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]
+offgrid_error_19	0	19	drc_error		{768.2710 462.3710} {768.3210 462.5730}	NA	NA	NA	NA	NA	NA
+drc_object_19	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]	net		{761.3390 438.1260} {768.3510 463.8190}						
+near_cell_19	1	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_i_rdata_q_reg_1__10_	cell		{762.8610 461.3070} {767.0430 463.1100}		DFFX1_HVT	saed32hvt_tt.modified_lef/DFFX1_HVT			
+near_cell_19	2	U7563	cell		{764.9890 463.0500} {767.1950 464.8670}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_19	3	U7571	cell		{768.6370 463.0500} {770.8430 464.8670}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_19	4	U7581	cell		{769.3970 461.2930} {771.6030 463.1100}		AO222X1_HVT	saed32hvt_tt.modified_lef/AO222X1_HVT			
+near_cell_19	5	U3117	cell		{766.9650 463.0500} {768.8670 464.8530}		NOR2X2_HVT	saed32hvt_tt.modified_lef/NOR2X2_HVT			
+near_pin_19	1	U3121/A1	pin	M1 CO	{767.9370 462.2650} {768.1090 462.4490}	n54907					
+near_pin_19	2	U3121/VSS	pin	M1 CO	{767.6880 462.6930} {769.3600 463.1100}	VSS					
+near_shape_19	1	PATH_15_186019	shape	M3	{761.5800 462.5960} {769.5400 462.6520}	n54904			detail_route		n54904
+near_shape_19	2	PATH_13_542197	shape	M2	{767.6600 462.5960} {768.3240 462.6520}	u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]			detail_route		u_ibex_top_u_ibex_core_if_stage_i_gen_prefetch_buffer_prefetch_buffer_i_fifo_busy[1]

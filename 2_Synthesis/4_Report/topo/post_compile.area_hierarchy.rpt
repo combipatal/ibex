@@ -1,0 +1,52 @@
+ 
+****************************************
+Report : area
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sat May  9 21:15:51 2026
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_tt1p05v25c (File: /DATA/home/edu135/lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1p05v25c.db)
+
+Number of ports:                          948
+Number of nets:                        111011
+Number of cells:                       109723
+Number of combinational cells:          74829
+Number of sequential cells:             34884
+Number of macros/black boxes:               0
+Number of buf/inv:                       8381
+Number of references:                      83
+
+Combinational area:             182948.863108
+Buf/Inv area:                    14587.866056
+Noncombinational area:          231809.324342
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                414758.187451
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  ----------------------------------------------
+ibex_mini_soc_top                 414758.1875    100.0  180115.1575  231809.3243  0.0000  ibex_mini_soc_top
+add_x_14                             102.4200      0.0     102.4200       0.0000  0.0000  ibex_mini_soc_top_DW01_inc_J4_0
+u_ibex_top/u_ibex_core/DP_OP_899J3_122_459
+                                    1855.7595      0.4    1855.7595       0.0000  0.0000  H13945677562857465990_DP_OP_899J3_122_459_J3_0
+u_ibex_top/u_ibex_core/add_x_190      99.1162      0.0      99.1162       0.0000  0.0000  H13945677562857465990_DW01_add_J3_11
+u_ibex_top/u_ibex_core/add_x_422      99.1162      0.0      99.1162       0.0000  0.0000  H13945677562857465990_DW01_add_J3_2
+u_ibex_top/u_ibex_core/add_x_479     157.0610      0.0     157.0610       0.0000  0.0000  H13945677562857465990_DW01_add_J3_1
+u_ibex_top/u_ibex_core/add_x_534     208.1439      0.1     208.1439       0.0000  0.0000  H13945677562857465990_DW01_inc_J3_1
+u_ibex_top/u_ibex_core/add_x_536     208.1439      0.1     208.1439       0.0000  0.0000  H13945677562857465990_DW01_inc_J3_0
+u_ibex_top/u_ibex_core/add_x_550     103.9449      0.0     103.9449       0.0000  0.0000  H13945677562857465990_DW01_add_J3_0
+--------------------------------  -----------  -------  -----------  -----------  ------  ----------------------------------------------
+Total                                                   182948.8631  231809.3243  0.0000
+
+1

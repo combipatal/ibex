@@ -1,0 +1,274 @@
+Information: Starting 'legalize_placement' (FLW-8000)
+Information: Time: 2026-05-10 10:48:24 / Session:  00:01:07 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1309 MB (FLW-8100)
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.5535 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 52031 total shapes.
+Layer M2: cached 41 shapes out of 712921 total shapes.
+Cached 10883 vias out of 1180025 total vias.
+=====> Processed 133 ref cells (19 fillers) from library
+Design has no advanced rules
+Checking legality
+Checking cell legality:
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Sorting rows.
+Checking spacing rule legality.
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Checking packing rule legality.
+
+
+****************************************
+  Report : Legality
+****************************************
+
+VIOLATIONS BY CATEGORY:
+   MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+         7          0          0  Two objects overlap.
+         0          0          0  A cell violates a pnet.
+         0          0          0  A cell is illegal at a site.
+         0          0          0  A cell is not aligned with a site.
+         0          0          0  A cell has an illegal orientation.
+         0          0          0  A cell spacing rule is violated.
+         0          0          0  A layer rule is violated.
+         0          0          0  A cell is in the wrong region.
+         0          0          0  Two cells violate cts margins.
+         0          0          0  Two cells violate coloring.
+
+         7          0          0  TOTAL
+
+TOTAL 7 Violations.
+
+VIOLATIONS BY SUBCATEGORY:
+     MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+
+         7          0          0    Two objects overlap.
+           7          0          0    Two cells overlap.
+           0          0          0    Two cells have overlapping keepout margins.
+           0          0          0    A cell overlaps a blockage.
+           0          0          0    A cell keepout margin overlaps a blockage.
+
+         0          0          0    A cell violates a pnet.
+
+         0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates pin-track alignment rules.
+           0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates legal index rule.
+           0          0          0    A cell has the wrong variant for its location.
+
+         0          0          0    A cell is not aligned with a site.
+           0          0          0    A cell is not aligned with the base site.
+           0          0          0    A cell is not aligned with an overlaid site.
+
+         0          0          0    A cell has an illegal orientation.
+
+         0          0          0    A cell spacing rule is violated.
+           0          0          0    A spacing rule is violated in a row.
+           0          0          0    A spacing rule is violated between adjacent rows.
+           0          0          0    A cell violates vertical abutment rule.
+           0          0          0    A cell violates metal spacing rule.
+
+         0          0          0    A layer rule is violated.
+           0          0          0    A layer VTH rule is violated.
+           0          0          0    A layer OD rule is violated.
+           0          0          0    A layer OD max-width rule is violated.
+           0          0          0    A layer ALL_OD corner rule is violated.
+           0          0          0    A layer max-vertical-length rule is violated.
+           0          0          0    A layer TPO rule is violated.
+           0          0          0    Filler cell insertion cannot satisfy layer rules.
+
+         0          0          0    A cell is in the wrong region.
+           0          0          0    A cell is outside its hard bound.
+           0          0          0    A cell is in the wrong voltage area.
+           0          0          0    A cell violates an exclusive movebound.
+
+         0          0          0    Two cells violate cts margins.
+
+         0          0          0    Two cells violate coloring.
+
+Information: Legalizing 14 cells and 115962 out of total 116856 cells will remain unchanged during legalization
+Information: 880 cells were skipped due to unplaced or fixed status
+nplDplc2Placer::setParam(effort,1)
+nplDplc2Placer::setParam(debug,0)
+nplDplc2Placer::setParam(site_check,2)
+nplDplc2Placer::setParam(app_firm_wgt,0)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 52031 total shapes.
+Layer M2: cached 41 shapes out of 712921 total shapes.
+Cached 10883 vias out of 1180025 total vias.
+
+Legalizing Top Level Design ibex_mini_soc_top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.5481 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 133 ref cells (19 fillers) from library
+
+Bounds/Regions In This Design:
+        Area    Num Cells  Exclusive Name
+ (square um)
+      691040       116856        Yes DEFAULT_VA
+
+Warning: max_legality_failures=5000 ignored.
+	To use it, set limit_legality_checks to true.
+Warning: max_legality_check_range=500 ignored.
+	To use it, set limit_legality_checks to true.
+Starting legalizer.
+Warning: There is high fragmentation caused by many blockages or fixed cells.
+	The median subrow width (space between blockages) is 42 sites
+	and the median cell width is 13 sites. This makes it difficult for
+	the legalizer to pack in the cells and can result in high
+	displacements and long runtimes.
+Please look for the GIF files that are written out at the end of
+	legalization to see the impact of the fragmentation.
+Warning: Exclusive bound 'DEFAULT' has no cells.
+Optimizing Exclusive Bound 'DEFAULT_VA' (2/2)
+Warning: There is high fragmentation caused by many blockages or fixed cells.
+	The median subrow width (space between blockages) is 42 sites
+	and the median cell width is 13 sites. This makes it difficult for
+	the legalizer to pack in the cells and can result in high
+	displacements and long runtimes.
+Please look for the GIF files that are written out at the end of
+	legalization to see the impact of the fragmentation.
+    Done Exclusive Bound 'DEFAULT_VA' (2/2) (0 sec)
+Writing GIF plot to file './legalizer_debug_plots/ibex_mini_soc_top_SITE_unit.001-0001-max_displacements.gif'.
+Writing GIF plot to file './legalizer_debug_plots/ibex_mini_soc_top_SITE_unit.001-0002-colored_displacements.gif'.
+Legalization complete (0 total sec)
+
+****************************************
+  Report : Placement Attempts
+  Site   : unit
+****************************************
+
+number of cells:                 116856
+number of references:               133
+number of site rows:                497
+number of locations attempted:      133
+number of locations failed:           8  (6.0%)
+
+Legality of references at locations:
+1 references had failures.
+
+Worst 1 references by total failures:
+ CELLS       UNFLIPPED                       FLIPPED                REFERENCE NAME
+         ATTEMPTS  FAILURES            ATTEMPTS  FAILURES           
+    19         42         4 (  9.5%)         14         4 ( 28.6%)  NOR2X4_HVT
+
+Worst 1 references by failure rate:
+ CELLS       UNFLIPPED                       FLIPPED                REFERENCE NAME
+         ATTEMPTS  FAILURES            ATTEMPTS  FAILURES           
+    19         42         4 (  9.5%)         14         4 ( 28.6%)  NOR2X4_HVT
+
+Legality of references in rows:
+0 references had row failures.
+
+****************************************
+  Report : Cell Displacements
+****************************************
+
+number of cells aggregated:          14 (171 total sites)
+avg row height over cells:        1.672 um
+rms cell displacement:            0.514 um ( 0.31 row height)
+rms weighted cell displacement:   0.514 um ( 0.31 row height)
+max cell displacement:            1.672 um ( 1.00 row height)
+avg cell displacement:            0.225 um ( 0.13 row height)
+avg weighted cell displacement:   0.225 um ( 0.13 row height)
+number of cells moved:                8
+number of large displacements:        0
+large displacement threshold:     3.000 row height
+
+Displacements of worst 10 cells:
+Cell: U45800 (NBUFFX4_HVT)
+  Input location: (792.16,451.376)
+  Legal location: (792.16,453.048)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: U80740 (INVX1_HVT)
+  Input location: (744.584,309.256)
+  Legal location: (744.584,307.584)
+  Displacement:   1.672 um ( 1.00 row height)
+Cell: U3014 (INVX1_HVT)
+  Input location: (737.44,330.992)
+  Legal location: (737.896,330.992)
+  Displacement:   0.456 um ( 0.27 row height)
+Cell: U7571 (AO222X1_HVT)
+  Input location: (768.752,463.08)
+  Legal location: (769.056,463.08)
+  Displacement:   0.304 um ( 0.18 row height)
+Cell: U80528 (AND2X1_HVT)
+  Input location: (714.944,317.616)
+  Legal location: (715.096,317.616)
+  Displacement:   0.152 um ( 0.09 row height)
+Cell: U6115 (NOR2X4_HVT)
+  Input location: (762.064,458.064)
+  Legal location: (761.912,458.064)
+  Displacement:   0.152 um ( 0.09 row height)
+Cell: U3121 (NOR2X4_HVT)
+  Input location: (767.688,461.408)
+  Legal location: (767.536,461.408)
+  Displacement:   0.152 um ( 0.09 row height)
+Cell: U80526 (NOR2X4_HVT)
+  Input location: (713.272,317.616)
+  Legal location: (713.12,317.616)
+  Displacement:   0.152 um ( 0.09 row height)
+Cell: U6697 (NOR2X4_HVT)
+  Input location: (790.64,451.376)
+  Legal location: (790.64,451.376)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: U7945 (NOR2X4_HVT)
+  Input location: (735.92,330.992)
+  Legal location: (735.92,330.992)
+  Displacement:   0.000 um ( 0.00 row height)
+
+Legalization succeeded.
+Total Legalizer CPU: 8.084
+Total Legalizer Wall Time: 8.105
+----------------------------------------------------------------
+Information: Ending   'legalize_placement' (FLW-8001)
+Information: Time: 2026-05-10 10:48:32 / Session:  00:01:15 / Command:  00:00:08 / CPU:  00:00:08 / Memory: 1309 MB (FLW-8100)
+1

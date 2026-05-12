@@ -1,0 +1,27 @@
+****************************************
+Report : Report drc errors
+Design : ibex_mini_soc_top
+Data   : zroute.err
+Type   : error_type
+Version: W-2024.09-SP2
+Date   : Sun May 10 01:04:04 2026
+****************************************
+
+ErrorSet                                    Total   Visible     Fixed   Ignored
+--------------------------------------------------------------------------------
+Design : ibex_mini_soc_top                  720     720         0       0
+      Data : zroute.err                     720     720         0       0
+            Diff net spacing                251     251         0       0
+                M1 (11)                     251     251         0       0
+            Less than minimum area          24      24          0       0
+                M2 (13)                     24      24          0       0
+            Needs fat contact               347     347         0       0
+                M1 (11)-M2 (13)             347     347         0       0
+            Off-grid                        92      92          0       0
+                M1 (11)                     7       7           0       0
+                M2 (13)                     42      42          0       0
+                VIA1 (12)                   43      43          0       0
+            Short                           6       6           0       0
+                M1 (11)                     5       5           0       0
+                M2 (13)                     1       1           0       0
+1

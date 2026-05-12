@@ -1,0 +1,66 @@
+This files generated automatically by the ICC2 command check_pg_drc
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {819.97 827.521} {820.03 827.631}
+Layer:              M2
+Net:                VSS
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 327.593} {840.03 327.703}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 367.721} {840.03 367.831}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 407.849} {840.03 407.959}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 447.977} {840.03 448.087}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 488.105} {840.03 488.215}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 528.233} {840.03 528.343}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+=================
+Error type:         Minimal metal area
+Violated rule:      General Minimum Area Rule
+Metal island b-box: {839.97 568.361} {840.03 568.471}
+Layer:              M2
+Net:                VDD
+Actual area:        0.0066
+Minimal area:       0.016
+==============================================================

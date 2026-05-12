@@ -1,0 +1,24 @@
+Using libraries: ibex_mini_soc_top_modified_lef_cleanup_icc2_lib saed32rvt_tt.modified_lef saed32lvt_tt.modified_lef saed32hvt_tt.modified_lef
+Visiting block ibex_mini_soc_top_modified_lef_cleanup_icc2_lib:ibex_mini_soc_top.design
+Design 'ibex_mini_soc_top' was successfully linked.
+****************************************
+Report : report_tracks
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 08:55:21 2026
+****************************************
+Layer          Direction     Start         Tracks    Pitch       Attr
+---------------------------------------------------------------------------
+M1             X             0.088000      5734      0.152000    default
+M1             Y             0.088000      5730      0.152000    default
+****************************************
+Report : report_tracks
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 08:55:21 2026
+****************************************
+Layer          Direction     Start         Tracks    Pitch       Attr
+---------------------------------------------------------------------------
+M2             X             0.088000      5734      0.152000    default
+M2             Y             0.088000      5730      0.152000    default
+1

@@ -1,0 +1,83 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 20
+        -hold
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP2
+Date   : Sun May 10 17:00:51 2026
+****************************************
+
+  Mode: default
+  Clock: clk
+
+  Clock Pin                                          Latency      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  u_dmem_mem_reg_424__24_/CLK                           0.11              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_456__24_/CLK                           0.11              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_472__24_/CLK                           0.11              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_460__24_/CLK                           0.11              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_428__24_/CLK                           0.11              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_412__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_500__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_392__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_457__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_473__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_425__24_/CLK                           0.12              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.24    rp-+    default
+
+  u_dmem_mem_reg_104__24_/CLK                           0.15              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.21    rp-+    default
+
+  u_dmem_mem_reg_40__24_/CLK                            0.15              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.21    rp-+    default
+
+  u_dmem_mem_reg_72__24_/CLK                            0.15              rp-+    default
+  u_dmem_rdata_q_reg_24_/CLK                            0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_120__31_/CLK                           0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_128__25_/CLK                           0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_248__31_/CLK                           0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_120__27_/CLK                           0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_0__26_/CLK                             0.36      0.21    rp-+    default
+
+  u_ibex_top_u_ibex_core_id_stage_i_imd_val_q_reg_1__31_/CLK
+                                                        0.15              rp-+    default
+  u_dmem_mem_reg_180__28_/CLK                           0.36      0.21    rp-+    default
+
+---------------------------------------------------------------------------------------------------
+1

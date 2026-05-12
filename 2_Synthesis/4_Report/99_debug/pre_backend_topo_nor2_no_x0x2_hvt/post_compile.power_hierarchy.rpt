@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ibex_mini_soc_top
+Version: W-2024.09-SP5-5
+Date   : Sun May 10 11:12:01 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_tt1p05v25c (File: /DATA/home/edu135/lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1p05v25c.db)
+
+
+Operating Conditions: tt1p05v25c   Library: saed32rvt_tt1p05v25c
+Wire Load Model Mode: Inactive.
+
+
+Global Operating Voltage = 1.05 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ibex_mini_soc_top                      5.56e+04 2.19e+04 1.80e+09 7.93e+04 100.0
+  u_ibex_top/u_ibex_core/DP_OP_899J3_122_459 (H13945677562857465990_DP_OP_899J3_122_459_J3_0)
+                                       2.51e-02 5.81e-02 7.50e+06    7.582   0.0
+  u_ibex_top/u_ibex_core/add_x_550 (H13945677562857465990_DW01_add_J3_0)
+                                       7.97e-02    0.270 6.11e+05    0.960   0.0
+  u_ibex_top/u_ibex_core/add_x_536 (H13945677562857465990_DW01_inc_J3_0)
+                                       8.02e-04 5.04e-03 1.25e+06    1.258   0.0
+  u_ibex_top/u_ibex_core/add_x_534 (H13945677562857465990_DW01_inc_J3_1)
+                                       4.40e-02    0.256 1.25e+06    1.548   0.0
+  u_ibex_top/u_ibex_core/add_x_479 (H13945677562857465990_DW01_add_J3_1)
+                                          0.126    0.183 7.14e+05    1.024   0.0
+  u_ibex_top/u_ibex_core/add_x_422 (H13945677562857465990_DW01_add_J3_2)
+                                       2.74e-03 1.69e-02 5.95e+05    0.614   0.0
+  u_ibex_top/u_ibex_core/add_x_190 (H13945677562857465990_DW01_add_J3_11)
+                                       5.89e-02    0.259 5.90e+05    0.908   0.0
+  add_x_14 (ibex_mini_soc_top_DW01_inc_J4_0)
+                                          0.000 2.39e-03 6.16e+05    0.618   0.0
+1

@@ -1,0 +1,105 @@
+****************************************
+Report : List of Attribute Definitions
+Version: W-2024.09-SP2
+Date   : Sun May 10 11:56:28 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+actual_spacing            drc_error  errdm_distance A       
+bbox                      drc_error  errdm_rect A           
+bounding_box              drc_error  collection A           
+brief_info                drc_error  string     A           
+direction                 drc_error  string     A           horizontal, lower_left_to_upper_right, unknown, upper_left_to_lower_right, vertical
+endpoints                 drc_error  errdm_coord_list_list A
+error_class               drc_error  string     A           basic, open_locator, short, size, spacing
+error_data                drc_error  collection A           
+error_id                  drc_error  int        A           
+error_info                drc_error  string     A,S         
+error_type                drc_error  collection A           
+full_name                 drc_error  string     A           
+layers                    drc_error  collection A           
+must_fix                  drc_error  boolean    A,S         
+name                      drc_error  string     A           
+object_class              drc_error  string     A           
+objects                   drc_error  collection A           
+pin_edge                  drc_error  int        A           
+points                    drc_error  errdm_coord_list_list A
+polygons                  drc_error  errdm_coord_list_list A
+polylines                 drc_error  errdm_coord_list_list A
+required_height           drc_error  errdm_distance A       
+required_spacing          drc_error  errdm_distance A       
+required_width            drc_error  errdm_distance A       
+shape                     drc_error  string     A           
+shape_uses                drc_error  route_type_list A      
+status                    drc_error  string     A,S         error, fixed, ignored, waived
+type_name                 drc_error  string     A           
+verbose_info              drc_error  string     A           
+z_level                   drc_error  int        A           
+****************************************
+Report : List of Attribute Definitions
+Version: W-2024.09-SP2
+Date   : Sun May 10 11:56:28 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+bbox                      drc_error_type errdm_rect A       
+bounding_box              drc_error_type collection A       
+brief_format              drc_error_type string A           ascii, message
+brief_info                drc_error_type string A           
+error_class               drc_error_type string A           basic, open_locator, short, size, spacing
+error_data                drc_error_type collection A       
+full_name                 drc_error_type string A           
+name                      drc_error_type string A           
+num_detected_errors       drc_error_type int    A           
+num_errors                drc_error_type int    A           
+object_class              drc_error_type string A           
+severity                  drc_error_type string A           error, information, recommendation, unknown, warning
+verbose_format            drc_error_type string A           ascii, message
+verbose_info              drc_error_type string A           
+****************************************
+Report : List of Attribute Definitions
+Version: W-2024.09-SP2
+Date   : Sun May 10 11:56:28 2026
+****************************************
+
+Properties:
+    A - Application-defined
+    U - User-defined
+    I - Importable from design/library (for user-defined)
+    S - Settable
+    B - Subscripted
+
+Attribute Name            Object     Type       Properties  Constraints
+--------------------------------------------------------------------------------
+cell_name                 drc_error_data string A           
+checker_name              drc_error_data string A           
+checker_version           drc_error_data string A           
+creation_date             drc_error_data string A           
+file_name                 drc_error_data string A           
+full_name                 drc_error_data string A           
+information               drc_error_data string A           
+modification_date         drc_error_data string A           
+modified                  drc_error_data boolean A          
+name                      drc_error_data string A           
+num_errors                drc_error_data int    A           
+num_types                 drc_error_data int    A           
+object_class              drc_error_data string A           
+open_mode                 drc_error_data string A           
+schema_version            drc_error_data string A           
+0
